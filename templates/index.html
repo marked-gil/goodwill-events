@@ -2,5 +2,29 @@
 
 {% block content %}
 
-<h1>Hello!</h1>
+<h2>Featured Events:</h2>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for event in featured_events %}
+    <div class="col">
+        <div class="card h-100">
+            {% if "proxy_image" in event.featured_image.url %}
+            <img src="https://cdn.seeklearning.com.au/media/images/career-guide/article/career-advice/web_images/blogs/214/6084/How-music-and-sound-can-help-alleviate-career-anxiety_940x485.jpg"
+                class="card-img-top" alt="featured_image">
+            {% else %}
+            <img src="{{ event.featured_image }}" class="card-img-top" alt="featured image">
+            {% endif %}
+            <div class="card-body">
+                <h5 class="card-title"><a href="#">{{ event.title }}</a></h5>
+                <p class="card-text">{{ event.blurb }}</p>
+                <p>{{ event.event_date }} ({{ event.event_time }})</p>
+            </div>
+            <button class="btn btn-primary" type="button">Reserve A Seat</button>
+            <div class="card-footer">
+                <small class="text-muted">Seats still Available</small>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
 {% endblock content %}

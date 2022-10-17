@@ -25,7 +25,7 @@ class Event(models.Model):
     status = models.IntegerField(choices=STATUS, default=2)
 
     class Meta:
-        ordering = ['-created_on']
+        ordering = ['-event_date']
 
     def __str__(self):
         return self.title
