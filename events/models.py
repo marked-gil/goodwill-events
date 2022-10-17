@@ -5,6 +5,8 @@ from cloudinary.models import CloudinaryField
 
 
 class Event(models.Model):
+    STATUS = ((0, "Expired"), (1, "Active"), (2, "Draft"))
+
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     title = models.CharField(max_length=150, blank=False)
     slug = models.SlugField(max_length=150, blank=False)
@@ -20,7 +22,7 @@ class Event(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
     likes = models.ManyToManyField(
         User, blank=True, related_name='event_likes')
-    is_published = models.BooleanField(default=False)
+    status = models.IntegerField(choices=STATUS, default=2)
 
     class Meta:
         ordering = ['-created_on']
