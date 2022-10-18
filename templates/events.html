@@ -5,8 +5,8 @@
 <h2>Upcoming Events</h2>
 
 {% for event in events_list %}
-<div class="card mb-3">
-    {% if event.featured_image == 'proxy_image' %}
+<div class="card mb-3 w-75">
+    {% if 'proxy_image' in event.featured_image.url  %}
     <img src="https://cdn.seeklearning.com.au/media/images/career-guide/article/career-advice/web_images/blogs/214/6084/How-music-and-sound-can-help-alleviate-career-anxiety_940x485.jpg"
         class="card-img-top" alt="featured_image">
     {% else %}
@@ -20,6 +20,5 @@
     </div>
 </div>
 {% endfor %}
-
 
 {% endblock content %}
