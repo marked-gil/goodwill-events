@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div>
+    {% if event.featured_image == 'proxy_image' %}
+    <img src="https://www.incimages.com/uploaded_files/image/1920x1080/getty_626660256_2000108620009280158_388846.jpg"
+        class="img-fluid" alt="featured_image">
+    {% else %}
+    <img src="{{ event.featured_image}}" class="img-fluid" alt="featured_image">
+    {% endif %}
+</div>
+<div>
+    <p>The Goodwill Events presents</p>
+    <h2>{{ event }}</h2>
+    <p>{{ event.blurb }}</p>
+    <p>{{ event.event_date|date:'d F Y, l' }} | <span>{{ event.event_time|date:'g A' }}</span></p>
+    <p>
+        <small>5 Seats Left</small> |
+    </p>
+    <button>Reserve A Seat</button>
+    <div>
+        <p>{{ event.post_content | safe }}</p>
+    </div>
+</div>
+
+<!-- COMMENT SECTION HERE -->
+<div>
+    <!-- commentsection -->
+</div>
+{% endblock content %}
