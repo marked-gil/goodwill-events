@@ -19,3 +19,21 @@ class EventsList(ListView):
     queryset = Event.objects.filter(status=1).order_by('event_date')
     template_name = 'events.html'
     paginate_by = 2
+
+
+class EventDetails(DetailView):
+    model = Event
+    context_object_name = 'event'
+    template_name = 'event_details.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        event_post = Event.objects.get(slug=self.kwargs.get('slug'))
+        likers = event_post.likes.all()
+
+        if self.request.user in likers:
+            context['liked'] = True
+        else:
+            context['liked'] = False
+
+        return context
