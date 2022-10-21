@@ -16,6 +16,12 @@
     <p>{{ event.event_date|date:'d F Y, l' }} | <span>{{ event.event_time|date:'g A' }}</span></p>
     <p>
         <small>5 Seats Left</small> |
+        {% if liked %}
+        <i class="fa-solid fa-heart"></i>
+        {% else %}
+        <i class="fa-regular fa-heart"></i>
+        {% endif %}
+        {{ event.total_likes }}
     </p>
     <button>Reserve A Seat</button>
     <div>
