@@ -27,3 +27,13 @@ def sign_out(request):
     logout(request)
     messages.success(request, ("Your are succesfully signed out."))
     return redirect('/')
+
+
+class SignUp(SuccessMessageMixin, CreateView):
+    model = User
+    form_class = SignUpForm
+    template_name = "./members/sign_up.html"
+    success_url = "/"
+    success_message = "Welcome! You are now a member."
+
+
