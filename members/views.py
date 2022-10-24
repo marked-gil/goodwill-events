@@ -1,6 +1,10 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib import messages
+from django.views.generic.edit import CreateView
+from django.contrib.auth.models import User
+from .forms import SignUpForm
 
 
 def sign_in(request):
