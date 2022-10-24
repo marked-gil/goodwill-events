@@ -36,4 +36,11 @@ class SignUp(SuccessMessageMixin, CreateView):
     success_url = "/"
     success_message = "Welcome! You are now a member."
 
-
+    # Automatically logs in after signing up [See ReadMe for credit]
+    def form_valid(self, form):
+        valid = super(SignUp, self).form_valid(form)
+        username, password = form.cleaned_data.get(
+            'username'), form.cleaned_data.get('password1')
+        new_user = authenticate(username=username, password=password)
+        login(self.request, new_user)
+        return valid
