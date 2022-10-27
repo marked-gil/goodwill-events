@@ -1,0 +1,14 @@
+[data-seat-location] {
+    fill: rgb(202, 217, 217);
+    stroke: rgb(10, 34, 84);
+}
+
+#my-svg {
+    width: 50vw;
+    height: 80vh;
+    border: 2px solid firebrick;
+}
+
+.booked {
+    fill: rgb(25, 169, 12);
+}
