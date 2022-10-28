@@ -8,6 +8,7 @@ class EventSeatsView(View):
         event_seats_obj = EventSeating.objects.filter(event__slug=slug)
         list_seats = []
         num_iteration = 1
+        event_name = ""
         for item in event_seats_obj:
             list_seats.append(str(item.seat_location))
             if num_iteration == 1:
