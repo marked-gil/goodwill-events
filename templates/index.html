@@ -18,7 +18,7 @@
                 <p class="card-text">{{ event.blurb }}</p>
                 <p>{{ event.event_date }} ({{ event.event_time }})</p>
             </div>
-            <button class="btn btn-primary" type="button">Reserve A Seat</button>
+            <a href="{% url 'seatmap' event.slug %}">Reserve A Seat</a>
             <div class="card-footer">
                 <small class="text-muted">Seats still Available</small>
             </div>
