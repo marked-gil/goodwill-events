@@ -2,8 +2,10 @@
 
 {% block content %}
 
-<h3>{{ event }}</h3>
-<p>{{ event.event_date|date:'d F Y, l' }} | <span>{{ event.event_time|date:'g A' }}</span></p>
+<div>
+    <h3>{{ event }}</h3>
+    <p>{{ event.event_date|date:'d F Y, l' }} | <span>{{ event.event_time|date:'g A' }}</span></p>
+</div>
 
 <div id="seatmap-container">
     <svg viewBox="-5.954 -11.097 500 500" xmlns="http://www.w3.org/2000/svg" id="my-svg">
@@ -292,18 +294,23 @@
                 x="387.14" y="441.179">14</text>
         </g>
     </svg>
-</div>
 
-<div style="border: 2px solid black; width: 20rem; height: 10rem;">
-    <p>- Available</p>
-    <p>- You Selected</p>
-    <p>- Unavailable</p>
-</div>
-
-<div style="border: 2px solid black; width: 20rem; height: 20rem;">
-    <h5>Selected Seats: </h5>
-    <p>Each member can only reserve a maximum of 2 seats per event via the website.</p>
-    <p>Seats are reserved only until 15 minutes before the start of the event.</p>
+    <div id="seatmap-legend">
+        <p>- Available</p>
+        <p>- You Selected</p>
+        <p>- Unavailable</p>
+    </div>
+    
+    <div id="selected-seats-box">
+        <h5>Selected Seats: </h5>
+        <div id="seats-selected-container">
+            <ul>
+                <li class="seat-selected"></li>
+            </ul>
+        </div>
+        <small>Each member can only reserve a maximum of 2 seats per event via the website.</small>
+        <small>Seats are reserved only until 15 minutes before the start of the event.</small>
+    </div>
 </div>
 
 <p id="data_seats">
