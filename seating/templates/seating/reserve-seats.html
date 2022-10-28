@@ -290,4 +290,19 @@
     </svg>
 </div>
 
+<script>
+    window.onpageshow = function () {
+        const reservedSeatsList = "{{ data | safe }}";
+        const seatsList = document.querySelectorAll('[data-seat-location]');
+        for (let seat of seatsList) {
+            var seat_loc = seat.getAttribute("data-seat-location")
+            if (reservedSeatsList.includes(seat_loc)) {
+                seat.style.fill = "blue";
+            } else {
+  
+            }
+        }
+    }
+</script>
+
 {% endblock %}
