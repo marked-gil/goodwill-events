@@ -299,7 +299,10 @@
             if (reservedSeatsList.includes(seat_loc)) {
                 seat.style.fill = "blue";
             } else {
-  
+                seat.style.cursor = 'pointer'
+                seat.addEventListener('click', (e) => {
+                    seat.classList.toggle("booked")
+                })
             }
         }
     }
