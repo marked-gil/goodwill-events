@@ -3,6 +3,24 @@
     stroke: rgb(10, 34, 84);
 }
 
+#seatmap-container {
+    display: flex;
+    border: 2px solid darkblue;
+    width: 100%;
+}
+
+#seatmap-legend {
+    border: 2px solid black;
+    width: 20rem;
+    height: 10rem;
+}
+
+#selected-seats-box {
+    border: 2px solid black;
+    width: 20rem;
+    height: 20rem;
+}
+
 #my-svg {
     width: 50vw;
     height: 80vh;
