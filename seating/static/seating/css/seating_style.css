@@ -12,3 +12,7 @@
 .booked {
     fill: rgb(25, 169, 12);
 }
+
+#data_seats {
+    display: none;
+}

@@ -306,23 +306,8 @@
     <p>Seats are reserved only until 15 minutes before the start of the event.</p>
 </div>
 
-
-<script>
-    window.onpageshow = function () {
-        const reservedSeatsList = "{{ data | safe }}";
-        const seatsList = document.querySelectorAll('[data-seat-location]');
-        for (let seat of seatsList) {
-            var seat_loc = seat.getAttribute("data-seat-location")
-            if (reservedSeatsList.includes(seat_loc)) {
-                seat.style.fill = "blue";
-            } else {
-                seat.style.cursor = 'pointer'
-                seat.addEventListener('click', (e) => {
-                    seat.classList.toggle("booked")
-                })
-            }
-        }
-    }
-</script>
+<p id="data_seats">
+    {{ data | safe }}
+</p>
 
 {% endblock %}
