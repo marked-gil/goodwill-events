@@ -13,6 +13,7 @@ class EventSeatsView(View):
             if not event_seats_obj.exists():
                 raise Exception("Start making seat reservations for this event.")
         except Exception as info:
+            messages.info(request, info)
             return render(request, './seating/reserve-seats.html', {
                 'event': event
                 })
