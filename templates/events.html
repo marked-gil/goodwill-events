@@ -15,6 +15,8 @@
 
     <div class="card-body">
         <h5 class="card-title"><a href="{% url 'event_details' event.slug %}">{{ event.title }}</a></h5>
+        <a href="{% url 'seatmap' event.slug %}"><button type="button" class="btn btn-primary btn-sm">Reserve A
+            Seat</button></a>
         <p class="card-text">{{ event.blurb }}</p>
         <p class="card-text"><small class="text-muted">{{ event.event_date}} | {{ event.event_time }}</small></p>
     </div>

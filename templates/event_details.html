@@ -12,6 +12,8 @@
 <div>
     <p>The Goodwill Events presents</p>
     <h2>{{ event }}</h2>
+    <a href="{% url 'seatmap' event.slug %}"><button type="button" class="btn btn-primary btn-sm">Reserve A
+        Seat</button></a>
     <p>{{ event.blurb }}</p>
     <p>{{ event.event_date|date:'d F Y, l' }} | <span>{{ event.event_time|date:'g A' }}</span></p>
     <p>
