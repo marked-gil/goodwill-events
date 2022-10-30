@@ -306,12 +306,15 @@
         <div id="seats-selected-container">
             <ul id="seats_selected_list"></ul>
         </div>
-        <form action="" method="POST">
+        
+        <form action="" method="POST" id="reserve_seat_form">
             {% csrf_token %}
-            <input type="hidden" class="seat_reserve" name="seat_first">
-            <input type="hidden" class="seat_reserve" name="seat_second">
+            {{ form }}
             <button>Reserve</button>
         </form>
+
+        <button id="submit_reservation">Reserve</button>
+
         <small>Each member can only reserve a maximum of 2 seats per event via the website.</small>
         <small>Seats are reserved only until 15 minutes before the start of the event.</small>
     </div>
