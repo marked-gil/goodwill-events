@@ -28,3 +28,9 @@ class EventSeatsView(View):
                 'data': list_seats,
                 'event': event, 'form': reservation_form
                 })
+
+    def post(self, request, slug, *args, **kwargs):
+        reservation_form = SeatReserveForm(request.POST)
+        if reservation_form.is_valid():
+            reservation_form.save()
+        return render(request, '/', {})
