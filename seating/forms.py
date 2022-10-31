@@ -5,4 +5,4 @@ from .models import EventSeating
 class SeatReserveForm(ModelForm):
     class Meta:
         model = EventSeating
-        fields = ['event', 'seat_location', 'reserved_by']
+        fields = ['seat_location_1', 'seat_location_2']
