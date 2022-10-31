@@ -4,7 +4,7 @@ from .models import VenueSeat, EventSeating
 
 @admin.register(VenueSeat)
 class VenueSeatAdmin(admin.ModelAdmin):
-    list_display = ('seat_location', 'is_active')
+    list_display = ('id', 'seat_location', 'is_active')
 
 
 @admin.register(EventSeating)
