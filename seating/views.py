@@ -23,14 +23,30 @@ class EventSeatsView(View):
         else:
             list_seats = []
             for item in event_seats_obj:
-                list_seats.append(str(item.seat_location))
+                list_seats.append(str(item.seat_location_1))
+                if item.seat_location_2:
+                    list_seats.append(str(item.seat_location_2))
             return render(request, './seating/reserve-seats.html', {
                 'data': list_seats,
                 'event': event, 'form': reservation_form
                 })
 
     def post(self, request, slug, *args, **kwargs):
-        reservation_form = SeatReserveForm(request.POST)
+        event = Event.objects.filter(slug=slug).first()
+        user = request.user
+        reservation_form = SeatReserveForm(data=request.POST)
         if reservation_form.is_valid():
-            reservation_form.save()
-        return render(request, './seating/reserve-seats.html', {})
+            filled_form = reservation_form.save(commit=False)
+            filled_form.event = event
+            filled_form.reserved_by = user
+            try:
+                filled_form.save()
+                messages.success(
+                    request, f"New seats are reserved for {event}.")
+            except Exception:
+                messages.error(
+                    request, "You already booked 2 seats for this event.")
+                return redirect(request.path_info)
+            else:
+                return redirect('/')
+        return redirect(request.path_info)
