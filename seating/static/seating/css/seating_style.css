@@ -34,3 +34,7 @@
 #data_seats {
     display: none;
 }
+
+#reserve_seat_form {
+    display: none;
+}

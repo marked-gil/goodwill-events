@@ -33,4 +33,4 @@ class EventSeatsView(View):
         reservation_form = SeatReserveForm(request.POST)
         if reservation_form.is_valid():
             reservation_form.save()
-        return render(request, '/', {})
+        return render(request, './seating/reserve-seats.html', {})
