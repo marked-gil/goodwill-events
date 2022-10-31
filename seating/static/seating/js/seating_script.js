@@ -13,8 +13,8 @@ window.onpageshow = function () {
                 if (num_seats_chosen < ALLOWED_SEATS_PER_USER) {
                     num_seats_chosen += toggleSeat(this, seat_loc);
                 } else {
-                    if (seat.classList.contains("booked")) {
-                        num_seats_chosen += toggleSeat(seat, seat_loc)
+                    if (this.classList.contains("booked")) {
+                        num_seats_chosen += toggleSeat(this, seat_loc)
                     }
                 }
             })
@@ -46,33 +46,11 @@ function showSelectedSeat(seat_loc) {
     li_elem.innerText = seat_loc;
     document.getElementById("seats_selected_list").appendChild(li_elem)
     li_elem.setAttribute('id', seat_loc)
-
-    // Adds the seat location to the input field's value
-    const selected_seats = document.querySelectorAll("#seats_selected_list>li")
-    const input_fields = document.getElementsByClassName("seat_reserve")
-    for (let seat of selected_seats) {
-        if (input_fields[0].value == "") {
-            input_fields[0].value = seat.innerText;
-        } else {
-            input_fields[1].value = seat.innerText;
-        }
-    }
 }
 
 function removeDeselectedSeat(seat_loc) {
     const li_elem = document.getElementById(seat_loc);
     li_elem.remove()
-
-    // Removes the seat_location as value to an input field
-    const selected_seats = document.querySelectorAll("#seats_selected_list>li")
-    const input_fields = document.getElementsByClassName("seat_reserve")
-    if (selected_seats.length > 0) {
-        input_fields[0].value = selected_seats[0].innerText;
-        input_fields[1].value = "";
-    } else {
-        input_fields[0].value = "";
-        input_fields[1].value = "";
-    }
 }
 
 function submitSeatReservation() {
