@@ -28,6 +28,7 @@ class EventSeating(models.Model):
     reserved_on = models.DateTimeField(auto_now_add=True)
     reserved_by = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='event_seats')
+    user_limit_reached = models.BooleanField(default=False)
 
     class Meta:
         ordering = ['-reserved_on']

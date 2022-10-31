@@ -10,6 +10,13 @@ class VenueSeatAdmin(admin.ModelAdmin):
 @admin.register(EventSeating)
 class EventSeatingAdmin(admin.ModelAdmin):
     list_display = ('event', 'seat_location_1', 'seat_location_2',
-                    'reserved_by', 'reserved_on')
+                    'reserved_by', 'reserved_on', 'user_limit_reached')
     search_fields = ('event', 'reserved_by')
     list_filter = ('event', 'reserved_by')
+    actions = ['limit_reached', 'can_book_seats']
+
+    def limit_reached(self, request, queryset):
+        queryset.update(user_limit_reached=True)
+
+    def can_book_seats(self, request, queryset):
+        queryset.update(user_limit_reached=False)
