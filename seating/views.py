@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
 from django.views import View
 from events.models import Event
@@ -6,7 +7,15 @@ from .models import EventSeating
 from .forms import SeatReserveForm
 
 
-class EventSeatsView(View):
+class EventSeatsView(LoginRequiredMixin, View):
+    permission_denied_message = 'You need to sign in to make seat reservations.'
+
+    # Displays a message to tell user to sign in before making reservation
+    def dispatch(self, request, *args, **kwargs):
+        if not request.user.is_authenticated:
+            messages.error(request, self.permission_denied_message)
+            return self.handle_no_permission()
+        return super(EventSeatsView, self).dispatch(request, *args, **kwargs)
 
     def get(self, request, slug, *args, **kwargs):
         reservation_form = SeatReserveForm()

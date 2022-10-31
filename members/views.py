@@ -15,7 +15,11 @@ def sign_in(request):
         if user is not None:
             login(request, user)
             messages.success(request, ("You are signed in successfully."))
-            return redirect('featured_events')
+            next_url = request.GET.get('next')
+            if next_url:
+                return redirect(request.GET.get('next'))
+            else:
+                return redirect('featured_events')
 
         else:
             messages.success(request, (
