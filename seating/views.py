@@ -26,13 +26,23 @@ class EventSeatsView(LoginRequiredMixin, View):
                 reserved_by=request.user)
 
             if not event_seats_obj.exists():
-                raise Exception("Start making seat reservations for this event.")
+                raise Exception(
+                    "Start making seat reservations for this event."
+                )
+            elif user_booked_seats.exists():
+                raise Exception(
+                    "You may update your reserved seats."
+                )
 
         except Exception as info:
             messages.info(request, info)
-            return render(request, './seating/reserve-seats.html', {
-                'event': event, 'form': reservation_form
-                })
+            if user_booked_seats.exists():
+                return redirect(
+                    f'/{self.kwargs.get("slug")}/update-reservation/'
+                    )
+            else:
+                return render(request, './seating/reserve-seats.html', {
+                    'event': event, 'form': reservation_form})
 
         else:
             list_seats = []
@@ -41,16 +51,9 @@ class EventSeatsView(LoginRequiredMixin, View):
                 if item.seat_location_2:
                     list_seats.append(str(item.seat_location_2))
 
-            list_user_booked_seats = []
-            for item in user_booked_seats:
-                list_user_booked_seats.append(str(item.seat_location_1))
-                if item.seat_location_2:
-                    list_user_booked_seats.append(
-                        str(item.seat_location_2))
-
             return render(request, './seating/reserve-seats.html', {
-                'data': list_seats, 'event': event, 'form': reservation_form,
-                'user_booked_seats': user_booked_seats})
+                'data': list_seats, 'event': event, 'form': reservation_form
+                })
 
     def post(self, request, slug, *args, **kwargs):
         event = Event.objects.filter(slug=slug).first()
@@ -71,3 +74,24 @@ class EventSeatsView(LoginRequiredMixin, View):
             else:
                 return redirect('/')
         return redirect(request.path_info)
+
+
+class UpdateSeatsReservation(LoginRequiredMixin, View):
+
+    def get(self, request, slug, *args, **kwargs):
+        reservation_form = SeatReserveForm()
+
+        event = Event.objects.filter(slug=slug).first()
+        event_seats_obj = EventSeating.objects.filter(event__slug=slug)
+        user_booked_seats = event_seats_obj.filter(
+            reserved_by=request.user)
+
+        list_seats = []
+        for item in event_seats_obj:
+            list_seats.append(str(item.seat_location_1))
+            if item.seat_location_2:
+                list_seats.append(str(item.seat_location_2))
+
+        return render(request, './seating/reserve-seats.html', {
+            'data': list_seats, 'event': event, 'form': reservation_form,
+            'user_booked_seats': user_booked_seats})
