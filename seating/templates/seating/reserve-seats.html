@@ -295,6 +295,7 @@
         </g>
     </svg>
 
+    <!-- Colour legend -->
     <div id="seatmap-legend">
         <p>- Available</p>
         <p>- You Selected</p>
@@ -304,23 +305,35 @@
     <div id="selected-seats-box">
         <h5>Selected Seats: </h5>
         <div id="seats-selected-container">
-            {% if user_booked_seats %}
-            <ul>
+            
+            <ul id="seats_selected_list">
                 {% for seat in user_booked_seats %}
-                <li>{{ seat.seat_location_1 }} <a href="#">cancel</a></li>
+                <li id="{{ seat.seat_location_1 }}">{{ seat.seat_location_1 }}
+                    {% if user_booked_seats %}
+                    <button class="btn_seat_location" type="button">remove</button>
+                    {% endif %}
+                </li>
                 {% if seat.seat_location_2 %}
-                <li>{{ seat.seat_location_2 }} <a href="#">cancel</a></li>
+                <li id="{{ seat.seat_location_2 }}">{{ seat.seat_location_2 }}
+                    {% if user_booked_seats %}
+                    <button class="btn_seat_location" type="button">remove</button>
+                    {% endif %}
+                </li>
                 {% endif%}
                 {% endfor %}
-                <button id="update_reservation">Update Reservation</button>
+
             </ul>
+            
+            
+            {% if user_booked_seats %}
+            <button id="update_reservation">Update Reservation</button>
             {% else %}
-            <ul id="seats_selected_list"></ul>
             <button id="submit_reservation">Reserve</button>
             {% endif %}
+
         </div>
         
-        <form action="" method="POST" id="reserve_seat_form">
+        <form method="POST" id="reserve_seat_form">
             {% csrf_token %}
             {{ form }}
         </form>
