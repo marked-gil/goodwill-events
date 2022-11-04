@@ -100,12 +100,13 @@ if (document.getElementById('seatmap-container')) {
     }
 
     function fillSeatReservationForm() {
-        const selected_seats_list = document.querySelectorAll("#seats_selected_list>li");
-        const select_seat_1 = document.querySelector("#id_seat_location_1");
-        const select_seat_2 = document.querySelector("#id_seat_location_2");
+        const selected_seats_list = document.querySelectorAll("#seats_selected_list>li")
+        const limit_reached = document.getElementById("id_user_limit_reached")
+        const select_seat_1 = document.querySelector("#id_seat_location_1")
+        const select_seat_2 = document.querySelector("#id_seat_location_2")
 
         for (let i = 0; i < selected_seats_list.length; i++) {
-            const seat_text = selected_seats_list[i].innerText
+            const seat_text = selected_seats_list[i].innerText.split(" ")[0]
             let seat_field = i == 0 ? select_seat_1 : select_seat_2
             const options_list = Array.from(seat_field.options)
             const option_selected = options_list.filter(item => item.text == seat_text)
@@ -113,7 +114,6 @@ if (document.getElementById('seatmap-container')) {
         }
 
         if (selected_seats_list.length == 2) {
-            const limit_reached = document.getElementById("id_user_limit_reached")
             limit_reached.checked = true;
         } else {
             limit_reached.checked = false;
