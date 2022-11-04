@@ -1,6 +1,5 @@
 if (document.getElementById('seatmap-container')) {
-    const svg_seats_list = document.getElementById('data_seats').textContent;
-    const seatsList = document.querySelectorAll('[data-seat-location]');
+    const svg_seats_list = document.querySelectorAll('[data-seat-location]');
 
     const string_reserved_seats = document.getElementById('data_seats').textContent;
     let list_reserved_seats = string_reserved_seats.replace(/[^a-zA-Z0-9_,]/g, '').split(",");
@@ -56,8 +55,8 @@ if (document.getElementById('seatmap-container')) {
     }
 
     function toggleSeat(seat, seat_loc) {
-        seat.classList.toggle("booked");
-        if (seat.classList.contains("booked")) {
+        seat.classList.toggle("user-selected");
+        if (seat.classList.contains("user-selected")) {
             showSelectedSeat(seat_loc);
         } else {
             removeDeselectedSeat(seat_loc);
