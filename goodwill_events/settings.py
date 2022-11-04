@@ -15,8 +15,11 @@ import dj_database_url
 import os
 if os.path.isfile('env.py'):
     import env
+import mimetypes
 
 development = os.environ.get('DEVELOPMENT', False)
+mimetypes.add_type("text/css", ".css", True)
+mimetypes.add_type("text/javascript", ".js", True)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
