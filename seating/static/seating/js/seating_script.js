@@ -1,26 +1,17 @@
 if (document.getElementById('seatmap-container')) {
-    const reservedSeatsList = document.getElementById('data_seats').textContent;
+    const svg_seats_list = document.getElementById('data_seats').textContent;
     const seatsList = document.querySelectorAll('[data-seat-location]');
 
+    const string_reserved_seats = document.getElementById('data_seats').textContent;
+    let list_reserved_seats = string_reserved_seats.replace(/[^a-zA-Z0-9_,]/g, '').split(",")
+
+    const ALLOWED_SEATS_PER_USER = 2
+
     window.onpageshow = function () {
-        ALLOWED_SEATS_PER_USER = 2
-        num_seats_chosen = 0
-        for (let seat of seatsList) {
-            const seat_loc = seat.getAttribute("data-seat-location");
-            if (reservedSeatsList.includes(seat_loc)) {
-                seat.style.fill = "blue";
-            } else {
-                seat.style.cursor = 'pointer'
-                seat.addEventListener('click', function () {
-                    if (num_seats_chosen < ALLOWED_SEATS_PER_USER) {
-                        num_seats_chosen += toggleSeat(this, seat_loc);
-                    } else {
-                        if (this.classList.contains("booked")) {
-                            num_seats_chosen += toggleSeat(this, seat_loc)
-                        }
-                    }
-                })
-            }
+        for (let svg_seat of svg_seats_list) {
+            const seat_loc = svg_seat.getAttribute("data-seat-location")
+            blockReservedSeats(svg_seat, seat_loc);
+            makeAllFreeSeatsClickable(svg_seat, seat_loc);
         }
     }
     
@@ -38,7 +29,7 @@ if (document.getElementById('seatmap-container')) {
                 seat = this.parentElement
                 removeDeselectedSeat(seat);
 
-                for (seat_box of seatsList) {
+                for (seat_box of svg_seats_list) {
                     seat_location = seat_box.getAttribute("data-seat-location")
                     if (seat_location == seat.getAttribute("id")) {
                         seat_box.style.fill = ""
@@ -52,6 +43,25 @@ if (document.getElementById('seatmap-container')) {
     
     // FUNCTIONS <---
     
+    function blockReservedSeats(svg_seat, seat_loc) {
+        if (list_reserved_seats.includes(seat_loc)) {
+            svg_seat.classList.add("booked")
+        }
+    }
+
+    function makeAllFreeSeatsClickable(svg_seat, seat_loc) {
+        svg_seat.style.cursor = 'pointer'
+        svg_seat.addEventListener('click', function () {
+            if (SelectedSeatsByUser().length < ALLOWED_SEATS_PER_USER) {
+                toggleSeat(this, seat_loc)
+            } else {
+                if (this.classList.contains("user-selected")) {
+                    toggleSeat(this, seat_loc)
+                }
+            }
+        })
+    }
+
     function toggleSeat(seat, seat_loc) {
         seat.classList.toggle("booked");
         if (seat.classList.contains("booked")) {
