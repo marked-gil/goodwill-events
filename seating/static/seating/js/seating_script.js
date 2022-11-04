@@ -15,29 +15,16 @@ if (document.getElementById('seatmap-container')) {
         }
     }
     
+    // EventListener to 'remove' reserved seat
+    if (document.getElementsByClassName("btn_seat_location")) {
+        const cancel_seat_buttons = document.querySelectorAll('.btn_seat_location')
+        cancel_seat_buttons.forEach(cancelSeat)
+    }
+
     // EventListener for form submission
     if (document.getElementById("submit_reservation")) {
         const reserve_button = document.getElementById("submit_reservation");
         reserve_button.addEventListener('click', submitSeatReservation)
-    }
-
-    // EventListener for 'remove' reserved seat button
-    if (document.getElementsByClassName("btn_seat_location")) {
-        const remove_seat_buttons = document.querySelectorAll('.btn_seat_location')
-        remove_seat_buttons.forEach(function (btn) {
-            btn.addEventListener('click', function () {
-                seat = this.parentElement
-                removeDeselectedSeat(seat);
-
-                for (seat_box of svg_seats_list) {
-                    seat_location = seat_box.getAttribute("data-seat-location")
-                    if (seat_location == seat.getAttribute("id")) {
-                        seat_box.style.fill = ""
-                    }
-                }
-
-            })
-        })
     }
 
     
@@ -66,18 +53,16 @@ if (document.getElementById('seatmap-container')) {
         seat.classList.toggle("booked");
         if (seat.classList.contains("booked")) {
             showSelectedSeat(seat_loc);
-            return 1
         } else {
             removeDeselectedSeat(seat_loc);
-            return -1
         }
     }
     
     function showSelectedSeat(seat_loc) {
         const li_elem = document.createElement("li");
         li_elem.innerText = seat_loc;
-        document.getElementById("seats_selected_list").appendChild(li_elem)
-        li_elem.setAttribute('id', seat_loc)
+        document.getElementById("seats_selected_list").appendChild(li_elem);
+        li_elem.setAttribute('id', seat_loc);
     }
     
     function removeDeselectedSeat(seat_loc) {
@@ -87,6 +72,26 @@ if (document.getElementById('seatmap-container')) {
         } else if (typeof seat_loc == "object") {
             seat_loc.remove()
         }
+    }
+
+    function SelectedSeatsByUser() {
+        const user_reserved_seats = document.querySelectorAll("#seats_selected_list > li")
+        return user_reserved_seats
+    }
+
+    function cancelSeat(btn) {
+        btn.addEventListener('click', function () {
+            seat = this.parentElement
+            for (svg_seat of svg_seats_list) {
+                seat_location = svg_seat.getAttribute("data-seat-location")
+                if (seat_location == seat.getAttribute("id")) {
+                    const seat_index = list_reserved_seats.indexOf(seat_location)
+                    list_reserved_seats.splice(seat_index, 1)
+                    svg_seat.classList.remove("booked")
+                    removeDeselectedSeat(seat);
+                }
+            }
+        })
     }
 
     function fillSeatReservationForm() {
