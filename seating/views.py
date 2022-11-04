@@ -95,3 +95,19 @@ class UpdateSeatsReservation(LoginRequiredMixin, View):
         return render(request, './seating/reserve-seats.html', {
             'data': list_seats, 'event': event, 'form': reservation_form,
             'user_booked_seats': user_booked_seats})
+
+    def post(self, request, slug, *args, **kwargs):
+        user = request.user
+        event_seats_obj = EventSeating.objects.filter(
+            event__slug=slug)
+        user_reservation = event_seats_obj.filter(
+            reserved_by=user).first()
+
+        reservation_form = SeatReserveForm(
+            request.POST, instance=user_reservation)
+
+        if reservation_form.is_valid():
+            updated_form = reservation_form.save(commit=False)
+            updated_form.save()
+            return redirect('/')
+        return redirect(request.path_info)
