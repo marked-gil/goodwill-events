@@ -28,6 +28,11 @@
 }
 
 .booked {
+    fill: rgb(8, 74, 155);
+    pointer-events: none;
+}
+
+.user-selected {
     fill: rgb(25, 169, 12);
 }
 
