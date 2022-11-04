@@ -15,11 +15,11 @@ import dj_database_url
 import os
 if os.path.isfile('env.py'):
     import env
-import mimetypes
+# import mimetypes
 
-development = os.environ.get('DEVELOPMENT', True)
-mimetypes.add_type("text/css", ".css", True)
-mimetypes.add_type("text/javascript", ".js", True)
+development = os.environ.get('DEVELOPMENT', False)
+# mimetypes.add_type("text/css", ".css", True)
+# mimetypes.add_type("text/javascript", ".js", True)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -33,6 +33,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = development
+
+X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 ALLOWED_HOSTS = ['goodwill-events.herokuapp.com', 'localhost']
 
@@ -53,6 +55,10 @@ INSTALLED_APPS = [
     'members',
     'seating',
 ]
+
+SITE_ID = 1
+
+LOGIN_URL = 'sign_in'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -149,7 +155,3 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-LOGIN_URL = 'sign_in'
-
-X_FRAMES_OPTIONS = 'SAMEORIGIN'
