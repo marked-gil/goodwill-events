@@ -21,12 +21,12 @@ if (document.getElementById('seatmap-container')) {
         cancel_seat_buttons.forEach(cancelSeat)
     }
 
-    // EventListener for form submission
+    // EventListener to Create Reservation
     if (document.getElementById("submit_reservation")) {
         const reserve_button = document.getElementById("submit_reservation");
         reserve_button.addEventListener('click', submitSeatReservation)
     }
-
+    
     
     // FUNCTIONS <---
     
@@ -106,11 +106,17 @@ if (document.getElementById('seatmap-container')) {
             const option_selected = options_list.filter(item => item.text == seat_text)
             seat_field.value = option_selected[0].value
         }
+
+        if (selected_seats_list.length == 2) {
+            const limit_reached = document.getElementById("id_user_limit_reached")
+            limit_reached.checked = true;
+        } else {
+            limit_reached.checked = false;
+        }
     }
 
     function submitSeatReservation() {
         fillSeatReservationForm()
-        // submit form
         const seat_form = document.getElementById("reserve_seat_form")
         seat_form.submit();
     }
