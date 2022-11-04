@@ -17,7 +17,7 @@ if os.path.isfile('env.py'):
     import env
 import mimetypes
 
-development = os.environ.get('DEVELOPMENT', False)
+development = os.environ.get('DEVELOPMENT', True)
 mimetypes.add_type("text/css", ".css", True)
 mimetypes.add_type("text/javascript", ".js", True)
 
