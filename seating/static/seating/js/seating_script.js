@@ -3,13 +3,13 @@ if (document.getElementById('seatmap-container')) {
     const seatsList = document.querySelectorAll('[data-seat-location]');
 
     const string_reserved_seats = document.getElementById('data_seats').textContent;
-    let list_reserved_seats = string_reserved_seats.replace(/[^a-zA-Z0-9_,]/g, '').split(",")
+    let list_reserved_seats = string_reserved_seats.replace(/[^a-zA-Z0-9_,]/g, '').split(",");
 
     const ALLOWED_SEATS_PER_USER = 2
 
     window.onpageshow = function () {
         for (let svg_seat of svg_seats_list) {
-            const seat_loc = svg_seat.getAttribute("data-seat-location")
+            const seat_loc = svg_seat.getAttribute("data-seat-location");
             blockReservedSeats(svg_seat, seat_loc);
             makeAllFreeSeatsClickable(svg_seat, seat_loc);
         }
@@ -17,17 +17,23 @@ if (document.getElementById('seatmap-container')) {
     
     // EventListener to 'remove' reserved seat
     if (document.getElementsByClassName("btn_seat_location")) {
-        const cancel_seat_buttons = document.querySelectorAll('.btn_seat_location')
-        cancel_seat_buttons.forEach(cancelSeat)
+        const cancel_seat_buttons = document.querySelectorAll('.btn_seat_location');
+        cancel_seat_buttons.forEach(cancelSeat);
     }
 
     // EventListener to Create Reservation
     if (document.getElementById("submit_reservation")) {
         const reserve_button = document.getElementById("submit_reservation");
-        reserve_button.addEventListener('click', submitSeatReservation)
+        reserve_button.addEventListener('click', submitSeatReservation);
+    }
+
+    // EventListener to Update Reservation
+    if (document.getElementById("update_reservation")) {
+        const update_button = document.getElementById("update_reservation");
+        update_button.addEventListener('click', submitSeatReservation);
     }
     
-    
+
     // FUNCTIONS <---
     
     function blockReservedSeats(svg_seat, seat_loc) {
