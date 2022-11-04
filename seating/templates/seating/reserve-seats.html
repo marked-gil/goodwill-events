@@ -307,23 +307,19 @@
         <div id="seats-selected-container">
             
             <ul id="seats_selected_list">
+
                 {% for seat in user_booked_seats %}
                 <li id="{{ seat.seat_location_1 }}">{{ seat.seat_location_1 }}
-                    {% if user_booked_seats %}
                     <button class="btn_seat_location" type="button">remove</button>
-                    {% endif %}
                 </li>
                 {% if seat.seat_location_2 %}
                 <li id="{{ seat.seat_location_2 }}">{{ seat.seat_location_2 }}
-                    {% if user_booked_seats %}
                     <button class="btn_seat_location" type="button">remove</button>
-                    {% endif %}
                 </li>
                 {% endif%}
                 {% endfor %}
 
             </ul>
-            
             
             {% if user_booked_seats %}
             <button id="update_reservation">Update Reservation</button>
