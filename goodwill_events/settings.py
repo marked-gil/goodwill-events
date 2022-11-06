@@ -36,7 +36,6 @@ X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 ALLOWED_HOSTS = ['goodwill-events.herokuapp.com', 'localhost']
 
-
 # Application definition
 
 INSTALLED_APPS = [
