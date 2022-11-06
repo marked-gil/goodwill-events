@@ -24,4 +24,4 @@ urlpatterns = [
     path('', include('events.urls'), name='events_url'),
     path('members/', include('members.urls'), name='members_url'),
     path('<slug:slug>/', include('seating.urls'), name='seating_url'),
-]+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]
