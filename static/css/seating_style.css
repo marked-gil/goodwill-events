@@ -43,3 +43,21 @@
 #reserve_seat_form {
     display: none;
 }
+
+@media (max-width: 500px) {
+    #seatmap-container {
+        flex-direction: column;
+    }
+
+    #my-svg {
+        width: 100%;
+    }
+
+    #seatmap-legend {
+        display: none;
+    }
+
+    #selected-seats-box {
+        /* display: none; */
+    }
+}

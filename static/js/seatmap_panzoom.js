@@ -2,10 +2,10 @@ if (document.getElementById('seatmap-container')) {
 
     var panZoomTiger = svgPanZoom('#my-svg', {
         fit: false,
+        controlIconsEnabled: true,
     })
     
-    // Don't use window.onLoad like this in production, because it can only listen to one function.
-    window.addEventListener('load', () => {
+    document.addEventListener('DOMContentLoaded', () => {
     
         var eventsHandler;
     
