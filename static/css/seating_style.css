@@ -24,7 +24,7 @@
 #my-svg {
     width: 50vw;
     height: 80vh;
-    border: 2px solid firebrick;
+    /* border: 2px solid firebrick; */
 }
 
 .booked {
@@ -51,6 +51,7 @@
 
     #my-svg {
         width: 100%;
+        height: 500px;
     }
 
     #seatmap-legend {
