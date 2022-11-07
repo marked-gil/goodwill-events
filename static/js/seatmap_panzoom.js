@@ -3,6 +3,7 @@ if (document.getElementById('seatmap-container')) {
     var panZoomTiger = svgPanZoom('#my-svg', {
         fit: false,
         controlIconsEnabled: true,
+        dblClickZoomEnabled: false,
         customEventsHandler: eventsHandler,
     });
 
