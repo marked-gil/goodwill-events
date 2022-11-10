@@ -3,6 +3,21 @@
     text-decoration: none;
 }
 
+#reserve-seat-wrapper {
+    display: inline;
+}
+
+/* event likes */
+#like-form {
+    display: inline;
+}
+
+#like-form>button {
+    background: none;
+    border: none;
+}
+
+
 /* FOOTER */
 footer {
     display: flex;

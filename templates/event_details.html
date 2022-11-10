@@ -12,20 +12,32 @@
 <div>
     <p>The Goodwill Events presents</p>
     <h2>{{ event }}</h2>
-    <a href="{% url 'seatmap' event.slug %}"><button type="button" class="btn btn-primary btn-sm">Reserve A
-        Seat</button></a>
     <p>{{ event.blurb }}</p>
     <p>{{ event.event_date|date:'d F Y, l' }} | <span>{{ event.event_time|date:'g A' }}</span></p>
-    <p>
-        <small>5 Seats Left</small> |
-        {% if liked %}
-        <i class="fa-solid fa-heart"></i>
-        {% else %}
-        <i class="fa-regular fa-heart"></i>
-        {% endif %}
-        {{ event.total_likes }}
+    <p id="reserve-seat-wrapper">
+        <small>5 Seats Left</small> | <a href="{% url 'seatmap' event.slug %}"><button type="button" class="btn btn-primary btn-sm">Reserve A
+            Seat</button></a> | 
     </p>
-    <button>Reserve A Seat</button>
+
+    {{ event.total_likes }}
+    {% if event.total_likes > 1 %}
+    <span>Likes</span>
+    {% else %}
+    <span>Like</span>
+    {% endif %}
+
+    {% if user.is_authenticated %}
+    <form action="{% url 'event_like' event.slug %}" method="POST" id="like-form">
+        {% csrf_token %}
+
+        {% if liked %}
+        <button type="submit" name="event_id" value="event.slug"><i class="fa-solid fa-heart"></i></button>
+        {% else %}
+        <button type="submit" name="event_id" value="event.slug"><i class="fa-regular fa-heart"></i></button>
+        {% endif %}
+    </form>
+    {% endif %}
+
     <div>
         <p>{{ event.post_content | safe }}</p>
     </div>
