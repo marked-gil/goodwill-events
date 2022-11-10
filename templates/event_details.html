@@ -16,15 +16,13 @@
     <p>{{ event.event_date|date:'d F Y, l' }} | <span>{{ event.event_time|date:'g A' }}</span></p>
     <p id="reserve-seat-wrapper">
         <small>5 Seats Left</small> | <a href="{% url 'seatmap' event.slug %}"><button type="button" class="btn btn-primary btn-sm">Reserve A
-            Seat</button></a> | 
+            Seat</button></a> | {{ event.total_likes }}
+            {% if event.total_likes > 1 %}
+            <span>Likes</span>
+            {% else %}
+            <span>Like</span>
+            {% endif %}
     </p>
-
-    {{ event.total_likes }}
-    {% if event.total_likes > 1 %}
-    <span>Likes</span>
-    {% else %}
-    <span>Like</span>
-    {% endif %}
 
     {% if user.is_authenticated %}
     <form action="{% url 'event_like' event.slug %}" method="POST" id="like-form">
