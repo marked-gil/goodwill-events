@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic.edit import DeleteView
 from django.contrib import messages
 from django.views import View
 from events.models import Event
@@ -106,8 +107,38 @@ class UpdateSeatsReservation(LoginRequiredMixin, View):
         reservation_form = SeatReserveForm(
             request.POST, instance=user_reservation)
 
-        if reservation_form.is_valid():
-            updated_form = reservation_form.save(commit=False)
-            updated_form.save()
-            return redirect('/')
-        return redirect(request.path_info)
+        try:
+            if reservation_form.is_valid():
+                updated_form = reservation_form.save(commit=False)
+                updated_form.save()
+            else:
+                raise Exception
+        except Exception:
+            formdata_dict = dict(request.POST)
+            empty_seat_1 = formdata_dict['seat_location_1'] == ['']
+            empty_seat_2 = formdata_dict['seat_location_2'] == ['']
+            if (empty_seat_1 and empty_seat_2):
+                return redirect(f'/{self.kwargs.get("slug")}/delete-reservation/')
+        else:
+            return redirect(request.path_info)
+
+
+class DeleteSeatsReservation(LoginRequiredMixin, DeleteView):
+    model = EventSeating
+
+    def get_object(self, queryset=None):
+        slug = self.kwargs.get('slug')
+        event_seats_obj = EventSeating.objects.filter(
+            event__slug=slug)
+        return event_seats_obj
+
+    def delete(self, request, slug, *args, **kwargs):
+        event_seats_obj = EventSeating.objects.filter(
+            event__slug=slug)
+        self.object = event_seats_obj.filter(
+            reserved_by=request.user).first()
+        self.object.delete()
+        messages.success(request,
+                         'Your reservation for this event is deleted successfully.'
+                         )
+        return redirect(f'/{self.kwargs.get("slug")}/reserve-seat/')

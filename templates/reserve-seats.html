@@ -339,6 +339,23 @@
     </div>
 </div>
 
+<!-- Bootstrap offcanvas for confirmation to delete reservation -->
+<button id="confirm-delete" class="d-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+    aria-controls="offcanvasRight"></button>
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas right</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <form method="POST" action="{% url 'delete_reservation' event.slug %}">
+            {% csrf_token %}
+            <p>Are you sure you want to delete your reservation?</p>
+            <input type="submit" value="Confirm">
+        </form>
+    </div>
+</div>
+
 <p id="data_seats">
     {{ data | safe }}
 </p>
