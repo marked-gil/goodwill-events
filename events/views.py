@@ -1,6 +1,6 @@
-from django.shortcuts import render
-from django.views.generic import TemplateView
-from django.views.generic import ListView, DetailView
+from django.shortcuts import get_object_or_404, redirect
+from django.urls import reverse
+from django.views.generic import ListView, DetailView, TemplateView, View
 from .models import Event
 
 
@@ -37,3 +37,16 @@ class EventDetails(DetailView):
             context['liked'] = False
 
         return context
+
+
+class EventLike(View):
+
+    def post(self, request, slug):
+        event = get_object_or_404(Event, slug=slug)
+
+        if event.likes.filter(id=request.user.id).exists():
+            event.likes.remove(request.user)
+        else:
+            event.likes.add(request.user)
+
+        return redirect(reverse('event_details', args=[slug]))
