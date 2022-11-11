@@ -63,7 +63,12 @@
             <h5 class="card-title">{{ comment.author.first_name }} {{ comment.author.last_name | first }}.</h5>
             <h6 class="card-subtitle mb-2 text-muted">{{ comment.posted_on }}</h6>
             <p class="card-text">{{ comment.text_comment }}</p>
-            <a href="#" class="card-link">Delete</a>
+            {% if comment.author == user %}
+            <form action="{% url 'delete_comment' pk=comment.id %}" method="POST">
+                {% csrf_token %}
+                <button type="submit">Delete</button>
+            </form>
+            {% endif %}
         </div>
         {% endfor %}
     </div>

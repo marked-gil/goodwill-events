@@ -69,3 +69,14 @@ class CommentView(LoginRequiredMixin, View):
             comment_form.instance.event = event
             comment_form.save()
         return redirect(reverse('event_details', args=[slug]))
+
+
+class DeleteComment(LoginRequiredMixin, View):
+
+    def post(self, request, pk):
+        user_comment = get_object_or_404(Comment, id=pk)
+
+        if user_comment.author == request.user:
+            user_comment.delete()
+
+        return redirect(self.request.META.get('HTTP_REFERER'))
