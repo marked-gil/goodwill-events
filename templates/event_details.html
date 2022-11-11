@@ -44,10 +44,11 @@
 <!-- COMMENT SECTION -->
 <section id="comments-outer-wrapper">
     <div class="mb-3">
-        <form action="" method="POST">
+        <form action="" method="POST" id="comment-form">
             {% csrf_token %}
-            <label for="exampleFormControlTextarea1" class="form-label">Your Comment:</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <label for="comment_textarea" class="form-label">Your Comment:</label>
+            <textarea class="form-control" id="comment_textarea" rows="3" maxlength="250"></textarea>
+            <small id="char-counter">250 characters remaining</small>
             <button class="btn btn-primary" type="submit">Post</button>
         </form>
     </div>
