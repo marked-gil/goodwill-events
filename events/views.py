@@ -3,6 +3,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse
 from django.views.generic import ListView, DetailView, TemplateView, View
 from .models import Event, Comment
+from .forms import CommentForm
 
 
 class FeaturedView(TemplateView):
@@ -53,4 +54,18 @@ class EventLike(LoginRequiredMixin, View):
         else:
             event.likes.add(request.user)
 
+        return redirect(reverse('event_details', args=[slug]))
+
+
+class CommentView(LoginRequiredMixin, View):
+
+    def post(self, request, slug):
+        event = get_object_or_404(Event, slug=slug)
+        comment_form = CommentForm(request.POST)
+        print(comment_form)
+
+        if comment_form.is_valid():
+            comment_form.instance.author = request.user
+            comment_form.instance.event = event
+            comment_form.save()
         return redirect(reverse('event_details', args=[slug]))

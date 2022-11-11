@@ -43,22 +43,24 @@
 
 <!-- COMMENT SECTION -->
 <section id="comments-outer-wrapper">
+    {% if user.is_authenticated %}
     <div class="mb-3">
-        <form action="" method="POST" id="comment-form">
+        <form action="{% url 'event_comment' event.slug %}" method="POST" id="comment-form">
             {% csrf_token %}
             <label for="comment_textarea" class="form-label">Your Comment:</label>
-            <textarea class="form-control" id="comment_textarea" rows="3" maxlength="250"></textarea>
+            <textarea class="form-control" id="comment_textarea" name="text_comment" rows="3" maxlength="250" required></textarea>
             <small id="char-counter">250 characters remaining</small>
             <button class="btn btn-primary" type="submit">Post</button>
         </form>
     </div>
+    {% endif %}
     <div class="card">
         {% if comments %}
         <h4>Comments:</h4>
         {% endif %}
         {% for comment in comments %}
         <div class="card-body">
-            <h5 class="card-title">{{ comment.author }}</h5>
+            <h5 class="card-title">{{ comment.author.first_name }} {{ comment.author.last_name | first }}.</h5>
             <h6 class="card-subtitle mb-2 text-muted">{{ comment.posted_on }}</h6>
             <p class="card-text">{{ comment.text_comment }}</p>
             <a href="#" class="card-link">Delete</a>
