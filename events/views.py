@@ -1,7 +1,8 @@
 from django.shortcuts import get_object_or_404, redirect
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse
 from django.views.generic import ListView, DetailView, TemplateView, View
-from .models import Event
+from .models import Event, Comment
 
 
 class FeaturedView(TemplateView):
@@ -36,10 +37,13 @@ class EventDetails(DetailView):
         else:
             context['liked'] = False
 
+        context['comments'] = Comment.objects.filter(
+            event__slug=self.kwargs.get('slug'))
+
         return context
 
 
-class EventLike(View):
+class EventLike(LoginRequiredMixin, View):
 
     def post(self, request, slug):
         event = get_object_or_404(Event, slug=slug)
