@@ -15,9 +15,20 @@
     <p>{{ event.blurb }}</p>
     <p>{{ event.event_date|date:'d F Y, l' }} | <span>{{ event.event_time|date:'g A' }}</span></p>
     <p id="reserve-seat-wrapper">
-        <small>5 Seats Left</small> | <a href="{% url 'seatmap' event.slug %}"><button type="button" class="btn btn-primary btn-sm">Reserve A
-            Seat</button></a> | {{ event.total_likes }}
-            {% if event.total_likes > 1 %}
+        {% if seats_available > 1 %}
+        <small>{{ seats_available }} Seats Left</small>
+        {% else %}
+        <small>{{ seats_available }} Seat Left</small>
+        {% endif %}
+        | 
+        {% if seats_available > 0 %}
+        <a href="{% url 'seatmap' event.slug %}"><button type="button" class="btn btn-primary btn-sm">Reserve A
+                Seat</button></a>
+        {% else %}
+        <a href="{% url 'seatmap' event.slug %}"><button type="button" class="btn btn-primary btn-sm">No Seats
+                Available</button></a>
+        {% endif %}        
+        | {{ event.total_likes }} {% if event.total_likes > 1 %}
             <span>Likes</span>
             {% else %}
             <span>Like</span>

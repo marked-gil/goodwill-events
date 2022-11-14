@@ -3,6 +3,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse
 from django.views.generic import ListView, DetailView, TemplateView, View
 from .models import Event, Comment
+from seating.models import EventSeating
 from .forms import CommentForm
 
 
@@ -33,13 +34,28 @@ class EventDetails(DetailView):
         event_post = Event.objects.get(slug=self.kwargs.get('slug'))
         likers = event_post.likes.all()
 
+        # checks if the user has already liked a post
         if self.request.user in likers:
             context['liked'] = True
         else:
             context['liked'] = False
 
+        # retrieves the comments for the event post
         context['comments'] = Comment.objects.filter(
             event__slug=self.kwargs.get('slug'))
+
+        # retrieves the number of seats still available
+        self.TOTAL_SEATS_AVAILABLE = 142
+        seat_reservations = EventSeating.objects.filter(
+            event__slug=self.kwargs.get('slug'))
+
+        for reserv in seat_reservations:
+            if reserv.seat_location_1 is not None:
+                self.TOTAL_SEATS_AVAILABLE -= 1
+            if reserv.seat_location_2 is not None:
+                self.TOTAL_SEATS_AVAILABLE -= 1
+
+        context['seats_available'] = self.TOTAL_SEATS_AVAILABLE
 
         return context
 
