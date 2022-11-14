@@ -18,11 +18,6 @@
                 <p class="card-text">{{ event.blurb }}</p>
                 <p>{{ event.event_date }} ({{ event.event_time }})</p>
             </div>
-            <a href="{% url 'seatmap' event.slug %}"><button type="button" class="btn btn-primary btn-sm">Reserve A
-                Seat</button></a>
-            <div class="card-footer">
-                <small class="text-muted">Seats still Available</small>
-            </div>
         </div>
     </div>
     {% endfor %}
