@@ -1,26 +1,44 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<section id="homepage-banner-container">
+    <h1 id="homepage-title" class="text-center"><span id="title-span">Welcome to </span>Goodwill Events!</h1>
+    <p id="catchy-line" class="text-center">The fusion of Entertainment and Charity.</p>
+</section>
 
-<h2>Featured Events:</h2>
-<div class="row row-cols-1 row-cols-md-3 g-4">
-    {% for event in featured_events %}
-    <div class="col">
-        <div class="card h-100">
-            {% if "proxy_image" in event.featured_image.url %}
-            <img src="https://cdn.seeklearning.com.au/media/images/career-guide/article/career-advice/web_images/blogs/214/6084/How-music-and-sound-can-help-alleviate-career-anxiety_940x485.jpg"
-                class="card-img-top" alt="featured_image">
-            {% else %}
-            <img src="{{ event.featured_image.url }}" class="card-img-top" alt="featured image">
-            {% endif %}
-            <div class="card-body">
-                <h5 class="card-title"><a href="{% url 'event_details' event.slug %}">{{ event.title }}</a></h5>
-                <p class="card-text">{{ event.blurb }}</p>
-                <p>{{ event.event_date }} ({{ event.event_time }})</p>
-            </div>
+<section id="feature-events-outer-container">
+    <h2 id="featured-events" class="text-center">Featured Events</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for event in featured_events %}
+        <div class="col feat-event-card-wrapper">
+            <a href="{% url 'event_details' event.slug %}">
+                <div class="card h-100 feat-event-card">
+                    {% if "proxy_image" in event.featured_image.url %}
+                    <img src="https://cdn.seeklearning.com.au/media/images/career-guide/article/career-advice/web_images/blogs/214/6084/How-music-and-sound-can-help-alleviate-career-anxiety_940x485.jpg"
+                        class="card-img-top" alt="featured_image">
+                    {% else %}
+                    <img src="{{ event.featured_image.url }}" class="card-img-top" alt="featured image">
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="featured card-title text-center">{{ event.title }}</h5>
+                        <p class="featured card-text text-center">{{ event.blurb }}</p>
+                        <p class="text-center">{{ event.event_date }} ({{ event.event_time }})</p>
+                    </div>
+                </div>
+            </a>
         </div>
+        {% endfor %}
     </div>
-    {% endfor %}
-</div>
+</section>
+
+<section id="about-us-outer-container">
+    <h2 id="about-us" class="text-center">About Us</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Nibh cras pulvinar mattis nunc sed blandit. Leo urna molestie at elementum eu facilisis. Sagittis
+        purus sit amet volutpat consequat mauris nunc congue. Sed enim ut sem viverra aliquet eget. Eu volutpat odio
+        facilisis mauris sit amet. Sit amet venenatis urna cursus eget nunc. Non sodales neque sodales ut. Ligula
+        ullamcorper malesuada proin libero nunc consequat interdum varius sit. Vitae justo eget magna fermentum. Id diam
+        vel quam elementum. Auctor eu augue ut lectus.</p>
+</section>
 
 {% endblock content %}

@@ -1,27 +1,36 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<section id="events-outer-container" class="container-md text-center">
+    <h2 id="upcoming-events">Upcoming Events</h2>
 
-<h2>Upcoming Events</h2>
+    {% for event in events_list %}
+    <div id="event-card-wrapper" class="card mb-4 mb-lg-5 text-center m-auto">
+        <a href="{% url 'event_details' event.slug %}">
+            {% if 'proxy_image' in event.featured_image.url  %}
+            <img src="https://cdn.seeklearning.com.au/media/images/career-guide/article/career-advice/web_images/blogs/214/6084/How-music-and-sound-can-help-alleviate-career-anxiety_940x485.jpg"
+                class="card-img-top event-card-img" alt="featured_image">
+            {% else %}
+            <img src="{{ event.featured_image.url }}" class="card-img-top event-card-img" alt="featured_image">
+            {% endif %}
+        </a>
 
-{% for event in events_list %}
-<div class="card mb-3 w-75">
-    {% if 'proxy_image' in event.featured_image.url  %}
-    <img src="https://cdn.seeklearning.com.au/media/images/career-guide/article/career-advice/web_images/blogs/214/6084/How-music-and-sound-can-help-alleviate-career-anxiety_940x485.jpg"
-        class="card-img-top" alt="featured_image">
-    {% else %}
-    <img src="{{ event.featured_image.url }}" class="card-img-top" alt="featured_image">
-    {% endif %}
-
-    <div class="card-body">
-        <h5 class="card-title"><a href="{% url 'event_details' event.slug %}">{{ event.title }}</a></h5>
-        <a href="{% url 'seatmap' event.slug %}"><button type="button" class="btn btn-primary btn-sm">Reserve A
-            Seat</button></a>
-        <p class="card-text">{{ event.blurb }}</p>
-        <p class="card-text"><small class="text-muted">{{ event.event_date}} | {{ event.event_time }}</small></p>
+        <div class="card-body py-2 py-lg-4">
+            <h5 class="events-list card-title">
+                <a id="event-title" href="{% url 'event_details' event.slug %}">{{ event.title }}</a>
+            </h5>
+            <p class="card-text mb-1">{{ event.blurb }}</p>
+            <p class="card-text">
+                <small class="text-muted">{{ event.event_date}} | {{ event.event_time }}</small>
+                <a href="{% url 'seatmap' event.slug %}">
+                    <button type="button" class="btn btn-outline-primary btn-sm">Reserve A
+                    Seat</button>
+                </a>
+            </p>
+        </div>
     </div>
-</div>
-{% endfor %}
+    {% endfor %}
+</section>
 
 {% if is_paginated %}
 <nav aria-label="list of events">

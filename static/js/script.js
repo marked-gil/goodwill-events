@@ -1,7 +1,7 @@
 if (document.getElementById('comment-form')) {
     // Comment Characters Counter
     MAX_COMMENT_CHARS = 250
-    const comment_textarea = document.getElementById('comment_textarea')
+    const comment_textarea = document.getElementById('comment-textarea')
     const char_counter_field = document.getElementById('char-counter')
 
     comment_textarea.addEventListener("keyup", (e) => {

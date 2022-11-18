@@ -1,30 +1,44 @@
+/* unavailable seats */
 [data-seat-location] {
     fill: rgb(202, 217, 217);
     stroke: rgb(10, 34, 84);
 }
 
+#seating-event-title {
+    font-weight: 700;
+}
+
+/* Legends */
+.seatmap-legend-icon {
+    font-size: .7rem;
+}
+
+#available-icon {
+    color: rgb(158, 156, 156);
+    font-size: 1rem;
+}
+
+#selected-icon {
+    color: rgb(25, 169, 12);
+    font-size: 1rem;
+}
+
+#unavailable-icon {
+    color: rgb(10, 34, 84);
+    font-size: 1rem;
+}
+
+
 #seatmap-container {
     display: flex;
-    border: 2px solid darkblue;
+    flex-direction: column;
     width: 100%;
 }
 
-#seatmap-legend {
-    border: 2px solid black;
-    width: 20rem;
-    height: 10rem;
-}
-
-#selected-seats-box {
-    border: 2px solid black;
-    width: 20rem;
-    height: 20rem;
-}
-
 #my-svg {
-    width: 50vw;
-    height: 80vh;
-    /* border: 2px solid firebrick; */
+    width: 100%;
+    height: 55vh;
+    border: 2px solid firebrick;
 }
 
 .booked {
@@ -34,31 +48,94 @@
 
 .user-selected {
     fill: rgb(25, 169, 12);
+
 }
 
-#data_seats {
+#svg-pan-zoom-controls {
     display: none;
 }
 
-#reserve_seat_form {
+/* Selected Seats Box */
+#selected-seats-container {
+    background-color: beige;
+    border: 1px solid black;
+    height: 8rem;
+}
+
+#your-selected-seats {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+#seats-selected-list {
+    padding-left: 0;
+}
+
+.btn-seat-location {
+    font-size: 1.4rem;
+    color: rgba(158, 73, 73, 0.822);
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+#update-reservation,
+#submit-reservation {
+    font-size: .9rem;
+    width: 6.2rem;
+    padding: .2rem .7rem;
+}
+
+/* Hidden Elements */
+#data-seats {
     display: none;
 }
 
-@media (max-width: 500px) {
-    #seatmap-container {
-        flex-direction: column;
+#reserve-seat-form {
+    display: none;
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (min-width: 360px) {
+    #seats-selected-list {
+        padding-left: 2.5rem;
+    }
+}
+
+@media screen and (min-width: 574px) {
+    #selected-seats-container {
+        height: 11rem;
     }
 
-    #my-svg {
-        width: 100%;
-        height: 500px;
+    #reservation-notice {
+        font-size: .8rem;
+        margin-top: 1rem;
+        padding-left: 0;
     }
 
-    #seatmap-legend {
-        display: none;
+    #svg-pan-zoom-controls {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    #seats-selected-list {
+        padding-left: 5rem;
     }
 
-    #selected-seats-box {
-        /* display: none; */
+    #your-selected-seats {
+        width: 42rem;
+        margin: auto;
+    }
+
+    #selected-seats-inner-wrapper {
+        width: 42rem;
+        margin: .5rem auto 0;
+    }
+
+    #reservation-notice {
+        width: 42rem;
+        margin: 1rem auto 0;
     }
 }

@@ -1,89 +1,120 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div>
-    {% if 'proxy_image' in event.featured_image.url %}
-    <img src="https://cdn.seeklearning.com.au/media/images/career-guide/article/career-advice/web_images/blogs/214/6084/How-music-and-sound-can-help-alleviate-career-anxiety_940x485.jpg"
-        class="img-fluid" alt="featured_image">
-    {% else %}
-    <img src="{{ event.featured_image.url }}" class="img-fluid" alt="featured_image">
-    {% endif %}
-</div>
-<div>
-    <p>The Goodwill Events presents</p>
-    <h2>{{ event }}</h2>
-    <p>{{ event.blurb }}</p>
-    <p>{{ event.event_date|date:'d F Y, l' }} | <span>{{ event.event_time|date:'g A' }}</span></p>
-    <p id="reserve-seat-wrapper">
-        {% if seats_available > 1 %}
-        <small>{{ seats_available }} Seats Left</small>
+<section id="event-details-outer-container" class="container py-4">
+    <p class="text-center mt-md-4 mt-xl-5">The Goodwill Events presents</p>
+    <h2 id="event-details-title" class="text-center my-md-4">{{ event.title }}</h2>
+    <p id="event-blurb" class="text-center mb-md-4">{{ event.blurb }}</p>
+    <div id="img-wrapper" class="event-details-div">
+        {% if 'proxy_image' in event.featured_image.url %}
+        <img src="https://cdn.seeklearning.com.au/media/images/career-guide/article/career-advice/web_images/blogs/214/6084/How-music-and-sound-can-help-alleviate-career-anxiety_940x485.jpg"
+            class="event-details-img img-fluid rounded" alt="featured image">
         {% else %}
-        <small>{{ seats_available }} Seat Left</small>
+        <img src="{{ event.featured_image.url }}" class="event-details-img img-fluid rounded" alt="featured image">
         {% endif %}
-        | 
-        {% if seats_available > 0 %}
-        <a href="{% url 'seatmap' event.slug %}"><button type="button" class="btn btn-primary btn-sm">Reserve A
-                Seat</button></a>
-        {% else %}
-        <a href="{% url 'seatmap' event.slug %}"><button type="button" class="btn btn-primary btn-sm">No Seats
-                Available</button></a>
-        {% endif %}        
-        | {{ event.total_likes }} {% if event.total_likes > 1 %}
-            <span>Likes</span>
-            {% else %}
-            <span>Like</span>
+    </div>
+    <div class="event-details-div text-center">
+        <p class="text-center">{{ event.event_date|date:'d F Y, l' }} | <span>{{ event.event_time|date:'g A' }}</span></p>
+        <p id="reserve-seat-wrapper" class="d-inline">
+            <span>
+                {% if seats_available > 1 %}
+                <small>{{ seats_available }} Seats Left</small>
+                {% else %}
+                <small>{{ seats_available }} Seat Left</small>
+                {% endif %}
+            </span>
+            |
+            <span class="d-none d-sm-inline">
+                {% if seats_available > 0 %}
+                <a href="{% url 'seatmap' event.slug %}"><button type="button" class="btn btn-primary btn-sm">Reserve A
+                        Seat</button> | </a>
+                {% else %}
+                <a href="{% url 'seatmap' event.slug %}"><button type="button" class="btn btn-primary btn-sm">No Seats
+                        Available</button> | </a>
+                {% endif %}   
+            </span>
+            <span>
+                <small id="event-likes">{{ event.total_likes }}
+                    {% if event.total_likes > 1 %}
+                    <span>Likes</span>
+                    {% else %}
+                    <span>Like</span>
+                    {% endif %}
+                </small>
+                <!-- Like Button on Small Screen-->
+                {% if user.is_authenticated %}
+                <form action="{% url 'event_like' event.slug %}" method="POST" id="like-form" class="d-inline d-sm-none">
+                    {% csrf_token %}
+                    {% if liked %}
+                    <button type="submit" name="event_id" value="event.slug"><i class="fa-solid fa-heart"></i></button>
+                    {% else %}
+                    <button type="submit" name="event_id" value="event.slug"><i class="fa-regular fa-heart"></i></button>
+                    {% endif %}
+                </form>
+                {% endif %}
+            </span>
+            <span class="d-block d-sm-none">
+                {% if seats_available > 0 %}
+                <a href="{% url 'seatmap' event.slug %}"><button type="button" class="btn btn-primary btn-sm">Reserve A
+                        Seat</button></a>
+                {% else %}
+                <a href="{% url 'seatmap' event.slug %}"><button type="button" class="btn btn-primary btn-sm">No Seats
+                        Available</button></a>
+                {% endif %}
+            </span>
+            <!-- Like Button on Bigger Screen -->
+            {% if user.is_authenticated %}
+            <form action="{% url 'event_like' event.slug %}" method="POST" id="like-form" class="d-none d-sm-inline">
+                {% csrf_token %}
+                {% if liked %}
+                <button type="submit" name="event_id" value="event.slug"><i class="fa-solid fa-heart"></i></button>
+                {% else %}
+                <button type="submit" name="event_id" value="event.slug"><i class="fa-regular fa-heart"></i></button>
+                {% endif %}
+            </form>
             {% endif %}
-    </p>
-
-    {% if user.is_authenticated %}
-    <form action="{% url 'event_like' event.slug %}" method="POST" id="like-form">
-        {% csrf_token %}
-
-        {% if liked %}
-        <button type="submit" name="event_id" value="event.slug"><i class="fa-solid fa-heart"></i></button>
-        {% else %}
-        <button type="submit" name="event_id" value="event.slug"><i class="fa-regular fa-heart"></i></button>
-        {% endif %}
-    </form>
-    {% endif %}
-
-    <div>
+        </p>
+    </div>
+    <div id="event-post" class="event-details-div">
         <p>{{ event.post_content | safe }}</p>
     </div>
-</div>
+</section>
 
 <!-- COMMENT SECTION -->
-<section id="comments-outer-wrapper">
+<section id="comments-outer-wrapper" class="container">
     {% if user.is_authenticated %}
-    <div class="mb-3">
+    <div class="mb-3 col-md-9 col-lg-6 m-auto">
         <form action="{% url 'event_comment' event.slug %}" method="POST" id="comment-form">
             {% csrf_token %}
-            <label for="comment_textarea" class="form-label">Your Comment:</label>
-            <textarea class="form-control" id="comment_textarea" name="text_comment" rows="3" maxlength="250" required></textarea>
-            <small id="char-counter">250 characters remaining</small>
-            <button class="btn btn-primary" type="submit">Post</button>
+            <label for="comment_textarea" class="form-label">Write Your Comment:</label>
+            <textarea class="form-control" id="comment-textarea" name="text_comment" rows="3" maxlength="250" required></textarea>
+            <div class="d-flex justify-content-between pt-2">
+                <small id="char-counter">250 characters remaining</small>
+                <button class="btn btn-primary py-1" type="submit">Post</button>
+            </div>
         </form>
     </div>
     {% endif %}
-    <div class="card">
+    <div class="card col-md-9 col-lg-6 mb-5 m-auto p-2">
         {% if comments %}
         <h4>Comments:</h4>
         {% endif %}
         {% for comment in comments %}
         <div class="card-body">
-            <h5 class="card-title">{{ comment.author.first_name }} {{ comment.author.last_name | first }}.</h5>
-            <h6 class="card-subtitle mb-2 text-muted">{{ comment.posted_on }}</h6>
-            <p class="card-text">{{ comment.text_comment }}</p>
-            {% if comment.author == user %}
-            <form action="{% url 'delete_comment' pk=comment.id %}" method="POST">
-                {% csrf_token %}
-                <button type="submit">Delete</button>
-            </form>
-            {% endif %}
+            <div class="d-flex justify-content-between">
+                <h5 class="card-title mb-0">{{ comment.author.first_name }} {{ comment.author.last_name | first }}.</h5>
+                {% if comment.author == user %}
+                <form action="{% url 'delete_comment' pk=comment.id %}" method="POST">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-outline-danger py-0">Delete</button>
+                </form>
+                {% endif %}
+            </div>
+            <h6 id="comment-posted-on" class="card-subtitle mb-2 text-muted">{{ comment.posted_on }}</h6>
+            <p class="card-text mb-1">{{ comment.text_comment }}</p>
         </div>
         {% endfor %}
     </div>
 </section>
-
 
 {% endblock content %}

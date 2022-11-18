@@ -1,22 +1,139 @@
 * {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
     list-style-type: none;
     text-decoration: none;
 }
 
-#reserve-seat-wrapper {
-    display: inline;
+a,
+a:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+textarea {
+    resize: none;
+}
+
+/* Logo */
+#logo {
+    font-family: 'Lobster', cursive;
+    font-size: 1.7rem;
+}
+
+/* navbar */
+.nav-item {
+    font-size: 1.1rem;
+}
+
+/* --> HOME PAGE [start] <-- */
+
+#homepage-banner-container {
+    height: 20rem;
+    background-color: bisque;
+    border: 1px solid rgb(2, 23, 14);
+}
+
+#homepage-title {
+    font-weight: 700;
+    margin: 6rem 0 .5rem;
+}
+
+#title-span {
+    font-size: 1.3rem;
+    font-weight: 400;
+    display: block;
+}
+
+#catchy-line {
+    margin-top: 1rem;
+}
+
+/* featured events */
+#feature-events-outer-container {
+    padding: 2rem 1rem;
+}
+
+#featured-events {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.feat-event-card {
+    border: 3px solid darkblue;
+}
+
+.featured.card-title {
+    font-weight: 700;
+}
+
+/* About Us */
+#about-us-outer-container {
+    padding: 2rem 1rem;
+}
+
+#about-us {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+/* --> HOME PAGE [end] <-- */
+
+
+/* --> ALL EVENTS PAGE [Start] <-- */
+
+#upcoming-events {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 2rem 0;
+}
+
+#event-card-wrapper {
+    border: 3px solid rgb(147, 87, 87)
+}
+
+.event-card-img {
+    height: 8rem;
+    object-fit: cover;
+}
+
+.events-list.card-title {
+    font-weight: 700;
+}
+
+#event-title:hover {
+    letter-spacing: 1.5px;
+    color: rgb(29, 45, 184);
+}
+
+#event-post {
+    padding: .5rem 0;
+}
+
+/* --> ALL EVENTS PAGE [End] <-- */
+
+/* --> EVENT DETAILS PAGE [start] */
+#event-details-title {
+    font-weight: 700;
+}
+
+#event-blurb {
+    font-weight: 300;
 }
 
 /* event likes */
-#like-form {
-    display: inline;
-}
-
 #like-form>button {
     background: none;
     border: none;
 }
 
+#comment-posted-on {
+    font-size: .9rem;
+}
+
+/* --> EVENT DETAILS PAGE [end] */
 
 /* FOOTER */
 footer {
@@ -52,4 +169,86 @@ footer {
 .fa-brands {
     font-size: 2rem;
     color: white;
+}
+
+
+/* MEDIA QUERIES */
+
+@media screen and (min-width:400px) {
+    #logo {
+        font-size: 2rem;
+    }
+
+    .navbar {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    /* ALL EVENTS PAGE */
+    #event-card-wrapper {
+        width: 75%
+    }
+
+    #upcoming-events {
+        font-size: 1.8rem;
+        margin: 3rem 0;
+    }
+}
+
+@media screen and (min-width:400px) and (max-width:767px) {
+
+    /* HOME PAGE */
+    .feat-event-card-wrapper {
+        padding-left: 12%;
+        padding-right: 12%;
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+    #logo {
+        font-size: 2.5rem;
+    }
+
+    .navbar {
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+    }
+}
+
+@media screen and (min-width: 900px) {
+
+    /* HOME PAGE */
+    #feature-events-outer-container {
+        padding: 1.5rem 2rem;
+    }
+
+    /* ALL EVENTS PAGE */
+    #upcoming-events {
+        font-size: 2.2rem;
+        margin: 5rem 0;
+    }
+
+    .event-card-img {
+        height: 10rem;
+        object-fit: cover;
+    }
+
+    #event-post {
+        padding: 1.5rem 0;
+    }
+}
+
+@media screen and (min-width: 1080px) {
+
+    /* HOME PAGE */
+    #feature-events-outer-container {
+        padding: 1rem 10%;
+    }
+
+    /* EVENTS DETAILS PAGE */
+    .event-details-div {
+        width: 58rem;
+        margin: auto;
+    }
 }

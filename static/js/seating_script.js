@@ -1,5 +1,5 @@
 if (document.getElementById('seatmap-container')) {
-    const string_reserved_seats = document.getElementById('data_seats').textContent;
+    const string_reserved_seats = document.getElementById('data-seats').textContent;
     let list_reserved_seats = string_reserved_seats.replace(/[^a-zA-Z0-9_,]/g, '').split(",");
 
     window.onpageshow = function () {
@@ -12,25 +12,25 @@ if (document.getElementById('seatmap-container')) {
     }
     
     // EventListener to 'remove' reserved seat
-    if (document.getElementsByClassName("btn_seat_location")) {
-        const cancel_seat_buttons = document.querySelectorAll('.btn_seat_location');
+    if (document.getElementsByClassName("btn-seat-location")) {
+        const cancel_seat_buttons = document.querySelectorAll('.btn-seat-location');
         cancel_seat_buttons.forEach(cancelSeat);
     }
 
     // EventListener to Create Reservation
-    if (document.getElementById("submit_reservation")) {
-        const reserve_button = document.getElementById("submit_reservation");
+    if (document.getElementById("submit-reservation")) {
+        const reserve_button = document.getElementById("submit-reservation");
         reserve_button.addEventListener('click', submitSeatReservation);
     }
 
     // EventListener to Update Reservation
-    if (document.getElementById("update_reservation")) {
-        const update_button = document.getElementById("update_reservation");
+    if (document.getElementById("update-reservation")) {
+        const update_button = document.getElementById("update-reservation");
         update_button.addEventListener('click', submitSeatReservation);
     }
     
 
-    // FUNCTIONS <---
+    // ---> FUNCTIONS <---
     
     function blockReservedSeats(svg_seat, seat_loc, list_reserved_seats) {
         if (list_reserved_seats.includes(seat_loc)) {
@@ -64,8 +64,9 @@ if (document.getElementById('seatmap-container')) {
     function showSelectedSeat(seat_loc) {
         const li_elem = document.createElement("li");
         li_elem.innerText = seat_loc;
-        document.getElementById("seats_selected_list").appendChild(li_elem);
+        document.getElementById("seats-selected-list").appendChild(li_elem);
         li_elem.setAttribute('id', seat_loc);
+        li_elem.setAttribute('class', 'd-flex align-items-center me-4')
     }
     
     function removeDeselectedSeat(seat_loc) {
@@ -78,13 +79,13 @@ if (document.getElementById('seatmap-container')) {
     }
 
     function SelectedSeatsByUser() {
-        const user_reserved_seats = document.querySelectorAll("#seats_selected_list > li")
+        const user_reserved_seats = document.querySelectorAll("#seats-selected-list > li")
         return user_reserved_seats
     }
 
     function cancelSeat(btn) {
         const svg_seats_list = document.querySelectorAll('[data-seat-location]');
-        const string_reserved_seats = document.getElementById('data_seats').textContent;
+        const string_reserved_seats = document.getElementById('data-seats').textContent;
         let list_reserved_seats = string_reserved_seats.replace(/[^a-zA-Z0-9_,]/g, '').split(",");
         btn.addEventListener('click', function () {
             seat = this.parentElement
@@ -101,7 +102,7 @@ if (document.getElementById('seatmap-container')) {
     }
 
     function fillSeatReservationForm() {
-        const selected_seats_list = document.querySelectorAll("#seats_selected_list>li")
+        const selected_seats_list = document.querySelectorAll("#seats-selected-list>li")
         if (selected_seats_list.length != 0) {
             const limit_reached = document.getElementById("id_user_limit_reached")
             const select_seat_1 = document.querySelector("#id_seat_location_1")
@@ -129,10 +130,10 @@ if (document.getElementById('seatmap-container')) {
 
     function submitSeatReservation() {
         if (fillSeatReservationForm()) {
-            const seat_form = document.getElementById("reserve_seat_form")
+            const seat_form = document.getElementById("reserve-seat-form")
             seat_form.submit();
         } else {
-            if (document.getElementById('update_reservation')) {
+            if (document.getElementById('update-reservation')) {
                 const confirm_delete_btn = document.getElementById('confirm-delete')
                 confirm_delete_btn.click()
             }

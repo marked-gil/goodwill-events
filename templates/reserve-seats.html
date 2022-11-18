@@ -1,350 +1,356 @@
 {% extends "base.html" %}
 
 {% block content %}
+<section class="container py-2 px-0">
+    <div class="py-2">
+        <h2 id="seating-event-title" class="mb-0 px-3">{{ event.title }}</h2>
+        <p class="px-3 m-0">{{ event.event_date|date:'d F Y, D' }} | <span>{{ event.event_time|date:'g A' }}</span></p>
+    </div>
 
-<div>
-    <h3>{{ event }}</h3>
-    <p>{{ event.event_date|date:'d F Y, l' }} | <span>{{ event.event_time|date:'g A' }}</span></p>
-</div>
-
-<div id="seatmap-container">
-    <svg viewBox="-5.954 -11.097 500 500" xmlns="http://www.w3.org/2000/svg" id="my-svg">
-        <g class="svg-pan-zoom_viewport">
-            <rect x="100" y="155.547" width="121.702" height="18.806"
-                style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" />
-            <rect x="100.062" y="26.545" width="299.938" height="89.631"
-                style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" />
-            <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 15.7px;"
-                x="230.691" y="73.856">Stage</text>
-            <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 15.7px;"
-                x="242.077" y="170.641"> </text>
-            <rect x="278.298" y="155.547" width="121.702" height="18.806"
-                style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" />
-            <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 15.7px;"
-                x="331.794" y="171.1">VIP</text>
-            <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 15.7px;"
-                x="148.548" y="171.1">VIP</text>
-            <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 15.7px;"
-                x="343.254" y="186.597"> </text>
-
-            <rect x="100" y="177.974" width="13.86" height="11.876" data-seat-location='seat_A1' />
-            <rect x="120.989" y="177.974" width="13.86" height="11.876" data-seat-location='seat_A2' />
-            <rect x="143.104" y="177.974" width="13.86" height="11.876" data-seat-location='seat_A3' />
-            <rect x="164.972" y="177.974" width="13.86" height="11.876" data-seat-location='seat_A4' />
-            <rect x="186.14" y="177.974" width="13.86" height="11.876" data-seat-location='seat_A5' />
-            <rect x="207.842" y="177.974" width="13.86" height="11.876" data-seat-location='seat_A6' />
-            <rect x="278.298" y="177.974" width="13.86" height="11.876" data-seat-location='seat_A9' />
-            <rect x="300" y="177.974" width="13.86" height="11.876" data-seat-location='seat_A10' />
-            <rect x="322.064" y="177.974" width="13.86" height="11.876" data-seat-location='seat_A11' />
-            <rect x="344.254" y="177.974" width="13.86" height="11.876" data-seat-location='seat_A12' />
-            <rect x="365.179" y="177.974" width="13.86" height="11.876" data-seat-location='seat_A13' />
-            <rect x="386.14" y="177.974" width="13.86" height="11.876" data-seat-location='seat_A14' />
-
-            <rect x="100" y="195.378" width="13.86" height="11.876" data-seat-location='seat_B1' />
-            <rect x="120.989" y="195.378" width="13.86" height="11.876" data-seat-location='seat_B2' />
-            <rect x="143.104" y="195.378" width="13.86" height="11.876" data-seat-location='seat_B3' />
-            <rect x="164.972" y="195.378" width="13.86" height="11.876" data-seat-location='seat_B4' />
-            <rect x="186.14" y="195.378" width="13.86" height="11.876" data-seat-location='seat_B5' />
-            <rect x="207.842" y="195.378" width="13.86" height="11.876" data-seat-location='seat_B6' />
-            <rect x="278.298" y="195.378" width="13.86" height="11.876" data-seat-location='seat_B9' />
-            <rect x="300" y="195.378" width="13.86" height="11.876" data-seat-location='seat_B10' />
-            <rect x="322.064" y="195.378" width="13.86" height="11.876" data-seat-location='seat_B11' />
-            <rect x="343.239" y="195.378" width="13.86" height="11.876" data-seat-location='seat_B12' />
-            <rect x="365.179" y="195.378" width="13.86" height="11.876" data-seat-location='seat_B13' />
-            <rect x="386.14" y="195.378" width="13.86" height="11.876" data-seat-location='seat_B14' />
-
-            <rect x="100.573" y="228.77" width="13.86" height="11.876" data-seat-location='seat_C1' />
-            <rect x="121.5" y="228.77" width="13.86" height="11.876" data-seat-location='seat_C2' />
-            <rect x="143.615" y="228.77" width="13.86" height="11.876" data-seat-location='seat_C3' />
-            <rect x="165.689" y="228.77" width="13.86" height="11.876" data-seat-location='seat_C4' />
-            <rect x="186.651" y="228.77" width="13.86" height="11.876" data-seat-location='seat_C5' />
-            <rect x="208.353" y="228.77" width="13.86" height="11.876" data-seat-location='seat_C6' />
-            <rect x="279.298" y="228.77" width="13.86" height="11.876" data-seat-location='seat_C9' />
-            <rect x="300" y="228.77" width="13.86" height="11.876" data-seat-location='seat_C10' />
-            <rect x="322.464" y="228.77" width="13.86" height="11.876" data-seat-location='seat_C11' />
-            <rect x="344.254" y="228.77" width="13.86" height="11.876" data-seat-location='seat_C12' />
-            <rect x="365.179" y="228.77" width="13.86" height="11.876" data-seat-location='seat_C13' />
-            <rect x="386.14" y="228.77" width="13.86" height="11.876" data-seat-location='seat_C14' />
-
-            <rect x="100.062" y="248.946" width="13.86" height="11.876" data-seat-location='seat_D1' />
-            <rect x="120.989" y="248.946" width="13.86" height="11.876" data-seat-location='seat_D2' />
-            <rect x="143.104" y="248.946" width="13.86" height="11.876" data-seat-location='seat_D3' />
-            <rect x=" 165.178" y="248.946" width="13.86" height="11.876" data-seat-location='seat_D4' />
-            <rect x="186.14" y="248.946" width="13.86" height="11.876" data-seat-location='seat_D5' />
-            <rect x="207.842" y="248.946" width="13.86" height="11.876" data-seat-location='seat_D6' />
-            <rect x=" 278.787" y="248.946" width="13.86" height="11.876" data-seat-location='seat_D9' />
-            <rect x="299.489" y="248.946" width="13.86" height="11.876" data-seat-location='seat_D10' />
-            <rect x=" 321.953" y="248.946" width="13.86" height="11.876" data-seat-location='seat_D11' />
-            <rect x=" 343.743" y="248.946" width="13.86" height="11.876" data-seat-location='seat_D12' />
-            <rect x="364.668" y="248.946" width="13.86" height="11.876" data-seat-location='seat_D13' />
-            <rect x="385.629" y="248.946" width="13.86" height="11.876" data-seat-location='seat_D14' />
-
-            <rect x=" 100" y="269.016" width="13.86" height="11.876" data-seat-location='seat_E1' />
-            <rect x="120.989" y="269.016" width="13.86" height="11.876" data-seat-location='seat_E2' />
-            <rect x="143.104" y="269.016" width="13.86" height="11.876" data-seat-location='seat_E3' />
-            <rect x="164.972" y="269.016" width="13.86" height="11.876" data-seat-location='seat_E4' />
-            <rect x="186.14" y="269.016" width="13.86" height="11.876" data-seat-location='seat_E5' />
-            <rect x=" 207.842" y="269.016" width="13.86" height="11.876" data-seat-location='seat_E6' />
-            <rect x="278.787" y="269.016" width="13.86" height="11.876" data-seat-location='seat_E9' />
-            <rect x="300.489" y="269.016" width="13.86" height="11.876" data-seat-location='seat_E10' />
-            <rect x=" 322.953" y="269.016" width="13.86" height="11.876" data-seat-location='seat_E11' />
-            <rect x=" 343.743" y="269.016" width="13.86" height="11.876" data-seat-location='seat_E12' />
-            <rect x="364.668" y="269.016" width="13.86" height="11.876" data-seat-location='seat_E13' />
-            <rect x=" 385.629" y="269.016" width="13.86" height="11.876" data-seat-location='seat_E14' />
-
-            <rect x=" 100" y="288.124" width="13.86" height="11.876" data-seat-location='seat_F1' />
-            <rect x="120.989" y="288.124" width="13.86" height="11.876" data-seat-location='seat_F2' />
-            <rect x="143.104" y="288.124" width="13.86" height="11.876" data-seat-location='seat_F3' />
-            <rect x="164.972" y="288.124" width="13.86" height="11.876" data-seat-location='seat_F4' />
-            <rect x="186.14" y="288.124" width="13.86" height="11.876" data-seat-location='seat_F5' />
-            <rect x="207.842" y="288.124" width="13.86" height="11.876" data-seat-location='seat_F6' />
-            <rect x="278.298" y="288.124" width="13.86" height="11.876" data-seat-location='seat_F9' />
-            <rect x="300" y="288.124" width="13.86" height="11.876" data-seat-location='seat_F10' />
-            <rect x="322.464" y="288.124" width="13.86" height="11.876" data-seat-location='seat_F11' />
-            <rect x="344.254" y="288.124" width="13.86" height="11.876" data-seat-location='seat_F12' />
-            <rect x="365.179" y="288.124" width="13.86" height="11.876" data-seat-location='seat_F13' />
-            <rect x="386.14" y="288.124" width="13.86" height="11.876" data-seat-location='seat_F14' />
-
-            <rect x="100.062" y="334.75" width="13.86" height="11.876" data-seat-location='seat_G1' />
-            <rect x="120.989" y="334.75" width="13.86" height="11.876" data-seat-location='seat_G2' />
-            <rect x="143.104" y="334.75" width="13.86" height="11.876" data-seat-location='seat_G3' />
-            <rect x="164.972" y="334.75" width="13.86" height="11.876" data-seat-location='seat_G4' />
-            <rect x="186.14" y="334.75" width="13.86" height="11.876" data-seat-location='seat_G5' />
-            <rect x="207.842" y="334.75" width="13.86" height="11.876" data-seat-location='seat_G6' />
-            <rect x="231.217" y="334.75" width="13.86" height="11.876" data-seat-location='seat_G7' />
-            <rect x="254.494" y="334.75" width="13.86" height="11.876" data-seat-location='seat_G8' />
-            <rect x="278.298" y="334.75" width="13.86" height="11.876" data-seat-location='seat_G9' />
-            <rect x="300" y="334.75" width="13.86" height="11.876" data-seat-location='seat_G10' />
-            <rect x="322.464" y="334.75" width="13.86" height="11.876" data-seat-location='seat_G11' />
-            <rect x="344.254" y="334.75" width="13.86" height="11.876" data-seat-location='seat_G12' />
-            <rect x="365.179" y="334.75" width="13.86" height="11.876" data-seat-location='seat_G13' />
-            <rect x="386.14" y="334.75" width="13.86" height="11.876" data-seat-location='seat_G14' />
-
-            <rect x="100.062" y="354.018" width="13.86" height="11.876" data-seat-location='seat_H1' />
-            <rect x="120.989" y="354.018" width="13.86" height="11.876" data-seat-location='seat_H2' />
-            <rect x="143.104" y="354.018" width="13.86" height="11.876" data-seat-location='seat_H3' />
-            <rect x="164.972" y="354.018" width="13.86" height="11.876" data-seat-location='seat_H4' />
-            <rect x="186.14" y="354.018" width="13.86" height="11.876" data-seat-location='seat_H5' />
-            <rect x="207.842" y="354.018" width="13.86" height="11.876" data-seat-location='seat_H6' />
-            <rect x="230.691" y="354.018" width="13.86" height="11.876" data-seat-location='seat_H7' />
-            <rect x="254.494" y="354.018" width="13.86" height="11.876" data-seat-location='seat_H8' />
-            <rect x="278.298" y="354.018" width="13.86" height="11.876" data-seat-location='seat_H9' />
-            <rect x="300" y="354.018" width="13.86" height="11.876" data-seat-location='seat_H10' />
-            <rect x="322.464" y="354.018" width="13.86" height="11.876" data-seat-location='seat_H11' />
-            <rect x="344.254" y="354.018" width="13.86" height="11.876" data-seat-location='seat_H12' />
-            <rect x="365.179" y="354.018" width="13.86" height="11.876" data-seat-location='seat_H13' />
-            <rect x="386.14" y="354.018" width="13.86" height="11.876" data-seat-location='seat_H14' />
-
-            <rect x="100.062" y="373.498" width="13.86" height="11.876" data-seat-location='seat_I1' />
-            <rect x="120.989" y="373.498" width="13.86" height="11.876" data-seat-location='seat_I2' />
-            <rect x="143.104" y="373.498" width="13.86" height="11.876" data-seat-location='seat_I3' />
-            <rect x="164.972" y="373.498" width="13.86" height="11.876" data-seat-location='seat_I4' />
-            <rect x="186.14" y="373.498" width="13.86" height="11.876" data-seat-location='seat_I5' />
-            <rect x="207.842" y="373.498" width="13.86" height="11.876" data-seat-location='seat_I6' />
-            <rect x="230.691" y="373.498" width="13.86" height="11.876" data-seat-location='seat_I7' />
-            <rect x="254.494" y="373.498" width="13.86" height="11.876" data-seat-location='seat_I8' />
-            <rect x="278.298" y="373.498" width="13.86" height="11.876" data-seat-location='seat_I9' />
-            <rect x="300" y="373.498" width="13.86" height="11.876" data-seat-location='seat_I10' />
-            <rect x="322.464" y="373.498" width="13.86" height="11.876" data-seat-location='seat_I11' />
-            <rect x="344.254" y="373.498" width="13.86" height="11.876" data-seat-location='seat_I12' />
-            <rect x="365.179" y="373.498" width="13.86" height="11.876" data-seat-location='seat_I13' />
-            <rect x="386.14" y="373.498" width="13.86" height="11.876" data-seat-location='seat_I14' />
-
-            <rect x="100.062" y="393.261" width="13.86" height="11.876" data-seat-location='seat_J1' />
-            <rect x="120.989" y="393.261" width="13.86" height="11.876" data-seat-location='seat_J2' />
-            <rect x="143.104" y="393.261" width="13.86" height="11.876" data-seat-location='seat_J3' />
-            <rect x="164.972" y="393.261" width="13.86" height="11.876" data-seat-location='seat_J4' />
-            <rect x="186.14" y="393.261" width="13.86" height="11.876" data-seat-location='seat_J5' />
-            <rect x="207.842" y="393.261" width="13.86" height="11.876" data-seat-location='seat_J6' />
-            <rect x="230.691" y="393.261" width="13.86" height="11.876" data-seat-location='seat_J7' />
-            <rect x="254.494" y="393.261" width="13.86" height="11.876" data-seat-location='seat_J8' />
-            <rect x="278.298" y="393.261" width="13.86" height="11.876" data-seat-location='seat_J9' />
-            <rect x="300" y="393.261" width="13.86" height="11.876" data-seat-location='seat_J10' />
-            <rect x="322.464" y="393.261" width="13.86" height="11.876" data-seat-location='seat_J11' />
-            <rect x="344.254" y="393.261" width="13.86" height="11.876" data-seat-location='seat_J12' />
-            <rect x="365.179" y="393.261" width="13.86" height="11.876" data-seat-location='seat_J13' />
-            <rect x="386.14" y="393.261" width="13.86" height="11.876" data-seat-location='seat_J14' />
-
-            <rect x="100.062" y="414.067" width="13.86" height="11.876" data-seat-location='seat_K1' />
-            <rect x="120.989" y="414.067" width="13.86" height="11.876" data-seat-location='seat_K2' />
-            <rect x="143.104" y="414.067" width="13.86" height="11.876" data-seat-location='seat_K3' />
-            <rect x="164.972" y="414.067" width="13.86" height="11.876" data-seat-location='seat_K4' />
-            <rect x="186.14" y="414.067" width="13.86" height="11.876" data-seat-location='seat_K5' />
-            <rect x="207.842" y="414.067" width="13.86" height="11.876" data-seat-location='seat_K6' />
-            <rect x="230.691" y="414.067" width="13.86" height="11.876" data-seat-location='seat_K7' />
-            <rect x="254.494" y="414.067" width="13.86" height="11.876" data-seat-location='seat_K8' />
-            <rect x="278.298" y="414.067" width="13.86" height="11.876" data-seat-location='seat_K9' />
-            <rect x="300" y="414.067" width="13.86" height="11.876" data-seat-location='seat_K10' />
-            <rect x="322.464" y="414.067" width="13.86" height="11.876" data-seat-location='seat_K11' />
-            <rect x="344.254" y="414.067" width="13.86" height="11.876" data-seat-location='seat_K12' />
-            <rect x="365.179" y="414.067" width="13.86" height="11.876" data-seat-location='seat_K13' />
-            <rect x="386.14" y="414.067" width="13.86" height="11.876" data-seat-location='seat_K14' />
-
-            <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
-                x="83.554" y="188.816">A</text>
-            <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 15.2px;"
-                x="82.26" y="271.281"> </text>
-            <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 15.2px;"
-                x="86.353" y="298.305"> </text>
-            <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 15.2px;"
-                x="66.467" y="273.259"> </text>
-            <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
-                x="83.906" y="206.22">B</text>
-            <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
-                x="84.407" y="239.675">C</text>
-            <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
-                x="85.353" y="278.326">E</text>
-            <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
-                x="85.353" y="259.851">D</text>
-            <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 15.2px;"
-                x="93.073" y="292.787"> </text>
-            <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
-                x="103.062" y="317.016">1</text>
-            <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 15.2px;"
-                x="154.162" y="320.705"> </text>
-            <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
-                x="123.989" y="317.016">2</text>
-            <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
-                x="146.104" y="317.016">3</text>
-            <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
-                x="167.178" y="316.724">4</text>
-            <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
-                x="189.14" y="316.724">5</text>
-            <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
-                x="210.842" y="316.724">6</text>
-            <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
-                x="235.402" y="327.755">7</text>
-            <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
-                x="258.494" y="327.755">8</text>
-            <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
-                x="282.484" y="316.724">9</text>
-            <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
-                x="300.511" y="316.724">10</text>
-            <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
-                x="323.464" y="316.724">11</text>
-            <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
-                x="343.75" y="316.724">12</text>
-            <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
-                x="365.69" y="316.724">13</text>
-            <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
-                x="387.14" y="316.016">14</text>
-            <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
-                x="85.353" y="298.946">F</text>
-            <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
-                x="84.407" y="346.06">G</text>
-            <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
-                x="86.683" y="404.166">J</text>
-            <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
-                x="88.242" y="382.808">I</text>
-            <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
-                x="85.353" y="363.923">H</text>
-            <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
-                x="85.683" y="424.846">K</text>
-            <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 15.9px;"
-                x="56.036" y="402.488"> </text>
-            <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
-                x="406.518" y="188.816">A</text>
-            <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
-                x="406.87" y="206.22">B</text>
-            <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
-                x="407.371" y="239.675">C</text>
-            <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
-                x="408.317" y="278.326">E</text>
-            <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
-                x="408.317" y="259.851">D</text>
-            <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
-                x="408.317" y="298.946">F</text>
-            <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
-                x="407.371" y="346.06">G</text>
-            <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
-                x="409.647" y="404.166">J</text>
-            <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
-                x="411.206" y="382.808">I</text>
-            <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
-                x="408.317" y="363.923">H</text>
-            <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
-                x="408.647" y="424.846">K</text>
-            <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
-                x="103.062" y="442.179">1</text>
-            <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
-                x="123.989" y="442.179">2</text>
-            <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
-                x="146.104" y="442.179">3</text>
-            <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
-                x="167.178" y="441.887">4</text>
-            <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
-                x="189.14" y="441.887">5</text>
-            <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
-                x="210.842" y="441.887">6</text>
-            <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
-                x="235.402" y="442.918">7</text>
-            <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
-                x="258.494" y="442.918">8</text>
-            <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
-                x="282.484" y="441.887">9</text>
-            <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
-                x="300.511" y="441.887">10</text>
-            <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
-                x="323.464" y="441.887">11</text>
-            <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
-                x="343.75" y="441.887">12</text>
-            <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
-                x="365.69" y="441.887">13</text>
-            <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
-                x="387.14" y="441.179">14</text>
-        </g>
-    </svg>
-
-    <!-- Colour legend -->
-    <div id="seatmap-legend">
-        <p>- Available</p>
-        <p>- You Selected</p>
-        <p>- Unavailable</p>
+    <!-- Colour Legend -->
+    <div id="seatmap-legend" class="container d-flex justify-content-around align-items-center px-2 py-1">
+        <p class="seatmap-legend-icon m-0"><i id="available-icon" class="fas fa-circle"></i> Available</p>
+        <p class="seatmap-legend-icon m-0"><i id="selected-icon" class="fas fa-circle"></i> Selected</p>
+        <p class="seatmap-legend-icon m-0"><i id="unavailable-icon" class="fas fa-circle"></i> Unavailable</p>
     </div>
     
-    <div id="selected-seats-box">
-        <h5>Selected Seats: </h5>
-        <div id="seats-selected-container">
+    <div id="seatmap-container">
+        <svg viewBox="-5.954 -11.097 500 500" xmlns="http://www.w3.org/2000/svg" id="my-svg">
+            <g class="svg-pan-zoom_viewport">
+                <rect x="100" y="155.547" width="121.702" height="18.806"
+                    style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" />
+                <rect x="100.062" y="26.545" width="299.938" height="89.631"
+                    style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" />
+                <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 15.7px;"
+                    x="230.691" y="73.856">Stage</text>
+                <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 15.7px;"
+                    x="242.077" y="170.641"> </text>
+                <rect x="278.298" y="155.547" width="121.702" height="18.806"
+                    style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" />
+                <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 15.7px;"
+                    x="331.794" y="171.1">VIP</text>
+                <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 15.7px;"
+                    x="148.548" y="171.1">VIP</text>
+                <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 15.7px;"
+                    x="343.254" y="186.597"> </text>
+    
+                <rect x="100" y="177.974" width="13.86" height="11.876" data-seat-location='seat_A1' />
+                <rect x="120.989" y="177.974" width="13.86" height="11.876" data-seat-location='seat_A2' />
+                <rect x="143.104" y="177.974" width="13.86" height="11.876" data-seat-location='seat_A3' />
+                <rect x="164.972" y="177.974" width="13.86" height="11.876" data-seat-location='seat_A4' />
+                <rect x="186.14" y="177.974" width="13.86" height="11.876" data-seat-location='seat_A5' />
+                <rect x="207.842" y="177.974" width="13.86" height="11.876" data-seat-location='seat_A6' />
+                <rect x="278.298" y="177.974" width="13.86" height="11.876" data-seat-location='seat_A9' />
+                <rect x="300" y="177.974" width="13.86" height="11.876" data-seat-location='seat_A10' />
+                <rect x="322.064" y="177.974" width="13.86" height="11.876" data-seat-location='seat_A11' />
+                <rect x="344.254" y="177.974" width="13.86" height="11.876" data-seat-location='seat_A12' />
+                <rect x="365.179" y="177.974" width="13.86" height="11.876" data-seat-location='seat_A13' />
+                <rect x="386.14" y="177.974" width="13.86" height="11.876" data-seat-location='seat_A14' />
+    
+                <rect x="100" y="195.378" width="13.86" height="11.876" data-seat-location='seat_B1' />
+                <rect x="120.989" y="195.378" width="13.86" height="11.876" data-seat-location='seat_B2' />
+                <rect x="143.104" y="195.378" width="13.86" height="11.876" data-seat-location='seat_B3' />
+                <rect x="164.972" y="195.378" width="13.86" height="11.876" data-seat-location='seat_B4' />
+                <rect x="186.14" y="195.378" width="13.86" height="11.876" data-seat-location='seat_B5' />
+                <rect x="207.842" y="195.378" width="13.86" height="11.876" data-seat-location='seat_B6' />
+                <rect x="278.298" y="195.378" width="13.86" height="11.876" data-seat-location='seat_B9' />
+                <rect x="300" y="195.378" width="13.86" height="11.876" data-seat-location='seat_B10' />
+                <rect x="322.064" y="195.378" width="13.86" height="11.876" data-seat-location='seat_B11' />
+                <rect x="343.239" y="195.378" width="13.86" height="11.876" data-seat-location='seat_B12' />
+                <rect x="365.179" y="195.378" width="13.86" height="11.876" data-seat-location='seat_B13' />
+                <rect x="386.14" y="195.378" width="13.86" height="11.876" data-seat-location='seat_B14' />
+    
+                <rect x="100.573" y="228.77" width="13.86" height="11.876" data-seat-location='seat_C1' />
+                <rect x="121.5" y="228.77" width="13.86" height="11.876" data-seat-location='seat_C2' />
+                <rect x="143.615" y="228.77" width="13.86" height="11.876" data-seat-location='seat_C3' />
+                <rect x="165.689" y="228.77" width="13.86" height="11.876" data-seat-location='seat_C4' />
+                <rect x="186.651" y="228.77" width="13.86" height="11.876" data-seat-location='seat_C5' />
+                <rect x="208.353" y="228.77" width="13.86" height="11.876" data-seat-location='seat_C6' />
+                <rect x="279.298" y="228.77" width="13.86" height="11.876" data-seat-location='seat_C9' />
+                <rect x="300" y="228.77" width="13.86" height="11.876" data-seat-location='seat_C10' />
+                <rect x="322.464" y="228.77" width="13.86" height="11.876" data-seat-location='seat_C11' />
+                <rect x="344.254" y="228.77" width="13.86" height="11.876" data-seat-location='seat_C12' />
+                <rect x="365.179" y="228.77" width="13.86" height="11.876" data-seat-location='seat_C13' />
+                <rect x="386.14" y="228.77" width="13.86" height="11.876" data-seat-location='seat_C14' />
+    
+                <rect x="100.062" y="248.946" width="13.86" height="11.876" data-seat-location='seat_D1' />
+                <rect x="120.989" y="248.946" width="13.86" height="11.876" data-seat-location='seat_D2' />
+                <rect x="143.104" y="248.946" width="13.86" height="11.876" data-seat-location='seat_D3' />
+                <rect x=" 165.178" y="248.946" width="13.86" height="11.876" data-seat-location='seat_D4' />
+                <rect x="186.14" y="248.946" width="13.86" height="11.876" data-seat-location='seat_D5' />
+                <rect x="207.842" y="248.946" width="13.86" height="11.876" data-seat-location='seat_D6' />
+                <rect x=" 278.787" y="248.946" width="13.86" height="11.876" data-seat-location='seat_D9' />
+                <rect x="299.489" y="248.946" width="13.86" height="11.876" data-seat-location='seat_D10' />
+                <rect x=" 321.953" y="248.946" width="13.86" height="11.876" data-seat-location='seat_D11' />
+                <rect x=" 343.743" y="248.946" width="13.86" height="11.876" data-seat-location='seat_D12' />
+                <rect x="364.668" y="248.946" width="13.86" height="11.876" data-seat-location='seat_D13' />
+                <rect x="385.629" y="248.946" width="13.86" height="11.876" data-seat-location='seat_D14' />
+    
+                <rect x=" 100" y="269.016" width="13.86" height="11.876" data-seat-location='seat_E1' />
+                <rect x="120.989" y="269.016" width="13.86" height="11.876" data-seat-location='seat_E2' />
+                <rect x="143.104" y="269.016" width="13.86" height="11.876" data-seat-location='seat_E3' />
+                <rect x="164.972" y="269.016" width="13.86" height="11.876" data-seat-location='seat_E4' />
+                <rect x="186.14" y="269.016" width="13.86" height="11.876" data-seat-location='seat_E5' />
+                <rect x=" 207.842" y="269.016" width="13.86" height="11.876" data-seat-location='seat_E6' />
+                <rect x="278.787" y="269.016" width="13.86" height="11.876" data-seat-location='seat_E9' />
+                <rect x="300.489" y="269.016" width="13.86" height="11.876" data-seat-location='seat_E10' />
+                <rect x=" 322.953" y="269.016" width="13.86" height="11.876" data-seat-location='seat_E11' />
+                <rect x=" 343.743" y="269.016" width="13.86" height="11.876" data-seat-location='seat_E12' />
+                <rect x="364.668" y="269.016" width="13.86" height="11.876" data-seat-location='seat_E13' />
+                <rect x=" 385.629" y="269.016" width="13.86" height="11.876" data-seat-location='seat_E14' />
+    
+                <rect x=" 100" y="288.124" width="13.86" height="11.876" data-seat-location='seat_F1' />
+                <rect x="120.989" y="288.124" width="13.86" height="11.876" data-seat-location='seat_F2' />
+                <rect x="143.104" y="288.124" width="13.86" height="11.876" data-seat-location='seat_F3' />
+                <rect x="164.972" y="288.124" width="13.86" height="11.876" data-seat-location='seat_F4' />
+                <rect x="186.14" y="288.124" width="13.86" height="11.876" data-seat-location='seat_F5' />
+                <rect x="207.842" y="288.124" width="13.86" height="11.876" data-seat-location='seat_F6' />
+                <rect x="278.298" y="288.124" width="13.86" height="11.876" data-seat-location='seat_F9' />
+                <rect x="300" y="288.124" width="13.86" height="11.876" data-seat-location='seat_F10' />
+                <rect x="322.464" y="288.124" width="13.86" height="11.876" data-seat-location='seat_F11' />
+                <rect x="344.254" y="288.124" width="13.86" height="11.876" data-seat-location='seat_F12' />
+                <rect x="365.179" y="288.124" width="13.86" height="11.876" data-seat-location='seat_F13' />
+                <rect x="386.14" y="288.124" width="13.86" height="11.876" data-seat-location='seat_F14' />
+    
+                <rect x="100.062" y="334.75" width="13.86" height="11.876" data-seat-location='seat_G1' />
+                <rect x="120.989" y="334.75" width="13.86" height="11.876" data-seat-location='seat_G2' />
+                <rect x="143.104" y="334.75" width="13.86" height="11.876" data-seat-location='seat_G3' />
+                <rect x="164.972" y="334.75" width="13.86" height="11.876" data-seat-location='seat_G4' />
+                <rect x="186.14" y="334.75" width="13.86" height="11.876" data-seat-location='seat_G5' />
+                <rect x="207.842" y="334.75" width="13.86" height="11.876" data-seat-location='seat_G6' />
+                <rect x="231.217" y="334.75" width="13.86" height="11.876" data-seat-location='seat_G7' />
+                <rect x="254.494" y="334.75" width="13.86" height="11.876" data-seat-location='seat_G8' />
+                <rect x="278.298" y="334.75" width="13.86" height="11.876" data-seat-location='seat_G9' />
+                <rect x="300" y="334.75" width="13.86" height="11.876" data-seat-location='seat_G10' />
+                <rect x="322.464" y="334.75" width="13.86" height="11.876" data-seat-location='seat_G11' />
+                <rect x="344.254" y="334.75" width="13.86" height="11.876" data-seat-location='seat_G12' />
+                <rect x="365.179" y="334.75" width="13.86" height="11.876" data-seat-location='seat_G13' />
+                <rect x="386.14" y="334.75" width="13.86" height="11.876" data-seat-location='seat_G14' />
+    
+                <rect x="100.062" y="354.018" width="13.86" height="11.876" data-seat-location='seat_H1' />
+                <rect x="120.989" y="354.018" width="13.86" height="11.876" data-seat-location='seat_H2' />
+                <rect x="143.104" y="354.018" width="13.86" height="11.876" data-seat-location='seat_H3' />
+                <rect x="164.972" y="354.018" width="13.86" height="11.876" data-seat-location='seat_H4' />
+                <rect x="186.14" y="354.018" width="13.86" height="11.876" data-seat-location='seat_H5' />
+                <rect x="207.842" y="354.018" width="13.86" height="11.876" data-seat-location='seat_H6' />
+                <rect x="230.691" y="354.018" width="13.86" height="11.876" data-seat-location='seat_H7' />
+                <rect x="254.494" y="354.018" width="13.86" height="11.876" data-seat-location='seat_H8' />
+                <rect x="278.298" y="354.018" width="13.86" height="11.876" data-seat-location='seat_H9' />
+                <rect x="300" y="354.018" width="13.86" height="11.876" data-seat-location='seat_H10' />
+                <rect x="322.464" y="354.018" width="13.86" height="11.876" data-seat-location='seat_H11' />
+                <rect x="344.254" y="354.018" width="13.86" height="11.876" data-seat-location='seat_H12' />
+                <rect x="365.179" y="354.018" width="13.86" height="11.876" data-seat-location='seat_H13' />
+                <rect x="386.14" y="354.018" width="13.86" height="11.876" data-seat-location='seat_H14' />
+    
+                <rect x="100.062" y="373.498" width="13.86" height="11.876" data-seat-location='seat_I1' />
+                <rect x="120.989" y="373.498" width="13.86" height="11.876" data-seat-location='seat_I2' />
+                <rect x="143.104" y="373.498" width="13.86" height="11.876" data-seat-location='seat_I3' />
+                <rect x="164.972" y="373.498" width="13.86" height="11.876" data-seat-location='seat_I4' />
+                <rect x="186.14" y="373.498" width="13.86" height="11.876" data-seat-location='seat_I5' />
+                <rect x="207.842" y="373.498" width="13.86" height="11.876" data-seat-location='seat_I6' />
+                <rect x="230.691" y="373.498" width="13.86" height="11.876" data-seat-location='seat_I7' />
+                <rect x="254.494" y="373.498" width="13.86" height="11.876" data-seat-location='seat_I8' />
+                <rect x="278.298" y="373.498" width="13.86" height="11.876" data-seat-location='seat_I9' />
+                <rect x="300" y="373.498" width="13.86" height="11.876" data-seat-location='seat_I10' />
+                <rect x="322.464" y="373.498" width="13.86" height="11.876" data-seat-location='seat_I11' />
+                <rect x="344.254" y="373.498" width="13.86" height="11.876" data-seat-location='seat_I12' />
+                <rect x="365.179" y="373.498" width="13.86" height="11.876" data-seat-location='seat_I13' />
+                <rect x="386.14" y="373.498" width="13.86" height="11.876" data-seat-location='seat_I14' />
+    
+                <rect x="100.062" y="393.261" width="13.86" height="11.876" data-seat-location='seat_J1' />
+                <rect x="120.989" y="393.261" width="13.86" height="11.876" data-seat-location='seat_J2' />
+                <rect x="143.104" y="393.261" width="13.86" height="11.876" data-seat-location='seat_J3' />
+                <rect x="164.972" y="393.261" width="13.86" height="11.876" data-seat-location='seat_J4' />
+                <rect x="186.14" y="393.261" width="13.86" height="11.876" data-seat-location='seat_J5' />
+                <rect x="207.842" y="393.261" width="13.86" height="11.876" data-seat-location='seat_J6' />
+                <rect x="230.691" y="393.261" width="13.86" height="11.876" data-seat-location='seat_J7' />
+                <rect x="254.494" y="393.261" width="13.86" height="11.876" data-seat-location='seat_J8' />
+                <rect x="278.298" y="393.261" width="13.86" height="11.876" data-seat-location='seat_J9' />
+                <rect x="300" y="393.261" width="13.86" height="11.876" data-seat-location='seat_J10' />
+                <rect x="322.464" y="393.261" width="13.86" height="11.876" data-seat-location='seat_J11' />
+                <rect x="344.254" y="393.261" width="13.86" height="11.876" data-seat-location='seat_J12' />
+                <rect x="365.179" y="393.261" width="13.86" height="11.876" data-seat-location='seat_J13' />
+                <rect x="386.14" y="393.261" width="13.86" height="11.876" data-seat-location='seat_J14' />
+    
+                <rect x="100.062" y="414.067" width="13.86" height="11.876" data-seat-location='seat_K1' />
+                <rect x="120.989" y="414.067" width="13.86" height="11.876" data-seat-location='seat_K2' />
+                <rect x="143.104" y="414.067" width="13.86" height="11.876" data-seat-location='seat_K3' />
+                <rect x="164.972" y="414.067" width="13.86" height="11.876" data-seat-location='seat_K4' />
+                <rect x="186.14" y="414.067" width="13.86" height="11.876" data-seat-location='seat_K5' />
+                <rect x="207.842" y="414.067" width="13.86" height="11.876" data-seat-location='seat_K6' />
+                <rect x="230.691" y="414.067" width="13.86" height="11.876" data-seat-location='seat_K7' />
+                <rect x="254.494" y="414.067" width="13.86" height="11.876" data-seat-location='seat_K8' />
+                <rect x="278.298" y="414.067" width="13.86" height="11.876" data-seat-location='seat_K9' />
+                <rect x="300" y="414.067" width="13.86" height="11.876" data-seat-location='seat_K10' />
+                <rect x="322.464" y="414.067" width="13.86" height="11.876" data-seat-location='seat_K11' />
+                <rect x="344.254" y="414.067" width="13.86" height="11.876" data-seat-location='seat_K12' />
+                <rect x="365.179" y="414.067" width="13.86" height="11.876" data-seat-location='seat_K13' />
+                <rect x="386.14" y="414.067" width="13.86" height="11.876" data-seat-location='seat_K14' />
+    
+                <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
+                    x="83.554" y="188.816">A</text>
+                <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 15.2px;"
+                    x="82.26" y="271.281"> </text>
+                <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 15.2px;"
+                    x="86.353" y="298.305"> </text>
+                <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 15.2px;"
+                    x="66.467" y="273.259"> </text>
+                <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
+                    x="83.906" y="206.22">B</text>
+                <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
+                    x="84.407" y="239.675">C</text>
+                <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
+                    x="85.353" y="278.326">E</text>
+                <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
+                    x="85.353" y="259.851">D</text>
+                <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 15.2px;"
+                    x="93.073" y="292.787"> </text>
+                <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
+                    x="103.062" y="317.016">1</text>
+                <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 15.2px;"
+                    x="154.162" y="320.705"> </text>
+                <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
+                    x="123.989" y="317.016">2</text>
+                <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
+                    x="146.104" y="317.016">3</text>
+                <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
+                    x="167.178" y="316.724">4</text>
+                <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
+                    x="189.14" y="316.724">5</text>
+                <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
+                    x="210.842" y="316.724">6</text>
+                <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
+                    x="235.402" y="327.755">7</text>
+                <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
+                    x="258.494" y="327.755">8</text>
+                <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
+                    x="282.484" y="316.724">9</text>
+                <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
+                    x="300.511" y="316.724">10</text>
+                <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
+                    x="323.464" y="316.724">11</text>
+                <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
+                    x="343.75" y="316.724">12</text>
+                <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
+                    x="365.69" y="316.724">13</text>
+                <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
+                    x="387.14" y="316.016">14</text>
+                <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
+                    x="85.353" y="298.946">F</text>
+                <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
+                    x="84.407" y="346.06">G</text>
+                <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
+                    x="86.683" y="404.166">J</text>
+                <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
+                    x="88.242" y="382.808">I</text>
+                <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
+                    x="85.353" y="363.923">H</text>
+                <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
+                    x="85.683" y="424.846">K</text>
+                <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 15.9px;"
+                    x="56.036" y="402.488"> </text>
+                <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
+                    x="406.518" y="188.816">A</text>
+                <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
+                    x="406.87" y="206.22">B</text>
+                <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
+                    x="407.371" y="239.675">C</text>
+                <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
+                    x="408.317" y="278.326">E</text>
+                <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
+                    x="408.317" y="259.851">D</text>
+                <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
+                    x="408.317" y="298.946">F</text>
+                <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
+                    x="407.371" y="346.06">G</text>
+                <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
+                    x="409.647" y="404.166">J</text>
+                <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
+                    x="411.206" y="382.808">I</text>
+                <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
+                    x="408.317" y="363.923">H</text>
+                <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
+                    x="408.647" y="424.846">K</text>
+                <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
+                    x="103.062" y="442.179">1</text>
+                <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
+                    x="123.989" y="442.179">2</text>
+                <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
+                    x="146.104" y="442.179">3</text>
+                <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
+                    x="167.178" y="441.887">4</text>
+                <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
+                    x="189.14" y="441.887">5</text>
+                <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
+                    x="210.842" y="441.887">6</text>
+                <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
+                    x="235.402" y="442.918">7</text>
+                <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
+                    x="258.494" y="442.918">8</text>
+                <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
+                    x="282.484" y="441.887">9</text>
+                <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
+                    x="300.511" y="441.887">10</text>
+                <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
+                    x="323.464" y="441.887">11</text>
+                <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
+                    x="343.75" y="441.887">12</text>
+                <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
+                    x="365.69" y="441.887">13</text>
+                <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 12px; white-space: pre;"
+                    x="387.14" y="441.179">14</text>
+            </g>
+        </svg>
+    
+        <!-- Selected Seats Box -->
+        <div id="selected-seats-container" class="fixed-bottom py-2 py-sm-4 px-3 px-sm-5">
+            <h3 id="your-selected-seats">Your Selected Seats:</h3>
+            <div id="selected-seats-inner-wrapper" class="d-flex justify-content-between align-items-center">
+                
+                <ul id="seats-selected-list" class="d-sm-flex my-2">
+    
+                    {% for seat in user_booked_seats %}
+                    <li id="{{ seat.seat_location_1 }}" class="d-flex align-items-center me-sm-5">{{ seat.seat_location_1 }}
+                        <button class="btn-seat-location ms-2" type="button"><i
+                            class="far fa-times-circle"></i></button>
+                    </li>
+                    {% if seat.seat_location_2 %}
+                    <li id="{{ seat.seat_location_2 }}" class="d-flex align-items-center me-sm-5">{{ seat.seat_location_2 }}
+                        <button class="btn-seat-location ms-2" type="button"><i
+                            class="far fa-times-circle"></i></button>
+                    </li>
+                    {% endif%}
+                    {% endfor %}
+    
+                </ul>
+                
+                {% if user_booked_seats %}
+                <button id="update-reservation" class="btn btn-primary">Update Reservation</button>
+                {% else %}
+                <button id="submit-reservation" class="btn btn-primary">Reserve</button>
+                {% endif %}
+            </div>
             
-            <ul id="seats_selected_list">
-
-                {% for seat in user_booked_seats %}
-                <li id="{{ seat.seat_location_1 }}">{{ seat.seat_location_1 }}
-                    <button class="btn_seat_location" type="button">remove</button>
+            <form method="POST" id="reserve-seat-form">
+                {% csrf_token %}
+                {{ form }}
+            </form>
+    
+            <ul id="reservation-notice">
+                <li class="d-none d-sm-block text-muted">Each member can only reserve a maximum of 2 seats per event.
                 </li>
-                {% if seat.seat_location_2 %}
-                <li id="{{ seat.seat_location_2 }}">{{ seat.seat_location_2 }}
-                    <button class="btn_seat_location" type="button">remove</button>
-                </li>
-                {% endif%}
-                {% endfor %}
-
+                <li class="d-none d-sm-block text-muted">Seats are reserved only until 15 minutes before the start of
+                    the event.</li>
             </ul>
-            
-            {% if user_booked_seats %}
-            <button id="update_reservation">Update Reservation</button>
-            {% else %}
-            <button id="submit_reservation">Reserve</button>
-            {% endif %}
-
         </div>
-        
-        <form method="POST" id="reserve_seat_form">
-            {% csrf_token %}
-            {{ form }}
-        </form>
-
-        <small>Each member can only reserve a maximum of 2 seats per event via the website.</small>
-        <small>Seats are reserved only until 15 minutes before the start of the event.</small>
     </div>
-</div>
+</section>
 
 <!-- Bootstrap offcanvas for confirmation to delete reservation -->
 <button id="confirm-delete" class="d-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
     aria-controls="offcanvasRight"></button>
 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
     <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas right</h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
@@ -356,7 +362,7 @@
     </div>
 </div>
 
-<p id="data_seats">
+<p id="data-seats">
     {{ data | safe }}
 </p>
 
