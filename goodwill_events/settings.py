@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = False
+DEBUG = True
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
@@ -53,7 +53,7 @@ INSTALLED_APPS = [
     'seating',
 ]
 
-SITE_ID = 1
+SITE_ID = 2
 
 LOGIN_URL = 'sign_in'
 
