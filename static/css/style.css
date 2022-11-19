@@ -171,6 +171,29 @@ footer {
     color: white;
 }
 
+/* --> SIGN UP [Start] <-- */
+
+#signup_form input {
+    display: block;
+    width: 100%;
+    padding: .1rem .5rem;
+    border-radius: 8px;
+    border: 1px solid rgb(186, 181, 181);
+}
+
+/* --> SIGN UP [End] <-- */
+
+/* --> SIGN IN [Start] <-- */
+
+#signin_form input {
+    display: block;
+    width: 100%;
+    padding: .1rem .5rem;
+    border-radius: 8px;
+    border: 1px solid rgb(186, 181, 181);
+}
+
+/* --> SIGN IN [End] <-- */
 
 /* MEDIA QUERIES */
 
