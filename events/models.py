@@ -36,7 +36,7 @@ class Event(models.Model):
 
 class Comment(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    text_comment = models.TextField(max_length=300, blank=False)
+    text_comment = models.TextField(max_length=250, blank=False)
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, blank=False, related_name='event_comments')
     event = models.ForeignKey(
