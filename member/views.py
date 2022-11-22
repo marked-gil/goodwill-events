@@ -11,7 +11,7 @@ from django.contrib.auth.models import User
 class MemberAccount(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     model = User
     fields = ['first_name', 'last_name', 'email']
-    template_name = 'member/member-account_form.html'
+    template_name = 'member/member-account.html'
     slug_field = 'username'
     context_object_name = 'member'
     success_message = "You have successfully updated your account."

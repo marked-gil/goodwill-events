@@ -14,3 +14,43 @@ if (document.getElementById('comment-form')) {
         }
     })
 }
+
+if (document.getElementById('member-account-outer-container')) {
+
+    const first_name = document.getElementById('id_first_name')
+    const last_name = document.getElementById('id_last_name')
+    const email = document.getElementById('id_email')
+
+    const fname_edit_btn = document.getElementById('fname_edit')
+    const lname_edit_btn = document.getElementById('lname_edit')
+    const email_edit_btn = document.getElementById('email_edit')
+
+    // Initially set all input fields as readonly in Member's Account page
+    member_info_fields = document.querySelectorAll('#member_account_form input')
+    for (field of member_info_fields) {
+        field.setAttribute('readonly', true)
+    }
+
+    // Event Listeners for edit buttons
+    fname_edit_btn.addEventListener('click', (e) => {
+        first_name.toggleAttribute('readonly')
+        toggleButtonText(fname_edit_btn)
+    })
+    lname_edit_btn.addEventListener('click', (e) => {
+        last_name.toggleAttribute('readonly')
+        toggleButtonText(lname_edit_btn)
+    })
+    email_edit_btn.addEventListener('click', (e) => {
+        email.toggleAttribute('readonly')
+        toggleButtonText(email_edit_btn)
+    })
+
+    /**
+     * Toggles text content of the Edit button
+     * @param {*} btn - The targeted button
+     */
+    function toggleButtonText(btn) {
+        btn.textContent == 'Edit' ? btn.textContent = 'X' : btn.textContent = 'Edit'
+    }
+
+}

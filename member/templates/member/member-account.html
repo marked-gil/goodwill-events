@@ -2,6 +2,8 @@
 
 {% block content %}
 
+<section id="member-account-outer-container">
+
 <h2 class="text-center">Member Account</h2>
 
 <form id="member_account_form" class="container col-md-6 col-lg-5 col-xl-4" method="POST">
@@ -9,24 +11,31 @@
     <div class="mb-3">
         <label for="member-username" class="form-label">Username</label>
         <input type="text" id="member-username" class="form-control" value="{{ member.username }}" readonly>
-        <div class="form-text">Username cannot be changed.</div>
+        <div class="form-text ms-2">Username cannot be changed.</div>
     </div>
     <div class="mb-3">
         <label for="id_first_name" class="form-label">First Name</label>
-        {{ form.first_name }}
-        <button type="button" class="btn btn-outline-warning">Edit</button>
+        <div class="d-flex justify-content-between">
+            {{ form.first_name }}
+            <button type="button" id="fname_edit" class="btn btn-outline-warning py-0">Edit</button>
+        </div>
     </div>
     <div class="mb-3">
         <label for="id_last_name" class="form-label">Last Name</label>
-        {{ form.last_name }}
-        <button type="button" class="btn btn-outline-warning">Edit</button>
+        <div class="d-flex justify-content-between">
+            {{ form.last_name }}
+            <button type="button" id="lname_edit" class="btn btn-outline-warning py-0">Edit</button>
+        </div>
     </div>
     <div class="mb-3">
         <label for="id_email" class="form-label">Email address</label>
-        {{ form.email }}
-        <button type="button" class="btn btn-outline-warning">Edit</button>
+        <div class="d-flex justify-content-between">
+            {{ form.email }}
+            <button type="button" id="email_edit" class="btn btn-outline-warning py-0">Edit</button>
+        </div>
     </div>
     <button type="submit" class="btn btn-primary">Update</button>
   </form>
 
+</section>
 {% endblock content %}

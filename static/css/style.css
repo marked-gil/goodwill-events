@@ -198,9 +198,13 @@ footer {
 
 
 /* --> MEMBER ACCOUNT Page [Start] <-- */
-#member_account_form input {
+#member_account_form label {
     display: block;
-    width: 100%;
+}
+
+#member_account_form input {
+    /* display: inline; */
+    width: 80%;
     padding: .1rem .5rem;
     border-radius: 8px;
     border: 1px solid rgb(186, 181, 181);
