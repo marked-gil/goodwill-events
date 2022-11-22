@@ -52,7 +52,7 @@
                             <a class="nav-link" href="{% url 'account_logout' %}">Sign Out</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">My Account</a>
+                            <a class="nav-link" href="{% url 'member_account' user.username %}">My Account</a>
                         </li>
                         {% else %}
                         <li class="nav-item">

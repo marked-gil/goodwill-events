@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = False
+DEBUG = True
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
@@ -51,7 +51,7 @@ INSTALLED_APPS = [
     'cloudinary',
     'django_summernote',
     'events',
-    'members',
+    'member',
     'seating',
 ]
 
@@ -60,7 +60,7 @@ SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
-ACCOUNT_FORMS = {'signup': 'members.forms.EventsSignUpForm'}
+ACCOUNT_FORMS = {'signup': 'member.forms.EventsSignUpForm'}
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 ACCOUNT_EMAIL_REQUIRED = True
 

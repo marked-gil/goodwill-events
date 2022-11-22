@@ -183,6 +183,7 @@ footer {
 
 /* --> SIGN UP [End] <-- */
 
+
 /* --> SIGN IN [Start] <-- */
 
 #signin_form input {
@@ -194,6 +195,19 @@ footer {
 }
 
 /* --> SIGN IN [End] <-- */
+
+
+/* --> MEMBER ACCOUNT Page [Start] <-- */
+#member_account_form input {
+    display: block;
+    width: 100%;
+    padding: .1rem .5rem;
+    border-radius: 8px;
+    border: 1px solid rgb(186, 181, 181);
+}
+
+/* --> MEMBER ACCOUNT Page [End] <-- */
+
 
 /* MEDIA QUERIES */
 
