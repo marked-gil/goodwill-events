@@ -68,8 +68,6 @@ class EventSeatsView(LoginRequiredMixin, View):
 
             try:
                 filled_form.save()
-                send_mail('Goodwill Events', 'It is working', settings.DEFAULT_FROM_EMAIL, ['mrkgdctn@icloud.com'], fail_silently=False)
-
                 messages.success(
                     request, f"New seats are reserved for {event}.")
             except Exception:
