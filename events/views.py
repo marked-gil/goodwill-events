@@ -12,7 +12,7 @@ class FeaturedView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['featured_events'] = Event.objects.all().reverse()[:3]
+        context['featured_events'] = Event.objects.filter(status=1).reverse()[:3]
         return context
 
 
@@ -31,7 +31,7 @@ class EventDetails(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        event_post = Event.objects.get(slug=self.kwargs.get('slug'))
+        event_post = Event.objects.filter(status=1).get(slug=self.kwargs.get('slug'))
         likers = event_post.likes.all()
 
         # checks if the user has already liked a post
