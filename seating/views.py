@@ -6,6 +6,8 @@ from django.views import View
 from events.models import Event
 from .models import EventSeating
 from .forms import SeatReserveForm
+from django.conf import settings
+from django.core.mail import send_mail
 
 
 class EventSeatsView(LoginRequiredMixin, View):
@@ -64,6 +66,13 @@ class EventSeatsView(LoginRequiredMixin, View):
             filled_form = reservation_form.save(commit=False)
             filled_form.event = event
             filled_form.reserved_by = user
+
+            subject = 'Successfully saved!'
+            message = f'Hi, thank you for registering.'
+            email_from = settings.EMAIL_HOST_USER
+            recipient_list = ['markgil_creates@yahoo.com', ]
+            send_mail(subject, message, email_from, recipient_list)
+
             try:
                 filled_form.save()
                 messages.success(
