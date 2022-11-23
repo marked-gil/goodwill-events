@@ -6,8 +6,8 @@ from django.views import View
 from events.models import Event
 from .models import EventSeating
 from .forms import SeatReserveForm
-from django.conf import settings
 from django.core.mail import send_mail
+from django.conf import settings
 
 
 class EventSeatsView(LoginRequiredMixin, View):
@@ -34,11 +34,10 @@ class EventSeatsView(LoginRequiredMixin, View):
                 )
             elif user_booked_seats.exists():
                 raise Exception(
-                    "You may update your reserved seats."
+                    "Reservations can be updated.a"
                 )
 
         except Exception as info:
-            messages.info(request, info)
             if user_booked_seats.exists():
                 return redirect(
                     f'/{self.kwargs.get("slug")}/update-reservation/'
@@ -67,14 +66,10 @@ class EventSeatsView(LoginRequiredMixin, View):
             filled_form.event = event
             filled_form.reserved_by = user
 
-            subject = 'Successfully saved!'
-            message = f'Hi, thank you for registering.'
-            email_from = settings.EMAIL_HOST_USER
-            recipient_list = ['markgil_creates@yahoo.com', ]
-            send_mail(subject, message, email_from, recipient_list)
-
             try:
                 filled_form.save()
+                send_mail('Goodwill Events', 'It is working', settings.DEFAULT_FROM_EMAIL, ['mrkgdctn@icloud.com'], fail_silently=False)
+
                 messages.success(
                     request, f"New seats are reserved for {event}.")
             except Exception:
