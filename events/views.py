@@ -11,6 +11,26 @@ from .forms import CommentForm
 class FeaturedView(TemplateView):
     template_name = 'index.html'
 
+    @staticmethod
+    def _recycle_expired_event(event, date_of_event):
+        """
+        Modifies event's date to next year of same month and day
+        and updates the database
+        """
+        event.event_date = date_of_event.replace(
+            date_of_event.year + 1)
+        event.save()
+
+    @staticmethod
+    def _delete_booked_seats(event):
+        """
+        Deletes all seats reserved for the event from
+        the database
+        """
+        event_seats_queryset = EventSeating.objects.filter(event=event)
+        for qset in event_seats_queryset:
+            qset.delete()
+
     def get_context_data(self, **kwargs):
 
         # Automatcally recycles the expired event to next year
@@ -20,14 +40,12 @@ class FeaturedView(TemplateView):
             event_expiration = time(hour=22, minute=0)
 
             if date_of_event < date.today():
-                event.event_date = date_of_event.replace(
-                    date_of_event.year + 1)
-                event.save()
+                self._recycle_expired_event(event, date_of_event)
+                self._delete_booked_seats(event)
             elif date_of_event == date.today():
                 if datetime.now().time() >= event_expiration:
-                    event.event_date = date_of_event.replace(
-                        date_of_event.year + 1)
-                    event.save()
+                    self._recycle_expired_event(event, date_of_event)
+                    self._delete_booked_seats(event)
 
         # Retrieves the featured events
         context = super().get_context_data(**kwargs)
@@ -98,7 +116,6 @@ class CommentView(LoginRequiredMixin, View):
     def post(self, request, slug):
         event = get_object_or_404(Event, slug=slug)
         comment_form = CommentForm(request.POST)
-        print(comment_form)
 
         if comment_form.is_valid():
             comment_form.instance.author = request.user
