@@ -2,6 +2,7 @@ from django.shortcuts import get_object_or_404, redirect
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse
 from django.views.generic import ListView, DetailView, TemplateView, View
+from datetime import datetime, date, time
 from .models import Event, Comment
 from seating.models import EventSeating
 from .forms import CommentForm
@@ -11,8 +12,27 @@ class FeaturedView(TemplateView):
     template_name = 'index.html'
 
     def get_context_data(self, **kwargs):
+
+        # Automatcally recycles the expired event to next year
+        all_events = Event.objects.all()
+        for event in all_events:
+            date_of_event = event.event_date
+            event_expiration = time(hour=22, minute=0)
+
+            if date_of_event < date.today():
+                event.event_date = date_of_event.replace(
+                    date_of_event.year + 1)
+                event.save()
+            elif date_of_event == date.today():
+                if datetime.now().time() >= event_expiration:
+                    event.event_date = date_of_event.replace(
+                        date_of_event.year + 1)
+                    event.save()
+
+        # Retrieves the featured events
         context = super().get_context_data(**kwargs)
         context['featured_events'] = Event.objects.filter(status=1).reverse()[:3]
+
         return context
 
 
