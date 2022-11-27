@@ -446,6 +446,12 @@ Iteration 4:
 
 #### **Design Choice**
 
+### STRUCTURE
+
+### SKELETON
+
+### SURFACE
+
 ## Features
 
 ## Fixed Bugs
@@ -457,7 +463,28 @@ Iteration 4:
 ## Deployment
 
 ## Technologies
+This project uses the following tools:
+* Frontend Programming Languages:
+    * HTML, CSS, Javascript 
+* Backend Programming Language:
+    * Python
+* [Django](https://www.djangoproject.com) - web framework used in developing this project
+* [Heroku](https://www.heroku.com) - the cloud platform used for deployment of the website
+* [Cloudinary](https://cloudinary.com/) - where the assets of this project, including photos are stored
+* [ElephantSQL](https://www.elephantsql.com/) - serves as the PostgreSQL database for this project
+* [Bootstrap](https://getbootstrap.com/) - frontend toolkit used to build this responsive site
+* [Sendgrid](https://sendgrid.com/) - used in sending emails to users without having to maintain email servers. In this project, it sends password reset link via email to users who has forgotten their password
+* [django-allauth](https://django-allauth.readthedocs.io/en/latest/installation.html) - used for user authentication and registration.
+* [Miniwebtool](https://miniwebtool.com/django-secret-key-generator/) - as Django secret_key generator
+* Git - as a version control system, was used to monitor and record changes made when building the site. This allowed for the restoration of an earlier version of the code when it was necessary
+* Gitpod - the cloud-based IDE (Integrated Developer Environment) used to code this site
+* GitHub - stores the source code repository for this website
+* [Diffchecker](https://www.diffchecker.com/#) - used when comparing codes tested in another IDE to the codes in gitpod
+* [Grammarly](https://www.grammarly.com/) - used to check the grammar of the contents in this project
 
 ## Credits
+* [Code Institute](https://codeinstitute.net/ie/)
+* [W3Schools](https://www.w3schools.com/)
+* [MDN Web Docs](https://developer.mozilla.org/en-US/)
 
 ## Acknowledgment
