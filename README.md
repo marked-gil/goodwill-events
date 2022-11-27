@@ -504,13 +504,23 @@ This project uses the following tools:
     * HTML, CSS, Javascript 
 * Backend Programming Language:
     * Python
-* [Django](https://www.djangoproject.com) - web framework used in developing this project
-* [Heroku](https://www.heroku.com) - the cloud platform used for deployment of the website
-* [Cloudinary](https://cloudinary.com/) - where the assets of this project, including photos are stored
-* [ElephantSQL](https://www.elephantsql.com/) - serves as the PostgreSQL database for this project
+* Web Framework:
+    * [Django](https://www.djangoproject.com) - web framework used in developing this project
+* Deployment Platform:
+    * [Heroku](https://www.heroku.com) - the cloud platform used for deployment of the website
+* Media and Asset Storage:
+    * [Cloudinary](https://cloudinary.com/) - where the assets of this project, including photos are stored
+* Database:
+    * [ElephantSQL](https://www.elephantsql.com/) - serves as the PostgreSQL database for this project
+* Modules and Libraries:
+    * [SVG-PAN-ZOOM library](https://github.com/bumbu/svg-pan-zoom) - used to add the pan and zoom functionality to the SVG seat map.
+    * os
+    * [datetime module](https://docs.python.org/3/library/datetime.html)
+    * django-database-url
+    * [django-allauth](https://django-allauth.readthedocs.io/en/latest/installation.html) - used for user authentication and registration.
+    * [django-summernote](https://github.com/summernote/django-summernote) - used to embed a WYSIWYG editor in the admin panel for the event post.
 * [Bootstrap](https://getbootstrap.com/) - frontend toolkit used to build this responsive site
 * [Sendgrid](https://sendgrid.com/) - used in sending emails to users without having to maintain email servers. In this project, it sends password reset link via email to users who has forgotten their password
-* [django-allauth](https://django-allauth.readthedocs.io/en/latest/installation.html) - used for user authentication and registration.
 * [Miniwebtool](https://miniwebtool.com/django-secret-key-generator/) - as Django secret_key generator
 * Git - as a version control system, was used to monitor and record changes made when building the site. This allowed for the restoration of an earlier version of the code when it was necessary
 * Gitpod - the cloud-based IDE (Integrated Developer Environment) used to code this site
@@ -519,8 +529,12 @@ This project uses the following tools:
 * [Grammarly](https://www.grammarly.com/) - used to check the grammar of the contents in this project
 
 ## Credits
-* [Code Institute](https://codeinstitute.net/ie/)
-* [W3Schools](https://www.w3schools.com/)
-* [MDN Web Docs](https://developer.mozilla.org/en-US/)
+* Main References:
+    * [Code Institute](https://codeinstitute.net/ie/)
+    * [Django Documentation](https://docs.djangoproject.com/en/3.2/)
+    * [W3Schools](https://www.w3schools.com/)
+    * [MDN Web Docs](https://developer.mozilla.org/en-US/)
+
+* Redirecting to the same page after post method - [StockOverflow](https://stackoverflow.com/questions/39560175/redirect-to-same-page-after-post-method-using-class-based-views)
 
 ## Acknowledgment
