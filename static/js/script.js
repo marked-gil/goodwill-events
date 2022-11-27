@@ -54,3 +54,42 @@ if (document.getElementById('member-account-outer-container')) {
     }
 
 }
+
+
+// --> Highlights the nav link when corresponding page is opened <--
+
+const homePage = document.getElementById('homepage-banner-container')
+const eventsPage = document.getElementById('events-outer-container')
+const signInPage = document.getElementById('sign-in-section')
+const signUpPage = document.getElementById('sign-up-section')
+const signOutPage = document.getElementById('sign-out-section')
+const AccountPage = document.getElementById('member-account-outer-container')
+
+showActiveNavLink(homePage, 'home-link')
+showActiveNavLink(eventsPage, 'events-link')
+showActiveNavLink(signInPage, 'sign-in-link')
+showActiveNavLink(signUpPage, 'sign-up-link')
+showActiveNavLink(signOutPage, 'sign-out-link')
+showActiveNavLink(AccountPage, 'user-acount-link')
+
+// --> Highlights the nav link when corresponding page is opened <--
+
+
+
+
+
+
+
+
+/**
+ * Highlights the nav link when page opened
+ * @param {*} pageDOM - element specific to a page
+ * @param {*} navID - ID of the nav link
+ */
+function showActiveNavLink(pageDOM, navID) {
+    if (pageDOM) {
+        const navLink = document.getElementById(navID)
+        navLink.classList.add('active', 'disabled-link')
+        navLink.setAttribute('aria-current', 'page')
+    }
+}

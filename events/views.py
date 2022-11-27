@@ -59,7 +59,7 @@ class EventsList(ListView):
     context_object_name = 'events_list'
     queryset = Event.objects.filter(status=1).order_by('event_date')
     template_name = 'events.html'
-    paginate_by = 2
+    paginate_by = 5
 
 
 class EventDetails(DetailView):

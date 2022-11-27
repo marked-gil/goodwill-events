@@ -39,27 +39,27 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{% url 'featured_events' %}">Home</a>
+                            <a class="nav-link" id="home-link" href="{% url 'featured_events' %}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'events_list' %}">Events</a>
+                            <a class="nav-link" id="events-link" href="{% url 'events_list' %}">Events</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">About Us</a>
                         </li>
                         {% if user.is_authenticated %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'account_logout' %}">Sign Out</a>
+                            <a class="nav-link" id="sign-out-link" href="{% url 'account_logout' %}">Sign Out</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'member_account' user.username %}">My Account</a>
+                            <a class="nav-link" id="user-acount-link" href="{% url 'member_account' user.username %}">My Account</a>
                         </li>
                         {% else %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'account_login' %}">Sign In</a>
+                            <a class="nav-link" id="sign-in-link" href="{% url 'account_login' %}">Sign In</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
+                            <a class="nav-link" id="sign-up-link" href="{% url 'account_signup' %}">Register</a>
                         </li>
                         {% endif %}
                     </ul>

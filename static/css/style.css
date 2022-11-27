@@ -19,6 +19,16 @@ main {
     flex: 1 0 auto;
 }
 
+/* Utility classes */
+.active {
+    font-weight: 700;
+}
+
+.disabled-link {
+    pointer-events: none;
+}
+
+
 a,
 a:hover {
     text-decoration: none;
