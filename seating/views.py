@@ -43,7 +43,7 @@ class EventSeatsView(LoginRequiredMixin, View):
                     f'/{self.kwargs.get("slug")}/update-reservation/'
                     )
             else:
-                return render(request, 'reserve-seats.html', {
+                return render(request, 'seating/reserve-seats.html', {
                     'event': event, 'form': reservation_form})
 
         else:
@@ -53,7 +53,7 @@ class EventSeatsView(LoginRequiredMixin, View):
                 if item.seat_location_2:
                     list_seats.append(str(item.seat_location_2))
 
-            return render(request, 'reserve-seats.html', {
+            return render(request, 'seating/reserve-seats.html', {
                 'data': list_seats, 'event': event, 'form': reservation_form
                 })
 
@@ -95,7 +95,7 @@ class UpdateSeatsReservation(LoginRequiredMixin, View):
             if item.seat_location_2:
                 list_seats.append(str(item.seat_location_2))
 
-        return render(request, 'reserve-seats.html', {
+        return render(request, 'seating/reserve-seats.html', {
             'data': list_seats, 'event': event, 'form': reservation_form,
             'user_booked_seats': user_booked_seats})
 

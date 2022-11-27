@@ -58,14 +58,14 @@ class EventsList(ListView):
     model = Event
     context_object_name = 'events_list'
     queryset = Event.objects.filter(status=1).order_by('event_date')
-    template_name = 'events.html'
+    template_name = 'events/events.html'
     paginate_by = 5
 
 
 class EventDetails(DetailView):
     model = Event
     context_object_name = 'event'
-    template_name = 'event_details.html'
+    template_name = 'events/event_details.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
