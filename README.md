@@ -521,10 +521,12 @@ This project uses the following tools:
     * [django-summernote](https://github.com/summernote/django-summernote) - used to embed a WYSIWYG editor in the admin panel for the event post.
 * [Bootstrap](https://getbootstrap.com/) - frontend toolkit used to build this responsive site
 * [Sendgrid](https://sendgrid.com/) - used in sending emails to users without having to maintain email servers. In this project, it sends password reset link via email to users who has forgotten their password
+* Google Fonts
 * [Miniwebtool](https://miniwebtool.com/django-secret-key-generator/) - as Django secret_key generator
 * Git - as a version control system, was used to monitor and record changes made when building the site. This allowed for the restoration of an earlier version of the code when it was necessary
 * Gitpod - the cloud-based IDE (Integrated Developer Environment) used to code this site
 * GitHub - stores the source code repository for this website
+* Balsalmiq
 * [Diffchecker](https://www.diffchecker.com/#) - used when comparing codes tested in another IDE to the codes in gitpod
 * [Grammarly](https://www.grammarly.com/) - used to check the grammar of the contents in this project
 
