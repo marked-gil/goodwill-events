@@ -462,6 +462,28 @@ Iteration 4:
 
 ## Deployment
 
+### Version Control
+
+**Git** was a crucial tool used to track changes that were made in the repository. The following git commands were mainly used in developing this program:
+
+* `git status` — to show the status of the repository by displaying the files that have been staged and are ready for commit, those that are not, and those that are untracked. 
+* `git add <file name>` — to add file or changes in the file to the staging area before they can be committed
+* `git commit -m "message"` — to add/record files or changes to the local repository
+* `git push` — to upload the local repository to the remote repository, such as GitHub
+
+### Heroku Deployment
+
+### Cloning from GitHub
+
+To clone the repository for this site, do the following steps:
+
+1. Go to this URL: https://github.com/marked-gil/goodwill-events
+2. Inside the repository, look for the button labelled as 'Code', which is along the rows with other buttons such as 'Go to file' and 'Add file'.
+3. Click on the 'Code' button, and a small popup box will show up with a top heading of 'Clone'.
+4. In the popup box, click on the 'HTTPS' link and copy the URL just below it.
+5. Then, go to your computer's terminal and type git clone https://github.com/marked-gil/goodwill-events
+6. A copy of the repository is now saved on your computer.
+
 ## Technologies
 This project uses the following tools:
 * Frontend Programming Languages:
