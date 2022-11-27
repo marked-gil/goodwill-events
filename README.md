@@ -434,7 +434,7 @@ Iteration 4:
         * Display a flash message to the user that a confirmation has been sent to his email
 
 * User Story: **Modify User Model** [NOT IMPLEMENTED]
-    > As a developer, I can add other fields in the User model in addition to those that are built-in so that customize the sign-up and sign-in feature of the site.
+    > As a developer, I can add other fields in the User model in addition to those that are built-in so I can customize the sign-up and sign-in feature of the site.
 
     * ACCEPTANCE CRITERIA:
         * The User modal is modified to include the telephone_number field, etc.
@@ -472,6 +472,20 @@ Iteration 4:
 * `git push` — to upload the local repository to the remote repository, such as GitHub
 
 ### Heroku Deployment
+
+This website is published on Heroku. The following were the steps I took for this project's deployment.
+
+1. I logged in to my Heroku account.
+2. Then, I was redirected to this URL https://dashboard.heroku.com/apps. Inside, I clicked the 'New' button which was a dropdown menu. Between the two (2) options it showed, I clicked on 'Create new app'.
+3. Then, on the 'Create New App' page, I typed in my 'app name' and 'region' on their respected input fields. Then I clicked the 'create app' button that is sitting at the bottom of the aforementioned fields. This then redirected me to my new app's page in Heroku.
+4. On my new app's page, there is a row of links, which includes: Overview, Resources, Deploy, Metrics, Activity, Access, and Settings. I first went to 'Settings' by clicking its link. 
+5. Inside the 'Settings', I clicked on 'Reveal Config Vars' and added the variables and corresponding values that are also found in my env.py file, then clicked on the 'add' button beside them.
+6. Then, on the 'Buildpacks' section, I clicked the 'Add buildpack' button and added heroku/python.
+7. Then, I went to the 'Deploy' link and clicked on Github as the Deployment Method.
+8. Below the Deployment Method section is the Connect to Github section. Here I searched for the name of my new app on Github using the search input field provided. When the name of the repository was displayed, I clicked on the 'connect' button.
+9. After a few minutes, it revealed a button to view the deployed website.
+
+<!-- Add deployed website link here -->
 
 ### Cloning from GitHub
 
