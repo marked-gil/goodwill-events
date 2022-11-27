@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block content %}
 <section id="event-details-outer-container" class="container py-4">
     <p class="text-center mt-md-4 mt-xl-5">The Goodwill Events presents</p>
@@ -7,7 +9,7 @@
     <p id="event-blurb" class="text-center mb-md-4">{{ event.blurb }}</p>
     <div id="img-wrapper" class="event-details-div">
         {% if 'proxy_image' in event.featured_image.url %}
-        <img src="https://cdn.seeklearning.com.au/media/images/career-guide/article/career-advice/web_images/blogs/214/6084/How-music-and-sound-can-help-alleviate-career-anxiety_940x485.jpg"
+        <img src="{% static 'images/default-image.jpg' %}"
             class="event-details-img img-fluid rounded" alt="featured image">
         {% else %}
         <img src="{{ event.featured_image.url }}" class="event-details-img img-fluid rounded" alt="featured image">
