@@ -34,7 +34,7 @@ class EventSeatsView(LoginRequiredMixin, View):
                 )
             elif user_booked_seats.exists():
                 raise Exception(
-                    "Reservations can be updated.a"
+                    "Reservations can be updated."
                 )
 
         except Exception as info:
@@ -146,6 +146,6 @@ class DeleteSeatsReservation(LoginRequiredMixin, DeleteView):
             reserved_by=request.user).first()
         self.object.delete()
         messages.success(request,
-                         'Your reservation for this event is deleted successfully.'
+                         'Your reservation for this event is successfully DELETED.'
                          )
         return redirect(f'/{self.kwargs.get("slug")}/reserve-seat/')
