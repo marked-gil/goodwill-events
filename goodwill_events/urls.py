@@ -25,4 +25,8 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('member/', include('member.urls'), name='member_url'),
     path('<slug:slug>/', include('seating.urls'), name='seating_url'),
+    path('', include('member.urls'), name='404_page'),
 ]
+
+# flag for handling the 404 error
+handler404 = 'member.views.error_404_view'

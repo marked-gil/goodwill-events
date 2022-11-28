@@ -1,4 +1,4 @@
-from django.shortcuts import redirect
+from django.shortcuts import redirect, render
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse
@@ -18,3 +18,10 @@ class MemberAccount(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
 
     def get_success_url(self):
         return reverse('member_account', kwargs={'slug': self.kwargs['slug']})
+
+
+def error_404_view(request, exception):
+    """
+    Renders the 404 template when 404 error is raised
+    """
+    return render(request, '404.html')
