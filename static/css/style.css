@@ -40,6 +40,9 @@ main {
     pointer-events: none;
 }
 
+.page-background {
+    background-image: linear-gradient(to right bottom, var(--clr-linen), var(--clr-crayola-gold));
+}
 
 a,
 a:hover {
@@ -60,7 +63,7 @@ textarea {
 
 /* navbar */
 
-nav {
+#navbar-main {
     background-color: var(--clr-mikado-yellow);
 }
 
@@ -130,10 +133,6 @@ nav {
 
 
 /* --> ALL EVENTS PAGE [Start] <-- */
-#events-outer-container {
-    background-color: var(--clr-linen);
-}
-
 #upcoming-events {
     font-size: 1.4rem;
     font-weight: 700;

@@ -1,5 +1,5 @@
+// --> // Comment Characters Counter <--
 if (document.getElementById('comment-form')) {
-    // Comment Characters Counter
     MAX_COMMENT_CHARS = 250
     const comment_textarea = document.getElementById('comment-textarea')
     const char_counter_field = document.getElementById('char-counter')
@@ -14,13 +14,12 @@ if (document.getElementById('comment-form')) {
         }
     })
 }
+// --> // Comment Characters Counter <--
 
 if (document.getElementById('member-account-outer-container')) {
-
     const first_name = document.getElementById('id_first_name')
     const last_name = document.getElementById('id_last_name')
     const email = document.getElementById('id_email')
-
     const fname_edit_btn = document.getElementById('fname_edit')
     const lname_edit_btn = document.getElementById('lname_edit')
     const email_edit_btn = document.getElementById('email_edit')
@@ -57,7 +56,6 @@ if (document.getElementById('member-account-outer-container')) {
 
 
 // --> Highlights the nav link when corresponding page is opened <--
-
 const homePage = document.getElementById('homepage-banner-container')
 const eventsPage = document.getElementById('events-outer-container')
 const signInPage = document.getElementById('sign-in-section')
@@ -71,14 +69,22 @@ showActiveNavLink(signInPage, 'sign-in-link')
 showActiveNavLink(signUpPage, 'sign-up-link')
 showActiveNavLink(signOutPage, 'sign-out-link')
 showActiveNavLink(AccountPage, 'user-acount-link')
-
 // --> Highlights the nav link when corresponding page is opened <--
 
 
+// --> Highlights the page nunber in the pagination nav <--
+if (document.getElementById("events-outer-container")) {
+    const pagination = document.getElementById('events-pagination')
+    const pageNumber = pagination.getAttribute('data-page-number')
+    const pageLinks = document.querySelectorAll('.page-link')
 
-
-
-
+    for (page of pageLinks) {
+        if (page.textContent == pageNumber) {
+            page.classList.add('active')
+        }
+    }
+}
+// --> Highlights the page nunber in the pagination nav <--
 
 
 /**
