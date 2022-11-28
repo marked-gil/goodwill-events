@@ -29,6 +29,7 @@ body {
 
 main {
     flex: 1 0 auto;
+    background-image: linear-gradient(to right bottom, var(--clr-linen), var(--clr-dutch-white));
 }
 
 /* Utility classes */
@@ -38,10 +39,6 @@ main {
 
 .disabled-link {
     pointer-events: none;
-}
-
-.page-background {
-    background-image: linear-gradient(to right bottom, var(--clr-linen), var(--clr-crayola-gold));
 }
 
 a,
