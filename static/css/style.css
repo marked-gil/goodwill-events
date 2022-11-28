@@ -6,6 +6,7 @@
     --clr-dutch-white: #F0E2BF;
     --clr-crayola-gold: #e6d098;
     --clr-linen: #F9F3E5;
+    --clr-police-blue: #284b63;
 }
 
 /* DEFAULT STYLING */
@@ -32,15 +33,6 @@ main {
     background-image: linear-gradient(to right bottom, var(--clr-linen), var(--clr-dutch-white));
 }
 
-/* Utility classes */
-.active {
-    font-weight: 700;
-}
-
-.disabled-link {
-    pointer-events: none;
-}
-
 a,
 a:hover {
     text-decoration: none;
@@ -50,6 +42,24 @@ a:hover {
 /* prevents the textarea from resizing */
 textarea {
     resize: none;
+}
+
+/* Utility classes */
+.active {
+    font-weight: 700;
+}
+
+.disabled-link {
+    pointer-events: none;
+}
+
+.disabled-field {
+    border: 1px solid gray;
+    background-color: rgb(162, 162, 162);
+}
+
+.auth-box-background {
+    background-color: var(--clr-police-blue);
 }
 
 /* Logo */
@@ -216,7 +226,6 @@ footer {
 
 
 /* --> SIGN IN [Start] <-- */
-
 #signin_form input {
     display: block;
     width: 100%;
@@ -229,21 +238,20 @@ footer {
 
 
 /* --> MEMBER ACCOUNT Page [Start] <-- */
-#member_account_form {
-    background-color: rgb(221, 206, 185);
-}
-
 #member_account_form label {
-    display: block;
+    color: white;
 }
 
 #member_account_form input {
     width: 80%;
     padding: .1rem .5rem;
     border-radius: 8px;
-    border: 1px solid rgb(186, 181, 181);
 }
 
+#change-password:hover {
+    color: var(--clr-police-blue);
+    font-weight: 700;
+}
 /* --> MEMBER ACCOUNT Page [End] <-- */
 
 

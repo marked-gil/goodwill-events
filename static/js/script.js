@@ -23,24 +23,32 @@ if (document.getElementById('member-account-outer-container')) {
     const fname_edit_btn = document.getElementById('fname_edit')
     const lname_edit_btn = document.getElementById('lname_edit')
     const email_edit_btn = document.getElementById('email_edit')
+    const updateBtn = document.getElementById('update-account-btn')
 
     // Initially set all input fields as readonly in Member's Account page
     member_info_fields = document.querySelectorAll('#member_account_form input')
     for (field of member_info_fields) {
         field.setAttribute('readonly', true)
+        field.setAttribute('class', 'disabled-field')
     }
 
     // Event Listeners for edit buttons
     fname_edit_btn.addEventListener('click', (e) => {
         first_name.toggleAttribute('readonly')
+        first_name.classList.toggle('disabled-field')
+        updateBtn.classList.remove('disabled')
         toggleButtonText(fname_edit_btn)
     })
     lname_edit_btn.addEventListener('click', (e) => {
         last_name.toggleAttribute('readonly')
+        last_name.classList.toggle('disabled-field')
+        updateBtn.classList.remove('disabled')
         toggleButtonText(lname_edit_btn)
     })
     email_edit_btn.addEventListener('click', (e) => {
         email.toggleAttribute('readonly')
+        email.classList.toggle('disabled-field')
+        updateBtn.classList.remove('disabled')
         toggleButtonText(email_edit_btn)
     })
 

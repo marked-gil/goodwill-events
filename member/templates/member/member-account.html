@@ -5,10 +5,10 @@
 <section id="member-account-outer-container" class="container py-4 py-sm-5">
     <h2 class="text-center pb-3 pb-sm-4">Member Account</h2>
 
-    <form id="member_account_form" class="container col-md-8 col-lg-6 col-xl-5 py-3 rounded" method="POST">
+    <form id="member_account_form" class="container col-md-9 col-lg-7 col-xl-6 px-3 px-sm-4 px-xl-5 py-3 py-sm-4 rounded auth-box-background" method="POST">
     {% csrf_token %}
         <div class="mb-3">
-            <label for="member-username mb-0" class="form-label mb-1">Username</label>
+            <label for="member-username mb-0" class="form-label mb-1 d-block">Username</label>
             <input type="text" id="member-username" class="form-control" value="{{ member.username }}" readonly>
             <div class="form-text ms-2">Username cannot be changed.</div>
         </div>
@@ -16,28 +16,28 @@
             <label for="id_first_name" class="form-label mb-1">First Name</label>
             <div class="d-flex justify-content-between">
                 {{ form.first_name }}
-                <button type="button" id="fname_edit" class="btn btn-outline-warning py-0">Edit</button>
+                <button type="button" id="fname_edit" class="btn btn-outline-warning py-0 px-1 px-sm-2">Edit</button>
             </div>
         </div>
         <div class="mb-3">
             <label for="id_last_name" class="form-label mb-1">Last Name</label>
             <div class="d-flex justify-content-between">
                 {{ form.last_name }}
-                <button type="button" id="lname_edit" class="btn btn-outline-warning py-0">Edit</button>
+                <button type="button" id="lname_edit" class="btn btn-outline-warning py-0 px-1 px-sm-2">Edit</button>
             </div>
         </div>
         <div class="mb-3">
             <label for="id_email" class="form-label mb-1">Email address</label>
             <div class="d-flex justify-content-between">
                 {{ form.email }}
-                <button type="button" id="email_edit" class="btn btn-outline-warning py-0">Edit</button>
+                <button type="button" id="email_edit" class="btn btn-outline-warning py-0 px-1 px-sm-2">Edit</button>
             </div>
         </div>
-        <button type="submit" class="btn btn-primary d-block mx-auto py-1 mt-4">Update</button>
+        <button type="submit" class="btn btn-primary d-block mx-auto py-0 mt-4 disabled" id="update-account-btn">Update</button>
     </form>
 
-    <div class="container col-md-8 col-lg-6 col-xl-5 my-5">
-        <a href="{% url 'account_change_password' %}">Change Password</a>
+    <div class="container col-md-9 col-lg-7 col-xl-6 my-3">
+        <a id="change-password" href="{% url 'account_change_password' %}"><i class="fa-solid fa-lock"></i> Change Password</a>
     </div>
 </section>
 {% endblock content %}
