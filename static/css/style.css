@@ -1,3 +1,11 @@
+/* Customized Variables */
+:root {
+    --clr-mikado-yellow: #f9c012;
+    --clr-rich-black: #030328;
+}
+
+/* DEFAULT STYLING */
+
 * {
     font-family: 'Roboto', sans-serif;
     font-style: normal;
@@ -47,6 +55,11 @@ textarea {
 }
 
 /* navbar */
+
+nav {
+    background-color: var(--clr-mikado-yellow);
+}
+
 .nav-item {
     font-size: 1.1rem;
 }
@@ -160,41 +173,27 @@ textarea {
 
 /* --> EVENT DETAILS PAGE [end] */
 
-/* FOOTER */
+
+/* --> FOOTER [Start] <--*/
+
 footer {
-    display: flex;
-    justify-content: space-between;
-    padding: 2rem 5rem;
     width: 100%;
     height: 8rem;
-    background-color: blue;
+    background-color: var(--clr-rich-black);
     color: white;
 }
 
 #social-links {
-    display: flex;
-    flex-direction: column;
-}
-
-#social-links>p {
-    margin-bottom: 0;
-}
-
-#social-icons {
-    display: flex;
-    justify-content: start;
     width: 100%;
-    padding-left: 0;
-}
-
-.social {
-    padding-right: 1.8rem;
 }
 
 .fa-brands {
     font-size: 2rem;
     color: white;
 }
+
+/* --> FOOTER [End] <--*/
+
 
 /* --> SIGN UP [Start] <-- */
 
@@ -223,12 +222,15 @@ footer {
 
 
 /* --> MEMBER ACCOUNT Page [Start] <-- */
+#member_account_form {
+    background-color: rgb(221, 206, 185);
+}
+
 #member_account_form label {
     display: block;
 }
 
 #member_account_form input {
-    /* display: inline; */
     width: 80%;
     padding: .1rem .5rem;
     border-radius: 8px;
@@ -261,8 +263,14 @@ footer {
     }
 }
 
-@media screen and (min-width:400px) and (max-width:767px) {
+@media screen and (min-width: 485px) {
+    /* FOOTER */
+    #social-links {
+        width: 28rem;
+    }
+}
 
+@media screen and (min-width:400px) and (max-width:767px) {
     /* HOME PAGE */
     .feat-event-card-wrapper {
         padding-left: 12%;
@@ -273,13 +281,23 @@ footer {
 
 @media screen and (min-width: 768px) {
     #logo {
-        font-size: 2.5rem;
+        font-size: 2.4rem;
     }
 
     .navbar {
         padding-left: 2.5rem;
         padding-right: 2.5rem;
     }
+
+    /* FOOTER */
+    #copy-right {
+        font-size: 1.2rem;
+    }
+
+    #social-links {
+        width: 24rem;
+    }
+    
 }
 
 @media screen and (min-width: 900px) {
@@ -303,6 +321,15 @@ footer {
     #event-post {
         padding: 1.5rem 0;
     }
+
+    /* FOOTER */
+    #copy-right {
+        font-size: 1.4rem;
+    }
+
+    #social-links {
+        width: 28rem;
+    }
 }
 
 @media screen and (min-width: 1080px) {
@@ -316,5 +343,10 @@ footer {
     .event-details-div {
         width: 58rem;
         margin: auto;
+    }
+
+    /* FOOTER */
+    #social-links {
+        width: 32rem;
     }
 }

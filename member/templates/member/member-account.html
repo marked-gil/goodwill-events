@@ -2,38 +2,38 @@
 
 {% block content %}
 
-<section id="member-account-outer-container">
-    <h2 class="text-center">Member Account</h2>
+<section id="member-account-outer-container" class="container py-4 py-sm-5">
+    <h2 class="text-center pb-3 pb-sm-4">Member Account</h2>
 
-    <form id="member_account_form" class="container col-md-8 col-lg-6 col-xl-5" method="POST">
+    <form id="member_account_form" class="container col-md-8 col-lg-6 col-xl-5 py-3 rounded" method="POST">
     {% csrf_token %}
         <div class="mb-3">
-            <label for="member-username" class="form-label">Username</label>
+            <label for="member-username mb-0" class="form-label mb-1">Username</label>
             <input type="text" id="member-username" class="form-control" value="{{ member.username }}" readonly>
             <div class="form-text ms-2">Username cannot be changed.</div>
         </div>
         <div class="mb-3">
-            <label for="id_first_name" class="form-label">First Name</label>
+            <label for="id_first_name" class="form-label mb-1">First Name</label>
             <div class="d-flex justify-content-between">
                 {{ form.first_name }}
                 <button type="button" id="fname_edit" class="btn btn-outline-warning py-0">Edit</button>
             </div>
         </div>
         <div class="mb-3">
-            <label for="id_last_name" class="form-label">Last Name</label>
+            <label for="id_last_name" class="form-label mb-1">Last Name</label>
             <div class="d-flex justify-content-between">
                 {{ form.last_name }}
                 <button type="button" id="lname_edit" class="btn btn-outline-warning py-0">Edit</button>
             </div>
         </div>
         <div class="mb-3">
-            <label for="id_email" class="form-label">Email address</label>
+            <label for="id_email" class="form-label mb-1">Email address</label>
             <div class="d-flex justify-content-between">
                 {{ form.email }}
                 <button type="button" id="email_edit" class="btn btn-outline-warning py-0">Edit</button>
             </div>
         </div>
-        <button type="submit" class="btn btn-primary">Update</button>
+        <button type="submit" class="btn btn-primary d-block mx-auto py-1 mt-4">Update</button>
     </form>
 
     <div class="container col-md-8 col-lg-6 col-xl-5 my-5">
