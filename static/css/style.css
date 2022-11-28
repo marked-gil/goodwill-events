@@ -4,6 +4,8 @@
     --clr-rich-black: #030328;
     --clr-timber-wolf: #E3D7D7;
     --clr-dutch-white: #F0E2BF;
+    --clr-crayola-gold: #e6d098;
+    --clr-linen: #F9F3E5;
 }
 
 /* DEFAULT STYLING */
@@ -71,7 +73,7 @@ nav {
 #homepage-banner-container {
     height: 18rem;
     background-color: var(--clr-dutch-white);
-    box-shadow: 0 5px 30px 35px #e6d098 inset;
+    box-shadow: 0 5px 30px 35px var(--clr-crayola-gold) inset;
 }
 
 #homepage-title {
@@ -90,7 +92,7 @@ nav {
 
 /* featured events */
 #feature-events-outer-container {
-    background-image: linear-gradient(to bottom, #e6d098, #F9F3E5);
+    background-image: linear-gradient(to bottom, var(--clr-crayola-gold), var(--clr-linen));
     padding: 2rem 1rem;
 }
 
@@ -110,7 +112,7 @@ nav {
 
 /* About Us */
 #about-us-outer-container {
-    background-image: linear-gradient(to bottom, #F9F3E5, #e6d098);
+    background-image: linear-gradient(to bottom, var(--clr-linen), var(--clr-crayola-gold));
     padding: 2rem 1rem;
 }
 
@@ -128,11 +130,13 @@ nav {
 
 
 /* --> ALL EVENTS PAGE [Start] <-- */
+#events-outer-container {
+    background-color: var(--clr-linen);
+}
 
 #upcoming-events {
     font-size: 1.4rem;
     font-weight: 700;
-    margin: 2rem 0;
 }
 
 #event-card-wrapper {
@@ -266,7 +270,6 @@ footer {
 
     #upcoming-events {
         font-size: 1.8rem;
-        margin: 3rem 0;
     }
 }
 
@@ -323,7 +326,6 @@ footer {
     /* ALL EVENTS PAGE */
     #upcoming-events {
         font-size: 2.2rem;
-        margin: 5rem 0;
     }
 
     .event-card-img {
