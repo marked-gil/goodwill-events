@@ -75,7 +75,7 @@ class EventSeatsView(LoginRequiredMixin, View):
                     request, "You already booked 2 seats for this event.")
                 return redirect(request.path_info)
             else:
-                return redirect('/')
+                return redirect(request.path_info)
         return redirect(request.path_info)
 
 
@@ -120,8 +120,13 @@ class UpdateSeatsReservation(LoginRequiredMixin, View):
             empty_seat_1 = formdata_dict['seat_location_1'] == ['']
             empty_seat_2 = formdata_dict['seat_location_2'] == ['']
             if (empty_seat_1 and empty_seat_2):
-                return redirect(f'/{self.kwargs.get("slug")}/delete-reservation/')
+                return redirect(
+                    f'/{self.kwargs.get("slug")}/delete-reservation/'
+                    )
         else:
+            messages.success(request,
+                             'Reservation for this event is successfully UPDATED.'
+                             )
             return redirect(request.path_info)
 
 
