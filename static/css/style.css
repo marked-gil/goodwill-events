@@ -62,6 +62,19 @@ textarea {
     background-color: var(--clr-police-blue);
 }
 
+.muted-text {
+    color: var(--clr-linen);
+    opacity: .8;
+}
+
+.underline-text {
+    text-decoration: underline;
+}
+
+.underline-text:hover {
+    color: var(--clr-mikado-yellow);
+}
+
 /* Logo */
 #logo {
     font-family: 'Lobster', cursive;
@@ -226,6 +239,15 @@ footer {
 
 
 /* --> SIGN IN [Start] <-- */
+#signin_form label,
+#signin_form > a {
+    color: white;
+}
+
+#signin_form > a:hover {
+    color: var(--clr-dutch-white);
+}
+
 #signin_form input {
     display: block;
     width: 100%;
