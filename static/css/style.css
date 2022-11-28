@@ -226,13 +226,18 @@ footer {
 
 
 /* --> SIGN UP [Start] <-- */
+#signup_form label {
+    color: white;
+}
 
 #signup_form input {
     display: block;
+    font-size: .9rem;
     width: 100%;
     padding: .1rem .5rem;
     border-radius: 8px;
     border: 1px solid rgb(186, 181, 181);
+    margin:auto;
 }
 
 /* --> SIGN UP [End] <-- */
@@ -255,7 +260,6 @@ footer {
     border-radius: 8px;
     border: 1px solid rgb(186, 181, 181);
 }
-
 /* --> SIGN IN [End] <-- */
 
 
