@@ -2,6 +2,8 @@
 :root {
     --clr-mikado-yellow: #f9c012;
     --clr-rich-black: #030328;
+    --clr-timber-wolf: #E3D7D7;
+    --clr-dutch-white: #F0E2BF;
 }
 
 /* DEFAULT STYLING */
@@ -67,14 +69,13 @@ nav {
 /* --> HOME PAGE [start] <-- */
 
 #homepage-banner-container {
-    height: 20rem;
-    background-color: bisque;
-    border: 1px solid rgb(2, 23, 14);
+    height: 18rem;
+    background-color: var(--clr-dutch-white);
+    box-shadow: 0 5px 30px 35px #e6d098 inset;
 }
 
 #homepage-title {
     font-weight: 700;
-    margin: 6rem 0 .5rem;
 }
 
 #title-span {
@@ -89,6 +90,7 @@ nav {
 
 /* featured events */
 #feature-events-outer-container {
+    background-image: linear-gradient(to bottom, #e6d098, #F9F3E5);
     padding: 2rem 1rem;
 }
 
@@ -108,6 +110,7 @@ nav {
 
 /* About Us */
 #about-us-outer-container {
+    background-image: linear-gradient(to bottom, #F9F3E5, #e6d098);
     padding: 2rem 1rem;
 }
 
@@ -115,6 +118,10 @@ nav {
     font-size: 1.4rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
+}
+
+#about-us-outer-container p {
+    font-size: 1.1rem;
 }
 
 /* --> HOME PAGE [end] <-- */
@@ -289,6 +296,12 @@ footer {
         padding-right: 2.5rem;
     }
 
+    /* ABOUT US */
+    #about-us-outer-container p {
+        font-size: 1.3rem;
+        width: 45rem;
+    }
+
     /* FOOTER */
     #copy-right {
         font-size: 1.2rem;
@@ -320,6 +333,11 @@ footer {
 
     #event-post {
         padding: 1.5rem 0;
+    }
+
+    /* ABOUT US */
+    #about-us-outer-container p {
+        width: 55rem;
     }
 
     /* FOOTER */
