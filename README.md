@@ -539,4 +539,6 @@ This project uses the following tools:
 
 * Redirecting to the same page after post method - [StockOverflow](https://stackoverflow.com/questions/39560175/redirect-to-same-page-after-post-method-using-class-based-views)
 
+* Creating a 404 Error Page - [GeeksforGeeks](https://www.geeksforgeeks.org/django-creating-a-404-error-page/)
+
 ## Acknowledgment
