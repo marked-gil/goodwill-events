@@ -263,6 +263,14 @@ footer {
 /* --> SIGN IN [End] <-- */
 
 
+/* --> SIGN OUT [Start] <-- */
+#sign-out-notice {
+    color: white;
+}
+
+/* --> SIGN OUT [End] <-- */
+
+
 /* --> MEMBER ACCOUNT Page [Start] <-- */
 #member_account_form label {
     color: white;
@@ -300,6 +308,11 @@ footer {
 
     #upcoming-events {
         font-size: 1.8rem;
+    }
+
+    /* SIGN OUT */
+    #sign-out-notice {
+        font-size: 1.1rem;
     }
 }
 
