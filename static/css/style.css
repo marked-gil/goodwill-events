@@ -45,6 +45,10 @@ textarea {
 }
 
 /* Utility classes */
+.logo-font-style {
+    font-family: 'Lobster', cursive;
+}
+
 .active {
     font-weight: 700;
 }
@@ -77,7 +81,6 @@ textarea {
 
 /* Logo */
 #logo {
-    font-family: 'Lobster', cursive;
     font-size: 1.7rem;
 }
 
@@ -136,17 +139,20 @@ textarea {
 /* About Us */
 #about-us-outer-container {
     background-image: linear-gradient(to bottom, var(--clr-linen), var(--clr-crayola-gold));
-    padding: 2rem 1rem;
 }
 
 #about-us {
     font-size: 1.4rem;
     font-weight: 700;
-    margin-bottom: 1.5rem;
 }
 
 #about-us-outer-container p {
-    font-size: 1.1rem;
+    font-size: 1rem;
+    text-align: justify;
+}
+
+#logo-about-us {
+    font-size: 1.3rem;
 }
 
 /* --> HOME PAGE [end] <-- */
@@ -317,6 +323,10 @@ footer {
 }
 
 @media screen and (min-width: 485px) {
+    #about-us-outer-container p {
+        font-size: 1.1rem;
+    }
+
     /* FOOTER */
     #social-links {
         width: 28rem;
@@ -343,9 +353,12 @@ footer {
     }
 
     /* ABOUT US */
+    #about-us-wrapper {
+        width: 40rem;
+    }
+
     #about-us-outer-container p {
-        font-size: 1.3rem;
-        width: 45rem;
+        font-size: 1.2rem;
     }
 
     /* FOOTER */
@@ -378,11 +391,6 @@ footer {
 
     #event-post {
         padding: 1.5rem 0;
-    }
-
-    /* ABOUT US */
-    #about-us-outer-container p {
-        width: 55rem;
     }
 
     /* FOOTER */

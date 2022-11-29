@@ -10,7 +10,7 @@
 
 <section id="feature-events-outer-container">
     <h2 id="featured-events" class="text-center">Featured Events</h2>
-    <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="row row-cols-1 row-cols-md-3 g-4 mt-sm-4">
         {% for event in featured_events %}
         <div class="col feat-event-card-wrapper">
             <a href="{% url 'event_details' event.slug %}">
@@ -33,14 +33,22 @@
     </div>
 </section>
 
-<section id="about-us-outer-container">
+<section id="about-us-outer-container" class="py-2 px-4 py-md-5 px-sm-5">
     <h2 id="about-us" class="text-center">About Us</h2>
-    <p class="container">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua. Nibh cras pulvinar mattis nunc sed blandit. Leo urna molestie at elementum eu facilisis. Sagittis
-        purus sit amet volutpat consequat mauris nunc congue. Sed enim ut sem viverra aliquet eget. Eu volutpat odio
-        facilisis mauris sit amet. Sit amet venenatis urna cursus eget nunc. Non sodales neque sodales ut. Ligula
-        ullamcorper malesuada proin libero nunc consequat interdum varius sit. Vitae justo eget magna fermentum. Id diam
-        vel quam elementum. Auctor eu augue ut lectus.</p>
+    <div id="about-us-wrapper" class="container my-4 my-md-5">
+        <p>
+            <span id="logo-about-us" class="logo-font-style">Goodwill Events</span> Organization is a charity organization that produces entertainment, such as concerts, 
+            stand-up comedy programs, magic shows, pet shows, charity auctions, and others for charitable purposes.
+        </p>
+        <p>
+            Funds raised for each event go to a specific beneficiary for either prevention or relief of poverty, 
+            advancement of education, promotion of health, saving of lives, or others.
+        </p>
+        <p>
+            The organization is open to the public for membership through registration via our website. And only members are given the privilege to
+            attend events and become patrons.
+        </p>
+    </div>
 </section>
 
 {% endblock content %}
