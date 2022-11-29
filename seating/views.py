@@ -28,23 +28,15 @@ class EventSeatsView(LoginRequiredMixin, View):
             user_booked_seats = event_seats_obj.filter(
                 reserved_by=request.user)
 
-            if not event_seats_obj.exists():
-                raise Exception(
-                    "Start making seat reservations for this event."
-                )
-            elif user_booked_seats.exists():
+            if user_booked_seats.exists():
                 raise Exception(
                     "Reservations can be updated."
                 )
 
         except Exception as info:
-            if user_booked_seats.exists():
-                return redirect(
-                    f'/{self.kwargs.get("slug")}/update-reservation/'
-                    )
-            else:
-                return render(request, 'seating/reserve-seats.html', {
-                    'event': event, 'form': reservation_form})
+            return redirect(
+                f'/{self.kwargs.get("slug")}/update-reservation/'
+                )
 
         else:
             list_seats = []
