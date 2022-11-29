@@ -35,15 +35,16 @@ class FeaturedView(TemplateView):
 
         # Automatcally recycles the expired event to next year
         all_events = Event.objects.all()
+
         for event in all_events:
             date_of_event = event.event_date
-            event_expiration = time(hour=22, minute=0)
+            event_expiration_time = event.event_time
 
             if date_of_event < date.today():
                 self._recycle_expired_event(event, date_of_event)
                 self._delete_booked_seats(event)
             elif date_of_event == date.today():
-                if datetime.now().time() >= event_expiration:
+                if datetime.now().time() >= event_expiration_time:
                     self._recycle_expired_event(event, date_of_event)
                     self._delete_booked_seats(event)
 
