@@ -57,17 +57,10 @@ class EventSeatsView(LoginRequiredMixin, View):
             filled_form = reservation_form.save(commit=False)
             filled_form.event = event
             filled_form.reserved_by = user
-
-            try:
-                filled_form.save()
-                messages.success(
-                    request, f"New seats are reserved for {event}.")
-            except Exception:
-                messages.error(
-                    request, "You already booked 2 seats for this event.")
-                return redirect(request.path_info)
-            else:
-                return redirect(request.path_info)
+            filled_form.save()
+            messages.success(
+                request, f"New seats are reserved for {event}."
+                )
         return redirect(request.path_info)
 
 
