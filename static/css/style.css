@@ -323,6 +323,10 @@ footer {
 }
 
 @media screen and (min-width: 485px) {
+    #logo-about-us {
+        font-size: 1.5rem;
+    }
+
     #about-us-outer-container p {
         font-size: 1.1rem;
     }
