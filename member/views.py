@@ -1,6 +1,7 @@
 from django.shortcuts import redirect, render
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib import messages
 from django.urls import reverse
 from django.views.generic import DetailView
 from django.views.generic.edit import UpdateView
@@ -29,6 +30,13 @@ class MemberAccount(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
         form.fields['last_name'].required = True
         form.fields['email'].required = True
         return form
+
+    def form_invalid(self, form):
+        """
+        Shows error message and reloads the page if a form field is left empty.
+        """
+        messages.error(self.request, 'Empty field is not allowed.')
+        return redirect(reverse('member_account', kwargs={'slug': self.kwargs['slug']}))
 
 
 def error_404_view(request, exception):
