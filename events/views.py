@@ -9,6 +9,10 @@ from .forms import CommentForm
 
 
 class FeaturedView(TemplateView):
+    """
+    Renders the featured events in the Home page, and recycles expired events
+    and deletes their booked seats.
+    """
     template_name = 'index.html'
 
     @staticmethod
@@ -32,6 +36,10 @@ class FeaturedView(TemplateView):
             qset.delete()
 
     def get_context_data(self, **kwargs):
+        """
+        Adds the featured events into the context dict, and automatically
+        recycles expired events by changing their date to the following year
+        """
 
         # Automatcally recycles the expired event to next year
         all_events = Event.objects.all()
@@ -48,14 +56,18 @@ class FeaturedView(TemplateView):
                     self._recycle_expired_event(event, date_of_event)
                     self._delete_booked_seats(event)
 
-        # Retrieves the featured events
+        # Inserts the featured events into the context dictionary
         context = super().get_context_data(**kwargs)
-        context['featured_events'] = Event.objects.filter(status=1).reverse()[:3]
+        context['featured_events'] = Event.objects.filter(
+            status=1).reverse()[:3]
 
         return context
 
 
 class EventsList(ListView):
+    """
+    Renders a list of all event objects in the Events page template
+    """
     model = Event
     context_object_name = 'events_list'
     queryset = Event.objects.filter(status=1).order_by('event_date')
@@ -64,13 +76,22 @@ class EventsList(ListView):
 
 
 class EventDetails(DetailView):
+    """
+    Displays the details of the specified Event
+    """
     model = Event
     context_object_name = 'event'
     template_name = 'events/event_details.html'
 
     def get_context_data(self, **kwargs):
+        """
+        Retrieves and adds the following objects into the context dict so it
+        can be used in the template: liked, comments, and number of seats
+        available.
+        """
         context = super().get_context_data(**kwargs)
-        event_post = Event.objects.filter(status=1).get(slug=self.kwargs.get('slug'))
+        event_post = Event.objects.filter(status=1).get(
+            slug=self.kwargs.get('slug'))
         likers = event_post.likes.all()
 
         # checks if the user has already liked a post
@@ -100,8 +121,13 @@ class EventDetails(DetailView):
 
 
 class EventLike(LoginRequiredMixin, View):
-
+    """
+    Likes or unlikes an event post.
+    """
     def post(self, request, slug):
+        """
+        Accepts POST method to 'Like' or 'Unlike' an event post.
+        """
         event = get_object_or_404(Event, slug=slug)
 
         if event.likes.filter(id=request.user.id).exists():
@@ -113,8 +139,13 @@ class EventLike(LoginRequiredMixin, View):
 
 
 class CommentView(LoginRequiredMixin, View):
-
+    """
+    Adds user's comment to an event post.
+    """
     def post(self, request, slug):
+        """
+        Accepts POST method to add user's comment to an event post.
+        """
         event = get_object_or_404(Event, slug=slug)
         comment_form = CommentForm(request.POST)
 
@@ -126,8 +157,13 @@ class CommentView(LoginRequiredMixin, View):
 
 
 class DeleteComment(LoginRequiredMixin, View):
-
+    """
+    Deletes a user's comment to an event post.
+    """
     def post(self, request, pk):
+        """
+        Accepts POST method to delete a user's comment to an event post.
+        """
         user_comment = get_object_or_404(Comment, id=pk)
 
         if user_comment.author == request.user:
