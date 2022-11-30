@@ -39,7 +39,9 @@ class MemberAccount(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
         Shows error message and reloads the page if a form field is left empty.
         """
         messages.error(self.request, 'Empty field is not allowed.')
-        return redirect(reverse('member_account', kwargs={'slug': self.kwargs['slug']}))
+        return redirect(
+            reverse('member_account', kwargs={'slug': self.kwargs['slug']})
+            )
 
 
 def error_404_view(request, exception):
