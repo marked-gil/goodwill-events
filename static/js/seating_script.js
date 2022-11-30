@@ -1,3 +1,4 @@
+// --> SEAT RESERVATION Page [Start] <--
 if (document.getElementById('seatmap-container')) {
     const string_reserved_seats = document.getElementById('data-seats').textContent;
     let list_reserved_seats = string_reserved_seats.replace(/[^a-zA-Z0-9_,]/g, '').split(",");
@@ -11,7 +12,7 @@ if (document.getElementById('seatmap-container')) {
         }
     }
     
-    // EventListener to 'remove' reserved seat
+    // EventListener to 'remove' reserved seat via cancel button
     if (document.getElementsByClassName("btn-seat-location")) {
         const cancel_seat_buttons = document.querySelectorAll('.btn-seat-location');
         cancel_seat_buttons.forEach(cancelSeat);
@@ -30,14 +31,19 @@ if (document.getElementById('seatmap-container')) {
     }
     
 
-    // ---> FUNCTIONS <---
-    
+    // --> FUNCTIONS [Start] <--
+    /**
+     * Blocks seats that are already reserved.
+     */
     function blockReservedSeats(svg_seat, seat_loc, list_reserved_seats) {
         if (list_reserved_seats.includes(seat_loc)) {
             svg_seat.classList.add("booked")
         }
     }
 
+    /**
+     * Transforms SVG boxes (seats) into clickable elements
+     */
     function makeAllFreeSeatsClickable(svg_seat, seat_loc) {
         const ALLOWED_SEATS_PER_USER = 2
         svg_seat.style.cursor = 'pointer'
@@ -52,6 +58,9 @@ if (document.getElementById('seatmap-container')) {
         })
     }
 
+    /**
+     * Toggles between displaying the selected seat location and removing it
+     */
     function toggleSeat(seat, seat_loc) {
         seat.classList.toggle("user-selected");
         if (seat.classList.contains("user-selected")) {
@@ -61,6 +70,9 @@ if (document.getElementById('seatmap-container')) {
         }
     }
     
+    /**
+     * Displays the seat location name
+     */
     function showSelectedSeat(seat_loc) {
         const li_elem = document.createElement("li");
         li_elem.innerText = seat_loc;
@@ -69,6 +81,10 @@ if (document.getElementById('seatmap-container')) {
         li_elem.setAttribute('class', 'd-flex align-items-center me-4')
     }
     
+    /**
+     * Removes the displayed seat location name
+     * @param {*} seat_loc 
+     */
     function removeDeselectedSeat(seat_loc) {
         if (typeof seat_loc == "string") {
             const li_elem = document.getElementById(seat_loc)
@@ -78,11 +94,17 @@ if (document.getElementById('seatmap-container')) {
         }
     }
 
+    /**
+     * Returns the selected seats by the user
+     */
     function SelectedSeatsByUser() {
         const user_reserved_seats = document.querySelectorAll("#seats-selected-list > li")
         return user_reserved_seats
     }
 
+    /**
+     * Cancels reserved seat by unblocking the SVG seat box and removing the display of the seat location name
+     */
     function cancelSeat(btn) {
         const svg_seats_list = document.querySelectorAll('[data-seat-location]');
         const string_reserved_seats = document.getElementById('data-seats').textContent;
@@ -101,6 +123,11 @@ if (document.getElementById('seatmap-container')) {
         })
     }
 
+    /**
+     * Fills the reservation form with the user's selected seats
+     * Returns 'true' if the user has selected a seat/s, and 'false' if not.
+     * @returns a boolean
+     */
     function fillSeatReservationForm() {
         const selected_seats_list = document.querySelectorAll("#seats-selected-list>li")
         if (selected_seats_list.length != 0) {
@@ -128,6 +155,9 @@ if (document.getElementById('seatmap-container')) {
         
     }
 
+    /**
+     * Submits the user's newly selected seats, or deletes previously booked seats.
+     */
     function submitSeatReservation() {
         if (fillSeatReservationForm()) {
             const seat_form = document.getElementById("reserve-seat-form")
@@ -139,4 +169,6 @@ if (document.getElementById('seatmap-container')) {
             }
         }
     }
+    // --> FUNCTIONS [End] <--
 }
+// --> SEAT RESERVATION Page [End] <--
