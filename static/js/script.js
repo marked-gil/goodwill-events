@@ -1,9 +1,28 @@
-// --> // Comment Characters Counter <--
+// --> NAV BAR [Start] <--
+const homePage = document.getElementById('homepage-banner-container')
+const eventsPage = document.getElementById('events-outer-container')
+const signInPage = document.getElementById('sign-in-section')
+const signUpPage = document.getElementById('sign-up-section')
+const signOutPage = document.getElementById('sign-out-section')
+const AccountPage = document.getElementById('member-account-outer-container')
+
+// Highlights the nav link when corresponding page is opened
+showActiveNavLink(homePage, 'home-link')
+showActiveNavLink(eventsPage, 'events-link')
+showActiveNavLink(signInPage, 'sign-in-link')
+showActiveNavLink(signUpPage, 'sign-up-link')
+showActiveNavLink(signOutPage, 'sign-out-link')
+showActiveNavLink(AccountPage, 'user-acount-link')
+// --> NAV BAR [End] <--
+
+
+// --> EVENT DETAILS Page [Start] <--
 if (document.getElementById('comment-form')) {
     MAX_COMMENT_CHARS = 250
     const comment_textarea = document.getElementById('comment-textarea')
     const char_counter_field = document.getElementById('char-counter')
-
+    
+    // Characters Counter for COMMENTS
     comment_textarea.addEventListener("keyup", (e) => {
         const comment_length = comment_textarea.value.length
         const chars_remaining = MAX_COMMENT_CHARS - comment_length
@@ -14,8 +33,26 @@ if (document.getElementById('comment-form')) {
         }
     })
 }
-// --> // Comment Characters Counter <--
+// --> EVENT DETAILS Page [End] <--
 
+
+// --> EVENTS Page [Start] <--
+if (document.getElementById("events-outer-container")) {
+    const pagination = document.getElementById('events-pagination')
+    const pageNumber = pagination.getAttribute('data-page-number')
+    const pageLinks = document.querySelectorAll('.page-link')
+
+    // Highlights the page nunber in the pagination nav
+    for (page of pageLinks) {
+        if (page.textContent == pageNumber) {
+            page.classList.add('active')
+        }
+    }
+}
+// --> EVENTS Page [End] <--
+
+
+// --> MEMBER ACCOUNT Page [Start] <--
 if (document.getElementById('member-account-outer-container')) {
     const first_name = document.getElementById('id_first_name')
     const last_name = document.getElementById('id_last_name')
@@ -59,42 +96,11 @@ if (document.getElementById('member-account-outer-container')) {
     function toggleButtonText(btn) {
         btn.textContent == 'Edit' ? btn.textContent = 'X' : btn.textContent = 'Edit'
     }
-
 }
+// --> MEMBER ACCOUNT Page [End] <--
 
 
-// --> Highlights the nav link when corresponding page is opened <--
-const homePage = document.getElementById('homepage-banner-container')
-const eventsPage = document.getElementById('events-outer-container')
-const signInPage = document.getElementById('sign-in-section')
-const signUpPage = document.getElementById('sign-up-section')
-const signOutPage = document.getElementById('sign-out-section')
-const AccountPage = document.getElementById('member-account-outer-container')
-
-showActiveNavLink(homePage, 'home-link')
-showActiveNavLink(eventsPage, 'events-link')
-showActiveNavLink(signInPage, 'sign-in-link')
-showActiveNavLink(signUpPage, 'sign-up-link')
-showActiveNavLink(signOutPage, 'sign-out-link')
-showActiveNavLink(AccountPage, 'user-acount-link')
-// --> Highlights the nav link when corresponding page is opened <--
-
-
-// --> Highlights the page nunber in the pagination nav <--
-if (document.getElementById("events-outer-container")) {
-    const pagination = document.getElementById('events-pagination')
-    const pageNumber = pagination.getAttribute('data-page-number')
-    const pageLinks = document.querySelectorAll('.page-link')
-
-    for (page of pageLinks) {
-        if (page.textContent == pageNumber) {
-            page.classList.add('active')
-        }
-    }
-}
-// --> Highlights the page nunber in the pagination nav <--
-
-
+// --> FUNCTION <--
 /**
  * Highlights the nav link when page opened
  * @param {*} pageDOM - element specific to a page
