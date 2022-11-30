@@ -266,6 +266,11 @@ footer {
     border-radius: 8px;
     border: 1px solid rgb(186, 181, 181);
 }
+
+#id_remember {
+    width: 1rem !important;
+}
+
 /* --> SIGN IN [End] <-- */
 
 

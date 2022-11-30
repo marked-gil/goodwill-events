@@ -45,6 +45,10 @@
         <label for="id_password" class="form-label mb-1">{{ form.password.label }}:</label>
         {{ form.password }}
       </div>
+      <div class="d-flex justify-content-start mt-3">
+        <label for="id_remember" class="form-label mb-0 me-2">{{ form.remember.label }}</label>
+        {{ form.remember }}
+      </div>
   
       {% if redirect_field_value %}
       <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
