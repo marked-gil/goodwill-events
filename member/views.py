@@ -19,6 +19,17 @@ class MemberAccount(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     def get_success_url(self):
         return reverse('member_account', kwargs={'slug': self.kwargs['slug']})
 
+    def get_form(self, form_class=None):
+        """
+        Set the fields specified as required
+        (Idea taken from StockOverflow - See Credits Section in README.)
+        """
+        form = super(MemberAccount, self).get_form(form_class)
+        form.fields['first_name'].required = True
+        form.fields['last_name'].required = True
+        form.fields['email'].required = True
+        return form
+
 
 def error_404_view(request, exception):
     """
