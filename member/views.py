@@ -10,6 +10,9 @@ from django.contrib.auth.models import User
 
 
 class MemberAccount(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
+    """
+    Renders the member's account profile and allows their update by the user.
+    """
     model = User
     fields = ['first_name', 'last_name', 'email']
     template_name = 'member/member-account.html'
