@@ -71,4 +71,5 @@ class Comment(models.Model):
         """
         Returns the specified string for the class Event's instance
         """
-        return f'{self.author} commented on {self.event.title} - {self.posted_on.strftime("%Y-%m-%d, %H:%M")}'
+        return f'{self.author} commented on {self.event.title} - \
+            {self.posted_on.strftime("%Y-%m-%d, %H:%M")}'
