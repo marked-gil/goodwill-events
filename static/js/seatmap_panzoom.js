@@ -1,5 +1,6 @@
+// --> SEAT MAP [Start] <--
 if (document.getElementById('seatmap-container')) {
-
+    // The following Code is copied from SVG-PAN-ZOOM library demo (See Technologies and Credits sections in README)
     var panZoomTiger = svgPanZoom('#my-svg', {
         zoomEnabled: true,
         fit: false,
@@ -64,3 +65,4 @@ if (document.getElementById('seatmap-container')) {
         },
     });
 }
+// --> SEAT MAP [End] <--
