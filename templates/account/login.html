@@ -37,6 +37,8 @@
     
     <form id="signin_form" class="login" method="POST" action="{% url 'account_login' %}">
       {% csrf_token %}
+
+      <!-- flash messages -->
       <div id="sign-in-errors-wrapper">
         {% for key, value in form.errors.items %}
           {% if key != '__all__' %} 
