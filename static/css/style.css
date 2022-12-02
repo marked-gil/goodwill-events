@@ -236,6 +236,11 @@ footer {
     color: white;
 }
 
+#signup_form p {
+    margin-top: 1rem;
+    margin-bottom: 0;
+}
+
 #signup_form input {
     display: block;
     font-size: .9rem;
@@ -243,9 +248,15 @@ footer {
     padding: .1rem .5rem;
     border-radius: 8px;
     border: 1px solid rgb(186, 181, 181);
-    margin:auto;
+    margin: auto;
 }
 
+.errorlist {
+    color:#f36868;
+    font-size: .9rem;
+    margin-top: 1rem;
+    margin-bottom: 0;
+}
 /* --> SIGN UP [End] <-- */
 
 
