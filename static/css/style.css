@@ -97,9 +97,9 @@ textarea {
 /* --> HOME PAGE [start] <-- */
 
 #homepage-banner-container {
-    height: 18rem;
     background-color: var(--clr-dutch-white);
-    box-shadow: 0 5px 30px 35px var(--clr-crayola-gold) inset;
+    box-shadow: 0 -60px 30px 35px var(--clr-crayola-gold),
+                0 -5px 30px 35px var(--clr-crayola-gold) inset;
 }
 
 #homepage-title {
@@ -126,6 +126,11 @@ textarea {
     font-size: 1.4rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
+}
+
+.featured-event-image {
+    height: 10rem;
+    object-fit: cover;
 }
 
 .feat-event-card {
@@ -340,6 +345,12 @@ footer {
 /* --> MEMBER ACCOUNT Page [End] <-- */
 
 
+/* --> FLASH MESSAGES [Start] <-- */
+
+
+/* --> FLASH MESSAGES [End] <-- */
+
+
 /* MEDIA QUERIES */
 
 @media screen and (min-width:400px) {
@@ -382,7 +393,7 @@ footer {
     }
 }
 
-@media screen and (min-width:400px) and (max-width:767px) {
+@media screen and (min-width:500px) and (max-width:767px) {
     /* HOME PAGE */
     .feat-event-card-wrapper {
         padding-left: 12%;
@@ -423,11 +434,6 @@ footer {
 
 @media screen and (min-width: 900px) {
 
-    /* HOME PAGE */
-    #feature-events-outer-container {
-        padding: 1.5rem 2rem;
-    }
-
     /* ALL EVENTS PAGE */
     #upcoming-events {
         font-size: 2.2rem;
@@ -454,11 +460,6 @@ footer {
 
 @media screen and (min-width: 1080px) {
 
-    /* HOME PAGE */
-    #feature-events-outer-container {
-        padding: 1rem 10%;
-    }
-
     /* EVENTS DETAILS PAGE */
     .event-details-div {
         width: 58rem;
@@ -469,4 +470,18 @@ footer {
     #social-links {
         width: 32rem;
     }
+}
+
+@media screen and (min-width: 1200px) {
+
+    /* HOME PAGE */
+    #featured-events-inner-container {
+        width: 75rem;
+        margin: 0 auto;
+    }
+
+    .feat-event-card-wrapper {
+        width: 23rem;
+    }
+
 }
