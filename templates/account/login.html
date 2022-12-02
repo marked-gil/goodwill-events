@@ -37,6 +37,15 @@
     
     <form id="signin_form" class="login" method="POST" action="{% url 'account_login' %}">
       {% csrf_token %}
+      <div id="sign-in-errors-wrapper">
+        {% for key, value in form.errors.items %}
+          {% if key != '__all__' %} 
+            {{ key }} 
+          {% endif %}
+          {{ value }}
+        {% endfor %}
+      </div>
+
       <div class="mb-2">
         <label for="id_login" class="form-label mb-1">{{ form.login.label }}: </label>
         {{ form.login }}

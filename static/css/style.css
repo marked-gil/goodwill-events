@@ -282,6 +282,15 @@ footer {
     width: 1rem !important;
 }
 
+#sign-in-errors-wrapper {
+    margin: 1rem 0;
+}
+
+#sign-in-errors-wrapper .errorlist {
+    padding-left: 0;
+    margin: 0;
+}
+
 /* --> SIGN IN [End] <-- */
 
 
