@@ -1,4 +1,4 @@
-from django.shortcuts import get_object_or_404, redirect
+from django.shortcuts import get_object_or_404, redirect, HttpResponseRedirect
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse
 from django.views.generic import ListView, DetailView, TemplateView, View
@@ -148,11 +148,14 @@ class CommentView(LoginRequiredMixin, View):
         """
         event = get_object_or_404(Event, slug=slug)
         comment_form = CommentForm(request.POST)
+        hashtag = request.GET.get('hashtag', '')
 
         if comment_form.is_valid():
             comment_form.instance.author = request.user
             comment_form.instance.event = event
             comment_form.save()
+            if hashtag:
+                return HttpResponseRedirect(reverse('event_details', args=[slug]) + '#{0}'.format(hashtag))
         return redirect(reverse('event_details', args=[slug]))
 
 

@@ -86,13 +86,13 @@
 <section id="comments-outer-wrapper" class="container">
     {% if user.is_authenticated %}
     <div class="mb-3 col-md-9 col-lg-6 m-auto">
-        <form action="{% url 'event_comment' event.slug %}" method="POST" id="comment-form">
+        <form action="{% url 'event_comment' event.slug %}?hashtag=comment" method="POST" id="comment-form">
             {% csrf_token %}
             <label for="comment_textarea" class="form-label">Write Your Comment:</label>
             <textarea class="form-control" id="comment-textarea" name="text_comment" rows="3" maxlength="250" required></textarea>
             <div class="d-flex justify-content-between pt-2">
                 <small id="char-counter">250 characters remaining</small>
-                <button class="btn btn-primary py-1" type="submit">Post</button>
+                <button class="btn btn-primary py-1" type="submit"><a id="comment">Post</a></button>
             </div>
         </form>
     </div>
