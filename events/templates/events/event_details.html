@@ -7,10 +7,10 @@
     <p class="text-center mt-md-4 mt-xl-5">The Goodwill Events presents</p>
     <h2 id="event-details-title" class="text-center my-md-4">{{ event.title }}</h2>
     <p id="event-blurb" class="text-center mb-md-4">{{ event.blurb }}</p>
-    <div id="img-wrapper" class="event-details-div">
+    <div id="img-wrapper" class="event-details-div container px-0">
         {% if 'proxy_image' in event.featured_image.url %}
         <img src="{% static 'images/default-image.jpg' %}"
-            class="event-details-img img-fluid rounded" alt="featured image">
+            class="event-details-img rounded" alt="featured image">
         {% else %}
         <img src="{{ event.featured_image.url }}" class="event-details-img img-fluid rounded" alt="featured image">
         {% endif %}
@@ -69,15 +69,15 @@
             <form action="{% url 'event_like' event.slug %}" method="POST" id="like-form" class="d-none d-sm-inline">
                 {% csrf_token %}
                 {% if liked %}
-                <button type="submit" name="event_id" value="event.slug"><i class="fa-solid fa-heart"></i></button>
+                <button class="like-button" type="submit" name="event_id" value="event.slug"><i class="fa-solid fa-heart"></i></button>
                 {% else %}
-                <button type="submit" name="event_id" value="event.slug"><i class="fa-regular fa-heart"></i></button>
+                <button class="like-button" type="submit" name="event_id" value="event.slug"><i class="fa-regular fa-heart"></i></button>
                 {% endif %}
             </form>
             {% endif %}
         </p>
     </div>
-    <div id="event-post" class="event-details-div">
+    <div id="event-post" class="event-details-div px-2 px-sm-3 px-md-5">
         <p>{{ event.post_content | safe }}</p>
     </div>
 </section>
