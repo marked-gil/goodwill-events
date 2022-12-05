@@ -319,6 +319,13 @@ footer {
 /* --> SIGN OUT [End] <-- */
 
 
+/* --> ALREADY LOGGED IN SNIPPET [Start] */
+#snippet-logged-in {
+    color:#ff9393;
+}
+/* --> ALREADY LOGGED IN SNIPPET [End] */
+
+
 /* --> PASSWORD RESET [Start] <-- */
 #password-reset-form label {
     color: white;
@@ -332,6 +339,25 @@ footer {
     margin-top: .4rem;
 }
 /* --> PASSWORD RESET [End] <-- */
+
+
+/* --> PASSWORD CHANGE [Start] <-- */
+#password-change-form label {
+    color: white;
+}
+
+#password-change-form input {
+    width: 100%;
+    padding: .1rem .5rem;
+    border-radius: 8px;
+    border: 1px solid rgb(186, 181, 181);
+    margin-top: .4rem;
+}
+
+#password-change-form a {
+    color: white;
+}
+/* --> PASSWORD CHANGE [End] <-- */
 
 
 /* --> MEMBER ACCOUNT Page [Start] <-- */
