@@ -191,6 +191,12 @@ textarea {
     padding: .5rem 0;
 }
 
+
+#reserve-btn {
+    display: block;
+    margin: auto;
+}
+
 /* --> ALL EVENTS PAGE [End] <-- */
 
 /* --> EVENT DETAILS PAGE [start] */
@@ -420,7 +426,11 @@ footer {
         font-size: 1.1rem;
     }
 
-    /* EVENT DETAILS PAEG */
+    #reserve-btn {
+        display: inline;
+    }
+
+    /* EVENT DETAILS PAGE */
     #img-wrapper {
         height: 14rem;
     }
