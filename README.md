@@ -500,8 +500,10 @@ To clone the repository for this site, do the following steps:
 
 ## Technologies
 This project uses the following tools:
+* Frontend Mark Up Language
+    * HTML
 * Frontend Programming Languages:
-    * HTML, CSS, Javascript 
+    * CSS, Javascript 
 * Backend Programming Language:
     * Python
 * Web Framework:
@@ -527,6 +529,7 @@ This project uses the following tools:
 * Gitpod - the cloud-based IDE (Integrated Developer Environment) used to code this site
 * GitHub - stores the source code repository for this website
 * Balsalmiq
+* [Favicon](https://favicon.io/) - Favicon generator
 * [Diffchecker](https://www.diffchecker.com/#) - used when comparing codes tested in another IDE to the codes in gitpod
 * [Grammarly](https://www.grammarly.com/) - used to check the grammar of the contents in this project
 
