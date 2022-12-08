@@ -65,6 +65,7 @@ LOGOUT_REDIRECT_URL = '/'
 ACCOUNT_FORMS = {'signup': 'member.forms.EventsSignUpForm'}
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_SUBJECT_PREFIX = ""
 
 # Django Message Tags
 
