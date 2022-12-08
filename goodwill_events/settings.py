@@ -60,9 +60,13 @@ SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
+# Django-allauth Configurations
+
 ACCOUNT_FORMS = {'signup': 'member.forms.EventsSignUpForm'}
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 ACCOUNT_EMAIL_REQUIRED = True
+
+# Django Message Tags
 
 MESSAGE_TAGS = {
     messages.DEBUG: 'alert-info',
