@@ -54,13 +54,17 @@ if (document.getElementById("events-outer-container")) {
 
 // --> MEMBER ACCOUNT Page [Start] <--
 if (document.getElementById('member-account-outer-container')) {
-    const first_name = document.getElementById('id_first_name')
-    const last_name = document.getElementById('id_last_name')
+    const firstName = document.getElementById('id_first_name')
+    const lastName = document.getElementById('id_last_name')
     const email = document.getElementById('id_email')
-    const fname_edit_btn = document.getElementById('fname_edit')
-    const lname_edit_btn = document.getElementById('lname_edit')
-    const email_edit_btn = document.getElementById('email_edit')
+    const fnameEditBtn = document.getElementById('fname_edit')
+    const lnameEditBtn = document.getElementById('lname_edit')
+    const emailEditBtn = document.getElementById('email_edit')
     const updateBtn = document.getElementById('update-account-btn')
+    
+    const originalFirstName = firstName.value
+    const originalLastName = lastName.value
+    const originalEmail =email.value
 
     // Initially set all input fields as readonly in Member's Account page
     member_info_fields = document.querySelectorAll('#member_account_form input')
@@ -70,23 +74,29 @@ if (document.getElementById('member-account-outer-container')) {
     }
 
     // Event Listeners for edit buttons
-    fname_edit_btn.addEventListener('click', (e) => {
-        first_name.toggleAttribute('readonly')
-        first_name.classList.toggle('disabled-field')
-        updateBtn.classList.remove('disabled')
-        toggleButtonText(fname_edit_btn)
+    fnameEditBtn.addEventListener('click', (e) => {
+        firstName.toggleAttribute('readonly')
+        firstName.classList.toggle('disabled-field')
+        toggleButtonText(fnameEditBtn)
+        firstName.addEventListener('keyup', function() {
+            fieldValueChanged(this, originalFirstName)
+        })
     })
-    lname_edit_btn.addEventListener('click', (e) => {
-        last_name.toggleAttribute('readonly')
-        last_name.classList.toggle('disabled-field')
-        updateBtn.classList.remove('disabled')
-        toggleButtonText(lname_edit_btn)
+    lnameEditBtn.addEventListener('click', (e) => {
+        lastName.toggleAttribute('readonly')
+        lastName.classList.toggle('disabled-field')
+        toggleButtonText(lnameEditBtn)
+        lastName.addEventListener('keyup', function() {
+            fieldValueChanged(this, originalLastName)
+        })
     })
-    email_edit_btn.addEventListener('click', (e) => {
+    emailEditBtn.addEventListener('click', (e) => {
         email.toggleAttribute('readonly')
         email.classList.toggle('disabled-field')
-        updateBtn.classList.remove('disabled')
-        toggleButtonText(email_edit_btn)
+        toggleButtonText(emailEditBtn)
+        email.addEventListener('keyup', function() {
+            fieldValueChanged(this, originalEmail)
+        })
     })
 
     /**
@@ -95,6 +105,20 @@ if (document.getElementById('member-account-outer-container')) {
      */
     function toggleButtonText(btn) {
         btn.textContent == 'Edit' ? btn.textContent = 'X' : btn.textContent = 'Edit'
+    }
+
+    /**
+     * Enables the 'Update' button when field input is changed,
+     * and disables it when no changes are made
+     * @param {*} field 
+     * @param {*} originalText 
+     */
+    function fieldValueChanged(field, originalText) {
+        if (field.value != originalText) {
+            updateBtn.classList.remove('disabled')
+        } else {
+            updateBtn.classList.add('disabled')
+        }
     }
 }
 // --> MEMBER ACCOUNT Page [End] <--
