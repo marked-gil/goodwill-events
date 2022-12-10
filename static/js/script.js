@@ -39,6 +39,31 @@ if (document.getElementById('comment-form')) {
             }
         }
     })
+
+    // Post Comment
+    $("#comment-form").submit(function (e) {
+        e.preventDefault();
+        const baseURL = window.location.origin;
+        const slug = window.location.pathname
+        $.ajax({
+            type: "POST",
+            url: baseURL + "/comment" + slug,
+            data: {
+                csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
+                text_comment: $('#comment-textarea').val(),
+            },
+            success: function (response) {
+                if (response.message === "success") {
+                    location.reload()
+                } else {
+                    $(this).after(`<p class="text-center">**${response.message}**</p>`)
+                }
+            },
+            error: function () {
+                $(this).after(`<p class="text-center">**Something went wrong.**</p>`)
+            },
+        });
+    });
 }
 // --> EVENT DETAILS Page [End] <--
 

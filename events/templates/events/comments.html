@@ -1,0 +1,17 @@
+<div>
+    {% for comment in comments %}
+    <div class="card-body">
+        <div class="d-flex justify-content-between">
+            <h5 class="card-title mb-0">{{ comment.author.first_name }} {{ comment.author.last_name | first }}.</h5>
+            {% if comment.author == user %}
+            <form class="delete-comment-form" data-url="{% url 'delete_comment' pk=comment.id %}" method="POST">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-outline-danger py-0">Delete</button>
+            </form>
+            {% endif %}
+        </div>
+        <h6 id="comment-posted-on" class="card-subtitle mb-2 text-muted">{{ comment.posted_on }}</h6>
+        <p class="card-text mb-1">{{ comment.text_comment }}</p>
+    </div>
+    {% endfor %}
+</div>

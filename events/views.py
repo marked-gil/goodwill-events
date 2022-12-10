@@ -1,4 +1,6 @@
-from django.shortcuts import get_object_or_404, redirect, HttpResponseRedirect
+from django.shortcuts import get_object_or_404, redirect
+from django.http import HttpResponse, JsonResponse
+from django.template import loader
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse
 from django.views.generic import ListView, DetailView, TemplateView, View
@@ -140,23 +142,34 @@ class EventLike(LoginRequiredMixin, View):
 
 class CommentView(LoginRequiredMixin, View):
     """
-    Adds user's comment to an event post.
+    Adds user's comment to an event's post.
     """
+    def get(self, request, *args, **kwargs):
+        """
+        
+        """
+        template = loader.get_template("events/comments.html")
+        comments = Comment.objects.filter(
+            event__slug=self.kwargs.get('slug'))
+        context = {
+            "comments": comments
+        }
+        return HttpResponse(template.render(context, self.request))
+
     def post(self, request, slug):
         """
         Accepts POST method to add user's comment to an event post.
         """
         event = get_object_or_404(Event, slug=slug)
         comment_form = CommentForm(request.POST)
-        hashtag = request.GET.get('hashtag', '')
 
         if comment_form.is_valid():
             comment_form.instance.author = request.user
             comment_form.instance.event = event
             comment_form.save()
-            if hashtag:
-                return HttpResponseRedirect(reverse('event_details', args=[slug]) + '#{0}'.format(hashtag))
-        return redirect(reverse('event_details', args=[slug]))
+            return JsonResponse({'message': 'success'})
+
+        return JsonResponse({'message': 'The submitted form is invalid.'})
 
 
 class DeleteComment(LoginRequiredMixin, View):

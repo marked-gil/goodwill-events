@@ -86,9 +86,9 @@
 <section id="comments-outer-wrapper" class="container">
     {% if user.is_authenticated %}
     <div class="mb-3 col-md-9 col-lg-6 m-auto">
-        <form action="{% url 'event_comment' event.slug %}" method="POST" id="comment-form">
+        <form id="comment-form" action="{% url 'event_comment' event.slug %}" method="POST">
             {% csrf_token %}
-            <label for="comment_textarea" class="form-label">Write Your Comment:</label>
+            <label for="comment-textarea" class="form-label">Write Your Comment:</label>
             <textarea class="form-control" id="comment-textarea" name="text_comment" rows="3" maxlength="250" required></textarea>
             <div class="d-flex justify-content-between pt-2">
                 <small id="char-counter">250 characters remaining</small>
@@ -100,22 +100,12 @@
     <div class="card col-md-9 col-lg-6 mb-5 m-auto p-2">
         {% if comments %}
         <h4>Comments:</h4>
+        {% else %}
+        <p class="text-center my-3">No comments available.</p>
         {% endif %}
-        {% for comment in comments %}
-        <div class="card-body">
-            <div class="d-flex justify-content-between">
-                <h5 class="card-title mb-0">{{ comment.author.first_name }} {{ comment.author.last_name | first }}.</h5>
-                {% if comment.author == user %}
-                <form action="{% url 'delete_comment' pk=comment.id %}" method="POST">
-                    {% csrf_token %}
-                    <button type="submit" class="btn btn-outline-danger py-0">Delete</button>
-                </form>
-                {% endif %}
-            </div>
-            <h6 id="comment-posted-on" class="card-subtitle mb-2 text-muted">{{ comment.posted_on }}</h6>
-            <p class="card-text mb-1">{{ comment.text_comment }}</p>
-        </div>
-        {% endfor %}
+
+        {% include 'events/comments.html' %}
+
     </div>
 </section>
 
