@@ -18,18 +18,25 @@ showActiveNavLink(AccountPage, 'user-acount-link')
 
 // --> EVENT DETAILS Page [Start] <--
 if (document.getElementById('comment-form')) {
-    MAX_COMMENT_CHARS = 250
-    const comment_textarea = document.getElementById('comment-textarea')
-    const char_counter_field = document.getElementById('char-counter')
+    const MAX_COMMENT_CHARS = 250
+    const commentTextarea = document.getElementById('comment-textarea')
+    const charCounterField = document.getElementById('char-counter')
+    const postCommentButton = document.querySelector('#comment-form button')
     
     // Characters Counter for COMMENTS
-    comment_textarea.addEventListener("keyup", (e) => {
-        const comment_length = comment_textarea.value.length
-        const chars_remaining = MAX_COMMENT_CHARS - comment_length
+    commentTextarea.addEventListener("keyup", (e) => {
+        const commentLength = commentTextarea.value.length
+        const charRemaining = MAX_COMMENT_CHARS - commentLength
 
-        if (comment_length <= MAX_COMMENT_CHARS) {
-            let chars = chars_remaining > 1 ? "characters" : "character"
-            char_counter_field.textContent = `${chars_remaining} ${chars} remaining`
+        if (commentLength <= MAX_COMMENT_CHARS) {
+            let chars = charRemaining > 1 ? "characters" : "character"
+            charCounterField.textContent = `${charRemaining} ${chars} remaining`
+            // Disable POST button when textarea is empty
+            if (charRemaining != MAX_COMMENT_CHARS) {
+                postCommentButton.classList.remove('disabled')
+            } else {
+                postCommentButton.classList.add('disabled')
+            }
         }
     })
 }
