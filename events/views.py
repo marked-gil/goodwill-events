@@ -185,4 +185,4 @@ class DeleteComment(LoginRequiredMixin, View):
         if user_comment.author == request.user:
             user_comment.delete()
 
-        return redirect(self.request.META.get('HTTP_REFERER'))
+        return JsonResponse({'message': 'success'})

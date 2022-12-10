@@ -40,7 +40,7 @@ if (document.getElementById('comment-form')) {
         }
     })
 
-    // Post Comment
+    // Post User's Comment using AJAX
     $("#comment-form").submit(function (e) {
         e.preventDefault();
         const baseURL = window.location.origin;
@@ -61,6 +61,23 @@ if (document.getElementById('comment-form')) {
             },
             error: function () {
                 $(this).after(`<p class="text-center">**Something went wrong.**</p>`)
+            },
+        });
+    });
+
+    // Delete User's Comment using AJAX
+    $(".delete-comment-form").submit(function (e) {
+        e.preventDefault();
+        $.ajax({
+            type: "POST",
+            url: $(".delete-comment-form").data("url"),
+            data: {
+                csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
+            },
+            success: function (response) {
+                if (response.message === 'success') {
+                    location.reload()
+                }
             },
         });
     });
