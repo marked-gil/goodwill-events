@@ -55,6 +55,10 @@ textarea {
     background-color: var(--clr-police-blue);
 }
 
+.bold-text {
+    font-weight: bold;
+}
+
 .disabled-field {
     border: 1px solid gray;
     background-color: rgb(162, 162, 162);
@@ -203,7 +207,6 @@ textarea {
     padding: .5rem 0;
 }
 
-
 #reserve-btn {
     display: block;
     margin: auto;
@@ -234,6 +237,13 @@ textarea {
 #like-form>button {
     background: none;
     border: none;
+    margin-left: .5rem;
+}
+
+.fa-heart {
+    color: rgb(182, 26, 26);
+    font-size: 1.6rem;
+
 }
 
 #comment-posted-on {
