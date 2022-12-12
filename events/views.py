@@ -45,6 +45,12 @@ class FeaturedView(TemplateView):
         event_obj = Event.objects.get(id=event.id)
         event_obj.likes.clear()
 
+    @staticmethod
+    def _delete_comments(event):
+        comment_queryset = Comment.objects.filter(event=event)
+        for qset in comment_queryset:
+            qset.delete()
+
     def get_context_data(self, **kwargs):
         """
         Adds the featured events into the context dict, and automatically
@@ -62,11 +68,13 @@ class FeaturedView(TemplateView):
                 self._recycle_expired_event(event, date_of_event)
                 self._delete_booked_seats(event)
                 self._delete_event_likes(event)
+                self._delete_comments(event)
             elif date_of_event == date.today():
                 if datetime.now().time() >= event_expiration_time:
                     self._recycle_expired_event(event, date_of_event)
                     self._delete_booked_seats(event)
                     self._delete_event_likes(event)
+                    self._delete_comments(event)
 
         # Inserts the featured events into the context dictionary
         context = super().get_context_data(**kwargs)
@@ -188,4 +196,4 @@ class DeleteComment(LoginRequiredMixin, View):
 
 class SeatMapView(TemplateView):
 
-    template_name = "events/seatmap.html"
+    template_name = "events/view_seatmap.html"
