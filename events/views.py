@@ -37,6 +37,14 @@ class FeaturedView(TemplateView):
         for qset in event_seats_queryset:
             qset.delete()
 
+    @staticmethod
+    def _delete_event_likes(event):
+        """
+        Removes all likes for the event from the database
+        """
+        event_obj = Event.objects.get(id=event.id)
+        event_obj.likes.clear()
+
     def get_context_data(self, **kwargs):
         """
         Adds the featured events into the context dict, and automatically
@@ -53,10 +61,12 @@ class FeaturedView(TemplateView):
             if date_of_event < date.today():
                 self._recycle_expired_event(event, date_of_event)
                 self._delete_booked_seats(event)
+                self._delete_event_likes(event)
             elif date_of_event == date.today():
                 if datetime.now().time() >= event_expiration_time:
                     self._recycle_expired_event(event, date_of_event)
                     self._delete_booked_seats(event)
+                    self._delete_event_likes(event)
 
         # Inserts the featured events into the context dictionary
         context = super().get_context_data(**kwargs)
