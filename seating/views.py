@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import DeleteView
-from django.contrib import messages
 from django.views import View
+from django.contrib import messages
 from events.models import Event
 from .models import EventSeating
 from .forms import SeatReserveForm
@@ -173,5 +173,13 @@ class DeleteSeatsReservation(LoginRequiredMixin, DeleteView):
             reserved_by=request.user
             ).first()
         success_url = f'/{self.kwargs.get("slug")}/reserve-seat/'
-        self.object.delete()
+
+        try:
+            self.object.delete()
+        except Exception:
+            error_msg = "Something went wrong. Seat cancellation is NOT successful."
+            messages.error(request, error_msg)
+        else:
+            succcess_msg = "You have successfully CANCELLED your reservation."
+            messages.success(request, succcess_msg)
         return redirect(success_url)
