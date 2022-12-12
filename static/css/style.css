@@ -453,6 +453,14 @@ footer {
 /* --> MEMBER ACCOUNT Page [End] <-- */
 
 
+/* 404 ERROR PAGE [Start] */
+#error-404 {
+    font-size: 1.5rem;
+}
+
+/* 404 ERROR PAGE [End] */
+
+
 /* --> FLASH MESSAGES [Start] <-- */
 
 
