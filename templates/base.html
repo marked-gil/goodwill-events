@@ -52,7 +52,7 @@
                             <a class="nav-link" id="events-link" href="{% url 'events_list' %}">Events</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">About Us</a>
+                            <a class="nav-link" id="view-seatmap-link" href="{% url 'view_seatmap' %}">Seat Map</a>
                         </li>
                         {% if user.is_authenticated %}
                         <li class="nav-item">

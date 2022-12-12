@@ -184,3 +184,8 @@ class DeleteComment(LoginRequiredMixin, View):
             user_comment.delete()
 
         return JsonResponse({'message': 'success'})
+
+
+class SeatMapView(TemplateView):
+
+    template_name = "events/seatmap.html"
