@@ -94,7 +94,7 @@ if (document.getElementById("events-outer-container")) {
     // Highlights the page nunber in the pagination nav
     for (page of pageLinks) {
         if (page.textContent == pageNumber) {
-            page.classList.add('active')
+            page.classList.add('active', 'disabled-link')
         }
     }
 }
