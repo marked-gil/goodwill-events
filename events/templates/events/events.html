@@ -25,17 +25,18 @@
                 <p class="card-text mb-1">{{ event.blurb }}</p>
                 <p class="card-text">
                     <small class="text-muted">{{ event.event_date}} | {{ event.event_time }}</small>
-                    <a href="{% url 'seatmap' event.slug %}">
-                        <button type="button" id="reserve-btn" class="btn btn-outline-primary btn-sm">Reserve A
-                        Seat</button>
-                    </a> |
-                    <small class="text-muted">{{ event.total_likes }}
+                    |
+                    <small class="text-muted me-1">{{ event.total_likes }}
                         {% if event.total_likes > 1 %}
                         <span>Likes</span>
                         {% else %}
                         <span>Like</span>
                         {% endif %}
                     </small>
+                    <a href="{% url 'seatmap' event.slug %}">
+                        <button type="button" id="reserve-btn" class="btn btn-outline-primary btn-sm">Reserve A
+                        Seat</button>
+                    </a>
                 </p>
             </div>
         </div>
