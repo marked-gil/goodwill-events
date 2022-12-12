@@ -243,11 +243,32 @@ textarea {
 .fa-heart {
     color: rgb(182, 26, 26);
     font-size: 1.6rem;
+}
 
+/* comments */
+#comment-section-title {
+    font-size: 1.3rem;
+}
+
+.comment-wrapper {
+    position: relative;
+    background-color: var(--clr-linen);
+    border-radius: 10px;
+}
+
+#comment-username {
+    font-size: 1rem;
 }
 
 #comment-posted-on {
-    font-size: .9rem;
+    font-size: .8rem;
+}
+
+.delete-comment-form > button {
+    font-size: .8rem;
+    position: absolute;
+    right: 14px;
+    top: 26px;
 }
 
 /* --> EVENT DETAILS PAGE [end] */
@@ -439,6 +460,11 @@ footer {
         font-size: 1.8rem;
     }
 
+    /* EVENT DETAILS PAGE */
+    .delete-comment-form > button {
+        font-size: 1rem;
+    }
+
     /* SIGN OUT */
     #sign-out-notice {
         font-size: 1.1rem;
@@ -475,7 +501,6 @@ footer {
         padding-left: 12%;
         padding-right: 12%;
     }
-
 }
 
 @media screen and (min-width: 768px) {
