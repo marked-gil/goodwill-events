@@ -2,8 +2,8 @@
     {% for comment in comments %}
     <div class="card-body py-2 mb-2 me-2 mx-sm-3 comment-wrapper">
         <h5 class="card-title mb-2 bold-text" id="comment-username"><i class="fa-solid fa-user me-1"></i> {{ comment.author }}</h5>
+        <p id="comment-posted-on" class="card-subtitle mb-2 text-muted">{{ comment.posted_on }}</p>
         {% if comment.author == user %}
-        <h6 id="comment-posted-on" class="card-subtitle mb-2 text-muted">{{ comment.posted_on }}</h6>
         <form class="delete-comment-form" data-url="{% url 'delete_comment' pk=comment.id %}" method="POST">
             {% csrf_token %}
             <button type="submit" class="btn btn-outline-danger py-0 px-1 px-sm-2">Delete</button>
