@@ -251,7 +251,7 @@ textarea {
 }
 
 #comments-container {
-    height: 35rem;
+    max-height: 35rem;
     overflow: auto;
     scrollbar-color: var(--clr-dutch-white) var(--clr-linen);   /* styles scrollbar in Firefox */
     scrollbar-width: thin;   /* styles scrollbar thumb in Firefox */
