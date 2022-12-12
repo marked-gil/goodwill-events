@@ -154,18 +154,6 @@ class CommentView(LoginRequiredMixin, View):
     """
     Adds user's comment to an event's post.
     """
-    def get(self, request, *args, **kwargs):
-        """
-        
-        """
-        template = loader.get_template("events/comments.html")
-        comments = Comment.objects.filter(
-            event__slug=self.kwargs.get('slug'))
-        context = {
-            "comments": comments
-        }
-        return HttpResponse(template.render(context, self.request))
-
     def post(self, request, slug):
         """
         Accepts POST method to add user's comment to an event post.
