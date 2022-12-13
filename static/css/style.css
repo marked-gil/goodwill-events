@@ -453,6 +453,13 @@ footer {
 /* --> MEMBER ACCOUNT Page [End] <-- */
 
 
+/* OFFCANVAS [Start] */
+.offcanvas {
+    background-color: var(--clr-dutch-white);
+}
+/* OFFCANVAS [End] */
+
+
 /* 404 ERROR PAGE [Start] */
 #error-404 {
     font-size: 1.5rem;
@@ -496,6 +503,11 @@ footer {
     /* SIGN OUT */
     #sign-out-notice {
         font-size: 1.1rem;
+    }
+
+    /* OFFCANVAS */
+    .offcanvas-body p {
+        font-size: 1.2rem;
     }
 }
 

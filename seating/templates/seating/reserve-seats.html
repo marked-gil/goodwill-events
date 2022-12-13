@@ -353,11 +353,11 @@
     <div class="offcanvas-header">
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
-    <div class="offcanvas-body">
-        <form method="POST" action="{% url 'delete_reservation' event.slug %}">
+    <div class="offcanvas-body d-flex pt-0 pb-5 px-5">
+        <form class="d-flex flex-column align-self-center" method="POST" action="{% url 'delete_reservation' event.slug %}">
             {% csrf_token %}
-            <p>Are you sure you want to delete your reservation?</p>
-            <input type="submit" value="Confirm">
+            <p class="text-center mb-4">Are you sure you want to delete your reservation?</p>
+            <button type="submit" class="btn btn-primary align-self-center">Confirm</button>
         </form>
     </div>
 </div>
