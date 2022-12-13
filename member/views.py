@@ -25,7 +25,7 @@ class MemberAccount(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
 
     def get_form(self, form_class=None):
         """
-        Set the fields specified as required
+        Set the specified fields as required
         (Idea taken from StockOverflow - See Credits Section in README.)
         """
         form = super(MemberAccount, self).get_form(form_class)
@@ -43,6 +43,22 @@ class MemberAccount(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
         return redirect(
             reverse('member_account', kwargs={'slug': self.kwargs['slug']})
             )
+
+    def post(self, request, *args, **kwargs):
+        """
+        Checks if the updated email address provided already exists before
+        submitting to the database.
+        """
+        self.object = self.get_object()
+
+        current_user = User.objects.filter(id=request.user.id).first()
+        found_user = User.objects.filter(
+            email=request.POST.get('email')).first()
+        if found_user and found_user != current_user:
+            messages.error(request, "A similar email address already exists.")
+            return redirect(request.path_info)
+
+        return super(MemberAccount, self).post(request, *args, **kwargs)
 
 
 def error_404_view(request, exception):
