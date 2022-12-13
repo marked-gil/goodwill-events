@@ -54,7 +54,8 @@ class FeaturedView(TemplateView):
     def get_context_data(self, **kwargs):
         """
         Adds the featured events into the context dict, and automatically
-        recycles expired events by changing their date to the following year
+        recycles expired events by changing their date to the following year,
+        and deletes their likes, comments, and seat reservations.
         """
 
         # Automatcally recycles the expired event to next year
