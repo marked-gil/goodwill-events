@@ -16,7 +16,7 @@
         {% endif %}
     </div>
     <div class="event-details-div text-center">
-        <p class="text-center">{{ event.event_date|date:'d F Y, l' }} | <span>{{ event.event_time|date:'g A' }}</span></p>
+        <p class="text-center">{{ event.event_date|date:'d F Y, l' }} | <span>{{ event.event_time|date:'g:i A' }}</span></p>
         <p id="reserve-seat-wrapper" class="d-inline">
             <span>
                 {% if seats_available > 1 %}
