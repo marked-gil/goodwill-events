@@ -508,7 +508,7 @@ The Change Password page requires the current password and new password (needs t
 A link to reset password is also available through the Forgot Password link.
 
 ### **Password Reset** Page     
-In this page, the user is only required to supply their registered email address where the site will automatically send an email with a link to. Once this email is received by the user and they click on the link, the user will be redirected to page where they can set their new password.
+In this page, the user is only required to supply their registered email address where the site will automatically send an email with a link. Once this email is received by the user and they click on the link, the user will be redirected to a page where they can set their new password.
 
 ## Fixed Bugs
 
