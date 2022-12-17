@@ -456,26 +456,38 @@ Iteration 4:
 ### **HOME** Page
 The Home page contains 3 featured events, which have the nearest show dates relative to today’s. Also, it displays the ‘About Us’ section.
 
+<!-- Home Page screenshot here -->
+
 ### **NAV BAR**      
 The nav bar is in the header of all the site’s pages. It contains the title of the website - Goodwill Events; and the navbar menu.
 
 For non-logged-in users, the navbar menu consist of the Home, Events, Seatmap, Sign In, and Sign Up links; while for the logged-in users, it consist of the Home, Events, Seatmap, Sign Out, and My Account links.
 
+<!-- Nav Bar screenshot here -->
+
 ### **FOOTER**
 The footer simply contains the title of the site and the icons, which are links to the site’s social media accounts.
+
+<!-- Footer screenshot here -->
 
 ### **Events** Page
 The Events page displays the list of all the upcoming events. This page is paginated, and there are only 5 events displayed per page. 
 
 Each item in the list is an event which shows a featured image, its title, date and time, a reserve button, and number of likes. Also, each item or event is clickable and will redirect the site to the specific event’s page. The reserve button, on the other hand, will redirect to the Seat Reservation page.
 
+<!-- Events Page screenshot here -->
+
 ### **Specific Event** Page
 The specific event’s page contains the details of the events. It shows the title of the event, its schedule, number of seats still available, a ‘Reserve a Seat’ button, a ‘LIKE’ button,  the event’s description and/or the performer’s description, and a comment section.
 
-For non-logged-in users, they will only see the comments posted by other users, but cannot post comment themselves; while the logged-in users can post comments .
+For non-logged-in users, they will only see the comments posted by other users, but cannot post comment themselves; while the logged-in users can post comments.
+
+<!-- Specific Event Page screenshot here -->
 
 ### **Seat Map** Page
 The Seat Map page shows the generic seat map for all the events of Goodwill Events. This SVG seat map can be panned and zoomed, but reservation cannot be made on this page. It’s main purpose is only to show the seating arrangement in the venue.
+
+<!-- Seat Map Page screenshot here -->
 
 ### **Seat Reservation** Page
 The Seat Reservation page contains the interactive SVG seat map, which can be panned and zoomed. In addition, the seats, as represented by the small boxes in the SVG map, can be toggled to select or deselect. In addition, the selected or reserved seats can be updated and deleted.
@@ -484,31 +496,45 @@ Only logged-in users can be redirected to this page, and they are limited to boo
 
 When a logged-in user deletes their previously booked seats by cancelling all seats and clicking the ‘Update My Reservation’ button, a off-canvas lightbox will come with a button for the user to click to confirm deletion.
 
+<!-- Seat Reservation Page screenshot here -->
+
 ### **Sign In** Page
 In the Sign In page, the user is required to provide their username and password to be logged-in. Also, if the user wishes to be automatically signed in on their next visit when they don’t sign out after their current site visit then there is a Remember Me checkbox for them to tick.
 
 For users who happens to visit the Sign In page but actually still have not signed up or registered in the website previously, a link is provided for them to be redirected to the Sign Up page. And if the user realizes that they have forgotten their password, a Forgot Password link is on display for them to click and be redirected to the Password Reset page.
+
+<!-- Sign In Page screenshot here -->
 
 ### **Register (Sign Up)** Page
 The Registration or Sign Up page requires the user to provide a username, first name, last name, email address, and password. The password has to be supplied twice for certainty of user’s intended password. The validation of these fields are provided by Django-Allauth.
 
 If the user visiting the page, realizes they actually have registered previously, a Sign In link is available on the page for the user to click and be redirected to the Sign In page.
 
+<!-- Sign Up Page screenshot here -->
+
 ### **My Account** Page
 The My Account page is created to allow a user to change or update their account profile, which includes their first name, last name, and email address. However, the username is not allowed to be changed.
 
 And if the user also wants to change their password, a link to Change Password is on this page for the user to click.
 
+<!-- My Account Page screenshot here -->
+
 ### **Sign Out** Page
 The Sign Out page’s only purpose is to require the user to confirm that they really intend to sign out from the website after clicking the Sign Out link in the navbar menu. And if they do want to logout, a Sign Out button is available for them to click.
+
+<!-- Sign Out Page screenshot here -->
 
 ### **Change Password** Page
 The Change Password page requires the current password and new password (needs to be entered twice) to be supplied. Then, a Change Password button is available for clicking to process the request. If the current password provided is correct, then the password will be successfully changed in the database.
 
 A link to reset password is also available through the Forgot Password link.
 
+<!-- Change Password Page screenshot here -->
+
 ### **Password Reset** Page     
 In this page, the user is only required to supply their registered email address where the site will automatically send an email with a link. Once this email is received by the user and they click on the link, the user will be redirected to a page where they can set their new password.
+
+<!-- Password Reset Page screenshot here -->
 
 ## Fixed Bugs
 
