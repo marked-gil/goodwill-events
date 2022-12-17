@@ -449,6 +449,12 @@ Iteration 4:
 ### STRUCTURE
 
 ### SKELETON
+#### **Database Schema**
+<!-- Events -->
+<!-- Comment -->
+<!-- Django-Allauth for Member Account Profile -->
+<!-- Venue Seat -->
+<!-- Venue Seating -->
 
 ### SURFACE
 
@@ -596,6 +602,7 @@ This project uses the following tools:
     * [Cloudinary](https://cloudinary.com/) - where the assets of this project, including photos are stored
 * Database:
     * [ElephantSQL](https://www.elephantsql.com/) - serves as the PostgreSQL database for this project
+* SVG
 * Modules and Libraries:
     * [SVG-PAN-ZOOM library](https://github.com/bumbu/svg-pan-zoom) - used to add the pan and zoom functionality to the SVG seat map.
     * os

@@ -1,7 +1,15 @@
+/* Customized Variables */
+:root {
+    --clr-chinese-silver: #ccc6c6;
+    --clr-cornflower-blue: #1f418b;
+    --clr-slimy-green: #19a90c;
+}
+
 /* unavailable seats */
 [data-seat-location] {
-    fill: rgb(202, 217, 217);
-    stroke: rgb(10, 34, 84);
+    fill: var(--clr-chinese-silver);
+    stroke: black;
+    stroke-width: .6px;
 }
 
 #seating-event-title {
@@ -14,17 +22,19 @@
 }
 
 #available-icon {
-    color: rgb(158, 156, 156);
+    color: var(--clr-chinese-silver);
     font-size: 1rem;
+    border: .6px solid black;
+    border-radius: 50%;
 }
 
 #selected-icon {
-    color: rgb(25, 169, 12);
+    color: var(--clr-slimy-green);
     font-size: 1rem;
 }
 
 #unavailable-icon {
-    color: rgb(10, 34, 84);
+    color: var(--clr-cornflower-blue);
     font-size: 1rem;
 }
 
@@ -41,12 +51,12 @@
 }
 
 .booked {
-    fill: rgb(8, 74, 155);
+    fill: var(--clr-cornflower-blue);
     pointer-events: none;
 }
 
 .user-selected {
-    fill: rgb(25, 169, 12);
+    fill: var(--clr-slimy-green);
 
 }
 
@@ -103,6 +113,11 @@
 }
 
 @media screen and (min-width: 574px) {
+    
+    .seatmap-legend-icon {
+        font-size: 1rem;
+    }
+
     #selected-seats-container {
         height: 11rem;
     }
@@ -119,6 +134,12 @@
 }
 
 @media screen and (min-width: 768px) {
+    #available-icon,
+    #selected-icon,
+    #unavailable-icon {
+        font-size: 1.5rem;
+    }
+
     #seats-selected-list {
         padding-left: 5rem;
     }
