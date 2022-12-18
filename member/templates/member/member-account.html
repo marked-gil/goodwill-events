@@ -10,7 +10,7 @@
         <div class="mb-3">
             <label for="member-username mb-0" class="form-label mb-1 d-block">Username</label>
             <input type="text" id="member-username" class="form-control" value="{{ member.username }}" readonly>
-            <div class="form-text ms-2">Username cannot be changed.</div>
+            <div class="form-text ms-2 muted-text">Username cannot be changed.</div>
         </div>
         <div class="mb-3">
             <label for="id_first_name" class="form-label mb-1">First Name</label>
@@ -34,11 +34,19 @@
             </div>
         </div>
         <button type="submit" class="btn btn-primary d-block mx-auto py-0 mt-4 disabled" id="update-account-btn">Update</button>
+
+        <!-- Change Password Link -->
+        <div class="mt-4 text-white">
+            <a id="change-password" href="{% url 'account_change_password' %}"><i class="fa-solid fa-lock"></i> Change Password</a>
+        </div>
+
     </form>
 
-    <div class="container col-md-9 col-lg-7 col-xl-6 my-3">
-        <a id="change-password" href="{% url 'account_change_password' %}"><i class="fa-solid fa-lock"></i> Change Password</a>
+    <div class="container col-md-9 col-lg-7 col-xl-6 my-5">
+        <button type="button" class="btn btn-success">My Reservations</button>
     </div>
+
+
 </section>
 {% endblock content %}
 

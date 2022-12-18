@@ -93,7 +93,7 @@ textarea {
     color: var(--clr-mikado-yellow);
 }
 
-/* UTILITY CLASSES [Start] */
+/* UTILITY CLASSES [End] */
 
 /* Logo */
 #logo {
@@ -429,9 +429,14 @@ footer {
     margin-top: .4rem;
 }
 
-#password-change-form a {
+#password-change-form > a {
     color: var(--clr-white);
 }
+
+#password-change-form > a:hover {
+    color: var(--clr-dutch-white);
+}
+
 /* --> PASSWORD CHANGE [End] <-- */
 
 
@@ -447,8 +452,7 @@ footer {
 }
 
 #change-password:hover {
-    color: var(--clr-police-blue);
-    font-weight: 700;
+    color: var(--clr-dutch-white);
 }
 /* --> MEMBER ACCOUNT Page [End] <-- */
 
