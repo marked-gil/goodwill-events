@@ -42,8 +42,44 @@
 
     </form>
 
+    <!-- My Reservations [Bootstrap's Offcanvas] -->
     <div class="container col-md-9 col-lg-7 col-xl-6 my-5">
-        <button type="button" class="btn btn-success">My Reservations</button>
+        <button type="button" class="btn btn-success" data-bs-target="#offcanvasRight" data-bs-toggle="offcanvas"aria-controls="offcanvasRight">View My Reservations</button>
+    </div>
+
+    <div class="offcanvas offcanvas-end" data-bs-backdrop="static" tabindex="-1" id="offcanvasRight" aria-labelledby="staticBackdropLabel">
+    <div class="offcanvas-header">
+        <button type="button" class="btn-close mt-3" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <h5 class="offcanvas-title mb-4 mb-sm-5 text-center bold-text" id="offcanvasRightLabel">My Reservations</h5>
+        {% for booking in event_reservations %}
+        <ul class="px-3">
+            <li>
+                <a href="{% url 'seatmap' booking.event.slug %}">{{ booking.event.title }}</a>
+                <p class="mb-0"></p>
+                
+                <small class="d-block">
+                    {{ booking.event.event_date|date:"t M Y, D" }} | {{ booking.event.event_time }}
+                </small>
+                <div class="d-flex justify-content-between">
+                    <p class="mb-0">reserved:</p>
+                    <p class="mb-0"> 
+                        {% if booking.seat_location_1 and booking.seat_location_2 %}
+                            {{ booking.seat_location_1 }}, {{ booking.seat_location_2 }}
+                        {% elif booking.seat_location_1 %}
+                            {{ booking.seat_location_1 }}
+                        {% elif booking.seat_location_2 %}
+                            {{ booking.seat_location_2 }}
+                        {% endif %}
+                    </p>
+                </div>
+
+            </li>
+        </ul>
+
+        {% endfor %}
+    </div>
     </div>
 
 

@@ -7,6 +7,7 @@ from django.views.generic import DetailView
 from django.views.generic.edit import UpdateView
 from django.views import View
 from django.contrib.auth.models import User
+from seating.models import EventSeating
 
 
 class MemberAccount(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
@@ -19,6 +20,15 @@ class MemberAccount(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     slug_field = 'username'
     context_object_name = 'member'
     success_message = "You have successfully updated your account."
+
+    def get_context_data(self, **kwargs):
+        """
+        Insert the single object into the context dict.
+        """
+        context = {}
+        context['event_reservations'] = EventSeating.objects.filter(
+            reserved_by=self.request.user)
+        return super().get_context_data(**context)
 
     def get_success_url(self):
         return reverse('member_account', kwargs={'slug': self.kwargs['slug']})
