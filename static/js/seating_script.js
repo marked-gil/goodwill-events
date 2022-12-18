@@ -2,6 +2,7 @@
 if (document.getElementById('seatmap-container')) {
     const string_reserved_seats = document.getElementById('data-seats').textContent;
     let list_reserved_seats = string_reserved_seats.replace(/[^a-zA-Z0-9_,]/g, '').split(",");
+    const userBookedSeats = getSelectedSeats();
 
     window.onpageshow = function () {
         const svg_seats_list = document.querySelectorAll('[data-seat-location]');
@@ -32,6 +33,7 @@ if (document.getElementById('seatmap-container')) {
     
 
     // --> FUNCTIONS [Start] <--
+
     /**
      * Blocks seats that are already reserved.
      */
@@ -42,7 +44,7 @@ if (document.getElementById('seatmap-container')) {
     }
 
     /**
-     * Transforms SVG boxes (seats) into clickable elements
+     * Transforms SVG boxes (seats) into clickable elements; also enables or disables the button to reserve or update the seats
      */
     function makeAllFreeSeatsClickable(svg_seat, seat_loc) {
         const ALLOWED_SEATS_PER_USER = 2
@@ -50,9 +52,11 @@ if (document.getElementById('seatmap-container')) {
         svg_seat.addEventListener('click', function () {
             if (SelectedSeatsByUser().length < ALLOWED_SEATS_PER_USER) {
                 toggleSeat(this, seat_loc)
+                toggleReserveUpdateButton()
             } else {
                 if (this.classList.contains("user-selected")) {
                     toggleSeat(this, seat_loc)
+                    toggleReserveUpdateButton()
                 }
             }
         })
@@ -103,7 +107,7 @@ if (document.getElementById('seatmap-container')) {
     }
 
     /**
-     * Cancels reserved seat by unblocking the SVG seat box and removing the display of the seat location name
+     * Cancels reserved seat by unblocking the SVG seat box and removing the display of the seat's name; also enables or disables the button to reserve or update the seats
      */
     function cancelSeat(btn) {
         const svg_seats_list = document.querySelectorAll('[data-seat-location]');
@@ -120,6 +124,7 @@ if (document.getElementById('seatmap-container')) {
                     removeDeselectedSeat(seat);
                 }
             }
+            toggleReserveUpdateButton()
         })
     }
 
@@ -152,7 +157,6 @@ if (document.getElementById('seatmap-container')) {
         } else {
             return false
         }
-        
     }
 
     /**
@@ -168,6 +172,58 @@ if (document.getElementById('seatmap-container')) {
                 confirm_delete_btn.click()
             }
         }
+    }
+
+    /**
+     * Gets the user's reserved or selected seats
+     * @returns array of selected seats
+     */
+    function getSelectedSeats() {
+        const seatChoices = document.querySelectorAll('#seats-selected-list>li')
+        const seatsArray = []
+        for (seat of seatChoices) {
+            seatsArray.push(seat.getAttribute('id'))
+        }
+        return seatsArray
+    }
+
+    /**
+     * Checks if the selected seats are the same as those already reserved by the user
+     * @returns true or false
+     */
+    function sameSeatsAsOriginal() {
+        const currentSeatChoices = getSelectedSeats();
+        if (currentSeatChoices.length === userBookedSeats.length) {
+            if (currentSeatChoices.sort().join(',') === userBookedSeats.sort().join(',')) {
+                return true
+            }
+            return false
+        }
+        return false
+    }
+
+    function toggleReserveUpdateButton() {
+        if (!sameSeatsAsOriginal()) {
+            enableReserveBtn()
+        } else {
+            disableReserveBtn()
+        }
+    }
+
+    /**
+     * Enables the 'Reserve' or 'Update button
+     */
+    function enableReserveBtn() {
+        const btn = document.querySelector('.reserve-btn')
+        btn.classList.remove('disabled-reserve-btn')
+    }
+
+    /**
+     * Disables the 'Reserve' or 'Update' button
+     */
+    function disableReserveBtn() {
+        const btn = document.querySelector('.reserve-btn')
+        btn.classList.add('disabled-reserve-btn')
     }
     // --> FUNCTIONS [End] <--
 }

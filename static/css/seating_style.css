@@ -57,7 +57,6 @@
 
 .user-selected {
     fill: var(--clr-slimy-green);
-
 }
 
 #svg-pan-zoom-controls {
@@ -93,6 +92,11 @@
     font-size: .9rem;
     width: 6.2rem;
     padding: .2rem .7rem;
+}
+
+.disabled-reserve-btn {
+    pointer-events: none;
+    opacity: .8;
 }
 
 /* Hidden Elements */
