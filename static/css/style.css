@@ -9,9 +9,10 @@
     --clr-police-blue: #284b63;
     --clr-american-pink:#ff9393;
     --clr-white: white;
+    --font-lobster: 'Lobster', cursive;
 }
 
-/* DEFAULT STYLING */
+/* DEFAULT STYLING [Start] */
 
 * {
     font-family: 'Roboto', sans-serif;
@@ -41,12 +42,14 @@ a:hover {
     color: inherit;
 }
 
-/* prevents the textarea from resizing */
-textarea {
+textarea {         /* prevents resizing of textarea */
     resize: none;
 }
 
+/* DEFAULT STYLING [End] */
+
 /* UTILITY CLASSES [Start] */
+
 .active {
     font-weight: 700;
 }
@@ -68,8 +71,8 @@ textarea {
     pointer-events: none;
 }
 
-.logo-font-style {
-    font-family: 'Lobster', cursive;
+.font-lobster {
+    font-family: var(--font-lobster);
 }
 
 .muted-text {
@@ -113,23 +116,20 @@ textarea {
 /* --> HOME PAGE [start] <-- */
 
 #homepage-banner-container {
-    background-color: var(--clr-dutch-white);
+    background-color: var(--clr-mikado-yellow);
     box-shadow: 0 -60px 30px 35px var(--clr-crayola-gold),
                 0 -5px 30px 35px var(--clr-crayola-gold) inset;
 }
 
 #homepage-title {
+    color: var(--clr-linen);
     font-weight: 700;
+    text-shadow: 2px 0 5px var(--clr-police-blue);
 }
 
 #title-span {
     font-size: 1.3rem;
     font-weight: 400;
-    display: block;
-}
-
-#catchy-line {
-    margin-top: 1rem;
 }
 
 /* featured events */
@@ -141,7 +141,6 @@ textarea {
 #featured-events {
     font-size: 1.4rem;
     font-weight: 700;
-    margin-bottom: 1.5rem;
 }
 
 .featured-event-image {
@@ -150,7 +149,7 @@ textarea {
 }
 
 .feat-event-card {
-    border: 3px solid darkblue;
+    border: 4px solid var(--clr-rich-black);
 }
 
 .featured.card-title {
@@ -186,7 +185,7 @@ textarea {
 }
 
 #event-card-wrapper {
-    border: 3px solid rgb(147, 87, 87)
+    border: 4px solid var(--clr-rich-black)
 }
 
 .event-card-img {
@@ -194,13 +193,19 @@ textarea {
     object-fit: cover;
 }
 
+.event-card-img:hover {
+    opacity: .9;
+}
+
 .events-list.card-title {
     font-weight: 700;
 }
 
 #event-title:hover {
-    letter-spacing: 1.5px;
-    color: rgb(29, 45, 184);
+    color: var(--clr-rich-black);
+    background-color: var(--clr-crayola-gold);
+    border-radius: 5px;
+    padding: 0 10px;
 }
 
 #event-post {
@@ -291,7 +296,17 @@ textarea {
     top: 26px;
 }
 
-/* --> EVENT DETAILS PAGE [end] */
+/* --> EVENT DETAILS PAGE [End] */
+
+
+/* --> SEAT MAP PAGE [Start] */
+
+#view-seatmap-section h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+/* --> SEAT MAP PAGE [End] */
 
 
 /* --> FOOTER [Start] <--*/
@@ -504,6 +519,11 @@ footer {
         font-size: 1rem;
     }
 
+    /* SEAT MAP PAGE */
+    #view-seatmap-section h2 {
+        font-size: 1.8rem;
+    }
+
     /* SIGN OUT */
     #sign-out-notice {
         font-size: 1.1rem;
@@ -541,6 +561,7 @@ footer {
 
 @media screen and (min-width:500px) and (max-width:767px) {
     /* HOME PAGE */
+
     .feat-event-card-wrapper {
         padding-left: 12%;
         padding-right: 12%;
@@ -557,6 +578,15 @@ footer {
         padding-right: 2.5rem;
     }
 
+    /* HOME PAGE */
+    #title-span {
+        font-size: 1.5rem;
+    }
+    
+    #catchy-line {
+        font-size: 1.2rem;
+    }
+
     /* ABOUT US */
     #about-us-wrapper {
         width: 40rem;
@@ -566,7 +596,7 @@ footer {
         font-size: 1.2rem;
     }
 
-    /* EVENT DETAILS PAEG */
+    /* EVENT DETAILS PAGE */
     #img-wrapper {
         height: 18rem;
     }
@@ -596,6 +626,11 @@ footer {
 
     #event-post {
         padding: 1.5rem 0;
+    }
+
+    /* SEAT MAP PAGE */
+    #view-seatmap-section h2 {
+        font-size: 2.2rem;
     }
 
     /* FOOTER */

@@ -3,12 +3,14 @@
 {% block content %}
 <section id="view-seatmap-section" class="container py-4 py-sm-5">
 
-    <h2 class="text-center pb-3 pb-sm-4">Seat Map</h2>
-    {% if user.is_authenticated %}
-    <p class="text-center">To reserve your seat, you need to choose an event among our <button type="button" class="btn btn-light py-0 px-1"><a href="{% url 'events_list' %}">UPCOMING EVENTS</a></button>.</p>
-    {% else %}
-    <p class="text-center">To reserve your seat for an event, you need to <button type="button" class="btn btn-light py-0 px-1"><a href="{% url 'account_login' %}">SIGN IN</a></button>.</p>
-    {% endif %}
+    <div class="container-md text-center">
+        <h2 class="text-center pb-3 pb-sm-4">Seat Map</h2>
+        {% if user.is_authenticated %}
+        <p class="text-center">To reserve your seat, you need to choose an event among our <button type="button" class="btn btn-light py-0 px-1"><a href="{% url 'events_list' %}">UPCOMING EVENTS</a></button>.</p>
+        {% else %}
+        <p class="text-center">To reserve your seat for an event, you need to <button type="button" class="btn btn-light py-0 px-1"><a href="{% url 'account_login' %}">SIGN IN</a></button>.</p>
+        {% endif %}
+    </div>
 
     <!-- Colour Legend -->
     <div id="seatmap-legend" class="container d-flex justify-content-around align-items-center px-2 py-1">
