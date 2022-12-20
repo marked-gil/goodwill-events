@@ -15,11 +15,12 @@
     * [Structure](#)
     	* [Interaction Design](#)
     * [Skeleton](#)
-        * [Data Model](#)
+        * [Database Schema](#database-schema)
+        * [Wireframes](#wireframes)
     * [Surface](#)
-* [Features](#)
-* [Fixed Bugs](#)
-* [Bugs Left To Fix](#b)
+* [Features](#features)
+* [Fixed Bugs](#fixed-bugs)
+* [Bugs Left To Fix](#bugs-left-to-fix)
 * [Testing](#)
 	* [Test Cases](#)
     * [Pep8 Checker](#pep8-online-checker)
@@ -445,13 +446,24 @@ Iteration 4:
         * Require all fields in the User Model
 
 #### **Design Choice**
+<!-- Color Schema -->
+<!-- Typography -->
 
 ### STRUCTURE
+<!-- Interaction Design (IXD) -->
+<!-- Consistent -->
+<!-- Predictable -->
+<!-- Learnable -->
+<!-- Visible -->
+<!-- Provides clear and intuitive Feedback -->
 
 ### SKELETON
 #### **Database Schema**
-<!-- Text here -->
+The database for the Goodwill Events project is composed of 5 models, of which four (4) are custom models, such as the Event, Comment, VenueSeat, and EventSeating models; while one (1) is a default model from Django - the User model. The database schema shown below, which is a modified snowflake schema, represents the relationship of the models among each other. Also, it provides significant information such as the table names (model names), the fields, and the type of data for each field. (Note: PK stands for 'primary key')
 ![Database schema](docs/others/database-schema.png)
+
+#### **Wireframes**
+<!-- Wireframes screenshots -->
 
 ### SURFACE
 
@@ -599,15 +611,15 @@ This project uses the following tools:
     * [Cloudinary](https://cloudinary.com/) - where the assets of this project, including photos are stored
 * Database:
     * [ElephantSQL](https://www.elephantsql.com/) - serves as the PostgreSQL database for this project
-* SVG
 * Modules and Libraries:
+    * [Bootstrap](https://getbootstrap.com/) - frontend toolkit used to build this responsive site
+    * [JQUERY](https://jquery.com/) - 
     * [SVG-PAN-ZOOM library](https://github.com/bumbu/svg-pan-zoom) - used to add the pan and zoom functionality to the SVG seat map.
     * os
     * [datetime module](https://docs.python.org/3/library/datetime.html)
     * django-database-url
     * [django-allauth](https://django-allauth.readthedocs.io/en/latest/installation.html) - used for user authentication and registration.
     * [django-summernote](https://github.com/summernote/django-summernote) - used to embed a WYSIWYG editor in the admin panel for the event post.
-* [Bootstrap](https://getbootstrap.com/) - frontend toolkit used to build this responsive site
 * [Sendgrid](https://sendgrid.com/) - used in sending emails to users without having to maintain email servers. In this project, it sends password reset link via email to users who has forgotten their password
 * Google Fonts
 * [Miniwebtool](https://miniwebtool.com/django-secret-key-generator/) - as Django secret_key generator
@@ -615,6 +627,8 @@ This project uses the following tools:
 * Gitpod - the cloud-based IDE (Integrated Developer Environment) used to code this site
 * GitHub - stores the source code repository for this website
 * Balsalmiq
+* [BOXY-SVG](boxy-svg.com) - an online editor for SVG files, which was used to create the SVG seat map
+* [Diagrams.net](https://www.diagrams.net) - used to create the database schema diagram
 * [Favicon](https://favicon.io/) - Favicon generator
 * [Diffchecker](https://www.diffchecker.com/#) - used when comparing codes tested in another IDE to the codes in gitpod
 * [Grammarly](https://www.grammarly.com/) - used to check the grammar of the contents in this project
