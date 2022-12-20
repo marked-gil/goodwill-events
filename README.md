@@ -450,11 +450,8 @@ Iteration 4:
 
 ### SKELETON
 #### **Database Schema**
-<!-- Events -->
-<!-- Comment -->
-<!-- Django-Allauth for Member Account Profile -->
-<!-- Venue Seat -->
-<!-- Venue Seating -->
+<!-- Text here -->
+![Database schema](docs/others/database-schema.png)
 
 ### SURFACE
 
