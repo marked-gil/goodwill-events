@@ -3,14 +3,14 @@
 {% load static %}
 
 {% block content %}
-<section id="homepage-banner-container" class="d-flex flex-column justify-content-center mt-5 pb-sm-5">
+<section id="homepage-banner-container" class="d-flex flex-column justify-content-center mt-5 pb-4">
     <h1 class="text-center mt-md-4"><span id="title-span" class="d-block mb-3">Welcome to </span><span id="homepage-title">Goodwill Events</span></h1>
     <p id="catchy-line" class="text-center px-3 mt-3">The fusion of Entertainment and Charity.</p>
 </section>
 
-<section id="feature-events-outer-container" class="py-sm-5 px-md-5">
-    <h2 id="featured-events" class="text-center mb-4">Featured Events</h2>
-    <div id="featured-events-inner-container" class="row row-cols-1 row-cols-md-2 d-md-flex justify-content-center justify-content-xl-between row-cols-lg-3 g-4 mt-sm-4">
+<section id="feature-events-outer-container" class="py-3 px-md-4">
+    <h2 id="featured-events" class="text-center mb-4 pt-xl-4">Featured Events</h2>
+    <div id="featured-events-inner-container" class="row row-cols-1 row-cols-md-2 d-md-flex justify-content-center justify-content-xl-between row-cols-lg-3 g-4">
         {% for event in featured_events %}
         <div class="col feat-event-card-wrapper">
             <a href="{% url 'event_details' event.slug %}">
@@ -24,7 +24,7 @@
                     <div class="card-body pb-0">
                         <h5 class="featured card-title text-center">{{ event.title }}</h5>
                         <p class="featured card-text text-center">{{ event.blurb }}</p>
-                        <p class="text-center">{{ event.event_date }} ({{ event.event_time }})</p>
+                        <p class="text-center small-text text-blue">{{ event.event_date|date:'M j, Y - D' }} ({{ event.event_time|time:'f A' }})</p>
                     </div>
                 </div>
             </a>

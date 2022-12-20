@@ -80,12 +80,20 @@ textarea {         /* prevents resizing of textarea */
     opacity: .8;
 }
 
+.small-text {
+    font-size: .9rem;
+}
+
 .text-pink {
     color: var(--clr-american-pink);
 }
 
 .text-white {
     color: var(--clr-white);
+}
+
+.text-blue {
+    color: var(--clr-police-blue);
 }
 
 .underline-text {
@@ -103,28 +111,43 @@ textarea {         /* prevents resizing of textarea */
     font-size: 1.7rem;
 }
 
+#logo:hover {
+    color: var(--clr-linen);
+    font-weight: 700;
+    text-shadow: 5px 0 5px var(--clr-police-blue);
+}
+
 /* navbar */
 
 #navbar-main {
     background-color: var(--clr-mikado-yellow);
+    box-shadow: 0px 0px 50px 5px rgb(235, 210, 16) inset, 0px 0px 5px 5px rgb(0, 0, 0) inset;
 }
 
-.nav-item {
+.nav-link {
     font-size: 1.1rem;
+}
+
+.nav-link:hover {
+    /* color: var(--clr-white); */
+    /* text-shadow: 0 0 6px var(--clr-rich-black); */
+    text-shadow: 0 0 15px var(--clr-white);
+    background-color: var(--clr-dutch-white);
+    border-radius: 10px;
 }
 
 /* --> HOME PAGE [start] <-- */
 
 #homepage-banner-container {
-    background-color: var(--clr-mikado-yellow);
+    background-color: rgb(238, 204, 35);
     box-shadow: 0 -60px 30px 35px var(--clr-crayola-gold),
-                0 -5px 30px 35px var(--clr-crayola-gold) inset;
+                0 0 30px 35px var(--clr-crayola-gold) inset;
 }
 
 #homepage-title {
     color: var(--clr-linen);
     font-weight: 700;
-    text-shadow: 2px 0 5px var(--clr-police-blue);
+    text-shadow: 4px 0 5px var(--clr-police-blue);
 }
 
 #title-span {
@@ -143,13 +166,22 @@ textarea {         /* prevents resizing of textarea */
     font-weight: 700;
 }
 
+.feat-event-card-wrapper {
+    max-width: 23rem;
+}
+
+.feat-event-card-wrapper:hover {
+    transform: rotate(2deg);
+}
+
 .featured-event-image {
     height: 10rem;
     object-fit: cover;
 }
 
 .feat-event-card {
-    border: 4px solid var(--clr-rich-black);
+    border: 2px solid var(--clr-rich-black);
+    border-radius: 10px
 }
 
 .featured.card-title {
@@ -326,6 +358,10 @@ footer {
     font-size: 2rem;
     color: var(--clr-white);
 }
+
+.fa-brands:hover {
+    color: var(--clr-mikado-yellow);
+} 
 
 /* --> FOOTER [End] <--*/
 
@@ -559,15 +595,6 @@ footer {
     }
 }
 
-@media screen and (min-width:500px) and (max-width:767px) {
-    /* HOME PAGE */
-
-    .feat-event-card-wrapper {
-        padding-left: 12%;
-        padding-right: 12%;
-    }
-}
-
 @media screen and (min-width: 768px) {
     #logo {
         font-size: 2.4rem;
@@ -669,7 +696,7 @@ footer {
 
     /* HOME PAGE */
     #featured-events-inner-container {
-        width: 75rem;
+        width: 70rem;
         margin: 0 auto;
     }
 

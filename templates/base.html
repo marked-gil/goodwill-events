@@ -37,7 +37,7 @@
 <body>
     <header>
         <!-- NAV BAR  [Start] -->
-        <nav id="navbar-main" class="navbar navbar-expand-md">
+        <nav id="navbar-main" class="navbar navbar-expand-md py-md-4">
             <div class="container-fluid">
                 <!-- logo -->
                 <a id="logo" class="navbar-brand font-lobster" href="{% url 'featured_events' %}">Goodwill Events</a>
@@ -51,28 +51,28 @@
                 <!-- navbar menu -->
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" id="home-link" href="{% url 'featured_events' %}">Home</a>
+                        <li>
+                            <a class="nav-link ps-2" id="home-link" href="{% url 'featured_events' %}">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="events-link" href="{% url 'events_list' %}">Events</a>
+                        <li>
+                            <a class="nav-link ps-2" id="events-link" href="{% url 'events_list' %}">Events</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="view-seatmap-link" href="{% url 'view_seatmap' %}">Seat Map</a>
+                        <li>
+                            <a class="nav-link ps-2" id="view-seatmap-link" href="{% url 'view_seatmap' %}">Seat Map</a>
                         </li>
                         {% if user.is_authenticated %}
-                        <li class="nav-item">
-                            <a class="nav-link" id="sign-out-link" href="{% url 'account_logout' %}">Sign Out</a>
+                        <li>
+                            <a class="nav-link ps-2" id="sign-out-link" href="{% url 'account_logout' %}">Sign Out</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="user-acount-link" href="{% url 'member_account' user.username %}">My Account</a>
+                        <li>
+                            <a class="nav-link ps-2" id="user-acount-link" href="{% url 'member_account' user.username %}">My Account</a>
                         </li>
                         {% else %}
-                        <li class="nav-item">
-                            <a class="nav-link" id="sign-in-link" href="{% url 'account_login' %}">Sign In</a>
+                        <li>
+                            <a class="nav-link ps-2" id="sign-in-link" href="{% url 'account_login' %}">Sign In</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="sign-up-link" href="{% url 'account_signup' %}">Register</a>
+                        <li>
+                            <a class="nav-link ps-2" id="sign-up-link" href="{% url 'account_signup' %}">Register</a>
                         </li>
                         {% endif %}
                     </ul>
