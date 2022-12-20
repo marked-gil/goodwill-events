@@ -36,13 +36,19 @@
 </head>
 <body>
     <header>
+        <!-- NAV BAR  [Start] -->
         <nav id="navbar-main" class="navbar navbar-expand-md">
             <div class="container-fluid">
+                <!-- logo -->
                 <a id="logo" class="navbar-brand logo-font-style" href="{% url 'featured_events' %}">Goodwill Events</a>
+
+                <!-- navbar toggler -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
+                <!-- navbar menu -->
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
@@ -73,7 +79,9 @@
                 </div>
             </div>
         </nav>
+        <!-- NAV BAR  [End] -->
     </header>
+
     <main>
         <!-- flash messages -->
         {% if messages %}
@@ -84,16 +92,16 @@
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         </div>
-
         {% endfor %}
         {% endif %}
 
+        <!-- for page content -->
         {% block content %}
         {% endblock content %}
     </main>
 
+    <!-- for footer content -->
     {% block footer %}
-
     {% endblock %}
 
     <!-- Bootstrap JS -->
