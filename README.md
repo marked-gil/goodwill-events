@@ -553,6 +553,13 @@ In this page, the user is only required to supply their registered email address
 
 ## Fixed Bugs
 
+* ISSUE:    
+    Whenever a comment was posted in the Comment section, the page would reload and go back to the top of the page. As the comment section is at the lower part of the page, the user then had to scroll back down to see the displayed comment on the Comment section. This did not seem to provide a good user experience.
+    * INTENDED OUTCOME:     
+        Every time a comment is being posted by the user, the comment should be displayed without the page having to go back to the top. If page reload is necessary after every post, it should still stay at the comment section to display the posted comment to the user.
+    * SOLUTION:     
+
+
 ## Bugs Left To Fix
 
 ## Testing
