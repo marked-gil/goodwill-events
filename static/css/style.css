@@ -129,8 +129,6 @@ textarea {         /* prevents resizing of textarea */
 }
 
 .nav-link:hover {
-    /* color: var(--clr-white); */
-    /* text-shadow: 0 0 6px var(--clr-rich-black); */
     text-shadow: 0 0 15px var(--clr-white);
     background-color: var(--clr-dutch-white);
     border-radius: 10px;
@@ -217,7 +215,12 @@ textarea {         /* prevents resizing of textarea */
 }
 
 #event-card-wrapper {
-    border: 4px solid var(--clr-rich-black)
+    border: 2px solid var(--clr-rich-black);
+    border-radius: 10px;
+}
+
+#event-card-wrapper:hover {
+    box-shadow: 2px 0 10px 0 var(--clr-rich-black);
 }
 
 .event-card-img {
