@@ -143,9 +143,8 @@ textarea {         /* prevents resizing of textarea */
 }
 
 #homepage-title {
-    color: var(--clr-linen);
     font-weight: 700;
-    text-shadow: 4px 0 5px var(--clr-police-blue);
+    text-shadow: 4px 0 10px white, 4px 0 5px rgb(188, 180, 59) ;
 }
 
 #title-span {
@@ -183,6 +182,7 @@ textarea {         /* prevents resizing of textarea */
 }
 
 .featured.card-title {
+    font-size: 1.1rem;
     font-weight: 700;
 }
 

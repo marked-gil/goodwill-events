@@ -17,12 +17,12 @@
                 <div class="card h-100 feat-event-card">
                     {% if "proxy_image" in event.featured_image.url %}
                     <img src="{% static 'images/default-image.jpg' %}"
-                        class="card-img-top featured-event-image" alt="featured_image">
+                        class="card-img-top featured-event-image" alt="image for featured event">
                     {% else %}
-                    <img src="{{ event.featured_image.url }}" class="card-img-top featured-event-image" alt="featured image">
+                    <img src="{{ event.featured_image.url }}" class="card-img-top featured-event-image" alt="image for featured event">
                     {% endif %}
                     <div class="card-body pb-0">
-                        <h5 class="featured card-title text-center">{{ event.title }}</h5>
+                        <h3 class="featured card-title text-center">{{ event.title }}</h3>
                         <p class="featured card-text text-center">{{ event.blurb }}</p>
                         <p class="text-center small-text text-blue">{{ event.event_date|date:'M j, Y - D' }} ({{ event.event_time|time:'f A' }})</p>
                     </div>
