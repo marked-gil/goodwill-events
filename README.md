@@ -21,7 +21,7 @@
 * [Features](#features)
 * [Fixed Bugs](#fixed-bugs)
 * [Bugs Left To Fix](#bugs-left-to-fix)
-* [Testing](#)
+* [Testing](#testing)
 	* [Test Cases](#)
     * [Pep8 Checker](#pep8-online-checker)
 * [Deployment](#)
@@ -563,6 +563,7 @@ In this page, the user is only required to supply their registered email address
 ## Bugs Left To Fix
 
 ## Testing
+To view all the tests performend on this project, kindly click [HERE](https://github.com/marked-gil/goodwill-events/blob/main/TESTING.md)
 
 ## Deployment
 
