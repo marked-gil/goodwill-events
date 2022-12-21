@@ -34,9 +34,18 @@
 
 * **EVENT SEATS & RESERVATION**     
     SVG Seat Map's Panning & Zooming Feature
-    ![SVG Seat Map test case](docs/test_cases/test-cases-12.png)
+    ![SVG Seat Map test case](docs/test_cases/test-cases-12.png)    
+    Seat Reservation
+    ![](docs/test_cases/test-cases-13.png)     
+    ![](docs/test_cases/test-cases-14.png)  
+    Reservation Update & Cancellation
+    ![](docs/test_cases/test-cases-15.png)
+    ![](docs/test_cases/test-cases-16.png)  
+    Seat Reservation Feature Restricted to Signed-In Users
+    ![](docs/test_cases/test-cases-17.png)  
 
 * **RECYCLING EXPIRED EVENTS**
+    ![](docs/test_cases/test-cases-18.png)
 
 ## LIGHTHOUSE TESTING
 
