@@ -1,41 +1,53 @@
 # Goodwill Events
 <!-- Screenshot here -->
-**Goodwill Events** is a fictional charity organization that produces events, such as concerts, recitals, dance performances and the like for the purpose of entertainment and most especially for charity. And, this website is created to register new members to the organization, show upcoming events, and allow reservation of desired seats for an event by members. In addition, signed-in users of the website can also like and leave comments on individual event posts.
+**Goodwill Events** is a fictional charity organization that produces events, such as concerts, recitals, dance performances and the like for the purpose of entertainment and most especially for charity. And, this website is created to register new members to the organization, show upcoming events, and allow reservation of desired seats for an event by members. In addition, signed-in users of the website can also like and leave comments on individual event posts. [View Live Website.](https://goodwill-events.herokuapp.com/)
 
 ## TABLE OF CONTENTS
-* [User Experience Design (UXD)](#)
-    * [Strategy](#)
-        * [Main Goal](#)
-        * [Target Audience](#)
-        * [EPICS](#)
-        * [User Stories](#)
-    * [Scope](#)
-        * [Planned Features](#)
-        * [Design Choice](#)
-    * [Structure](#)
+* [User Experience Design (UXD)](#user-experience-design-uxd)
+    * [Strategy](#strategy)
+        * [Main Goal](#main-goal)
+        * [Target Audience](#target-audience)
+        * [EPICS](#epics)
+        * [User Stories](#user-stories)
+    * [Scope](#scope)
+        * [Planned Features](#planned-features)
+        * [Design Choice](#design-choice)
+    * [Structure](#structure)
     	* [Interaction Design](#)
-    * [Skeleton](#)
+    * [Skeleton](#skeleton)
         * [Database Schema](#database-schema)
         * [Wireframes](#wireframes)
-    * [Surface](#)
+    * [Surface](#surface)
 * [Features](#features)
 * [Fixed Bugs](#fixed-bugs)
 * [Bugs Left To Fix](#bugs-left-to-fix)
 * [Testing](#testing)
-	* [Test Cases](#)
-    * [Pep8 Checker](#pep8-online-checker)
-* [Deployment](#)
-* [Technologies](#)
-* [Credits](#)
-* [Acknowledgment](#)
+* [Deployment](#deployment)
+* [Technologies](#technologies)
+* [Credits](#credits)
+* [Acknowledgment](#acknowledgment)
 
 
 ## User Experience Design (UXD)
 
 ### STRATEGY
 #### **Main Goal:**
+This website aims to showcase 'upcoming' charity shows and events by the fictional organization called ‘Goodwill Events’. And it provides numerous conveniences to philanthropists, such as its online membership registration and seat reservation features. It also allows members to leave comments and likes on specific upcoming events.
 
 #### **Target Audience:**
+* Philanthropists or people who are interested in charity work, and are willing to support the cause of a charity organization.     
+* People who enjoy attending concerts and shows for its entertainment value.
+* People who prefer convenience when attending events by being able to choose and reserve preferred seat/s ahead of time.
+* People who like to feel involved and able to show support to a specific event by commenting and liking an event post.
+
+#### **The Use of Agile Methodology**
+This project was created using the Agile Methodology. At the start of the project, 9 EPICS were formed to guide the design, structure, and the process of constructing the website. Under each epic are several User Stories that specify the features of the project. And each User Story was assigned a story point  ( ie, 2 - 8 points) and a priority label (ie, Must-Have, Should-Have, Could-Have, and Won’t-Have). The story points for each User Story guided the creator to estimate the time needed to implement the feature, while the priority labels allowed the creator to implement first the most vital components of the site to make it a viable product quicker.
+
+Also, each User Story includes acceptance criteria, which are the basis of whether the User Story has been implemented successfully or not. And in order for the creator to fulfill them successfully, tasks are specified for the creator to implement.
+
+In total, there are 30 User Stories formulated for this project - 28 have been implemented, and the remaining 2 are left for future implementation. These 28 implemented User Stories were divided among the 4 planned iterations. However, each iteration has been given a different timeframe as the owner and creator of this site has his time constrained by other professional obligations.
+
+Github’s Kanban board is an extremely useful feature that this project used. Through it , tasks were marked conveniently when done, and User Stories were closed when fulfilled. Here is the link for the project’s Kanban board - [CLICK HERE](https://github.com/users/marked-gil/projects/15).
 
 #### **EPICS:**
 1. [Initial Django Setup](https://github.com/marked-gil/goodwill-events/issues/1)
@@ -561,6 +573,7 @@ In this page, the user is only required to supply their registered email address
 
 
 ## Bugs Left To Fix
+<!-- Content here -->
 
 ## Testing
 To view all the tests performend on this project, kindly click [HERE](https://github.com/marked-gil/goodwill-events/blob/main/TESTING.md)
@@ -588,10 +601,7 @@ This website is published on Heroku. The following were the steps I took for thi
 6. Then, on the 'Buildpacks' section, I clicked the 'Add buildpack' button and added heroku/python.
 7. Then, I went to the 'Deploy' link and clicked on Github as the Deployment Method.
 8. Below the Deployment Method section is the Connect to Github section. Here I searched for the name of my new app on Github using the search input field provided. When the name of the repository was displayed, I clicked on the 'connect' button.
-9. After a few minutes, it revealed a button to view the deployed website.
-
-<!-- Add deployed website link here -->
-
+9. After a few minutes, it revealed a button to view the deployed website. [View Live Website.](https://goodwill-events.herokuapp.com/)
 ### Cloning from GitHub
 
 To clone the repository for this site, do the following steps:
@@ -653,3 +663,4 @@ This project uses the following tools:
 * Creating a 404 Error Page - [GeeksforGeeks](https://www.geeksforgeeks.org/django-creating-a-404-error-page/)
 
 ## Acknowledgment
+<!-- Content here -->
