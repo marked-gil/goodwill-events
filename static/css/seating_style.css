@@ -3,6 +3,19 @@
     --clr-chinese-silver: #ccc6c6;
     --clr-cornflower-blue: #1f418b;
     --clr-slimy-green: #19a90c;
+    --clr-mikado-yellow: #f9c012;
+    --clr-timber-wolf: #E3D7D7;
+    --clr-dutch-white: #F0E2BF;
+    --clr-crayola-gold: #e6d098;
+    --clr-police-blue: #284b63;
+}
+
+/* UTILITY CLASSES */
+.locked {
+    /* opacity: .8;
+    border-radius: 10px;
+    background-color: var(--clr-crayola-gold);
+    pointer-events: none; */
 }
 
 /* unavailable seats */
@@ -12,8 +25,21 @@
     stroke-width: .6px;
 }
 
-#seating-event-title {
+#reserve-seats-section {
+    min-height: 100%;
+    border: 4px solid forestgreen;
+    min-height: 100%;
+}
+
+/* Event Title */
+#event-info > h2 {
+    font-size: 1.1rem;
     font-weight: 700;
+}
+
+/* Event Date/Time */
+#event-info > p {
+    font-size: .8rem;
 }
 
 /* Legends */
@@ -38,12 +64,6 @@
     font-size: 1rem;
 }
 
-#seatmap-container {
-    /* display: flex;
-    flex-direction: column;
-    width: 100%; */
-}
-
 #my-svg {
     width: 100%;
     height: 55vh;
@@ -63,20 +83,19 @@
     display: none;
 }
 
-/* Selected Seats Box */
+/* Selected Seats Footer Box */
 #selected-seats-container {
     background-color: beige;
     border: 1px solid black;
-    height: 8rem;
 }
 
-#your-selected-seats {
-    font-size: 1rem;
+#selected-seats-container > h3 {
+    font-size: .9rem;
     font-weight: 700;
 }
 
-#seats-selected-list {
-    padding-left: 0;
+#seats-selected-list > li {
+    font-size: .9rem;
 }
 
 .btn-seat-location {
@@ -84,7 +103,6 @@
     color: rgba(158, 73, 73, 0.822);
     background: none;
     border: none;
-    padding: 0;
 }
 
 #update-reservation,
@@ -111,25 +129,36 @@
 /* MEDIA QUERIES */
 
 @media screen and (min-width: 360px) {
-    #seats-selected-list {
-        padding-left: 2.5rem;
+
+    /* Event Title */
+    #event-info > h2 {
+        font-size: 1.2rem;
     }
+    
+    /* Event Date/Time */
+    #event-info > p {
+        font-size: .9rem;
+    }
+
 }
 
-@media screen and (min-width: 574px) {
-    
+@media screen and (min-width: 576px) {
+
+    /* Event Title */
+    #event-info > h2 {
+        font-size: 1.4rem;
+    }
+
     .seatmap-legend-icon {
         font-size: 1rem;
     }
 
-    #selected-seats-container {
-        height: 11rem;
+    #selected-seats-container > h3 {
+        font-size: 1.1rem;
     }
 
     #reservation-notice {
         font-size: .8rem;
-        margin-top: 1rem;
-        padding-left: 0;
     }
 
     #svg-pan-zoom-controls {
@@ -138,28 +167,44 @@
 }
 
 @media screen and (min-width: 768px) {
+
+    /* Event Title */
+    #event-info > h2 {
+        font-size: 1.6rem;
+    }
+    
+    /* Event Date/Time */
+    #event-info > p {
+        font-size: 1rem;
+    }
+
     #available-icon,
     #selected-icon,
     #unavailable-icon {
         font-size: 1.5rem;
     }
 
-    #seats-selected-list {
-        padding-left: 5rem;
-    }
-
-    #your-selected-seats {
+    #selected-seats-container > h3 {
         width: 42rem;
-        margin: auto;
     }
 
     #selected-seats-inner-wrapper {
         width: 42rem;
-        margin: .5rem auto 0;
     }
 
     #reservation-notice {
         width: 42rem;
-        margin: 1rem auto 0;
+    }
+}
+
+@media screen and (max-height: 600px) {
+    #seatmap-container {
+        margin-bottom: 10rem;
+    }
+}
+
+@media screen and (max-height: 900px) {
+    #seatmap-container {
+        margin-bottom: 12rem;
     }
 }

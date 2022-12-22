@@ -32,6 +32,16 @@ if (document.getElementById('seatmap-container')) {
     }
     
 
+    // 
+    const hasBookedSeats = document.getElementById("has-booked-seats").value;
+    const seatsBox = document.getElementById("selected-seats-inner-wrapper");
+
+    if (!hasBookedSeats) {
+        seatsBox.classList.remove("locked")
+    }
+    // 
+
+
     // --> FUNCTIONS [Start] <--
 
     /**
