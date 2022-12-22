@@ -221,6 +221,7 @@ textarea {         /* prevents resizing of textarea */
 
 #event-card-wrapper:hover {
     box-shadow: 2px 0 10px 0 var(--clr-rich-black);
+    opacity: .9;
 }
 
 .event-card-img {
@@ -228,28 +229,18 @@ textarea {         /* prevents resizing of textarea */
     object-fit: cover;
 }
 
-.event-card-img:hover {
-    opacity: .9;
-}
-
 .events-list.card-title {
+    font-size: 1.1rem;
     font-weight: 700;
-}
-
-#event-title:hover {
-    color: var(--clr-rich-black);
-    background-color: var(--clr-crayola-gold);
-    border-radius: 5px;
-    padding: 0 10px;
 }
 
 #event-post {
     padding: .5rem 0;
 }
 
-#reserve-btn {
-    display: block;
-    margin: auto;
+#reserve-btn:hover {
+    background-color: #1b3d81;
+    border: 1px solid #1b3d81;
 }
 
 /* --> ALL EVENTS PAGE [End] <-- */
@@ -674,7 +665,13 @@ footer {
 }
 
 @media screen and (min-width: 992px) {
-    /* EVENT DETAILS PAEG */
+
+    /* ALL EVENTS PAGE */
+    .events-list.card-title {
+        font-size: 1.2rem;
+    }
+
+    /* EVENT DETAILS PAGE */
     #img-wrapper {
         height: 22rem;
     }

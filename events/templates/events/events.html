@@ -16,29 +16,26 @@
                 {% else %}
                 <img src="{{ event.featured_image.url }}" class="card-img-top event-card-img" alt="featured_image">
                 {% endif %}
-            </a>
     
-            <div class="card-body py-2 py-lg-4">
-                <h5 class="events-list card-title">
-                    <a id="event-title" href="{% url 'event_details' event.slug %}">{{ event.title }}</a>
-                </h5>
-                <p class="card-text mb-1">{{ event.blurb }}</p>
-                <p class="card-text">
-                    <small class="text-muted">{{ event.event_date }} | {{ event.event_time }}</small>
-                    |
-                    <small class="text-muted me-1">{{ event.total_likes }}
-                        {% if event.total_likes > 1 %}
-                        <span>Likes</span>
-                        {% else %}
-                        <span>Like</span>
-                        {% endif %}
-                    </small>
-                    <a href="{% url 'seatmap' event.slug %}">
-                        <button type="button" id="reserve-btn" class="btn btn-outline-primary btn-sm">Reserve A
-                        Seat</button>
-                    </a>
-                </p>
-            </div>
+                <div class="card-body">
+                    <h5 class="events-list card-title">{{ event.title }}</h5>
+                    <p class="card-text mb-1">{{ event.blurb }}</p>
+                    <p class="card-text">
+                        <small class="text-muted">{{ event.event_date }} | {{ event.event_time }}</small>
+                        |
+                        <small class="text-muted me-1">{{ event.total_likes }}
+                            {% if event.total_likes > 1 %}
+                            <span>Likes</span>
+                            {% else %}
+                            <span>Like</span>
+                            {% endif %}
+                        </small>
+                    </p>
+                </div>
+            </a>
+            <a href="{% url 'seatmap' event.slug %}" class="position-relative">
+                <button type="button" id="reserve-btn" class="btn btn-primary btn-sm position-absolute top-0 end-0 me-1 mb-1">Reserve A Seat</button>
+            </a>
         </div>
         {% endfor %}    
     </div>
