@@ -327,6 +327,17 @@ textarea {         /* prevents resizing of textarea */
 
 /* --> SEAT MAP PAGE [Start] */
 
+#seatmap-instruction,
+#seatmap-instruction > button {
+    font-size: .9rem;
+}
+
+#seatmap-instruction > button:hover {
+    color: var(--clr-rich-black);
+    background-color: var(--clr-crayola-gold);
+    border: 1px solid var(--clr-crayola-gold);
+}
+
 #view-seatmap-section h2 {
     font-size: 1.4rem;
     font-weight: 700;
@@ -552,6 +563,10 @@ footer {
     /* SEAT MAP PAGE */
     #view-seatmap-section h2 {
         font-size: 1.8rem;
+    }
+
+    #seatmap-instruction {
+        font-size: 1rem;
     }
 
     /* SIGN OUT */
