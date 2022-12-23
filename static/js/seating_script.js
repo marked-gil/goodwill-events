@@ -1,5 +1,5 @@
 // --> SEAT RESERVATION Page [Start] <--
-if (document.getElementById('seatmap-container')) {
+if (document.getElementById('seat-reservation-section')) {
     const string_reserved_seats = document.getElementById('data-seats').textContent;
     let list_reserved_seats = string_reserved_seats.replace(/[^a-zA-Z0-9_,]/g, '').split(",");
     const userBookedSeats = getSelectedSeats();
