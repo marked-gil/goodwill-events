@@ -8,6 +8,14 @@
         <p class="px-3 m-0">{{ event.event_date|date:'d F Y, D' }} | <span>{{ event.event_time|date:'g:i A' }}</span></p>
     </div>
 
+    <!-- Feedback Message (Modified Bootstrap Toast) -->
+    <div id="feedbackToast" class="toast align-items-center position-absolute" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+          <div class="toast-body text-center"></div>
+          <button type="button" class="btn-close me-2 mt-1" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+
     <!-- Colour Legend -->
     <div id="seatmap-legend" class="container d-flex justify-content-around align-items-center px-2 py-1 pt-sm-3 pt-lg-4">
         <p class="seatmap-legend-icon m-0"><i id="available-icon" class="fas fa-circle"></i> Available</p>

@@ -8,6 +8,7 @@
     --clr-dutch-white: #F0E2BF;
     --clr-crayola-gold: #e6d098;
     --clr-police-blue: #284b63;
+    --clr-american-pink:#ff9393;
 }
 
 /* UTILITY CLASSES */
@@ -43,6 +44,13 @@
 /* Event Date/Time */
 #event-info > p {
     font-size: .8rem;
+}
+
+#feedbackToast {
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ee7c7af5;
 }
 
 /* Legends */
@@ -103,7 +111,7 @@
 
 .btn-seat-location {
     font-size: 1.4rem;
-    color: rgba(158, 73, 73, 0.822);
+    color: #9e4949d2;
     background: none;
     border: none;
 }
@@ -149,6 +157,10 @@
 
     .seatmap-legend-icon {
         font-size: 1rem;
+    }
+
+    .toast-body {
+        font-size: 1.1rem;
     }
 
     #selected-seats-container > h3 {

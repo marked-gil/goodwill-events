@@ -37,7 +37,6 @@ if (document.getElementById('seat-reservation-section')) {
         editReservationBtn.addEventListener('click', allowEditingReservation);
     }
 
-
     // --> FUNCTIONS [Start] <--
 
     /**
@@ -50,7 +49,9 @@ if (document.getElementById('seat-reservation-section')) {
     }
 
     /**
-     * Transforms SVG boxes (seats) into clickable elements; also enables or disables the button to reserve or update the seats
+     * Transforms SVG boxes (seats) into clickable elements;
+     * Enables or disables the button to reserve or update the seats;
+     * Displays feedback if user tries to select more than 2 seats
      */
     function makeAllFreeSeatsClickable(svg_seat, seat_loc) {
         const ALLOWED_SEATS_PER_USER = 2
@@ -63,6 +64,10 @@ if (document.getElementById('seat-reservation-section')) {
                 if (this.classList.contains("user-selected")) {
                     toggleSeat(this, seat_loc)
                     toggleReserveUpdateButton()
+                } else {
+                    // Displays feedback that 2 seats already booked by user
+                    const message = "You've reached the maximum of 2 seats per user."
+                    showFeedBackMsg(message)
                 }
             }
         })
@@ -163,6 +168,18 @@ if (document.getElementById('seat-reservation-section')) {
         } else {
             return false
         }
+    }
+
+    /**
+     * Displays a feedback message
+     * @param {str} message 
+     */
+    function showFeedBackMsg(message) {
+        const feedbackBody = document.querySelector(".toast-body");
+        const feedback = document.getElementById("feedbackToast");
+        feedbackBody.textContent = message;
+        const feedbackMessage = new bootstrap.Toast(feedback);
+        feedbackMessage.show()
     }
 
     /**
