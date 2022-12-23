@@ -11,11 +11,14 @@
 }
 
 /* UTILITY CLASSES */
-.locked {
-    /* opacity: .8;
+.locked-style {
     border-radius: 10px;
     background-color: var(--clr-crayola-gold);
-    pointer-events: none; */
+}
+
+.disabled-btn {
+    pointer-events: none;
+    opacity: .8;
 }
 
 /* unavailable seats */
@@ -110,11 +113,6 @@
     font-size: .9rem;
     width: 6.2rem;
     padding: .2rem .7rem;
-}
-
-.disabled-reserve-btn {
-    pointer-events: none;
-    opacity: .8;
 }
 
 /* Hidden Elements */

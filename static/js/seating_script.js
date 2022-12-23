@@ -31,15 +31,11 @@ if (document.getElementById('seatmap-container')) {
         update_button.addEventListener('click', submitSeatReservation);
     }
     
-
-    // 
-    const hasBookedSeats = document.getElementById("has-booked-seats").value;
-    const seatsBox = document.getElementById("selected-seats-inner-wrapper");
-
-    if (!hasBookedSeats) {
-        seatsBox.classList.remove("locked")
+    // EventListener to Allow Editing of Reserved Seats
+    if (document.getElementById("edit-reservation")) {
+        const editReservationBtn = document.getElementById("edit-reservation");
+        editReservationBtn.addEventListener('click', allowEditingReservation);
     }
-    // 
 
 
     // --> FUNCTIONS [Start] <--
@@ -225,7 +221,7 @@ if (document.getElementById('seatmap-container')) {
      */
     function enableReserveBtn() {
         const btn = document.querySelector('.reserve-btn')
-        btn.classList.remove('disabled-reserve-btn')
+        btn.classList.remove('disabled-btn')
     }
 
     /**
@@ -233,7 +229,22 @@ if (document.getElementById('seatmap-container')) {
      */
     function disableReserveBtn() {
         const btn = document.querySelector('.reserve-btn')
-        btn.classList.add('disabled-reserve-btn')
+        btn.classList.add('disabled-btn')
+    }
+
+    /**
+     * Allow the Editing of Reserved Seats
+     */
+    function allowEditingReservation() {
+        const seatsBox = document.getElementById("selected-seats-inner-wrapper")
+        const updateReservationBtn = document.getElementById("update-reservation");
+        const seatsList = document.querySelectorAll("#seats-selected-list button");
+        seatsBox.classList.remove("locked-style");
+        seatsList.forEach( (el) => {
+            el.classList.remove("disabled-btn")
+        });
+        updateReservationBtn.classList.remove("d-none");
+        this.classList.add("d-none");
     }
     // --> FUNCTIONS [End] <--
 }
