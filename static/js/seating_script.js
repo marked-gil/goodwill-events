@@ -33,7 +33,9 @@ if (document.getElementById('seat-reservation-section')) {
     
     // EventListener to Allow Editing of Reserved Seats
     if (document.getElementById("edit-reservation")) {
+        const seatMapBlocker = document.getElementById("seatmap-blocker");
         const editReservationBtn = document.getElementById("edit-reservation");
+        seatMapBlocker.classList.remove("d-none");
         editReservationBtn.addEventListener('click', allowEditingReservation);
     }
 
@@ -257,6 +259,7 @@ if (document.getElementById('seat-reservation-section')) {
         const seatsBox = document.getElementById("selected-seats-inner-wrapper");
         const updateReservationBtn = document.getElementById("update-reservation");
         const seatsList = document.querySelectorAll("#seats-selected-list button");
+        const seatMapBlocker = document.getElementById("seatmap-blocker");
         seatsBox.classList.remove("locked-style");
         seatsList.forEach( (el) => {
             el.classList.remove("disabled-btn")
@@ -264,7 +267,7 @@ if (document.getElementById('seat-reservation-section')) {
         updateReservationBtn.classList.remove("d-none");
         this.classList.add("d-none");
         seatsBoxHeader.textContent = "Edit Your Reservation"
-
+        seatMapBlocker.classList.add("d-none");
     }
     // --> FUNCTIONS [End] <--
 }
