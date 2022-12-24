@@ -529,7 +529,10 @@ footer {
 
 
 /* --> FLASH MESSAGES [Start] <-- */
-
+#flash-message {
+    position: absolute;
+    top: 4.5rem;
+}
 
 /* --> FLASH MESSAGES [End] <-- */
 
@@ -578,6 +581,11 @@ footer {
     .offcanvas-body p {
         font-size: 1.2rem;
     }
+
+    /* FLASH MESSAGES */
+    #flash-message {
+        top: 5rem;
+    }
 }
 
 @media screen and (min-width: 485px) {
@@ -601,6 +609,15 @@ footer {
     /* FOOTER */
     #social-links {
         width: 28rem;
+    }
+}
+
+@media screen and (min-width: 576px) {
+    /* FLASH MESSAGES */
+    #flash-message {
+        top: 7.5rem;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 }
 
@@ -646,6 +663,11 @@ footer {
         width: 24rem;
     }
     
+    /* FLASH MESSAGES */
+    #flash-message {
+        top: 9.5rem;
+        width: 40rem;
+    }
 }
 
 @media screen and (min-width: 900px) {
