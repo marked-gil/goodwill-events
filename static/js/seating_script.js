@@ -253,7 +253,8 @@ if (document.getElementById('seat-reservation-section')) {
      * Allow the Editing of Reserved Seats
      */
     function allowEditingReservation() {
-        const seatsBox = document.getElementById("selected-seats-inner-wrapper")
+        const seatsBoxHeader = document.querySelector("#selected-seats-container>h3");
+        const seatsBox = document.getElementById("selected-seats-inner-wrapper");
         const updateReservationBtn = document.getElementById("update-reservation");
         const seatsList = document.querySelectorAll("#seats-selected-list button");
         seatsBox.classList.remove("locked-style");
@@ -262,6 +263,8 @@ if (document.getElementById('seat-reservation-section')) {
         });
         updateReservationBtn.classList.remove("d-none");
         this.classList.add("d-none");
+        seatsBoxHeader.textContent = "Edit Your Reservation"
+
     }
     // --> FUNCTIONS [End] <--
 }
