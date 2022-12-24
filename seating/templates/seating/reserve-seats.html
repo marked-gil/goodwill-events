@@ -39,11 +39,11 @@
             <ul id="seats-selected-list" class="d-sm-flex my-2 ps-3 ps-sm-5">
                 {% for seat in user_booked_seats %}
                 <li id="{{ seat.seat_location_1 }}" class="d-flex align-items-center me-sm-5">{{ seat.seat_location_1 }}
-                    <button type="button" class="btn-seat-location ms-2 p-0 disabled-btn" ><i class="far fa-times-circle"></i></button>
+                    <button type="button" tabindex="-1" class="btn-seat-location ms-2 p-0 disabled-btn"><i class="far fa-times-circle"></i></button>
                 </li>
                 {% if seat.seat_location_2 %}
                 <li id="{{ seat.seat_location_2 }}" class="d-flex align-items-center me-sm-5">{{ seat.seat_location_2 }}
-                    <button type="button" class="btn-seat-location ms-2 p-0 disabled-btn" ><i class="far fa-times-circle"></i></button>
+                    <button type="button" tabindex="-1" class="btn-seat-location ms-2 p-0 disabled-btn"><i class="far fa-times-circle"></i></button>
                 </li>
                 {% endif%}
                 {% endfor %}

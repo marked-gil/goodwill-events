@@ -261,8 +261,9 @@ if (document.getElementById('seat-reservation-section')) {
         const seatsList = document.querySelectorAll("#seats-selected-list button");
         const seatMapBlocker = document.getElementById("seatmap-blocker");
         seatsBox.classList.remove("locked-style");
-        seatsList.forEach( (el) => {
-            el.classList.remove("disabled-btn")
+        seatsList.forEach( (btn) => {
+            btn.classList.remove("disabled-btn");
+            btn.removeAttribute("tabindex");
         });
         updateReservationBtn.classList.remove("d-none");
         this.classList.add("d-none");
