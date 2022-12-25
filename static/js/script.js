@@ -97,6 +97,7 @@ if (document.getElementById("events-outer-container")) {
     for (page of pageLinks) {
         if (page.textContent == pageNumber) {
             page.classList.add('active', 'disabled-link')
+            page.setAttribute('tabindex', '-1')
         }
     }
 }
@@ -186,5 +187,6 @@ function showActiveNavLink(pageDOM, navID) {
         const navLink = document.getElementById(navID)
         navLink.classList.add('active', 'disabled-link')
         navLink.setAttribute('aria-current', 'page')
+        navLink.setAttribute('tabindex', '-1')
     }
 }
