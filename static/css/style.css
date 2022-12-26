@@ -350,7 +350,6 @@ textarea {         /* prevents resizing of textarea */
 
 
 /* --> FOOTER [Start] <--*/
-
 footer {
     width: 100%;
     height: 8rem;
@@ -358,19 +357,27 @@ footer {
     color: var(--clr-white)
 }
 
+#copy-right {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+#educ-statement {
+    font-size: .8rem;
+}
+
 #social-links {
     width: 100%;
 }
 
 .fa-brands {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: var(--clr-white);
 }
 
 .fa-brands:hover {
     color: var(--clr-mikado-yellow);
 } 
-
 /* --> FOOTER [End] <--*/
 
 
@@ -495,7 +502,6 @@ footer {
 #password-change-form > a:hover {
     color: var(--clr-dutch-white);
 }
-
 /* --> PASSWORD CHANGE [End] <-- */
 
 
@@ -527,7 +533,6 @@ footer {
 #error-404 {
     font-size: 1.5rem;
 }
-
 /* 404 ERROR PAGE [End] */
 
 
@@ -536,7 +541,6 @@ footer {
     position: absolute;
     top: 4.5rem;
 }
-
 /* --> FLASH MESSAGES [End] <-- */
 
 
@@ -660,6 +664,12 @@ footer {
     /* FOOTER */
     #copy-right {
         font-size: 1.2rem;
+    }
+
+    #educ-statement {
+        font-size: .9rem;
+        position: absolute;
+        top: 26%;
     }
 
     #social-links {
