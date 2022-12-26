@@ -476,29 +476,39 @@ The database for the Goodwill Events project is composed of 5 models, of which f
 
 #### **Wireframes**
 * **HOME** Page      
-    * Desktop    
-    ![Home page - logged out](docs/wireframes/home-loggedout-desktop-wf.png)
-    <!-- Wireframes screenshots -->
+    * Desktop       
+    ![Home page - desktop](docs/wireframes/home-loggedout-desktop-wf.png)
     * Tablet
-    <!-- Wireframes screenshots -->
-    * Mobile Screen
-    <!-- Wireframes screenshots -->
+    ![Home page - tablet](docs/wireframes/home-loggedout-tablet-wf.png)
+    * Mobile Screen     
+    ![Home page - mobile](docs/wireframes/home-mobile-wf.png)
 * **EVENTS** Page       
-    <!-- Wireframes screenshots -->
+    ![All Events page](docs/wireframes/upcoming-events-wf.png)
 * **SPECIFIC EVENT** Page       
-    * Logged In
+    * Logged In     
+    ![Event Details page - logged in](docs/wireframes/event-details-loggedin-wf.png)
     * Logged Out
-* **SEAT MAP** Page
-* **SEAT RESERVATION** Page
-* **MY ACCOUNT** Page
-* **MY RESERVATIONS** Off Canvas
-* **SIGN IN** Page
-* **REGISTER** Page
-* **SIGN OUT** Page
-* **CHANGE PASSWORD** Page
-* **RESET PASSWORD** Page
-* **DELETE RESERVATION** Off Canvas
-
+    ![Event Details page - logged out](docs/wireframes/event-details-loggedout-wf.png)
+* **SEAT MAP** Page     
+    ![Seat Map page](docs/wireframes/seatmap-page-wf.png)
+* **SEAT RESERVATION** Page     
+    ![Seat Reservation](docs/wireframes/reserve-seat-wf.png)
+* **MY ACCOUNT** Page       
+    ![My Account page](docs/wireframes/my-account-wf.png)
+* **MY RESERVATIONS** Off Canvas        
+    ![My Reservations](docs/wireframes/my-reservations-wf.png)
+* **SIGN IN** Page      
+    ![Sign In page](docs/wireframes/signin-wf.png)
+* **REGISTER** Page     
+    ![Registration page](docs/wireframes/register-wf.png)
+* **SIGN OUT** Page     
+    ![Sign Out page](docs/wireframes/signout-wf.png)
+* **CHANGE PASSWORD** Page      
+    ![Change Password page](docs/wireframes/change-password-wf.png)
+* **RESET PASSWORD** Page       
+    ![Reset Password Page](docs/wireframes/password-reset-wf.png)
+* **CONFIRM DELETE RESERVATION** Off Canvas     
+    ![Confirm Delete Reservation](docs/wireframes/confirm-delete-reservation-wf.png)
 
 ### SURFACE
 
