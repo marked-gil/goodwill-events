@@ -13,7 +13,6 @@
 }
 
 /* DEFAULT STYLING [Start] */
-
 * {
     font-family: 'Roboto', sans-serif;
     font-style: normal;
@@ -45,11 +44,9 @@ a:hover {
 textarea {         /* prevents resizing of textarea */
     resize: none;
 }
-
 /* DEFAULT STYLING [End] */
 
 /* UTILITY CLASSES [Start] */
-
 .active {
     font-weight: 700;
 }
@@ -107,7 +104,6 @@ textarea {         /* prevents resizing of textarea */
 .underline-text:hover {
     color: var(--clr-mikado-yellow);
 }
-
 /* UTILITY CLASSES [End] */
 
 /* Logo */
@@ -123,7 +119,6 @@ textarea {         /* prevents resizing of textarea */
 }
 
 /* navbar */
-
 #navbar-main {
     background-color: var(--clr-mikado-yellow);
     box-shadow: 0px 0px 50px 5px rgb(235, 210, 16) inset, 0px 0px 5px 5px rgb(0, 0, 0) inset;
@@ -140,7 +135,6 @@ textarea {         /* prevents resizing of textarea */
 }
 
 /* --> HOME PAGE [start] <-- */
-
 #homepage-banner-container {
     background-color: rgb(238, 204, 35);
     box-shadow: 0 -60px 30px 35px var(--clr-crayola-gold),
@@ -210,7 +204,6 @@ textarea {         /* prevents resizing of textarea */
 #logo-about-us {
     font-size: 1.3rem;
 }
-
 /* --> HOME PAGE [end] <-- */
 
 
@@ -249,7 +242,6 @@ textarea {         /* prevents resizing of textarea */
     background-color: #1b3d81;
     border: 1px solid #1b3d81;
 }
-
 /* --> ALL EVENTS PAGE [End] <-- */
 
 /* --> EVENT DETAILS PAGE [start] */
@@ -328,12 +320,9 @@ textarea {         /* prevents resizing of textarea */
     right: 14px;
     top: 26px;
 }
-
 /* --> EVENT DETAILS PAGE [End] */
 
-
 /* --> SEAT MAP PAGE [Start] */
-
 #seatmap-instruction,
 #seatmap-instruction > button {
     font-size: .9rem;
@@ -349,7 +338,6 @@ textarea {         /* prevents resizing of textarea */
     font-size: 1.4rem;
     font-weight: 700;
 }
-
 /* --> SEAT MAP PAGE [End] */
 
 
@@ -548,6 +536,21 @@ footer {
 
 #my-reservations-header {
     border-bottom: 5px solid var(--clr-police-blue);
+}
+
+.my-booking-item {
+    background-color: var(--clr-police-blue);
+    color: var(--clr-timber-wolf);
+}
+
+.my-booking-item:hover {
+    box-shadow: inset 0 0 5px 2px var(--clr-linen),  0 0 5px 2px var(--clr-police-blue);
+}
+
+#my-reservation-seats > p {
+    color: var(--clr-crayola-gold);
+    font-weight: 700;
+    font-size: .9rem;
 }
 /* OFFCANVAS [End] */
 

@@ -52,33 +52,32 @@
         <button type="button" class="btn-close mt-2 align-self-start" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         <h5 class="offcanvas-title text-center bold-text mt-4" id="offcanvasRightLabel">My Reservations</h5>
     </div>
-    <div class="offcanvas-body py-4">
+    <div class="offcanvas-body py-3">
+        <ul class="px-0">
         {% for booking in event_reservations %}
-        <ul class="px-2 px-sm-4">
-            <li>
-                <a href="{% url 'seatmap' booking.event.slug %}">{{ booking.event.title }}</a>
-                <p class="mb-0"></p>
-                
-                <small class="d-block">
+            <li class="my-booking-item rounded px-2 py-2 my-3">
+                <a href="{% url 'seatmap' booking.event.slug %}">
+                    <h6 class="mb-0">{{ booking.event.title }}</h6>
+                        
+                    <small class="d-block">
                     {{ booking.event.event_date|date:"j M Y, D" }} | {{ booking.event.event_time }}
-                </small>
-                <div class="d-flex justify-content-between">
-                    <p class="mb-0">reserved:</p>
-                    <p class="mb-0"> 
+                    </small>
+                    <div id="my-reservation-seats" class="d-flex justify-content-between">
+                        <p class="mb-0">reserved:</p>
+                        <p class="mb-0"> 
                         {% if booking.seat_location_1 and booking.seat_location_2 %}
-                            {{ booking.seat_location_1 }}, {{ booking.seat_location_2 }}
+                            {{ booking.seat_location_1 }} | {{ booking.seat_location_2 }}
                         {% elif booking.seat_location_1 %}
                             {{ booking.seat_location_1 }}
                         {% elif booking.seat_location_2 %}
                             {{ booking.seat_location_2 }}
                         {% endif %}
-                    </p>
-                </div>
-
+                        </p>
+                    </div>
+                </a>
             </li>
-        </ul>
-
         {% endfor %}
+        </ul>
     </div>
     </div>
 
