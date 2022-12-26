@@ -47,14 +47,14 @@
         <button type="button" class="btn btn-success" data-bs-target="#offcanvasRight" data-bs-toggle="offcanvas"aria-controls="offcanvasRight">View My Reservations</button>
     </div>
 
-    <div class="offcanvas offcanvas-end" data-bs-backdrop="static" tabindex="-1" id="offcanvasRight" aria-labelledby="staticBackdropLabel">
-    <div class="offcanvas-header">
-        <button type="button" class="btn-close mt-3" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    <div class="offcanvas offcanvas-end color-dutch-white" data-bs-backdrop="static" tabindex="-1" id="offcanvasRight" aria-labelledby="staticBackdropLabel">
+    <div class="offcanvas-header d-flex flex-column pt-2 pb-3 px-3 px-sm-4 py-sm-3 pb-sm-4">
+        <button type="button" class="btn-close mt-2 align-self-start" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        <h5 class="offcanvas-title text-center bold-text mt-4" id="offcanvasRightLabel">My Reservations</h5>
     </div>
     <div class="offcanvas-body">
-        <h5 class="offcanvas-title mb-4 mb-sm-5 text-center bold-text" id="offcanvasRightLabel">My Reservations</h5>
         {% for booking in event_reservations %}
-        <ul class="px-3">
+        <ul class="px-2 px-sm-4">
             <li>
                 <a href="{% url 'seatmap' booking.event.slug %}">{{ booking.event.title }}</a>
                 <p class="mb-0"></p>
