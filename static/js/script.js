@@ -27,18 +27,21 @@ if (document.getElementById('comment-form')) {
     
     // Characters Counter for COMMENTS
     commentTextarea.addEventListener("keyup", (e) => {
+        const commentContent = commentTextarea.value
         const commentLength = commentTextarea.value.length
         const charRemaining = MAX_COMMENT_CHARS - commentLength
 
+        // Grammar Consideration
         if (commentLength <= MAX_COMMENT_CHARS) {
             let chars = charRemaining > 1 ? "characters" : "character"
             charCounterField.textContent = `${charRemaining} ${chars} remaining`
-            // Disable POST button when textarea is empty
-            if (charRemaining != MAX_COMMENT_CHARS) {
-                postCommentButton.classList.remove('disabled')
-            } else {
-                postCommentButton.classList.add('disabled')
-            }
+        }
+
+        // Disables POST button when textarea is empty
+        if (charRemaining != MAX_COMMENT_CHARS && !containsOnlySpaces(commentContent)) {
+            postCommentButton.classList.remove('disabled')
+        } else {
+             postCommentButton.classList.add('disabled')
         }
     })
 
@@ -176,7 +179,7 @@ if (document.getElementById('member-account-outer-container')) {
 // --> MEMBER ACCOUNT Page [End] <--
 
 
-// --> FUNCTION <--
+// --> FUNCTIONS <--
 /**
  * Highlights the nav link when page opened
  * @param {*} pageDOM - element specific to a page
@@ -189,4 +192,14 @@ function showActiveNavLink(pageDOM, navID) {
         navLink.setAttribute('aria-current', 'page')
         navLink.setAttribute('tabindex', '-1')
     }
+}
+
+/**
+ * Checks if a string only contains spaces
+ * CREDITS to bobbyhadz blog (See README Credits)
+ * @param {*} str
+ * @returns boolean
+ */
+function containsOnlySpaces(str) {
+    return /^\s*$/.test(str);
 }
