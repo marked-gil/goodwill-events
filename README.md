@@ -475,7 +475,29 @@ The database for the Goodwill Events project is composed of 5 models, of which f
 ![Database schema](docs/others/database-schema.png)
 
 #### **Wireframes**
-<!-- Wireframes screenshots -->
+* **HOME** Page      
+    * Desktop    
+    <!-- Wireframes screenshots -->
+    * Tablet
+    <!-- Wireframes screenshots -->
+    * Mobile Screen
+    <!-- Wireframes screenshots -->
+* **EVENTS** Page       
+    <!-- Wireframes screenshots -->
+* **SPECIFIC EVENT** Page       
+    * Logged In
+    * Logged Out
+* **SEAT MAP** Page
+* **SEAT RESERVATION** Page
+* **MY ACCOUNT** Page
+* **MY RESERVATIONS** Off Canvas
+* **SIGN IN** Page
+* **REGISTER** Page
+* **SIGN OUT** Page
+* **CHANGE PASSWORD** Page
+* **RESET PASSWORD** Page
+* **DELETE RESERVATION** Off Canvas
+
 
 ### SURFACE
 
