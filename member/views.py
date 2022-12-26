@@ -27,7 +27,7 @@ class MemberAccount(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
         """
         context = {}
         context['event_reservations'] = EventSeating.objects.filter(
-            reserved_by=self.request.user)
+            reserved_by=self.request.user).order_by('event').reverse()
         return super().get_context_data(**context)
 
     def get_success_url(self):
