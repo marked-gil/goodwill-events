@@ -477,6 +477,7 @@ The database for the Goodwill Events project is composed of 5 models, of which f
 #### **Wireframes**
 * **HOME** Page      
     * Desktop    
+    ![Home page - logged out](docs/wireframes/home-loggedout-desktop-wf.png)
     <!-- Wireframes screenshots -->
     * Tablet
     <!-- Wireframes screenshots -->
