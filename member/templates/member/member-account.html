@@ -48,11 +48,11 @@
     </div>
 
     <div class="offcanvas offcanvas-end color-dutch-white" data-bs-backdrop="static" tabindex="-1" id="offcanvasRight" aria-labelledby="staticBackdropLabel">
-    <div class="offcanvas-header d-flex flex-column pt-2 pb-3 px-3 px-sm-4 py-sm-3 pb-sm-4">
+    <div id="my-reservations-header" class="offcanvas-header d-flex flex-column pt-2 pb-3 px-3 px-sm-4 py-sm-3 pb-sm-4">
         <button type="button" class="btn-close mt-2 align-self-start" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         <h5 class="offcanvas-title text-center bold-text mt-4" id="offcanvasRightLabel">My Reservations</h5>
     </div>
-    <div class="offcanvas-body">
+    <div class="offcanvas-body py-4">
         {% for booking in event_reservations %}
         <ul class="px-2 px-sm-4">
             <li>
