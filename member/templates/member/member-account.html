@@ -53,6 +53,7 @@
         <h5 class="offcanvas-title text-center bold-text mt-4" id="offcanvasRightLabel">My Reservations</h5>
     </div>
     <div class="offcanvas-body py-3">
+        {% if event_reservations %}
         <ul class="px-0">
         {% for booking in event_reservations %}
             <li class="my-booking-item rounded px-2 py-2 my-3">
@@ -78,6 +79,9 @@
             </li>
         {% endfor %}
         </ul>
+        {% else %}
+        <p class="text-center my-4">No Reservations Made Yet.</p>
+        {% endif %}
     </div>
     </div>
 
