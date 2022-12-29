@@ -30,6 +30,10 @@ body {
     min-height: 100%;
 }
 
+header {
+    z-index: 1;
+}
+
 main {
     flex: 1 0 auto;
     background-image: linear-gradient(to right bottom, var(--clr-linen), var(--clr-dutch-white));
@@ -564,8 +568,7 @@ footer {
 
 /* --> FLASH MESSAGES [Start] <-- */
 #flash-message {
-    position: absolute;
-    top: 4.5rem;
+    top: .7rem;
 }
 /* --> FLASH MESSAGES [End] <-- */
 
@@ -617,7 +620,7 @@ footer {
 
     /* FLASH MESSAGES */
     #flash-message {
-        top: 5rem;
+        top: 1rem;
     }
 }
 
@@ -648,7 +651,7 @@ footer {
 @media screen and (min-width: 576px) {
     /* FLASH MESSAGES */
     #flash-message {
-        top: 7.5rem;
+        top: 3.6rem;
         left: 50%;
         transform: translate(-50%, -50%);
     }
@@ -704,7 +707,7 @@ footer {
     
     /* FLASH MESSAGES */
     #flash-message {
-        top: 9.5rem;
+        top: 5rem;
         width: 40rem;
     }
 }
