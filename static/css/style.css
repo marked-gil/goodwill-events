@@ -45,8 +45,8 @@ a:hover {
     color: inherit;
 }
 
-textarea {         /* prevents resizing of textarea */
-    resize: none;
+textarea {         
+    resize: none;       /* prevents resizing of textarea */
 }
 /* DEFAULT STYLING [End] */
 
@@ -238,10 +238,6 @@ textarea {         /* prevents resizing of textarea */
     font-weight: 700;
 }
 
-#event-post {
-    padding: .5rem 0;
-}
-
 #reserve-btn:hover {
     background-color: #1b3d81;
     border: 1px solid #1b3d81;
@@ -271,7 +267,6 @@ textarea {         /* prevents resizing of textarea */
 #like-form>button {
     background: none;
     border: none;
-    margin-left: .5rem;
 }
 
 .fa-heart {
@@ -305,7 +300,6 @@ textarea {         /* prevents resizing of textarea */
 }
 
 .comment-wrapper {
-    position: relative;
     background-color: var(--clr-linen);
     border-radius: 10px;
 }
@@ -320,7 +314,6 @@ textarea {         /* prevents resizing of textarea */
 
 .delete-comment-form > button {
     font-size: .8rem;
-    position: absolute;
     right: 14px;
     top: 26px;
 }
@@ -662,11 +655,6 @@ footer {
         font-size: 2.4rem;
     }
 
-    .navbar {
-        padding-left: 2.5rem;
-        padding-right: 2.5rem;
-    }
-
     /* HOME PAGE */
     #title-span {
         font-size: 1.5rem;
@@ -724,10 +712,6 @@ footer {
         object-fit: cover;
     }
 
-    #event-post {
-        padding: 1.5rem 0;
-    }
-
     /* SEAT MAP PAGE */
     #view-seatmap-section h2 {
         font-size: 2.2rem;
@@ -776,7 +760,6 @@ footer {
     /* HOME PAGE */
     #featured-events-inner-container {
         width: 70rem;
-        margin: 0 auto;
     }
 
     .feat-event-card-wrapper {

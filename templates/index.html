@@ -10,7 +10,7 @@
 
 <section id="feature-events-outer-container" class="py-3 px-md-4">
     <h2 id="featured-events" class="text-center mb-4 pt-xl-4">Featured Events</h2>
-    <div id="featured-events-inner-container" class="row row-cols-1 row-cols-md-2 d-md-flex justify-content-center justify-content-xl-between row-cols-lg-3 g-4">
+    <div id="featured-events-inner-container" class="row row-cols-1 row-cols-md-2 d-md-flex justify-content-center justify-content-xl-between row-cols-lg-3 g-4 my-xl-0 mx-xl-auto">
         {% for event in featured_events %}
         <div class="col feat-event-card-wrapper">
             <a href="{% url 'event_details' event.slug %}">

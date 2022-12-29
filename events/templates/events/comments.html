@@ -1,12 +1,12 @@
 <div id="comments-container">
     {% for comment in comments %}
-    <div class="card-body py-2 mb-2 me-2 mx-sm-3 comment-wrapper">
+    <div class="card-body comment-wrapper position-relative py-2 mb-2 me-2 mx-sm-3">
         <h5 class="card-title mb-2 bold-text" id="comment-username"><i class="fa-solid fa-user me-1"></i> {{ comment.author }}</h5>
         <p id="comment-posted-on" class="card-subtitle mb-2 text-muted">{{ comment.posted_on }}</p>
         {% if comment.author == user %}
         <form class="delete-comment-form" data-url="{% url 'delete_comment' pk=comment.id %}" method="POST">
             {% csrf_token %}
-            <button type="submit" class="btn btn-outline-danger py-0 px-1 px-sm-2">Delete</button>
+            <button type="submit" class="btn btn-outline-danger position-absolute py-0 px-1 px-sm-2">Delete</button>
         </form>
         {% endif %}
         <p class="card-text mb-1">{{ comment.text_comment }}</p>

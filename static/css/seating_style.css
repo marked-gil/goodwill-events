@@ -3,12 +3,9 @@
     --clr-chinese-silver: #ccc6c6;
     --clr-cornflower-blue: #1f418b;
     --clr-slimy-green: #19a90c;
-    --clr-mikado-yellow: #f9c012;
-    --clr-timber-wolf: #E3D7D7;
-    --clr-dutch-white: #F0E2BF;
     --clr-crayola-gold: #e6d098;
-    --clr-police-blue: #284b63;
-    --clr-american-pink:#ff9393;
+    --clr-light-coral: #ee7c7af5;
+    --clr-red-purple: #9e4949d2;
 }
 
 /* UTILITY CLASSES */
@@ -50,7 +47,7 @@
     top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #ee7c7af5;
+    background-color: var(--clr-light-coral);
     z-index: 1;
 }
 
@@ -97,8 +94,7 @@
 
 /* Seat Map BLocker */
 #seatmap-blocker {
-    background-color: #83c2ec;
-    position: absolute;
+    background-color: var(--clr-cornflower-blue);
     top: 0;
     width: 100%;
     height: 100%;
@@ -122,7 +118,7 @@
 
 .btn-cancel-seat {
     font-size: 1.4rem;
-    color: #9e4949d2;
+    color: var(--clr-red-purple);
     background: none;
     border: none;
 }

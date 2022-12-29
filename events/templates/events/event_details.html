@@ -69,15 +69,15 @@
             <form action="{% url 'event_like' event.slug %}" method="POST" id="like-form" class="d-none d-sm-inline">
                 {% csrf_token %}
                 {% if liked %}
-                <button class="like-button" type="submit" name="event_id" value="event.slug"><i class="fa-solid fa-heart"></i></button>
+                <button class="like-button ms-2" type="submit" name="event_id" value="event.slug"><i class="fa-solid fa-heart"></i></button>
                 {% else %}
-                <button class="like-button" type="submit" name="event_id" value="event.slug"><i class="fa-regular fa-heart"></i></button>
+                <button class="like-button ms-2" type="submit" name="event_id" value="event.slug"><i class="fa-regular fa-heart"></i></button>
                 {% endif %}
             </form>
             {% endif %}
         </p>
     </div>
-    <div id="event-post" class="event-details-div px-2 px-sm-3 px-md-5">
+    <div id="event-post" class="event-details-div py-2 pt-sm-3 pt-md-4 px-2 px-sm-3 px-md-5">
         <p>{{ event.post_content | safe }}</p>
     </div>
 </section>
