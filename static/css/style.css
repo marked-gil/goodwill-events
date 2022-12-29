@@ -113,13 +113,14 @@ textarea {
 /* Logo */
 #logo {
     font-size: 1.7rem;
-    transition: .1s;
+    transition: .3s;
 }
 
 #logo:hover {
-    color: var(--clr-linen);
+    color: var(--clr-police-blue);
     font-weight: 700;
-    text-shadow: 5px 0 5px var(--clr-police-blue);
+    text-shadow: 3px 0 5px var(--clr-linen), 1px 0 0 var(--clr-rich-black);
+
 }
 
 /* navbar */
@@ -145,14 +146,16 @@ textarea {
                 0 0 30px 35px var(--clr-crayola-gold) inset;
 }
 
-#homepage-title {
-    font-weight: 700;
-    text-shadow: 4px 0 10px white, 4px 0 5px rgb(188, 180, 59) ;
-}
-
 #title-span {
     font-size: 1.3rem;
-    font-weight: 400;
+}
+
+#homepage-title {
+    font-family: var(--font-lobster);
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: var(--clr-police-blue);
+    text-shadow: 4px 0 10px white, 4px 0 5px rgb(188, 180, 59) ;
 }
 
 /* featured events */
@@ -181,7 +184,7 @@ textarea {
 }
 
 .feat-event-card {
-    border: 2px solid var(--clr-rich-black);
+    border: 5px solid var(--clr-police-blue);
     border-radius: 10px
 }
 
@@ -218,12 +221,12 @@ textarea {
 }
 
 #event-card-wrapper {
-    border: 2px solid var(--clr-rich-black);
+    border: 2px solid var(--clr-police-blue);
     border-radius: 10px;
 }
 
 #event-card-wrapper:hover {
-    box-shadow: 2px 0 15px 0 var(--clr-rich-black);
+    box-shadow: 2px 0 15px 0 var(--clr-police-blue);
     opacity: .9;
     transition: .3s;
 }
@@ -660,6 +663,10 @@ footer {
         font-size: 1.5rem;
     }
     
+    #homepage-title {
+        font-size: 2.8rem;
+    }
+
     #catchy-line {
         font-size: 1.2rem;
     }
@@ -758,6 +765,11 @@ footer {
 @media screen and (min-width: 1200px) {
 
     /* HOME PAGE */
+    #homepage-title {
+        font-size: 3.2rem;
+    }
+
+
     #featured-events-inner-container {
         width: 70rem;
     }
