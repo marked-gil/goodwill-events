@@ -187,7 +187,7 @@ function toggleButtonText(btn) {
      */
 function fieldValueChanged(field, originalText) {
     const updateBtn = document.getElementById('update-account-btn');
-    if (field.value != originalText) {
+    if (field.value.trim() != originalText) {
         updateBtn.classList.remove('disabled');
     } else {
         updateBtn.classList.add('disabled');
