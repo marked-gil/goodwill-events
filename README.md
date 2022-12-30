@@ -78,7 +78,7 @@ Iteration 2:
 * Sign Out ([Epic 5](https://github.com/marked-gil/goodwill-events/issues/5))
 * Member Registration ([Epic 5](https://github.com/marked-gil/goodwill-events/issues/5))
 * Seating Model ([Epic 3](https://github.com/marked-gil/goodwill-events/issues/3))
-* Event Seats Page ([Epic 7](https://github.com/marked-gil/goodwill-events/issues/7))
+* Seat Map Page([Epic 7](https://github.com/marked-gil/goodwill-events/issues/7))
 * Make Event Seat Reservation ([Epic 7](https://github.com/marked-gil/goodwill-events/issues/7))
 
 Iteration 3:    
@@ -143,18 +143,21 @@ Iteration 4:
         * Deploy to Heroku
 
 * User Story: **Base Template**
-    > As a Developer, I can use an initial base template so that I connect it to other html pages and do initial testing.
+    > As a Developer, I can use a base template that contains the header with logo and navbar menu so that I can connect it to other html pages.    
 
     * ACCEPTANCE CRITERIA:
-        * The base template is initially set up with header and footer.
+        * The base template is initially set up with header.
+        * The base template is successfully displayed in all the other pages of the site.
+
     * TASKS:
         * Create a base template.
         * Create a header with navbar and site name or logo
 
 * User Story: **Home Page Template**
-    > As a Developer, I can use a basic home page for the initial creation of the site so that I can initially check if the base template can connect successfully to other pages.
+    > As a User, I can see the home page of the site so that I will know what the website is for.
 
-    * ACCEPTANCE CRITERIA:
+    * ACCEPTANCE CRITERIA:  
+        * GIVEN that the user has entered the correct base URL for the site, WHEN they enter the site THEN the home page will be displayed.
         * The basic home page template is initially set up and linked with the base template
     * TASKS:
         * Create a basic home page
@@ -286,18 +289,19 @@ Iteration 4:
         * Add the user’s like to the total likes of the event and display it
         * Allow user to remove their ‘like’
 
-* User Story: **Event Seats Page**
-    > As a user, I can visit the seating page so that see the available seats I can reserve.
+* User Story: **Seat Map Page**
+    > As a user, I can visit the Seat Map page so that I can see the seat map of the venue.
 
     * ACCEPTANCE CRITERIA:
-        * GIVEN the user is signed in, WHEN the user visits the seating page THEN the seat map is displayed.
-        * GIVEN the user is signed in, WHEN the user visits the seating page THEN the event’s title, date, and time are displayed.
+        * GIVEN the user is NOT logged in, WHEN the user visits the seat map page THEN the SVG seat map is displayed.
+        * GIVEN the user is signed in, WHEN the user visits the particular event's seating page THEN the event’s title, date, and time are displayed, along with the event's seat map.
+
     * TASKS:
-        * Create ‘event seating page’
-        * Add the seat map on the ‘seating page’
-        * Allow the seat map to pan and zoom
-        * Display the event’s title, date, and time
-        * Display the colour legend for the seat map
+        *  Create a generic seat map page for all users (including non-logged-in users) to visit
+        * Create an 'Event's Seating' page for each specific event
+        * Add the seat map on the 'seating' pages
+        * Allow the seat map on the specific Event's 'seating' page to pan and zoom
+        * Display the event’s title, date, time and colour legend on the specific Event's 'seating' page
 
 * User Story: **Restrict Seat Reservation to Signed-in Members Only**
     > As a user, I can register as a member and sign in so that I can reserve seats.
@@ -393,7 +397,7 @@ Iteration 4:
         * Delete all reserved seats for the expired and recycled events
 
 * User Story: **Create Member Account Page**
-    > As a User, I can view all of my personal information/data as a registered member so that I review them as needed.
+    > As a User, I can view all of my account information/data as a registered member so that I can review them as needed.
     
     * ACCEPTANCE CRITERIA:
         * GIVEN that I am registered to the site, WHEN I log in THEN I can view all my personal information/data that I have provided to the site.
@@ -562,88 +566,184 @@ The database for the Goodwill Events project is composed of 5 models, of which f
 
 
 ## Features
-### **HOME** Page
-The Home page contains 3 featured events, which have the nearest show dates relative to today’s. Also, it displays the ‘About Us’ section.
+### NAV BAR    
+> **User Story:** As a Developer, I can use a base template that contains the header with logo and navbar menu so that I can connect it to other html pages.    
 
-<!-- Home Page screenshot here -->
-
-### **NAV BAR**      
 The nav bar is in the header of all the site’s pages. It contains the title of the website - Goodwill Events; and the navbar menu.
 
 For non-logged-in users, the navbar menu consist of the Home, Events, Seatmap, Sign In, and Sign Up links; while for the logged-in users, it consist of the Home, Events, Seatmap, Sign Out, and My Account links.
 
 <!-- Nav Bar screenshot here -->
 
-### **FOOTER**
+### FOOTER
+> **User Story:** 
+
 The footer simply contains the title of the site and the icons, which are links to the site’s social media accounts.
 
 <!-- Footer screenshot here -->
 
-### **Events** Page
-The Events page displays the list of all the upcoming events. This page is paginated, and there are only 5 events displayed per page. 
+### HOME Page
+> **User Story:** As a User, I can see the home page of the site so that I will know what the website is for.   
+
+The Home page contains 3 featured events, which have the nearest show dates relative to today’s. Also, it displays the ‘About Us’ section.
+
+<!-- Home Page screenshot here -->
+
+### FEATURED EVENTS
+> **User Story:** As a user, I can see the featured list of events on the home page so that immediately see the events that are coming up.  
+
+<!-- Featured Events screenshot -->
+
+### Upcoming Events Page
+> **User Story:** As a user, I can See all the upcoming events so that I can decide which one interests me.
+
+The Upcoming Events page displays the list of all the upcoming events. This page is paginated, and there are only 5 events displayed per page. 
 
 Each item in the list is an event which shows a featured image, its title, date and time, a reserve button, and number of likes. Also, each item or event is clickable and will redirect the site to the specific event’s page. The reserve button, on the other hand, will redirect to the Seat Reservation page.
 
-<!-- Events Page screenshot here -->
+    * Clickable event cards that redirects to the event's specific page
+    * 'Reserve a Seat' - redirects to the 'Seat Reservation' page
+    * Pagination
 
-### **Specific Event** Page
+    <!-- Upcoming Events Page screenshot here -->
+
+### Specific Event Page     
+> **User Story:** As a user, I can view the full detail of the event so that I can learn more about the event.
+
 The specific event’s page contains the details of the events. It shows the title of the event, its schedule, number of seats still available, a ‘Reserve a Seat’ button, a ‘LIKE’ button,  the event’s description and/or the performer’s description, and a comment section.
 
 For non-logged-in users, they will only see the comments posted by other users, but cannot post comment themselves; while the logged-in users can post comments.
 
+    * 'Reserve a Seat' - redirects to the 'Seat Reservation' page
+    * 'Like' button
+    * Comment section - where users can leave comment if they are logged in, and read comments for the event
+
 <!-- Specific Event Page screenshot here -->
 
-### **Seat Map** Page
+### Event Likes
+> **User Story:** As a user, I can like an event post that interests me so that I can show my support for the event.    
+
+<!-- screenshot here -->
+
+### Posting Comments
+> **User Story:** As a user, I can leave a comment on the event page so that I can share my thoughts to the public about a particular event.
+
+ <!-- Create a form for comments on each page
+ Limit the comment length to 250 characters
+ Show realtime character counter for comments
+ Save the comment to the database when the ‘submit’ button is clicked
+ Display the comments on the event’s page along with the author's first name and initial of their last name, and the date and time of posting -->
+
+<!-- screenshot here -->
+
+### Deleting Comments
+> **User Story:** As a user, I can delete my comments on a particular event so that they are no longer visible to the public.
+
+<!-- screenshot -->
+
+### Seat Map Pages
+> **User Story:** As a user, I can visit the Seat Map page so that I can see the seat map of the venue.
+
+* Generic Seat Map      
 The Seat Map page shows the generic seat map for all the events of Goodwill Events. This SVG seat map can be panned and zoomed, but reservation cannot be made on this page. It’s main purpose is only to show the seating arrangement in the venue.
+<!-- Screenshot here -->
 
-<!-- Seat Map Page screenshot here -->
-
-### **Seat Reservation** Page
+* Specific Event's Seat Map     
 The Seat Reservation page contains the interactive SVG seat map, which can be panned and zoomed. In addition, the seats, as represented by the small boxes in the SVG map, can be toggled to select or deselect. In addition, the selected or reserved seats can be updated and deleted.
+<!-- screenshot here -->
 
-Only logged-in users can be redirected to this page, and they are limited to booking only a maximum of 2 seats per event. When a non-logged-in user clicks on a ‘Reserve a Seat’ button, they will be redirected to the Sign In page; and once they sign in, they will be redirected back to the Seat Reservation page for the specific event.
+### Restricting Seat Reservation to Signed-in Members Only
+> **User Story:** As a user, I can register as a member and sign in so that I can reserve seats.
 
-When a logged-in user deletes their previously booked seats by cancelling all seats and clicking the ‘Update My Reservation’ button, a off-canvas lightbox will come with a button for the user to click to confirm deletion.
+Only logged-in users can be redirected to specific event's SEAT MAP page. When a non-logged-in user clicks on a ‘Reserve a Seat’ button, they will be redirected to the Sign In page; and once they sign in, they will be redirected back to the Seat Reservation page for the specific event.
 
 <!-- Seat Reservation Page screenshot here -->
 
-### **Sign In** Page
+### Selecting and Reserving Seats for an Event
+> **User Story:** As a user, I can reserve a seat so that I can choose the available seat I want and ensure I have a seat during the event.
+> **User Story:** As a user, I can submit the selected seat/s so that I can ensure that it is reserved.
+
+<!-- Signed in members are limited to booking only a maximum of 2 seats per event.
+ Make all available seats active on the seat map and can be toggled
+ Display all unavailable seats as inactive items on the seat map
+ Allow only 2 seats to be reserved per member
+ List all selected seats on the screen
+ Allow de-selection of the seat -->
+
+### Cancelling and Updating Reserved Seats
+When a logged-in user deletes their previously booked seats by cancelling all seats and clicking the ‘Update My Reservation’ button, a off-canvas lightbox will come with a button for the user to click to confirm deletion.
+
+ <!-- Add a ‘cancel’ button to remove the selected seat/s
+ Add an ‘Update my reservation’ button’ to allow the cancellation and/or replacement of the reserved seats.
+ Remove the ‘reserve’ button when the user already has reserved seat/s, and show the list of seats reserved.
+ Allow reserved seats to be cancelled
+ Add an ‘update reservation’ button is clicked.
+ When the ‘update’ button is clicked, the 'seating' database is updated and a feedback message is flashed -->
+
+### Sign In Page
+> **User Story:** As a user, I can sign in when I am registered so that I can access the full functionality of the website.
+
 In the Sign In page, the user is required to provide their username and password to be logged-in. Also, if the user wishes to be automatically signed in on their next visit when they don’t sign out after their current site visit then there is a Remember Me checkbox for them to tick.
 
 For users who happens to visit the Sign In page but actually still have not signed up or registered in the website previously, a link is provided for them to be redirected to the Sign Up page. And if the user realizes that they have forgotten their password, a Forgot Password link is on display for them to click and be redirected to the Password Reset page.
 
 <!-- Sign In Page screenshot here -->
 
-### **Register (Sign Up)** Page
+### Registration (Sign Up) Page
+> **User Story:** As a user, I can sign-up on the website so that I can be a member and use the full functionality of the website.
+
 The Registration or Sign Up page requires the user to provide a username, first name, last name, email address, and password. The password has to be supplied twice for certainty of user’s intended password. The validation of these fields are provided by Django-Allauth.
 
 If the user visiting the page, realizes they actually have registered previously, a Sign In link is available on the page for the user to click and be redirected to the Sign In page.
 
-<!-- Sign Up Page screenshot here -->
+<!-- screenshot here -->
 
-### **My Account** Page
-The My Account page is created to allow a user to change or update their account profile, which includes their first name, last name, and email address. However, the username is not allowed to be changed.
+### My Account Page (Member Account)
+> **User Story:** As a User, I can view all of my account information/data as a registered member so that I can review them as needed.
+
+The My Account page (Member Account) is created to allow a user to change or update their account profile, which includes their first name, last name, and email address. However, the username is not allowed to be changed.
 
 And if the user also wants to change their password, a link to Change Password is on this page for the user to click.
 
-<!-- My Account Page screenshot here -->
+<!-- screenshot here -->
 
-### **Sign Out** Page
+### Editing Account Information by Logged-in Users
+> **User Story:** As a User, I can edit my personal information/data such as first name, last name, and email address so that I can update them easily as necessary.
+
+ <!-- Make the username uneditable.
+ Make all input fields readonly by default.
+ Create edit buttons for the first name, last name, and email input fields which will enable editing of the field value.
+ Disable UPDATE button by default, and enable it only when changes are made in the input values.
+ Update the database when valid changes are made in the Member's Account form. -->
+
+### Sign Out Page
+> **User Story:** As a user, I can sign out when I am already signed in so that I can protect my website account and prevent unauthorised persons from using it.
+
 The Sign Out page’s only purpose is to require the user to confirm that they really intend to sign out from the website after clicking the Sign Out link in the navbar menu. And if they do want to logout, a Sign Out button is available for them to click.
 
 <!-- Sign Out Page screenshot here -->
 
-### **Change Password** Page
+### Change Password Page
+> **User Story:** As a User, I can change my password so that I can maintain the security of my account.
+
 The Change Password page requires the current password and new password (needs to be entered twice) to be supplied. Then, a Change Password button is available for clicking to process the request. If the current password provided is correct, then the password will be successfully changed in the database.
 
 A link to reset password is also available through the Forgot Password link.
 
 <!-- Change Password Page screenshot here -->
 
-### **Password Reset** Page     
+### Password Reset Page    
+> **User Story:** As a User, I can reset my password so that I can either keep my account secured or keep using my account when I have forgotten my password.
+
 In this page, the user is only required to supply their registered email address where the site will automatically send an email with a link. Once this email is received by the user and they click on the link, the user will be redirected to a page where they can set their new password.
 
 <!-- Password Reset Page screenshot here -->
+
+### Automatic Recycling of Expired Events
+> **User Story:** As a site owner, I can set an expired event to automatically be recycled to a new scheduled date so that the site can perpetuate despite its contents not being monitored and updated manually.
+
+<!-- Automatically update the schedule of the event in the database to the following year as soon as it expires
+ Delete all reserved seats for the expired and recycled events -->
 
 ## Fixed Bugs
 
