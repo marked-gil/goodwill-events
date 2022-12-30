@@ -199,6 +199,7 @@ textarea {
 }
 
 .featured.card-title {
+    color: var(--clr-police-blue);
     font-size: 1.1rem;
     font-weight: 700;
 }
@@ -247,6 +248,7 @@ textarea {
 }
 
 .events-list.card-title {
+    color: var(--clr-police-blue);
     font-size: 1.1rem;
     font-weight: 700;
 }
