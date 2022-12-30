@@ -549,6 +549,10 @@ footer {
     border-bottom: 5px solid var(--clr-police-blue);
 }
 
+#staticBackdropLabel {
+    font-size: 1.2rem;
+}
+
 .my-booking-item {
     background-color: var(--clr-police-blue);
     color: var(--clr-timber-wolf);

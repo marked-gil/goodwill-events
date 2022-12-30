@@ -63,9 +63,9 @@
         </form>
     
         <ul id="reservation-notice" class="ps-sm-0 mt-sm-2 mx-md-auto">
-            <li class="d-none d-sm-block text-muted">Each member can only reserve a maximum of 2 seats per event.
+            <li class="d-none d-sm-block">Each member can only reserve a maximum of 2 seats per event.
             </li>
-            <li class="d-none d-sm-block text-muted">Be in the venue at least 15 minutes before start of event to get your reserved seats.</li>
+            <li class="d-none d-sm-block">Be in the venue at least 15 minutes before start of event to get your reserved seats.</li>
         </ul>
     </div>
     <input type="hidden" id="has-booked-seats" name="has-booked-seats" value="{{ user_booked_seats }}">
@@ -73,8 +73,7 @@
 </section>
 
 <!-- Bootstrap offcanvas for confirmation to delete reservation -->
-<button id="confirm-delete" class="d-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-    aria-controls="offcanvasRight"></button>
+<button id="confirm-delete" class="d-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Open Offcanvas</button>
 <div class="offcanvas offcanvas-end color-dutch-white" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
     <div class="offcanvas-header">
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -82,7 +81,7 @@
     <div class="offcanvas-body d-flex pt-0 pb-5 px-5">
         <form class="d-flex flex-column align-self-center" method="POST" action="{% url 'delete_reservation' event.slug %}">
             {% csrf_token %}
-            <p class="text-center mb-4">Are you sure you want to delete your reservation?</p>
+            <p id="offcanvasRightLabel" class="text-center mb-4">Are you sure you want to delete your reservation?</p>
             <button type="submit" class="btn btn-primary align-self-center">Confirm</button>
         </form>
     </div>

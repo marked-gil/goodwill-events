@@ -12,13 +12,13 @@
             <a href="{% url 'event_details' event.slug %}">
                 {% if 'proxy_image' in event.featured_image.url  %}
                 <img src="{% static 'images/default-image.jpg' %}"
-                    class="card-img-top event-card-img" alt="featured_image">
+                    class="card-img-top event-card-img" alt="featured image for the event">
                 {% else %}
-                <img src="{{ event.featured_image.url }}" class="card-img-top event-card-img" alt="featured_image">
+                <img src="{{ event.featured_image.url }}" class="card-img-top event-card-img" alt="featured image for the event">
                 {% endif %}
     
                 <div class="card-body">
-                    <h5 class="events-list card-title">{{ event.title }}</h5>
+                    <h3 class="events-list card-title">{{ event.title }}</h3>
                     <p class="card-text mb-1">{{ event.blurb }}</p>
                     <p class="card-text">
                         <small class="text-muted">{{ event.event_date }} | {{ event.event_time }}</small>

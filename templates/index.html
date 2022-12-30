@@ -4,12 +4,12 @@
 
 {% block content %}
 <section id="homepage-banner-container" class="d-flex flex-column justify-content-center mt-5 pb-4">
-    <h1 class="text-center mt-md-4 mt-xl-5  mx-3"><span id="title-span" class="d-block mb-0">Welcome to </span><span id="homepage-title">Goodwill Events</span></h1>
+    <h2 class="text-center mt-md-4 mt-xl-5  mx-3"><span id="title-span" class="d-block mb-0">Welcome to </span><span id="homepage-title">Goodwill Events</span></h2>
     <p id="catchy-line" class="text-center px-3 mt-2">The fusion of Entertainment and Charity.</p>
 </section>
 
 <section id="feature-events-outer-container" class="py-3 px-md-4">
-    <h2 id="featured-events" class="text-center mb-4 pt-xl-4">Featured Events</h2>
+    <h3 id="featured-events" class="text-center mb-4 pt-xl-4">Featured Events</h3>
     <div id="featured-events-inner-container" class="row row-cols-1 row-cols-md-2 d-md-flex justify-content-center justify-content-xl-between row-cols-lg-3 g-4 my-xl-0 mx-xl-auto">
         {% for event in featured_events %}
         <div class="col feat-event-card-wrapper">
@@ -22,7 +22,7 @@
                     <img src="{{ event.featured_image.url }}" class="card-img-top featured-event-image" alt="image for featured event">
                     {% endif %}
                     <div class="card-body pb-0">
-                        <h3 class="featured card-title text-center">{{ event.title }}</h3>
+                        <h4 class="featured card-title text-center">{{ event.title }}</h4>
                         <p class="featured card-text text-center">{{ event.blurb }}</p>
                         <p class="text-center small-text text-blue">{{ event.event_date|date:'M j, Y - D' }} ({{ event.event_time|time:'f A' }})</p>
                     </div>
@@ -34,7 +34,7 @@
 </section>
 
 <section id="about-us-outer-container" class="py-2 px-4 py-md-5 px-sm-5">
-    <h2 id="about-us" class="text-center">About Us</h2>
+    <h3 id="about-us" class="text-center">About Us</h3>
     <div id="about-us-wrapper" class="container my-4 my-md-5">
         <p>
             <span id="logo-about-us" class="logo-font-style">Goodwill Events</span> Organization is a charity organization that produces entertainment, such as concerts, 
