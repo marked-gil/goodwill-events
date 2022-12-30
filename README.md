@@ -3,29 +3,29 @@
 **Goodwill Events** is a fictional charity organization that produces events, such as concerts, recitals, dance performances and the like for the purpose of entertainment and most especially for charity. And, this website is created to register new members to the organization, show upcoming events, and allow reservation of desired seats for an event by members. In addition, signed-in users of the website can also like and leave comments on individual event posts. [View Live Website.](https://goodwill-events.herokuapp.com/)
 
 ## TABLE OF CONTENTS
-* [User Experience Design (UXD)](#user-experience-design-uxd)
-    * [Strategy](#strategy)
-        * [Main Goal](#main-goal)
-        * [Target Audience](#target-audience)
-        * [EPICS](#epics)
-        * [User Stories](#user-stories)
-    * [Scope](#scope)
-        * [Planned Features](#planned-features)
-        * [Design Choice](#design-choice)
-    * [Structure](#structure)
-    	* [Interaction Design](#)
-    * [Skeleton](#skeleton)
-        * [Database Schema](#database-schema)
-        * [Wireframes](#wireframes)
-    * [Surface](#surface)
-* [Features](#features)
-* [Fixed Bugs](#fixed-bugs)
-* [Bugs Left To Fix](#bugs-left-to-fix)
-* [Testing](#testing)
-* [Deployment](#deployment)
-* [Technologies](#technologies)
-* [Credits](#credits)
-* [Acknowledgment](#acknowledgment)
+* [**User Experience Design (UXD)**](#user-experience-design-uxd)
+    * [**STRATEGY**](#strategy)     
+        [Main Goal](#main-goal)     
+        [Target Audience](#target-audience)     
+        [EPICS](#epics)     
+        [User Stories](#user-stories)
+    * [**SCOPE**](#scope)   
+        [Planned Features](#planned-features)   
+        [Design Choice](#design-choice)
+    * [**STRUCTURE**](#structure)   
+        [Interaction Design](#)
+    * [**SKELETON**](#skeleton)     
+        [Database Schema](#database-schema)     
+        [Wireframes](#wireframes)
+    * [**SURFACE**](#surface)
+* [**Features**](#features)
+* [**Fixed Bugs**](#fixed-bugs)
+* [**Bugs Left To Fix**](#bugs-left-to-fix)
+* [**Testing**](#testing)
+* [**Deployment**](#deployment)
+* [**Technologies**](#technologies)
+* [**Credits**](#credits)
+* [**Acknowledgment**](#acknowledgment)
 
 
 ## User Experience Design (UXD)
@@ -66,9 +66,9 @@ Iteration 1:
 * Initial Dependencies Installation ([Epic 1](https://github.com/marked-gil/goodwill-events/issues/1))
 * Basic Skeletal Structure of the Project ([Epic 1](https://github.com/marked-gil/goodwill-events/issues/1))
 * Initial Deployment to Heroku ([Epic 2](https://github.com/marked-gil/goodwill-events/issues/2))
-* Basic Home Page Template ([Epic 4](https://github.com/marked-gil/goodwill-events/issues/4))
-* Event Model ([Epic 3](https://github.com/marked-gil/goodwill-events/issues/15))
-* Basic Base Template ([Epic 4](https://github.com/marked-gil/goodwill-events/issues/13))
+* Base Template ([Epic 4](https://github.com/marked-gil/goodwill-events/issues/4))
+* Home Page Template ([Epic 4](https://github.com/marked-gil/goodwill-events/issues/4))
+* Event Model ([Epic 3](https://github.com/marked-gil/goodwill-events/issues/3))
 * Featured Events List ([Epic 6](https://github.com/marked-gil/goodwill-events/issues/6))
 * All Events Page ([Epic 6](https://github.com/marked-gil/goodwill-events/issues/6))
 * Specific Event's Page ([Epic 6](https://github.com/marked-gil/goodwill-events/issues/6))
@@ -77,25 +77,25 @@ Iteration 2:
 * Sign In ([Epic 5](https://github.com/marked-gil/goodwill-events/issues/5))
 * Sign Out ([Epic 5](https://github.com/marked-gil/goodwill-events/issues/5))
 * Member Registration ([Epic 5](https://github.com/marked-gil/goodwill-events/issues/5))
-* Seating Model ([Epic 3](https://github.com/marked-gil/goodwill-events/issues/16))
+* Seating Model ([Epic 3](https://github.com/marked-gil/goodwill-events/issues/3))
 * Event Seats Page ([Epic 7](https://github.com/marked-gil/goodwill-events/issues/7))
 * Make Event Seat Reservation ([Epic 7](https://github.com/marked-gil/goodwill-events/issues/7))
 
 Iteration 3:    
-* Submission of Selected Seats for a Particular Event ([Epic 7](https://github.com/marked-gil/goodwill-events/issues/7))
+* Submission of Selected Seats for an Event ([Epic 7](https://github.com/marked-gil/goodwill-events/issues/7))
 * Restrict Seat Reservation to Signed-in Members Only ([Epic 7](https://github.com/marked-gil/goodwill-events/issues/7))
-* Cancellation Reserved Seats for an Event ([Epic 7](https://github.com/marked-gil/goodwill-events/issues/7))
+* Cancel and/or Update Reserved Seats ([Epic 7](https://github.com/marked-gil/goodwill-events/issues/7))
 * Event Likes ([Epic 6](https://github.com/marked-gil/goodwill-events/issues/6))
-* Comment Model ([Epic 3](https://github.com/marked-gil/goodwill-events/issues/16))
+* Comment Model ([Epic 3](https://github.com/marked-gil/goodwill-events/issues/3))
 * Comments Control by Site Owner ([Epic 8](https://github.com/marked-gil/goodwill-events/issues/8))
-* User Comments on Upcoming Events ([Epic 8](https://github.com/marked-gil/goodwill-events/issues/8))
-* Deleting Comments on Upcoming Events ([Epic 8](https://github.com/marked-gil/goodwill-events/issues/8))
+* User Comments on a Specific Event ([Epic 8](https://github.com/marked-gil/goodwill-events/issues/8))
+* Deleting Comments ([Epic 8](https://github.com/marked-gil/goodwill-events/issues/8))
 
 Iteration 4:    
 * Create Member Account Page ([Epic 5](https://github.com/marked-gil/goodwill-events/issues/5))
-* Allow logged in member to edit their provided personal information. ([Epic 5](https://github.com/marked-gil/goodwill-events/issues/5))
+* Allow Logged-in User to Edit their Account Information. ([Epic 5](https://github.com/marked-gil/goodwill-events/issues/5))
 * Allow Change of Password ([Epic 5](https://github.com/marked-gil/goodwill-events/issues/5))
-* User can reset their password ([Epic 5](https://github.com/marked-gil/goodwill-events/issues/5))
+* Allow Password Reset ([Epic 5](https://github.com/marked-gil/goodwill-events/issues/5))
 * Recycling Expired Events ([Epic 9](https://github.com/marked-gil/goodwill-events/issues/9))
 * Confirmation Email for Seat Reservation ([Epic 7](https://github.com/marked-gil/goodwill-events/issues/7))
 * Modify User Model ([Epic 3](https://github.com/marked-gil/goodwill-events/issues/3))
@@ -142,17 +142,16 @@ Iteration 4:
         * Create Procfile
         * Deploy to Heroku
 
-* User Story: **Basic Base Template**
+* User Story: **Base Template**
     > As a Developer, I can use an initial base template so that I connect it to other html pages and do initial testing.
 
     * ACCEPTANCE CRITERIA:
         * The base template is initially set up with header and footer.
     * TASKS:
-        *  Create a base template.
+        * Create a base template.
         * Create a header with navbar and site name or logo
-        * Create a footer that contains the site name, contact details, and social media links.
 
-* User Story: **Basic Home Page Template**
+* User Story: **Home Page Template**
     > As a Developer, I can use a basic home page for the initial creation of the site so that I can initially check if the base template can connect successfully to other pages.
 
     * ACCEPTANCE CRITERIA:
@@ -160,7 +159,7 @@ Iteration 4:
     * TASKS:
         * Create a basic home page
         * Connect the base template to the basic home page
-
+        * Include a footer at the end of the page
 
 * User Story: **Event Model**
     > As a Developer, I can save new events into a database table so that I can use the data on the website.
@@ -209,9 +208,9 @@ Iteration 4:
         * GIVEN that the registration form is validly completed, WHEN the form is submitted, THEN the user is redirected to the home page.
     * TASKS:
         * Create a registration template
-        * Create a form that includes fields for username, first name, last name, email address, and password
-        * Validate the form when submitted; and if it is invalid, redirect to the same page and show a feedback message
-        * Prevent the submission of the form when the password is not re-entered correctly, and show a feedback message to the user
+        * Using django-allauth, create a form that includes fields for username, first name, last name, email address, and password
+        * Make all fields in the form required
+        * Prevent the submission of the form when the password is not re-entered correctly, and use django-allauth password validation to show feedback message to the user
         * Redirect the user to the home page when registration is validly submitted
 
 * User Story: **Sign In**
@@ -222,9 +221,9 @@ Iteration 4:
         * GIVEN the ‘sign in’ form is created, WHEN the user signs in with invalid credentials THEN feedback message is displayed and the form is not submitted.
     * TASKS:
         * Create a ‘sign-in’ page
-        * Create a 'sign-in' form that requires the user’s username and password
-        * Redirect the user to the home page when sign-in is successful
-        * Flash feedback message when sign-in credentials are invalid
+        * Use django-allauth's 'sign-in' form that requires the user’s username and password
+        * Redirect the user to the home page when sign-in is successful, flashes a message to confirm that sign in is successful
+        * Flash feedback message when sign-in credentials are invalid, and the URL stays the same.
 
 * User Story: **Sign Out**
     > As a user, I can sign out when I am already signed in so that I can protect my website account and prevent unauthorised persons from using it.
@@ -237,6 +236,7 @@ Iteration 4:
         * Create a sign-out link on the navbar
         * Redirect to the home page when the sign-out link is clicked
         * Flash a feedback message on the home page when the user is signed out successfully
+        * Prevent user from making seat reservations, liking events, and posting comments when signed out
 
 * User Story: **Featured Events List**
     > As a user, I can see the featured list of events on the home page so that immediately see the events that are coming up.
@@ -247,7 +247,7 @@ Iteration 4:
     * TASKS:
         * Display the upcoming 3 - 4 events on the home page
         * Show title, short description, date and time
-        * Add a button for every featured event that redirects to the event's full detail page.
+        * Make every featured event clickable and redirect each to their event's full detail page
 
 * User Story: **All Events Page**
     > As a user, I can See all the upcoming events so that I can decide which one interests me.
@@ -256,10 +256,11 @@ Iteration 4:
         * GIVEN template for all events is created, WHEN user visits the ‘all events’ page THEN they can browse all the upcoming events
         * GIVEN the user is visiting the ‘all events’ page, WHEN user clicks an event THEN the site attempts to redirect to another page.
     * TASKS:
-        *  Create a template for all the upcoming events
+        * Create a template for all the upcoming events
         * Display all the upcoming events in ascending order based on the date of the event
         * Make each event item a clickable element that redirects to another URL
         * Develop pagination
+        * Redirect the 'Events' link in the navbar menu to the 'Events page'
 
 * User Story: **Specific Event’s Page**
     > As a user, I can view the full detail of the event so that I can learn more about the event.
@@ -267,7 +268,7 @@ Iteration 4:
     * ACCEPTANCE CRITERIA:
         * GIVEN the user is on the home page or ‘all events’ page, WHEN the user clicked an event THEN the full details of the event will be displayed on a separate page.
     * TASKS:
-        *  Create event template
+        * Create event template
         * Display the featured banner image of the event
         * Display the description or writeup about the event
         * Display the date and time of the event
@@ -292,7 +293,7 @@ Iteration 4:
         * GIVEN the user is signed in, WHEN the user visits the seating page THEN the seat map is displayed.
         * GIVEN the user is signed in, WHEN the user visits the seating page THEN the event’s title, date, and time are displayed.
     * TASKS:
-        * Create ‘seating page’
+        * Create ‘event seating page’
         * Add the seat map on the ‘seating page’
         * Allow the seat map to pan and zoom
         * Display the event’s title, date, and time
@@ -302,14 +303,13 @@ Iteration 4:
     > As a user, I can register as a member and sign in so that I can reserve seats.
 
     * ACCEPTANCE CRITERIA:
-        * GIVEN the user is not signed in, WHEN they visit the seating page THEN they are still able to see the seat map and the available seats.
-        * GIVEN the user is not signed in, WHEN they attempt to make a reservation THEN they are redirected to the sign-in page with a flash feedback message.
-        * GIVEN the un-signed-in user has been redirected to the ‘sign-in’ page from the seating page, WHEN the user signed in THEN the user is redirected back to the seating page.
+        * GIVEN the user is not signed in, WHEN they attempt to make a reservation by clicking the 'reserve a seat' button THEN they are redirected to the Sign-In page with a flash feedback message.
+        * GIVEN the un-signed-in user has been redirected to the Sign-In page, WHEN the user signs in THEN the user is redirected back to the Seat Reservation Page of the Event.
 
     * TASKS:
         *  Redirect the user to the sign-in page when the un-signed-in user attempts to book a reservation
         * Flash a feedback message to the user to sign in when redirected to the sign-in page
-        * Redirect the user back to the seating page after signing in
+        * Redirect the user back to the event's Seat Reservation page after signing in
 
 * User Story: **Make Event Seat Reservation**
     > As a user, I can reserve a seat so that I can choose the available seat I want and ensure I have a seat during the event.
@@ -324,18 +324,18 @@ Iteration 4:
         * List all selected seats on the screen
         * Allow de-selection of the seat
 
-* User Story: **Submission of Selected Seats for a Particular Event**
+* User Story: **Submission of Selected Seats for an Event**
     > As a user, I can submit the selected seat/s so that I can ensure that it is reserved.
 
     * ACCEPTANCE CRITERIA:
         * GIVEN the signed-in user has selected a seat/s, WHEN I click on the ‘reserve’ button THEN the seats are saved to the database and reserved.
     * TASKS:
         * Add a ‘reserve’ button to proceed with the reservation
-        * Save selected seats in database
-        * Display a flash message on the seating page when a seat is successfully reserved
+        * Save selected seats in the database
+        * Display a flash message on the seating (seat reservation) page when a seat is successfully reserved
 
-* User Story: **Cancellation of Reserved Seats for an Event**
-    > As a user, I can cancel my reserved seats so that other users can reserve the seats.
+* User Story: **Cancel and/or Update Reserved Seats**
+    > As a user, I can cancel and/or update my reserved seats so that other users can reserve the seats or I can conveniently change my preference.
 
     * ACCEPTANCE CRITERIA:
         * GIVEN the signed-in user has selected a seat/s, WHEN I click on the ‘cancel’ button THEN the selected seat/s are de-selected on the map.
@@ -343,14 +343,14 @@ Iteration 4:
         * GIVEN the user has already reserved a seat/s for an event, WHEN the user clicks on the ‘Update my reservation’ button THEN the reserved seats can be cancelled and/or replaced.
     * TASKS:
         * Add a ‘cancel’ button to remove the selected seat/s
-        * Add an ‘Update my reservation’ button’ to allow the cancellation and/or replacement of the reserved seats.
-        * Remove the ‘reserve’ button when the user already has reserved seat/s, and show the list of seats reserved.
+        * Add an ‘Update my reservation’ button’ to allow the cancellation and/or replacement of the reserved seats
+        * Remove the ‘reserve’ button when the user already has reserved seat/s, and show the list of seats reserved
         * Allow reserved seats to be cancelled
-        * Add an ‘update reservation’ button is clicked.
+        * Add an ‘update reservation’ button is clicked
         * When the ‘update’ button is clicked, the 'seating' database is updated and a feedback message is flashed
 
-* User Story: **User Comments on Upcoming Events**
-    > As a user, I can leave a comment on the event page so that I can share my thoughts with the public about a particular event.
+* User Story: **User Comments on a Specific Event**
+    > As a user, I can leave a comment on the event page so that I can share my thoughts to the public about a particular event.
 
     * ACCEPTANCE CRITERIA:
         * GIVEN the user is signed-in, WHEN I add a comment on an event page THEN it will be saved in the database.
@@ -363,13 +363,13 @@ Iteration 4:
         * Save the comment to the database when the ‘submit’ button is clicked
         * Display the comments on the event’s page along with the author's first name and initial of their last name, and the date and time of posting
 
-* User Story: **Deleting Comments on Upcoming Events**
+* User Story: **Deleting Comments**
     > As a user, I can delete my comments on a particular event so that they are no longer visible to the public.
 
     * ACCEPTANCE CRITERIA:
         * GIVEN the user has posted a comment, WHEN the author of the comment is signed-in THEN they are allowed to delete their comments.
     * TASKS:
-        * Add a ‘delete’ button on the user’s comment when signed-in
+        * Add a ‘delete’ button on the user’s comment/s when signed-in
         * Delete the comment when the ‘delete’ button is clicked
 
 * User Story: **Comments Control by Site Owner**
@@ -402,16 +402,18 @@ Iteration 4:
         * Create A Member's Account page
         * In the Member's Account page, display the username, first name, last name, and email of the user.
 
-* User Story: **Allow logged in member to edit their provided personal information**
+* User Story: **Allow Logged-In User to Edit their Account Information**
     > As a User, I can edit my personal information/data such as first name, last name, and email address so that I can update them easily as necessary.
 
     * ACCEPTANCE CRITERIA:
         * GIVEN the user is logged in and inside the Member's Account page, WHEN I edit my personal information/data THEN they are allowed to edit their provided personal information as they see fit.
-        * GIVEN the user has edited a specific personal information (eg, first name), WHEN I click save THEN the specific field will be updated in the database.
+        * GIVEN the user has edited a specific personal information (eg, first name), WHEN I click the 'Update' button THEN the specific field will be updated in the database.
     * TASKS:
-        * Create an edit button for each personal info field
-        * Update the database when an edited personal info is saved
-        * Do not allow username to be changed.
+        * Make the username uneditable
+        * Make all input fields readonly by default
+        * Create edit buttons for the first name, last name, and email input fields which will enable editing of the field value
+        * Disable UPDATE button by default, and enable it only when changes are made in the input values
+        * Update the database when valid changes are made in the Member's Account form
 
 * User Story: **Allow Change of Password**
     > As a User, I can change my password so that I can maintain the security of my account.
@@ -424,7 +426,7 @@ Iteration 4:
         * Verify the new password the user entered by asking them to re-enter the same password.
         * Update the database when the new password is verified and saved.
 
-* User Story: **User Can Reset their Password**
+* User Story: **Allow Password Reset**
     > As a User, I can reset my password so that I can either keep my account secured or keep using my account when I have forgotten my password.
 
     * ACCEPTANCE CRITERIA:
@@ -440,8 +442,6 @@ Iteration 4:
 
     * ACCEPTANCE CRITERIA:
         * GIVEN that the user has selected their seat/s, WHEN they click the ‘reserve’ button THEN an automatic email will be sent to the user as confirmation.
-        * Set up automatic email function
-        * Display a flash message to the user that a confirmation has been sent to his email
     * TASKS:
         * Set up automatic email function
         * Display a flash message to the user that a confirmation has been sent to his email
@@ -454,7 +454,7 @@ Iteration 4:
         * All the fields in the User Model cannot be left blank and will raise a validator error if attempted.
         * The added fields to the User model are available on the admin panel.
     * TASKS:
-        * Modify the User model to include: telephone_number, and/or etc
+        * Modify the User model to include: telephone_number, date of birth, gender, address, and/or etc
         * Require all fields in the User Model
 
 #### **Design Choice**
