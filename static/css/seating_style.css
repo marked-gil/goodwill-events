@@ -1,14 +1,16 @@
 /* Customized Variables */
 :root {
     --clr-chinese-silver: #ccc6c6;
-    --clr-cornflower-blue: #1f418b;
-    --clr-slimy-green: #19a90c;
     --clr-crayola-gold: #e6d098;
+    --clr-jonquil: #f7d61c;
     --clr-light-coral: #ee7c7af5;
     --clr-red-purple: #9e4949d2;
+    --clr-slimy-green: #19a90c;
+    --clr-cornflower-blue: #1f418b;
+    --clr-police-blue: #284b63;
 }
 
-/* UTILITY CLASSES */
+/* UTILITY CLASSES [Start] */
 .locked-style {
     border-radius: 10px;
     background-color: var(--clr-crayola-gold);
@@ -19,6 +21,13 @@
     opacity: .8;
 }
 
+.seat-booking-btn:hover {
+    color: black;
+    background-color: var(--clr-jonquil);
+    border: 1px solid var(--clr-police-blue);
+}
+/* UTILITY CLASSES [End] */
+
 /* unavailable seats */
 [data-seat-location] {
     fill: var(--clr-chinese-silver);
@@ -26,14 +35,10 @@
     stroke-width: .6px;
 }
 
-#reserve-seats-section {
-    min-height: 100%;
-    border: 4px solid forestgreen;
-    min-height: 100%;
-}
-
 /* Event Title */
 #event-info > h2 {
+    color: var(--clr-police-blue);
+    text-shadow: 0 0 .5px var(--clr-cornflower-blue);
     font-size: 1.1rem;
     font-weight: 700;
 }
@@ -142,7 +147,6 @@
 /* MEDIA QUERIES */
 
 @media screen and (min-width: 360px) {
-
     /* Event Title */
     #event-info > h2 {
         font-size: 1.2rem;
@@ -156,7 +160,6 @@
 }
 
 @media screen and (min-width: 576px) {
-
     /* Event Title */
     #event-info > h2 {
         font-size: 1.4rem;
@@ -184,7 +187,6 @@
 }
 
 @media screen and (min-width: 768px) {
-
     /* Event Title */
     #event-info > h2 {
         font-size: 1.6rem;
