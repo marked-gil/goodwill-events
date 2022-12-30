@@ -5,10 +5,11 @@
     --clr-timber-wolf: #E3D7D7;
     --clr-dutch-white: #F0E2BF;
     --clr-crayola-gold: #e6d098;
+    --clr-jonquil: #f7d61c;
     --clr-linen: #F9F3E5;
     --clr-police-blue: #284b63;
     --clr-american-pink:#ff9393;
-    --clr-white: white;
+    --clr-white: #ffffff;
     --font-lobster: 'Lobster', cursive;
 }
 
@@ -64,8 +65,8 @@ textarea {
 }
 
 .disabled-field {
-    border: 1px solid gray;
-    background-color: rgb(162, 162, 162);
+    border: 1px solid #808080;
+    background-color: #a2a2a2;
 }
 
 .disabled-link {
@@ -107,6 +108,12 @@ textarea {
 
 .underline-text:hover {
     color: var(--clr-mikado-yellow);
+}
+
+.goto-reservations-btn:hover {
+    color: black;
+    background-color: var(--clr-jonquil);
+    border: 1px solid var(--clr-police-blue);
 }
 /* UTILITY CLASSES [End] */
 
@@ -243,11 +250,6 @@ textarea {
     font-size: 1.1rem;
     font-weight: 700;
 }
-
-#reserve-btn:hover {
-    background-color: #1b3d81;
-    border: 1px solid #1b3d81;
-}
 /* --> ALL EVENTS PAGE [End] <-- */
 
 /* --> EVENT DETAILS PAGE [start] */
@@ -270,13 +272,17 @@ textarea {
 }
 
 /* event likes */
-#like-form>button {
+#like-form > button {
     background: none;
     border: none;
 }
 
+#like-form > button i:hover {
+    text-shadow: 0 0 8px #b61a1a;
+}
+
 .fa-heart {
-    color: rgb(182, 26, 26);
+    color: #b61a1a;
     font-size: 1.6rem;
 }
 
@@ -637,6 +643,7 @@ footer {
         font-size: 1.1rem;
     }
 
+    /* ALL EVENTS PAGE */
     #reserve-btn {
         display: inline;
     }
