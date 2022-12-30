@@ -458,8 +458,41 @@ Iteration 4:
         * Require all fields in the User Model
 
 #### **Design Choice**
-<!-- Color Schema -->
-<!-- Typography -->
+* **Color Scheme**:     
+The following are the main colors used:     
+
+    **ON ALL PAGES (except Seat Reservation Page)**     
+    * #ffffff (White)
+    * #F9F3E5 (Linen)   
+    * #F0E2BF (Dutch-white)
+    * #e6d098 (Crayola-gold)    
+    * #E3D7D7 (Timber-wolf)
+    * #f7d61c (Jonquil)
+    * #f9c012 (Mikado-yellow)
+    * #ff9393 (American-pink)
+    * #284b63 (Police-blue)
+    * #030328 (Rich-black)
+    * #000000 (Black)       
+
+    **ON RESERVATION PAGE**
+    * #ffffff (White)
+    * #ccc6c6 (Chinese-silver)  
+    * #e6d098 (Crayola-gold)    
+    * #f7d61c (Jonquil)
+    * #ee7c7af5 (Light-coral)
+    * #9e4949d2 (Red-purple)
+    * #19a90c (Slimy-green)
+    * #1f418b (Cornflower-blue)
+    * #284b63 (Police-blue)
+    * #000000 (Black)
+
+    ([See SURFACE section for more details](#surface))      
+        
+* **Typography**:       
+This project uses fonts from [Google Fonts](https://fonts.google.com/). And the following are the fonts used in this project:
+    * **Roboto** - the default font for the whole site
+    * **Lobster** - the font used to design the text logo       
+    ([See SURFACE section for more details](#surface))
 
 ### STRUCTURE
 <!-- Interaction Design (IXD) -->
@@ -511,6 +544,22 @@ The database for the Goodwill Events project is composed of 5 models, of which f
     ![Confirm Delete Reservation](docs/wireframes/confirm-delete-reservation-wf.png)
 
 ### SURFACE
+
+* **Colors & Contrast**     
+    Using the Contrast Grid from [Eightshapes.com](https://contrast-grid.eightshapes.com/), 
+    compliance with the WCAG 2.0 Minimum Contrast were adhered to when mixing and matching the different colors for the project.        
+    
+    **FOR ALL PAGES (Except Seat Reservation page)**
+    ![Colors Contrast Grid for All Pages except Seat Reservation Page](docs/design_choices/color-contrast-general.png)
+
+    **FOR SEAT RESERVATION PAGE**
+    ![Colors Contrast Grid for the Seat Reservation Page](docs/design_choices/color-contrast-seating.png)       
+
+* **Typography**        
+    The following [Google Fonts](https://fonts.google.com/) are used on this project:   
+    ![Roboto Font](docs/design_choices/roboto-font.png)
+    ![Lobster Font](docs/design_choices/lobster-font.png)
+
 
 ## Features
 ### **HOME** Page
