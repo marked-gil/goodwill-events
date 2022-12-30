@@ -50,10 +50,10 @@
             </ul>
                 
             {% if user_booked_seats %}
-            <button type="button" id="edit-reservation" class="btn btn-primary me-1">Edit Reservation</button>
-            <button type="button" id="update-reservation" class="btn btn-primary disabled-btn reserve-btn me-1 d-none">Update Reservation</button>
+            <button type="button" id="edit-reservation" class="btn btn-primary me-1 seat-booking-btn">Edit Reservation</button>
+            <button type="button" id="update-reservation" class="btn btn-primary disabled-btn reserve-btn me-1 d-none seat-booking-btn">Update Reservation</button>
             {% else %}
-            <button type="button" id="submit-reservation" class="btn btn-primary disabled-btn reserve-btn me-1">Reserve</button>
+            <button type="button" id="submit-reservation" class="btn btn-primary disabled-btn reserve-btn me-1 seat-booking-btn">Reserve</button>
             {% endif %}
         </div>
 
@@ -70,7 +70,6 @@
     </div>
     <input type="hidden" id="has-booked-seats" name="has-booked-seats" value="{{ user_booked_seats }}">
     <!-- SELECTED SEATS FOOTER BOX [End] -->
-
 </section>
 
 <!-- Bootstrap offcanvas for confirmation to delete reservation -->

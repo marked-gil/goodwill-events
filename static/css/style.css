@@ -1,15 +1,15 @@
 /* Customized Variables */
 :root {
-    --clr-mikado-yellow: #f9c012;
-    --clr-rich-black: #030328;
-    --clr-timber-wolf: #E3D7D7;
+    --clr-white: #ffffff;
+    --clr-linen: #F9F3E5;
     --clr-dutch-white: #F0E2BF;
     --clr-crayola-gold: #e6d098;
+    --clr-timber-wolf: #E3D7D7;
     --clr-jonquil: #f7d61c;
-    --clr-linen: #F9F3E5;
-    --clr-police-blue: #284b63;
+    --clr-mikado-yellow: #f9c012;
     --clr-american-pink:#ff9393;
-    --clr-white: #ffffff;
+    --clr-police-blue: #284b63;
+    --clr-rich-black: #030328;
     --font-lobster: 'Lobster', cursive;
 }
 
