@@ -147,13 +147,16 @@ textarea {
 }
 
 #title-span {
+    color: var(--clr-police-blue);
+    font-weight: 700;
     font-size: 1.3rem;
+    text-shadow: 2px 2px 6px var(--clr-white);
 }
 
 #homepage-title {
     font-family: var(--font-lobster);
     font-weight: 700;
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     color: var(--clr-police-blue);
     text-shadow: 4px 0 10px white, 4px 0 5px rgb(188, 180, 59) ;
 }
@@ -621,6 +624,11 @@ footer {
 }
 
 @media screen and (min-width: 485px) {
+    /* HOME PAGE */
+    #homepage-title {
+        font-size: 3rem;
+    }
+
     #logo-about-us {
         font-size: 1.5rem;
     }
@@ -645,9 +653,18 @@ footer {
 }
 
 @media screen and (min-width: 576px) {
+    /* HOME PAGE */
+    #title-span {
+        font-size: 1.5rem;
+    }
+
+    #homepage-title {
+        font-size: 3.2rem;
+    }
+
     /* FLASH MESSAGES */
     #flash-message {
-        top: 3.6rem;
+        top: 3.2rem;
         left: 50%;
         transform: translate(-50%, -50%);
     }
@@ -660,11 +677,11 @@ footer {
 
     /* HOME PAGE */
     #title-span {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
     }
     
     #homepage-title {
-        font-size: 2.8rem;
+        font-size: 3.4rem;
     }
 
     #catchy-line {
@@ -702,7 +719,6 @@ footer {
     
     /* FLASH MESSAGES */
     #flash-message {
-        top: 5rem;
         width: 40rem;
     }
 }
@@ -766,7 +782,7 @@ footer {
 
     /* HOME PAGE */
     #homepage-title {
-        font-size: 3.2rem;
+        font-size: 3.8rem;
     }
 
 
