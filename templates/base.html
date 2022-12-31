@@ -86,10 +86,10 @@
         <!-- flash messages -->
         {% if messages %}
         {% for message in messages %}
-        <div id="flash-message" class="container position-absolute">
-            <div class="alert {{ message.tags }} alert-dismissible fade show" role="alert">
+        <div id="flash-message" class="container">
+            <div class="alert {{ message.tags }} alert-dismissible fade show mt-2 py-1 py-sm-3" role="alert">
                 {{ message | safe}}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                <button type="button" class="btn-close py-2 py-sm-3" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         </div>
         {% endfor %}

@@ -579,14 +579,14 @@ footer {
 
 /* --> FLASH MESSAGES [Start] <-- */
 #flash-message {
-    top: .7rem;
+    /* top: .7rem; */
 }
 /* --> FLASH MESSAGES [End] <-- */
 
 
 /* MEDIA QUERIES */
 
-@media screen and (min-width:400px) {
+@media screen and (min-width: 400px) {
     #logo {
         font-size: 2rem;
     }
@@ -631,7 +631,7 @@ footer {
 
     /* FLASH MESSAGES */
     #flash-message {
-        top: 1rem;
+        /* top: 1rem; */
     }
 }
 
@@ -677,6 +677,7 @@ footer {
 
     /* FLASH MESSAGES */
     #flash-message {
+        position: absolute;
         top: 3.2rem;
         left: 50%;
         transform: translate(-50%, -50%);
