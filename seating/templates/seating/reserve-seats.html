@@ -26,50 +26,6 @@
     <!-- SEAT MAP -->
     {% include 'seatmap.html' %}
 
-    <!-- SELECTED SEATS FOOTER BOX [Start] -->
-    <div id="selected-seats-container" class="fixed-bottom py-2 py-sm-3 px-3 px-sm-5">
-        {% if user_booked_seats %}
-        <h3 class="mb-0 m-md-auto">Your Reserved Seats:</h3>
-        <div id="selected-seats-inner-wrapper" class="d-flex justify-content-between align-items-center mx-md-auto locked-style">
-        {% else %}
-        <h3 class="mb-0 m-md-auto">No Seats Reserved</h3>
-        <div id="selected-seats-inner-wrapper" class="d-flex justify-content-between align-items-center mx-md-auto">
-        {% endif %}
-
-            <ul id="seats-selected-list" class="d-sm-flex my-2 ps-3 ps-sm-5">
-                {% for seat in user_booked_seats %}
-                <li id="{{ seat.seat_location_1 }}" class="d-flex align-items-center me-sm-5">{{ seat.seat_location_1 }}
-                    <button type="button" tabindex="-1" class="btn-cancel-seat ms-2 p-0 disabled-btn"><i class="far fa-times-circle"></i></button>
-                </li>
-                {% if seat.seat_location_2 %}
-                <li id="{{ seat.seat_location_2 }}" class="d-flex align-items-center me-sm-5">{{ seat.seat_location_2 }}
-                    <button type="button" tabindex="-1" class="btn-cancel-seat ms-2 p-0 disabled-btn"><i class="far fa-times-circle"></i></button>
-                </li>
-                {% endif%}
-                {% endfor %}
-            </ul>
-                
-            {% if user_booked_seats %}
-            <button type="button" id="edit-reservation" class="btn btn-primary me-1 seat-booking-btn">Edit Reservation</button>
-            <button type="button" id="update-reservation" class="btn btn-primary disabled-btn reserve-btn me-1 d-none seat-booking-btn">Update Reservation</button>
-            {% else %}
-            <button type="button" id="submit-reservation" class="btn btn-primary disabled-btn reserve-btn me-1 seat-booking-btn">Reserve</button>
-            {% endif %}
-        </div>
-
-        <form method="POST" id="reserve-seat-form">
-            {% csrf_token %}
-            {{ form }}
-        </form>
-    
-        <ul id="reservation-notice" class="ps-sm-0 mt-sm-2 mx-md-auto">
-            <li class="d-none d-sm-block">Each member can only reserve a maximum of 2 seats per event.
-            </li>
-            <li class="d-none d-sm-block">Be in the venue at least 15 minutes before start of event to get your reserved seats.</li>
-        </ul>
-    </div>
-    <input type="hidden" id="has-booked-seats" name="has-booked-seats" value="{{ user_booked_seats }}">
-    <!-- SELECTED SEATS FOOTER BOX [End] -->
 </section>
 
 <!-- Bootstrap offcanvas for confirmation to delete reservation -->
@@ -91,4 +47,51 @@
     {{ data | safe }}
 </p>
 
+{% endblock %}
+
+{% block footer %}
+ <!-- SELECTED SEATS FOOTER BOX [Start] -->
+ <div id="selected-seats-container" class="fixed-bottom py-2 py-sm-3 px-3 px-sm-5">
+    {% if user_booked_seats %}
+    <h3 class="mb-0 m-md-auto">Your Reserved Seats:</h3>
+    <div id="selected-seats-inner-wrapper" class="d-flex justify-content-between align-items-center mx-md-auto locked-style">
+    {% else %}
+    <h3 class="mb-0 m-md-auto">No Seats Reserved</h3>
+    <div id="selected-seats-inner-wrapper" class="d-flex justify-content-between align-items-center mx-md-auto">
+    {% endif %}
+
+        <ul id="seats-selected-list" class="d-sm-flex my-2 ps-3 ps-sm-5">
+            {% for seat in user_booked_seats %}
+            <li id="{{ seat.seat_location_1 }}" class="d-flex align-items-center me-sm-5">{{ seat.seat_location_1 }}
+                <button type="button" tabindex="-1" class="btn-cancel-seat ms-2 p-0 disabled-btn"><i class="far fa-times-circle"></i></button>
+            </li>
+            {% if seat.seat_location_2 %}
+            <li id="{{ seat.seat_location_2 }}" class="d-flex align-items-center me-sm-5">{{ seat.seat_location_2 }}
+                <button type="button" tabindex="-1" class="btn-cancel-seat ms-2 p-0 disabled-btn"><i class="far fa-times-circle"></i></button>
+            </li>
+            {% endif%}
+            {% endfor %}
+        </ul>
+            
+        {% if user_booked_seats %}
+        <button type="button" id="edit-reservation" class="btn btn-primary me-1 seat-booking-btn">Edit Reservation</button>
+        <button type="button" id="update-reservation" class="btn btn-primary disabled-btn reserve-btn me-1 d-none seat-booking-btn">Update Reservation</button>
+        {% else %}
+        <button type="button" id="submit-reservation" class="btn btn-primary disabled-btn reserve-btn me-1 seat-booking-btn">Reserve</button>
+        {% endif %}
+    </div>
+
+    <form method="POST" id="reserve-seat-form">
+        {% csrf_token %}
+        {{ form }}
+    </form>
+
+    <ul id="reservation-notice" class="ps-sm-0 mt-sm-2 mx-md-auto">
+        <li class="d-none d-sm-block">Each member can only reserve a maximum of 2 seats per event.
+        </li>
+        <li class="d-none d-sm-block">Be at the venue at least 15 minutes before start of event to get your reserved seats.</li>
+    </ul>
+</div>
+<input type="hidden" id="has-booked-seats" name="has-booked-seats" value="{{ user_booked_seats }}">
+<!-- SELECTED SEATS FOOTER BOX [End] -->
 {% endblock %}

@@ -6,27 +6,16 @@
 
 {% block content %}
 <section id="sign-out-section" class="container py-4 py-sm-5">
-
   <h2 class="text-center pb-3 pb-sm-4">{% trans "Sign Out" %}</h2>
-
   <div class="container col-md-8 col-lg-6 col-xl-5 px-3 px-sm-5 py-3 py-sm-4 rounded auth-box-background">
     <p id="sign-out-notice" class="text-center">{% trans 'Are you sure you want to sign out?' %}</p>
-  
     <form method="post" action="{% url 'account_logout' %}">
       {% csrf_token %}
       {% if redirect_field_value %}
       <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
       {% endif %}
       <button class="primaryAction btn btn-primary d-block mx-auto mt-4" type="submit">{% trans 'Sign Out' %}</button>
-
     </form>
   </div>
 </section>
-
-{% endblock %}
-
-{% block footer %}
-
-    {% include 'footer.html' %}
-
 {% endblock %}
