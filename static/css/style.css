@@ -256,6 +256,9 @@ textarea {
 
 /* --> EVENT DETAILS PAGE [start] */
 #event-details-title {
+    color: var(--clr-police-blue);
+    text-shadow: 0 0 .5px var(--clr-rich-black);
+    font-size: 1.2rem;
     font-weight: 700;
 }
 
@@ -643,6 +646,14 @@ footer {
     }
 
     /* EVENT DETAILS PAGE */
+    #goodwill-presents {
+        font-size: 1.1rem;
+    }
+    
+    #event-details-title {
+        font-size: 1.4rem;
+    }
+    
     #img-wrapper {
         height: 14rem;
     }
@@ -661,6 +672,16 @@ footer {
 
     #homepage-title {
         font-size: 3.2rem;
+    }
+
+
+    /* EVENT DETAILS PAGE */
+    #event-details-title {
+        font-size: 1.6rem;
+    }
+    
+    #img-wrapper {
+        height: 14rem;
     }
 
     /* FLASH MESSAGES */
@@ -700,6 +721,10 @@ footer {
     }
 
     /* EVENT DETAILS PAGE */
+    #goodwill-presents {
+        font-size: 1.2rem;
+    }
+
     #img-wrapper {
         height: 18rem;
     }
@@ -737,6 +762,20 @@ footer {
         object-fit: cover;
     }
 
+    /* EVENT DETAILS PAGE */
+    #goodwill-presents {
+        font-size: 1.3rem;
+    }
+    
+    #event-details-title {
+        font-size: 1.7rem;
+    }
+    
+    #event-blurb {
+        font-size: 1.2rem;
+    }
+
+
     /* SEAT MAP PAGE */
     #view-seatmap-section h2 {
         font-size: 2.2rem;
@@ -773,6 +812,19 @@ footer {
         width: 58rem;
         margin: auto;
     }
+
+    #goodwill-presents {
+        font-size: 1.4rem;
+    }
+        
+    #event-details-title {
+        font-size: 1.9rem;
+    }
+        
+    #event-blurb {
+        font-size: 1.3rem;
+    }
+    
 
     /* FOOTER */
     #social-links {
