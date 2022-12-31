@@ -577,13 +577,6 @@ footer {
 /* 404 ERROR PAGE [End] */
 
 
-/* --> FLASH MESSAGES [Start] <-- */
-#flash-message {
-    /* top: .7rem; */
-}
-/* --> FLASH MESSAGES [End] <-- */
-
-
 /* MEDIA QUERIES */
 
 @media screen and (min-width: 400px) {
@@ -627,11 +620,6 @@ footer {
     /* OFFCANVAS */
     .offcanvas-body p {
         font-size: 1.2rem;
-    }
-
-    /* FLASH MESSAGES */
-    #flash-message {
-        /* top: 1rem; */
     }
 }
 
