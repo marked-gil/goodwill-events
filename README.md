@@ -103,6 +103,7 @@ Iteration 4:
 ### SCOPE
 
 #### **Planned Features**
+The following are the User Stories that guided the creation of the features of this project:
 
 * User Story #10: [**Initial Dependencies Installation**](https://github.com/marked-gil/goodwill-events/issues/10)
     > As a Developer, I want the significant dependencies installed first so that I can focus on the functionalities of the site later on.
@@ -355,7 +356,8 @@ The 'Like' button on the specific event's detail page is a red-coloured heart ic
 
 The number of likes for an event is displayed on the 'Upcoming Events' page, and on the specific event's detail page. 
 
-<!-- screenshot here -->
+![Liked screenshot](docs/features_screenshots/liked-screenshot.png)
+![unliked screenshot](docs/features_screenshots/unliked-screenshot.png)
 
 **POSTING COMMENTS**
 > **User Story [#31](https://github.com/marked-gil/goodwill-events/issues/31):** As a user, I can leave a comment on the event page so that I can share my thoughts to the public about a particular event.
@@ -364,14 +366,14 @@ Inside the specific event's page, a comment section is located after the event's
 
 Non-logged-in users, on the other hand, will only see the comments posted by other users but cannot post comments themselves.
 
-![Comment section screenshot](docs/features_screenshots/comment-section.png)
+![Comment section](docs/features_screenshots/comment-section.png)
 
 **DELETING COMMENTS**
 > **User Story [#32](https://github.com/marked-gil/goodwill-events/issues/32):** As a user, I can delete my comments on a particular event so that they are no longer visible to the public.
 
 Logged-in users are allowed to delete their posted comments on an event. When a signed-in user visits an event's specific page, a 'Delete' button are displayed beside each of their comments on the 'Comment' section. Once the user clicks on the button, the corresponding comment will be deleted from the database and from the page.
 
-![Comment with delete button screenshot](docs/features_screenshots/delete-comment.png)
+![Comment with delete button](docs/features_screenshots/delete-comment.png)
 
 **SEAT MAP PAGES**
 > **User Story [#26](https://github.com/marked-gil/goodwill-events/issues/26):** As a user, I can visit the Seat Map page so that I can see the seat map of the venue.
@@ -386,14 +388,14 @@ The 'Seat Reservation' page (or specific event's seating page) contains the inte
 
 The gray small boxes represents 'available' seats, the blue ones are reserved or 'unavailable' seats, and the green boxes are the current user's 'selected' seats.
 
-![Seat Reservatio page screenshot](docs/features_screenshots/reservation-page.png)
+![Seat Reservatio page](docs/features_screenshots/reservation-page.png)
 
 **RESTRICTING SEAT RESERVATION TO SIGNED-IN MEMBERS ONLY**
 > **User Story [#27](https://github.com/marked-gil/goodwill-events/issues/27):** As a user, I can register as a member and sign in so that I can reserve seats.
 
 The event's specific 'Seating' or 'Seat Reservation' page can only be accessed by logged-in users. When a non-logged-in user attempts to access it by clicking on a ‘Reserve a Seat’ button, they will, instead, be redirected to the Sign In page with a flash message 'You need to sign in to make seat reservations'; and once they sign in, they will be redirected back to the 'Seat Reservation' page for the specific event.
 
-<!-- screenshot here -->
+![Seat reservation restricted to signed-in members](docs/features_screenshots/reservation-restricted.png)
 
 **SELECTING SEATS**
 > **User Story [#28](https://github.com/marked-gil/goodwill-events/issues/28):** As a user, I can select a seat so that I can choose the available seat I want for the event.
@@ -404,7 +406,7 @@ Only a maximum of 2 seats can be selected and reserved by a user per event. If t
 
 The seats selected by the user are displayed at the footer of the page.
 
-![selecting seats screenshot](docs/features_screenshots/selecting-seats.png)
+![selecting seats](docs/features_screenshots/selecting-seats.png)
 
 **SEAT RESERVATION**
 > **User Story [#29](https://github.com/marked-gil/goodwill-events/issues/29):** As a user, I can reserve the selected seat/s so that they are saved in the database.
@@ -416,9 +418,15 @@ In the 'Seat Reservation' page, when the user clicks the 'Reserve' button the se
 
 When a logged-in user already has reserved seat/s for an event, the seat map is disabled by default. For the user to edit their reservation, they need to click the 'Edit Reservation' button, which will enable the seat map's interactivity and allow updating and cancelling of reservation.
 
+![Edit Reservation](docs/features_screenshots/edit-reservation.png)
+
 If the user wants to change their reserved seats, they have to cancel a seat first if 2 seats have already been reserved before they can select another seat. Only a maximum of 2 seats are allowed per user per event. And to update the database of the changes, the user needs to click the 'Update Reservation' button. This button is disabled if there are no changes made in the reservation.
 
+![Update Reservation](docs/features_screenshots/update-reservation.png)
+
 If a user wants to delete their reservation, this can simply be done by cancelling all the reserved seats and clicking the ‘Update Reservation’ button. After which an offcanvas lightbox will appear with a button for the user to click to confirm the deletion.
+
+![Delete Reservation](docs/features_screenshots/delete-reservation.png)
 
 **SIGN IN PAGE**
 > **User Story [#20](https://github.com/marked-gil/goodwill-events/issues/20):** As a user, I can sign in when I am registered so that I can access the full functionality of the website.
@@ -429,7 +437,7 @@ For users who happen to visit the Sign In page but actually still have not signe
 
 Feedback messages are flashed when the user is successfully signed in, and when provided credentials are invalid.
 
-<!-- screenshot here -->
+![Sign In page](docs/features_screenshots/sign-in.png)
 
 **REGISTRATION (SIGN UP) PAGE**
 > **User Story [#19](https://github.com/marked-gil/goodwill-events/issues/19):** As a user, I can sign-up on the website so that I can be a member and use the full functionality of the website.
@@ -438,7 +446,7 @@ The Registration or Sign Up page requires the user to provide a username, first 
 
 If the user visiting the Sign Up page realizes that they have already registered previously, a 'Sign In' link is available on the page for the user to click and be redirected to the Sign In page.
 
-<!-- screenshot here -->
+![Sign Up page](docs/features_screenshots/sign-up.png)
 
 **MEMBER ACCOUNT PAGE (My Account Page)**
 > **User Story [#36](https://github.com/marked-gil/goodwill-events/issues/36):** As a User, I can view all of my account information/data as a registered member so that I can review them as needed.
@@ -449,7 +457,7 @@ A list of all the active reservations can also be accessed via the 'View My Rese
 
 A link to change password is also available on the page.
 
-<!-- screenshot here -->
+![Member Account page](docs/features_screenshots/member-account.png)
 
 **EDITING ACCOUNT INFORMATION**
 > **User Story [#37](https://github.com/marked-gil/goodwill-events/issues/37):** As a User, I can edit my personal information/data such as first name, last name, and email address so that I can update them easily as necessary.
@@ -468,7 +476,7 @@ The Sign Out page’s purpose is to require the user to confirm that they intend
 
 A feedback message stating 'You have signed out' is flashed when the user is successfully signed out.
 
-<!-- screenshot here -->
+![Sign Out page](docs/features_screenshots/sign-out.png)
 
 **CHANGE PASSWORD**
 > **User Story [#38](https://github.com/marked-gil/goodwill-events/issues/38):** As a User, I can change my password so that I can maintain the security of my account.
@@ -477,14 +485,14 @@ The 'Change Password' page requires the current password and new password (needs
 
 A link to reset password is also available through the Forgot Password link.
 
-<!-- screenshot here -->
+![Change password page](docs/features_screenshots/change-password.png)
 
 **PASSWORD RESET**    
 > **User Story [#39](https://github.com/marked-gil/goodwill-events/issues/39):** As a User, I can reset my password so that I can either keep my account secured or keep using my account when I have forgotten my password.
 
 In this page, the user is only required to supply their registered email address where the site will automatically send an email with a link. Once this email is received by the user and they click on the link, the user will be redirected to a page where they can set their new password.
 
-<!-- screenshot here -->
+![Password reset page](docs/features_screenshots/password-reset.png)
 
 **AUTOMATIC RECYCLING OF EXPIRED EVENTS**
 > **User Story [#34](https://github.com/marked-gil/goodwill-events/issues/34):** As a site owner, I can set an expired event to automatically be recycled to a new scheduled date so that the site can perpetuate despite its contents not being monitored and updated manually.
