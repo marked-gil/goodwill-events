@@ -84,6 +84,7 @@
 
     <main class="position-relative">
         <!-- flash messages -->
+        {% block flash-messages %}
         {% if messages %}
         {% for message in messages %}
         <div id="flash-message" class="container">
@@ -94,6 +95,7 @@
         </div>
         {% endfor %}
         {% endif %}
+        {% endblock %}
 
         <!-- for page content -->
         {% block content %}

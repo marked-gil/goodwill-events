@@ -56,6 +56,11 @@
     z-index: 1;
 }
 
+/* Flash Message */
+#seating-flash-message {
+    max-width: 50rem;
+}
+
 /* Legends */
 .seatmap-legend-icon {
     font-size: .7rem;

@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 
+<!-- Removes the flash message that comes with the base template -->
+{% block flash-messages %}
+{% endblock %}
+
 {% block content %}
 <section id="seat-reservation-section" class="container py-2 px-0">
     <!-- Event Info -->
@@ -7,6 +11,18 @@
         <h2 id="seating-event-title" class="mb-0 px-3">{{ event.title }}</h2>
         <p class="px-3 m-0">{{ event.event_date|date:'d F Y, D' }} | <span>{{ event.event_time|date:'g:i A' }}</span></p>
     </div>
+    
+    <!-- Flash Message -->
+    {% if messages %}
+        {% for message in messages %}
+        <div class="container">
+            <div id="seating-flash-message" class="alert {{ message.tags }} alert-dismissible fade show m-auto mb-sm-0" role="alert">
+                {{ message | safe}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>
+        {% endfor %}
+    {% endif %}
 
     <!-- Feedback Message (Modified Bootstrap Toast) -->
     <div id="feedbackToast" class="toast align-items-center position-absolute" role="alert" aria-live="assertive" aria-atomic="true">
