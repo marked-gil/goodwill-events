@@ -79,7 +79,7 @@ Iteration 2:
 * Member Registration ([Epic 5](https://github.com/marked-gil/goodwill-events/issues/5))
 * Seating Model ([Epic 3](https://github.com/marked-gil/goodwill-events/issues/3))
 * Seat Map Page([Epic 7](https://github.com/marked-gil/goodwill-events/issues/7))
-* Make Event Seat Reservation ([Epic 7](https://github.com/marked-gil/goodwill-events/issues/7))
+* Allow Seat Selection ([Epic 7](https://github.com/marked-gil/goodwill-events/issues/7))
 
 Iteration 3:    
 * Submission of Selected Seats for an Event ([Epic 7](https://github.com/marked-gil/goodwill-events/issues/7))
@@ -104,33 +104,36 @@ Iteration 4:
 
 #### **Planned Features**
 
-* User Story: **Initial Dependencies Installation**
+* User Story [#10](https://github.com/marked-gil/goodwill-events/issues/10): **Initial Dependencies Installation**
     > As a Developer, I want the significant dependencies installed first so that I can focus on the functionalities of the site later on.
 
     * ACCEPTANCE CRITERIA:
         * Django, gunicorn, dj_database_url, psycopg2, and dj3 cloudinary storage are all successfully installed and added to the requirements.txt.
+
     * TASKS:    
         * Install Django and gunicorn
         * Install dj_database_url and psycopg2
         * Install dj3-cloudinary-storage
         * Add the dependencies to the requirements.txt     
 
-* User Story: **Basic Skeletal Structure of the Project**
+* User Story [#11](https://github.com/marked-gil/goodwill-events/issues/11): **Basic Skeletal Structure of the Project**
     > As a developer, I can see the basic skeletal structure of the project .
 
     * ACCEPTANCE CRITERIA:
         * The new django project and first app are created and migrated.
+
     * TASKS:
         * Create the new django project
         * Create initial apps - events
         * Add the apps to the installed apps in settings.py
 
-* User Story: **Initial Deployment to Heroku**
+* User Story [#12](https://github.com/marked-gil/goodwill-events/issues/12): **Initial Deployment to Heroku**
     > As a developer, I can initially deploy the basic and skeletal structure of the project to Heroku so that I can check the initial successful connection to Heroku.
 
     * ACCEPTANCE CRITERIA:
         * Initial deployment of the project to Heroku is successful.
         * PostgreSQL and Cloudinary are set up.
+
     * TASKS:
         * Create a new Heroku app
         * Use PostgreSQL
@@ -142,8 +145,8 @@ Iteration 4:
         * Create Procfile
         * Deploy to Heroku
 
-* User Story: **Base Template**
-    > As a Developer, I can use a base template that contains the header with logo and navbar menu so that I can connect it to other html pages.    
+* User Story [#13](https://github.com/marked-gil/goodwill-events/issues/13): **Base Template**
+    > As a Developer, I can use a base template that contains the header with logo, navbar menu, a block content tag, and general footer so that I can connect it to other html pages.
 
     * ACCEPTANCE CRITERIA:
         * The base template is initially set up with header.
@@ -152,24 +155,27 @@ Iteration 4:
     * TASKS:
         * Create a base template.
         * Create a header with navbar and site name or logo
+        * Create block tag for footer and include the general footer content
 
-* User Story: **Home Page Template**
+* User Story [#14](https://github.com/marked-gil/goodwill-events/issues/14): **Home Page Template**
     > As a User, I can see the home page of the site so that I will know what the website is for.
 
     * ACCEPTANCE CRITERIA:  
         * GIVEN that the user has entered the correct base URL for the site, WHEN they enter the site THEN the home page will be displayed.
         * The basic home page template is initially set up and linked with the base template
+
     * TASKS:
         * Create a basic home page
         * Connect the base template to the basic home page
         * Include a footer at the end of the page
 
-* User Story: **Event Model**
+* User Story [#15](https://github.com/marked-gil/goodwill-events/issues/15): **Event Model**
     > As a Developer, I can save new events into a database table so that I can use the data on the website.
 
     * ACCEPTANCE CRITERIA:
         * The event model is constructed with fields such as title, slug, blurb, event_date, event_time, content, featured_image, author, entered_by, created_on, updated_on, likes, and etc.
         * The Event model is available on the admin panel.
+
     * TASKS:
         * Create an Event Model with fields such as: title, slug, blurb, event_date, event_time, content, featured_image, author, entered_by, created_on, updated_on, likes, etc.
         * Modify the built-in string method of Django’s base Model class
@@ -177,12 +183,13 @@ Iteration 4:
         * Customize the admin interface for the Event class Model
         * Register the Event model in admin.py
 
-* User Story: **Seating Model**
+* User Story [#16](https://github.com/marked-gil/goodwill-events/issues/16): **Seating Model**
     > As a developer, I can save the seat reservation of a signed-in member on the database so that I can block the specific seat/s of the event for the specific member.
 
     * ACCEPTANCE CRITERIA:
         * The seating model is constructed with fields such as 'event', 'seat_location', 'reserved_on', and 'reserved_by'.
         * The Seating model is available on the admin panel.
+
     * TASKS:
         * Create Seating app
         * Create VenueSeat Model
@@ -190,18 +197,19 @@ Iteration 4:
         * Modify the built-in string method of Django’s base Model class
         * Register the VenueSeat and EventSeating models in admin.py
 
-* User Story: **Comment Model**
+* User Story [#17](https://github.com/marked-gil/goodwill-events/issues/17): **Comment Model**
     > As a developer, I can save the user’s comments into the database so that I can display it in its specific event post.
 
     * ACCEPTANCE CRITERIA:
         * The comment model is constructed with fields such as text_comment, author, event_post, and posted_on.
-        * The Comment model is available on the admin panel
+        * The Comment model is available on the admin panel.
+
     * TASKS:
         * Create a Comment Model with fields such as text_comment, author, event, and posted_on
         * Modify the built-in string method of Django’s base Model class
         * Register the Comment model in admin.py
 
-* User Story: **Member Registration**
+* User Story [#19](https://github.com/marked-gil/goodwill-events/issues/19): **Member Registration**
     > As a user, I can sign-up on the website so that I can be a member and use the full functionality of the website.
 
     * ACCEPTANCE CRITERIA:
@@ -209,6 +217,7 @@ Iteration 4:
         * GIVEN that the registration form is present, WHEN the form is submitted with invalid formats on any of the fields THEN the form is not submitted and a feedback message shows up.
         * GIVEN that the registration form is present, WHEN password is created by the user THEN it will be required to re-enter the same password before the form can be submitted.
         * GIVEN that the registration form is validly completed, WHEN the form is submitted, THEN the user is redirected to the home page.
+
     * TASKS:
         * Create a registration template
         * Using django-allauth, create a form that includes fields for username, first name, last name, email address, and password
@@ -216,20 +225,21 @@ Iteration 4:
         * Prevent the submission of the form when the password is not re-entered correctly, and use django-allauth password validation to show feedback message to the user
         * Redirect the user to the home page when registration is validly submitted
 
-* User Story: **Sign In**
+* User Story [#20](https://github.com/marked-gil/goodwill-events/issues/20): **Sign In**
     > As a user, I can sign in when I am registered so that I can access the full functionality of the website.
 
     * ACCEPTANCE CRITERIA:
         * GIVEN the ‘sign in’ form is created and the user is registered, WHEN the user signs in with the required valid username or email address and password THEN the user can access the full functionality of the website.
         * GIVEN the ‘sign in’ form is created, WHEN the user signs in with invalid credentials THEN feedback message is displayed and the form is not submitted.
+
     * TASKS:
         * Create a ‘sign-in’ page
         * Use django-allauth's 'sign-in' form that requires the user’s username and password
         * Redirect the user to the home page when sign-in is successful, flashes a message to confirm that sign in is successful
         * Flash feedback message when sign-in credentials are invalid, and the URL stays the same.
 
-* User Story: **Sign Out**
-    > As a user, I can sign out when I am already signed in so that I can protect my website account and prevent unauthorised persons from using it.
+* User Story [#21](https://github.com/marked-gil/goodwill-events/issues/21): **Sign Out**
+    > As a user, I can sign out after logging in so that I can protect my website account and prevent unauthorised persons from accessing it.
 
     * ACCEPTANCE CRITERIA:
         * GIVEN the user is signed in, WHEN the user clicks the sign-out button THEN the user’s session is ended and access to the site is limited to its content that is for general consumption.
@@ -241,8 +251,8 @@ Iteration 4:
         * Flash a feedback message on the home page when the user is signed out successfully
         * Prevent user from making seat reservations, liking events, and posting comments when signed out
 
-* User Story: **Featured Events List**
-    > As a user, I can see the featured list of events on the home page so that immediately see the events that are coming up.
+* User Story [#22](https://github.com/marked-gil/goodwill-events/issues/22): **Featured Events List**
+    > As a user, I can see the featured list of events on the home page so that I can immediately see the events that are coming up.
 
     * ACCEPTANCE CRITERIA:
         * GIVEN home page is created, WHEN the user visits the home page THEN they can see a list of the featured events.
@@ -252,12 +262,13 @@ Iteration 4:
         * Show title, short description, date and time
         * Make every featured event clickable and redirect each to their event's full detail page
 
-* User Story: **All Events Page**
+* User Story [#23](https://github.com/marked-gil/goodwill-events/issues/23): **All Events Page**
     > As a user, I can See all the upcoming events so that I can decide which one interests me.
 
     * ACCEPTANCE CRITERIA:
         * GIVEN template for all events is created, WHEN user visits the ‘all events’ page THEN they can browse all the upcoming events
         * GIVEN the user is visiting the ‘all events’ page, WHEN user clicks an event THEN the site attempts to redirect to another page.
+
     * TASKS:
         * Create a template for all the upcoming events
         * Display all the upcoming events in ascending order based on the date of the event
@@ -265,11 +276,12 @@ Iteration 4:
         * Develop pagination
         * Redirect the 'Events' link in the navbar menu to the 'Events page'
 
-* User Story: **Specific Event’s Page**
+* User Story [#24](https://github.com/marked-gil/goodwill-events/issues/24): **Specific Event’s Page**
     > As a user, I can view the full detail of the event so that I can learn more about the event.
 
     * ACCEPTANCE CRITERIA:
         * GIVEN the user is on the home page or ‘all events’ page, WHEN the user clicked an event THEN the full details of the event will be displayed on a separate page.
+
     * TASKS:
         * Create event template
         * Display the featured banner image of the event
@@ -277,19 +289,20 @@ Iteration 4:
         * Display the date and time of the event
         * Add a ‘reserve seat’ button to the event’s page
 
-* User Story: **Event Likes**
+* User Story [#25](https://github.com/marked-gil/goodwill-events/issues/25): **Event Likes**
     > As a user, I can like an event post that interests me so that I can show my support for the event.
 
     * ACCEPTANCE CRITERIA:
         * GIVEN the user is signed in and visiting the event’s page, WHEN the user clicks the ‘like’ button THEN it will add to the number of likes of the event post.
         * GIVEN the user is signed in and visiting the event’s page, WHEN the user clicks again the ‘like’ button THEN it will remove their like of the post and update the displayed number of likes of the event post.
+
     * TASKS:
         * Create a ‘like’ toggle button on the event’s page
         * Display the number of likes of the event post
         * Add the user’s like to the total likes of the event and display it
         * Allow user to remove their ‘like’
 
-* User Story: **Seat Map Page**
+* User Story [#26](https://github.com/marked-gil/goodwill-events/issues/26): **Seat Map Page**
     > As a user, I can visit the Seat Map page so that I can see the seat map of the venue.
 
     * ACCEPTANCE CRITERIA:
@@ -299,11 +312,11 @@ Iteration 4:
     * TASKS:
         *  Create a generic seat map page for all users (including non-logged-in users) to visit
         * Create an 'Event's Seating' page for each specific event
-        * Add the seat map on the 'seating' pages
-        * Allow the seat map on the specific Event's 'seating' page to pan and zoom
+        * Add the SVG seat map on the 'seating' pages
+        * Allow the seat map to pan and zoom
         * Display the event’s title, date, time and colour legend on the specific Event's 'seating' page
 
-* User Story: **Restrict Seat Reservation to Signed-in Members Only**
+* User Story [#27]https://github.com/marked-gil/goodwill-events/issues/27): **Restrict Seat Reservation to Signed-in Members Only**
     > As a user, I can register as a member and sign in so that I can reserve seats.
 
     * ACCEPTANCE CRITERIA:
@@ -315,59 +328,64 @@ Iteration 4:
         * Flash a feedback message to the user to sign in when redirected to the sign-in page
         * Redirect the user back to the event's Seat Reservation page after signing in
 
-* User Story: **Make Event Seat Reservation**
-    > As a user, I can reserve a seat so that I can choose the available seat I want and ensure I have a seat during the event.
+* User Story [#28](https://github.com/marked-gil/goodwill-events/issues/28): **Allow Seat Selection**
+    > As a user, I can select a seat so that I can choose the available seat I want for the event.
 
     * ACCEPTANCE CRITERIA:
         * GIVEN the user is signed in, WHEN I clicked on the available seat on the map THEN it shows on the screen that the user has selected it.
-        * GIVEN the user has selected a seat/s, WHEN the user clicks or toggles again on the selected seat/s on the seat map THEN the seats are de-selected.
+        * GIVEN the user has selected a seat/s, WHEN the user clicks or toggles again on the selected seat/s on the seat map THEN the seats are deselected.
+
     * TASKS:
         * Make all available seats active on the seat map and can be toggled
         * Display all unavailable seats as inactive items on the seat map
-        * Allow only 2 seats to be reserved per member
+        * Allow only 2 seats to be selected per member
         * List all selected seats on the screen
-        * Allow de-selection of the seat
+        * Allow deselection of the seat
 
-* User Story: **Submission of Selected Seats for an Event**
-    > As a user, I can submit the selected seat/s so that I can ensure that it is reserved.
+* User Story [#29](https://github.com/marked-gil/goodwill-events/issues/29): **Reservation of Selected Seats**   
+    > As a user, I can reserve the selected seat/s so that they are saved in the database.
 
     * ACCEPTANCE CRITERIA:
         * GIVEN the signed-in user has selected a seat/s, WHEN I click on the ‘reserve’ button THEN the seats are saved to the database and reserved.
+
     * TASKS:
         * Add a ‘reserve’ button to proceed with the reservation
         * Save selected seats in the database
         * Display a flash message on the seating (seat reservation) page when a seat is successfully reserved
 
-* User Story: **Cancel and/or Update Reserved Seats**
+* User Story [#30](https://github.com/marked-gil/goodwill-events/issues/30): **Cancel and/or Update Reserved Seats**
     > As a user, I can cancel and/or update my reserved seats so that other users can reserve the seats or I can conveniently change my preference.
 
-    * ACCEPTANCE CRITERIA:
-        * GIVEN the signed-in user has selected a seat/s, WHEN I click on the ‘cancel’ button THEN the selected seat/s are de-selected on the map.
-        * GIVEN the user has already reserved a seat/s for an event, WHEN the user visits the event’s seating page THEN the selected seats are displayed.
-        * GIVEN the user has already reserved a seat/s for an event, WHEN the user clicks on the ‘Update my reservation’ button THEN the reserved seats can be cancelled and/or replaced.
+    * ACCEPTANCE CRITERIA:  
+        * GIVEN the user has already reserved a seat/s for an event, WHEN the user visits the event’s seating page THEN the user's reserved seats for the event are displayed.
+        * GIVEN the user has already reserved a seat/s for an event, WHEN the user clicks on the ‘Edit Seat Reservation’ button THEN the reserved seats can be cancelled and/or replaced.
+        * GIVEN the signed-in user has selected a seat/s, WHEN I click on the ‘cancel’ button for a reserved seat THEN the selected seat/s are de-selected on the map.
+        * GIVEN the user changed their seat selection, WHEN the user clicks on the ‘Update Reservation’ button THEN the seat reservation is updated.
+        * GIVEN the user has cancelled all their reserved seats for the event, WHEN the user clicks on the ‘Update Reservation’ button THEN their reservation for the event is deleted.
+    
     * TASKS:
         * Add a ‘cancel’ button to remove the selected seat/s
-        * Add an ‘Update my reservation’ button’ to allow the cancellation and/or replacement of the reserved seats
-        * Remove the ‘reserve’ button when the user already has reserved seat/s, and show the list of seats reserved
-        * Allow reserved seats to be cancelled
-        * Add an ‘update reservation’ button is clicked
-        * When the ‘update’ button is clicked, the 'seating' database is updated and a feedback message is flashed
+        * Add an ‘Update Reservation’ button’ to allow the deletion and/or replacement of the reserved seats
+        * Replace the ‘Reserve’ button with 'Update Reservation' button when the user already has reserved seat/s, and show the list of reserved seats
+        * Allow reserved seats to be cancelled or updated
+        * When 'EventSeating' database is successfully updated, flash a feedback message
 
-* User Story: **User Comments on a Specific Event**
+* User Story [#31](https://github.com/marked-gil/goodwill-events/issues/31): **User Comments on a Specific Event**
     > As a user, I can leave a comment on the event page so that I can share my thoughts to the public about a particular event.
 
     * ACCEPTANCE CRITERIA:
         * GIVEN the user is signed-in, WHEN I add a comment on an event page THEN it will be saved in the database.
         * GIVEN the number of text characters for each comment is limited, WHEN the user adds a comment on an event page THEN the number of characters left is displayed in real-time.
         * GIVEN the user is visiting an event's page, WHEN the user scrolls down to the comment section THEN they can see the comments from members.
+
     * TASKS:
         * Create a form for comments on each page
         * Limit the comment length to 250 characters
         * Show realtime character counter for comments
         * Save the comment to the database when the ‘submit’ button is clicked
-        * Display the comments on the event’s page along with the author's first name and initial of their last name, and the date and time of posting
+        * Display the comments on the event’s page along with the author's username, and time since posted
 
-* User Story: **Deleting Comments**
+* User Story [#32](https://github.com/marked-gil/goodwill-events/issues/32): **Deleting Comments**
     > As a user, I can delete my comments on a particular event so that they are no longer visible to the public.
 
     * ACCEPTANCE CRITERIA:
@@ -376,42 +394,46 @@ Iteration 4:
         * Add a ‘delete’ button on the user’s comment/s when signed-in
         * Delete the comment when the ‘delete’ button is clicked
 
-* User Story: **Comments Control by Site Owner**
+* User Story [#33](https://github.com/marked-gil/goodwill-events/issues/33): **Comments Control by Site Owner**
     > As a site owner, I can delete the comments of members so that the site is kept friendly and safe for all users.
 
     * ACCEPTANCE CRITERIA:
         * GIVEN an inappropriate comment is posted by a user, THEN the site owner can deliberately delete the comment without notice.
+
     * TASKS:
         *  Delete an inappropriate comment through the admin panel
 
-* User Story: **Recycling Expired Events**
+* User Story [#34](https://github.com/marked-gil/goodwill-events/issues/34): **Recycling Expired Events**
     > As a site owner, I can set an expired event to automatically be recycled to a new scheduled date so that the site can perpetuate despite its contents not being monitored and updated manually.
 
     * ACCEPTANCE CRITERIA:
         * GIVEN that this site is for educational purposes only and the events may not be monitored or updated regularly, WHEN an event has gone past its schedule THEN it will automatically be rescheduled to a future date.
         * GIVEN that the event has gone past its schedule, WHEN the event is automatically recycled with a new date THEN it is re-displayed with all the other events in the order of their dates.
         * GIVEN that the event has gone past its schedule, WHEN the event is automatically recycled with a new date THEN all its previously reserved seats are deleted for a new start.
+
     * TASKS:
         * Automatically update the schedule of the event in the database to the following year as soon as it expires
         * Re-display the recycled event with the new schedule
         * Delete all reserved seats for the expired and recycled events
 
-* User Story: **Create Member Account Page**
+* User Story [#36](https://github.com/marked-gil/goodwill-events/issues/36): **Create Member Account Page**
     > As a User, I can view all of my account information/data as a registered member so that I can review them as needed.
     
     * ACCEPTANCE CRITERIA:
-        * GIVEN that I am registered to the site, WHEN I log in THEN I can view all my personal information/data that I have provided to the site.
-        * GIVEN that I am registered to the site, WHEN I click on the Member Account Page THEN I will be able to see my registered username, first name, last name, and email
+        * GIVEN that the user is registered and signed in to the site, WHEN I visit the Member Account Page THEN I can see my username, first name, last name, email address, and seat reservations.
+
     * TASKS:
         * Create A Member's Account page
-        * In the Member's Account page, display the username, first name, last name, and email of the user.
+        * In the Member's Account page, display the user's username, first name, last name, and email address.
+        * Display the user's reserved seats
 
-* User Story: **Allow Logged-In User to Edit their Account Information**
+* User Story [#37](https://github.com/marked-gil/goodwill-events/issues/37): **Allow Logged-In User to Edit their Account Information**
     > As a User, I can edit my personal information/data such as first name, last name, and email address so that I can update them easily as necessary.
 
     * ACCEPTANCE CRITERIA:
         * GIVEN the user is logged in and inside the Member's Account page, WHEN I edit my personal information/data THEN they are allowed to edit their provided personal information as they see fit.
         * GIVEN the user has edited a specific personal information (eg, first name), WHEN I click the 'Update' button THEN the specific field will be updated in the database.
+
     * TASKS:
         * Make the username uneditable
         * Make all input fields readonly by default
@@ -419,44 +441,48 @@ Iteration 4:
         * Disable UPDATE button by default, and enable it only when changes are made in the input values
         * Update the database when valid changes are made in the Member's Account form
 
-* User Story: **Allow Change of Password**
+* User Story [#38](https://github.com/marked-gil/goodwill-events/issues/38): **Allow Change of Password**
     > As a User, I can change my password so that I can maintain the security of my account.
     
     * ACCEPTANCE CRITERIA:
         * GIVEN the user is a logged in member, WHEN they click on 'Change Password' inside the Member's Account page THEN it will allow them to change their password.
         * GIVEN the user has entered a new and verified password, WHEN they click 'save' THEN the database will be updated.
+
     * TASKS:
         * Create a 'Change Password' button inside the Member's Account page
         * Verify the new password the user entered by asking them to re-enter the same password.
         * Update the database when the new password is verified and saved.
 
-* User Story: **Allow Password Reset**
+* User Story [#39](https://github.com/marked-gil/goodwill-events/issues/39): **Allow Password Reset**
     > As a User, I can reset my password so that I can either keep my account secured or keep using my account when I have forgotten my password.
 
     * ACCEPTANCE CRITERIA:
         * GIVEN that the user is logged in and has provided a valid email address, WHEN they visit the Member's Account page and click on the 'change my password' link an email will be sent to the user to enable them to change his password.
         * GIVEN that the user has previously registered and has provided a valid email address, WHEN they click on 'forgot password?' link inside the Sign In page THEN an email will be sent to user to enable them to change their password.
+
     * TASKS:
         * Add a 'change my password' link inside the Member's Account page and redirect it to the password reset page
         * Add a 'forgot my password?' link inside the Sign In page and redirect it to the password reset page
         * Send an email to the user with a link to enable them to change their password
 
-* User Story: **Confirmation Email for Seat Reservation** [NOT IMPLEMENTED]
+* User Story [#35](https://github.com/marked-gil/goodwill-events/issues/35): **Confirmation Email for Seat Reservation** [NOT IMPLEMENTED]
     > As a user, I can receive a confirmation email for my seat reservation so that I can ensure that my seat reservation to an event is confirmed.
 
     * ACCEPTANCE CRITERIA:
         * GIVEN that the user has selected their seat/s, WHEN they click the ‘reserve’ button THEN an automatic email will be sent to the user as confirmation.
+
     * TASKS:
         * Set up automatic email function
         * Display a flash message to the user that a confirmation has been sent to his email
 
-* User Story: **Modify User Model** [NOT IMPLEMENTED]
+* User Story [#18](https://github.com/marked-gil/goodwill-events/issues/18): **Modify User Model** [NOT IMPLEMENTED]
     > As a developer, I can add other fields in the User model in addition to those that are built-in so I can customize the sign-up and sign-in feature of the site.
 
     * ACCEPTANCE CRITERIA:
         * The User modal is modified to include the telephone_number field, etc.
         * All the fields in the User Model cannot be left blank and will raise a validator error if attempted.
         * The added fields to the User model are available on the admin panel.
+
     * TASKS:
         * Modify the User model to include: telephone_number, date of birth, gender, address, and/or etc
         * Require all fields in the User Model
@@ -566,184 +592,197 @@ The database for the Goodwill Events project is composed of 5 models, of which f
 
 
 ## Features
-### NAV BAR    
-> **User Story:** As a Developer, I can use a base template that contains the header with logo and navbar menu so that I can connect it to other html pages.    
+**BASE TEMPLATE with Navbar and Footer**    
+> **User Story [#13](https://github.com/marked-gil/goodwill-events/issues/13):** As a Developer, I can use a base template that contains the header with logo, navbar menu, a `block content` tag,  and general footer so that I can connect it to other HTML pages.
 
-The nav bar is in the header of all the site’s pages. It contains the title of the website - Goodwill Events; and the navbar menu.
+The 'base template', which contains the navbar and footer, is included in all the other templates of the site. The default footer is enclosed in a block tag so it can be modified on other pages where necessary, such as on the 'Seat Reservation' page. It also includes a `block content` tag inside which specific content for each page can be included.
 
-For non-logged-in users, the navbar menu consist of the Home, Events, Seatmap, Sign In, and Sign Up links; while for the logged-in users, it consist of the Home, Events, Seatmap, Sign Out, and My Account links.
+* **Navbar**    
+    The navbar is in the header of all the site’s pages. It contains the title logo of the website - Goodwill Events, and the navbar menu.
 
-<!-- Nav Bar screenshot here -->
+    For non-logged-in users, the navbar menu consists of the 'Home', 'Events', 'Seat Map', 'Sign In', and 'Sign Up' links; while for the logged-in users, it consists of the 'Home', 'Events', 'Seat Map', 'Sign Out', and 'My Account' links.
 
-### FOOTER
-> **User Story:** 
+    ![Navbar screenshot](docs/features_screenshots/navbar.png)
 
-The footer simply contains the title of the site and the icons, which are links to the site’s social media accounts.
+* **Footer**    
+    The footer for most pages, except on the 'Seat Reservation' page, simply contains the site title, copyright and the social media icons, which are links to the social media sites.
 
-<!-- Footer screenshot here -->
+    ![Footer screenshot](docs/features_screenshots/general-footer.png)
 
-### HOME Page
-> **User Story:** As a User, I can see the home page of the site so that I will know what the website is for.   
+**HOME Page**
+> **User Story [#14](https://github.com/marked-gil/goodwill-events/issue):** As a User, I can see the home page of the site so that I will know what the website is for.   
 
-The Home page contains 3 featured events, which have the nearest show dates relative to today’s. Also, it displays the ‘About Us’ section.
+The Home page includes the base template as described above and displays three (3) featured events, and the ‘About Us’ section.
 
 <!-- Home Page screenshot here -->
 
-### FEATURED EVENTS
-> **User Story:** As a user, I can see the featured list of events on the home page so that immediately see the events that are coming up.  
+**FEATURED EVENTS**
+> **User Story [#22](https://github.com/marked-gil/goodwill-events/issues/22):** As a user, I can see the featured list of events on the home page so that I can immediately see the events that are coming up.
 
-<!-- Featured Events screenshot -->
-
-### Upcoming Events Page
-> **User Story:** As a user, I can See all the upcoming events so that I can decide which one interests me.
-
-The Upcoming Events page displays the list of all the upcoming events. This page is paginated, and there are only 5 events displayed per page. 
-
-Each item in the list is an event which shows a featured image, its title, date and time, a reserve button, and number of likes. Also, each item or event is clickable and will redirect the site to the specific event’s page. The reserve button, on the other hand, will redirect to the Seat Reservation page.
-
-    * Clickable event cards that redirects to the event's specific page
-    * 'Reserve a Seat' - redirects to the 'Seat Reservation' page
-    * Pagination
-
-    <!-- Upcoming Events Page screenshot here -->
-
-### Specific Event Page     
-> **User Story:** As a user, I can view the full detail of the event so that I can learn more about the event.
-
-The specific event’s page contains the details of the events. It shows the title of the event, its schedule, number of seats still available, a ‘Reserve a Seat’ button, a ‘LIKE’ button,  the event’s description and/or the performer’s description, and a comment section.
-
-For non-logged-in users, they will only see the comments posted by other users, but cannot post comment themselves; while the logged-in users can post comments.
-
-    * 'Reserve a Seat' - redirects to the 'Seat Reservation' page
-    * 'Like' button
-    * Comment section - where users can leave comment if they are logged in, and read comments for the event
-
-<!-- Specific Event Page screenshot here -->
-
-### Event Likes
-> **User Story:** As a user, I can like an event post that interests me so that I can show my support for the event.    
-
-<!-- screenshot here -->
-
-### Posting Comments
-> **User Story:** As a user, I can leave a comment on the event page so that I can share my thoughts to the public about a particular event.
-
- <!-- Create a form for comments on each page
- Limit the comment length to 250 characters
- Show realtime character counter for comments
- Save the comment to the database when the ‘submit’ button is clicked
- Display the comments on the event’s page along with the author's first name and initial of their last name, and the date and time of posting -->
-
-<!-- screenshot here -->
-
-### Deleting Comments
-> **User Story:** As a user, I can delete my comments on a particular event so that they are no longer visible to the public.
+There are 3 featured events displayed in the Home page. These events are automatically selected based on their show dates relative to today. Each featured event is in a card container and displays the event's image, title, its show date and time. Each card is clickable and will redirect to the specific event's full detail page.
 
 <!-- screenshot -->
 
-### Seat Map Pages
-> **User Story:** As a user, I can visit the Seat Map page so that I can see the seat map of the venue.
+**UPCOMING EVENTS PAGE (List of All Events)**
+> **User Story [#23](https://github.com/marked-gil/goodwill-events/issues/23):** As a user, I can see all the upcoming events so that I can decide which one interests me.
 
-* Generic Seat Map      
-The Seat Map page shows the generic seat map for all the events of Goodwill Events. This SVG seat map can be panned and zoomed, but reservation cannot be made on this page. It’s main purpose is only to show the seating arrangement in the venue.
-<!-- Screenshot here -->
+The Upcoming Events page displays the list of all the upcoming events. This page is paginated, and there are only 5 events displayed per page. 
 
-* Specific Event's Seat Map     
-The Seat Reservation page contains the interactive SVG seat map, which can be panned and zoomed. In addition, the seats, as represented by the small boxes in the SVG map, can be toggled to select or deselect. In addition, the selected or reserved seats can be updated and deleted.
+Each item (event) in the list is presented as a card and shows a featured image, event title, date and time, a reserve button, and the number of likes. Also, each card is clickable and will redirect the site to the specific event’s page. The reserve button, on the other hand, will redirect to the 'Seat Reservation' page.
+
 <!-- screenshot here -->
 
-### Restricting Seat Reservation to Signed-in Members Only
-> **User Story:** As a user, I can register as a member and sign in so that I can reserve seats.
+**SPECIFIC EVENT PAGE**   
+> **User Story [#24](https://github.com/marked-gil/goodwill-events/issues/24):** As a user, I can view the full detail of the event so that I can learn more about the event.
 
-Only logged-in users can be redirected to specific event's SEAT MAP page. When a non-logged-in user clicks on a ‘Reserve a Seat’ button, they will be redirected to the Sign In page; and once they sign in, they will be redirected back to the Seat Reservation page for the specific event.
+The specific event’s page displays the details of an event. It shows the event title, its schedule, number of seats still available, a ‘Reserve a Seat’ button, a ‘LIKE’ button, the event’s description or call-to-action writeup, and a comment section.
 
-<!-- Seat Reservation Page screenshot here -->
+The 'Reserve a Seat' button, when clicked, will redirect the user to the event's 'Seat Reservation' page.
 
-### Selecting and Reserving Seats for an Event
-> **User Story:** As a user, I can reserve a seat so that I can choose the available seat I want and ensure I have a seat during the event.
-> **User Story:** As a user, I can submit the selected seat/s so that I can ensure that it is reserved.
+<!-- screenshot here -->
 
-<!-- Signed in members are limited to booking only a maximum of 2 seats per event.
- Make all available seats active on the seat map and can be toggled
- Display all unavailable seats as inactive items on the seat map
- Allow only 2 seats to be reserved per member
- List all selected seats on the screen
- Allow de-selection of the seat -->
+**EVENT LIKES**
+> **User Story [#25](https://github.com/marked-gil/goodwill-events/issues/25):** As a user, I can like an event post that interests me so that I can show my support for the event.    
 
-### Cancelling and Updating Reserved Seats
-When a logged-in user deletes their previously booked seats by cancelling all seats and clicking the ‘Update My Reservation’ button, a off-canvas lightbox will come with a button for the user to click to confirm deletion.
+The 'Like' button on the specific event's detail page is a red-coloured heart icon, which can be toggled. A hollow heart icon means the user has not liked the post yet, while a colour-filled heart icon denotes otherwise.
 
- <!-- Add a ‘cancel’ button to remove the selected seat/s
- Add an ‘Update my reservation’ button’ to allow the cancellation and/or replacement of the reserved seats.
- Remove the ‘reserve’ button when the user already has reserved seat/s, and show the list of seats reserved.
- Allow reserved seats to be cancelled
- Add an ‘update reservation’ button is clicked.
- When the ‘update’ button is clicked, the 'seating' database is updated and a feedback message is flashed -->
+The number of likes for an event is displayed on the 'Upcoming Events' page, and on the specific event's detail page. 
 
-### Sign In Page
-> **User Story:** As a user, I can sign in when I am registered so that I can access the full functionality of the website.
+<!-- screenshot here -->
 
-In the Sign In page, the user is required to provide their username and password to be logged-in. Also, if the user wishes to be automatically signed in on their next visit when they don’t sign out after their current site visit then there is a Remember Me checkbox for them to tick.
+**POSTING COMMENTS**
+> **User Story [#31](https://github.com/marked-gil/goodwill-events/issues/31):** As a user, I can leave a comment on the event page so that I can share my thoughts to the public about a particular event.
 
-For users who happens to visit the Sign In page but actually still have not signed up or registered in the website previously, a link is provided for them to be redirected to the Sign Up page. And if the user realizes that they have forgotten their password, a Forgot Password link is on display for them to click and be redirected to the Password Reset page.
+Inside the specific event's page, a comment section is located after the event's write-up. For logged-in users, a textarea is available for them to type in their comment. Each comment is only limited to 250 characters, and a realtime character counter is available tp guide the user. When the user submits their comment by clicking on the 'Post' button, the comment will be saved to the database and be displayed on the same page.
 
-<!-- Sign In Page screenshot here -->
+Non-logged-in users, on the other hand, will only see the comments posted by other users but cannot post comments themselves.
 
-### Registration (Sign Up) Page
-> **User Story:** As a user, I can sign-up on the website so that I can be a member and use the full functionality of the website.
+![Comment section screenshot](docs/features_screenshots/comment-section.png)
+
+**DELETING COMMENTS**
+> **User Story [#32](https://github.com/marked-gil/goodwill-events/issues/32):** As a user, I can delete my comments on a particular event so that they are no longer visible to the public.
+
+Logged-in users are allowed to delete their posted comments on an event. When a signed-in user visits an event's specific page, a 'Delete' button are displayed beside each of their comments on the 'Comment' section. Once the user clicks on the button, the corresponding comment will be deleted from the database and from the page.
+
+![Comment with delete button screenshot](docs/features_screenshots/delete-comment.png)
+
+**SEAT MAP PAGES**
+> **User Story [#26](https://github.com/marked-gil/goodwill-events/issues/26):** As a user, I can visit the Seat Map page so that I can see the seat map of the venue.
+
+* **Generic Seat Map** (Seat Map page)      
+The 'Seat Map' page shows the generic seat map for all the events. This SVG seat map can be panned and zoomed, but reservation cannot be made on this page. It’s main purpose is only to show the seating arrangement in the venue.
+
+![Generic Seat Map page](docs/features_screenshots/seatmap-page.png)
+
+* **Specific Event's Seat Map**    
+The 'Seat Reservation' page (or specific event's seating page) contains the interactive SVG seat map, which can be panned and zoomed. In addition, the seats, as represented by the small boxes in the SVG map, can be toggled to select or deselect. Also, the selected or reserved seats can be updated and deleted.
+
+The gray small boxes represents 'available' seats, the blue ones are reserved or 'unavailable' seats, and the green boxes are the current user's 'selected' seats.
+
+![Seat Reservatio page screenshot](docs/features_screenshots/reservation-page.png)
+
+**RESTRICTING SEAT RESERVATION TO SIGNED-IN MEMBERS ONLY**
+> **User Story [#27](https://github.com/marked-gil/goodwill-events/issues/27):** As a user, I can register as a member and sign in so that I can reserve seats.
+
+The event's specific 'Seating' or 'Seat Reservation' page can only be accessed by logged-in users. When a non-logged-in user attempts to access it by clicking on a ‘Reserve a Seat’ button, they will, instead, be redirected to the Sign In page with a flash message 'You need to sign in to make seat reservations'; and once they sign in, they will be redirected back to the 'Seat Reservation' page for the specific event.
+
+<!-- screenshot here -->
+
+**SELECTING SEATS**
+> **User Story [#28](https://github.com/marked-gil/goodwill-events/issues/28):** As a user, I can select a seat so that I can choose the available seat I want for the event.
+
+In the 'Seat Reservation' page for a particular event, which only signed-in users can access, the SVG seat map's small boxes can be toggled (selected or deselected). When selected, the grey box will turn green; and when deselected, it will turn back to grey. The blue boxes, on the other hand, cannot be clicked as they are already 'reserved' or 'unavailable'. However, if the blue boxes are the reservations made by the current user, then they can be updated or deselected by clicking the 'cancel' button (x button) at the page footer.
+
+Only a maximum of 2 seats can be selected and reserved by a user per event. If the user attempts to select more than 2 seats, a feedback message stating `You've reached the maximum of 2 seats per user` will be flashed.
+
+The seats selected by the user are displayed at the footer of the page.
+
+![selecting seats screenshot](docs/features_screenshots/selecting-seats.png)
+
+**SEAT RESERVATION**
+> **User Story [#29](https://github.com/marked-gil/goodwill-events/issues/29):** As a user, I can reserve the selected seat/s so that they are saved in the database.
+
+In the 'Seat Reservation' page, when the user clicks the 'Reserve' button the selected seats will be saved in the database, the page will reload, turn the selected SVG boxes to blue and flashes a feedback message that 'new seats are reserved'.
+
+**CANCELLING AND UPDATING RESERVED SEATS**
+> **User Story [#30](https://github.com/marked-gil/goodwill-events/issues/30):** As a user, I can cancel and/or update my reserved seats so that other users can reserve the seats or I can conveniently change my preference.   
+
+When a logged-in user already has reserved seat/s for an event, the seat map is disabled by default. For the user to edit their reservation, they need to click the 'Edit Reservation' button, which will enable the seat map's interactivity and allow updating and cancelling of reservation.
+
+If the user wants to change their reserved seats, they have to cancel a seat first if 2 seats have already been reserved before they can select another seat. Only a maximum of 2 seats are allowed per user per event. And to update the database of the changes, the user needs to click the 'Update Reservation' button. This button is disabled if there are no changes made in the reservation.
+
+If a user wants to delete their reservation, this can simply be done by cancelling all the reserved seats and clicking the ‘Update Reservation’ button. After which an offcanvas lightbox will appear with a button for the user to click to confirm the deletion.
+
+**SIGN IN PAGE**
+> **User Story [#20](https://github.com/marked-gil/goodwill-events/issues/20):** As a user, I can sign in when I am registered so that I can access the full functionality of the website.
+
+On the Sign In page, utilizing the 'django-allauth' library, the user is required to provide their username and password to log in. Also, if the user wishes to be automatically signed in on their next visit, provided they don’t sign out after their current site visit, then there is a 'Remember Me' checkbox for them to tick.
+
+For users who happen to visit the Sign In page but actually still have not signed up or registered on the website previously, a link is provided for them to be redirected to the Sign Up page. And if the user realizes that they have forgotten their password, a Forgot Password link is on display for them to click and be redirected to the Password Reset page.
+
+Feedback messages are flashed when the user is successfully signed in, and when provided credentials are invalid.
+
+<!-- screenshot here -->
+
+**REGISTRATION (SIGN UP) PAGE**
+> **User Story [#19](https://github.com/marked-gil/goodwill-events/issues/19):** As a user, I can sign-up on the website so that I can be a member and use the full functionality of the website.
 
 The Registration or Sign Up page requires the user to provide a username, first name, last name, email address, and password. The password has to be supplied twice for certainty of user’s intended password. The validation of these fields are provided by Django-Allauth.
 
-If the user visiting the page, realizes they actually have registered previously, a Sign In link is available on the page for the user to click and be redirected to the Sign In page.
+If the user visiting the Sign Up page realizes that they have already registered previously, a 'Sign In' link is available on the page for the user to click and be redirected to the Sign In page.
 
 <!-- screenshot here -->
 
-### My Account Page (Member Account)
-> **User Story:** As a User, I can view all of my account information/data as a registered member so that I can review them as needed.
+**MEMBER ACCOUNT PAGE (My Account Page)**
+> **User Story [#36](https://github.com/marked-gil/goodwill-events/issues/36):** As a User, I can view all of my account information/data as a registered member so that I can review them as needed.
 
-The My Account page (Member Account) is created to allow a user to change or update their account profile, which includes their first name, last name, and email address. However, the username is not allowed to be changed.
+The 'Member Account' page (My Account page) displays the user's username, first and last names, and email address. These fields are editable, except for the username.
 
-And if the user also wants to change their password, a link to Change Password is on this page for the user to click.
+A list of all the active reservations can also be accessed via the 'View My Reservations' button, which reveals an offcanvas containing the list.
+
+A link to change password is also available on the page.
 
 <!-- screenshot here -->
 
-### Editing Account Information by Logged-in Users
-> **User Story:** As a User, I can edit my personal information/data such as first name, last name, and email address so that I can update them easily as necessary.
+**EDITING ACCOUNT INFORMATION**
+> **User Story [#37](https://github.com/marked-gil/goodwill-events/issues/37):** As a User, I can edit my personal information/data such as first name, last name, and email address so that I can update them easily as necessary.
 
- <!-- Make the username uneditable.
- Make all input fields readonly by default.
- Create edit buttons for the first name, last name, and email input fields which will enable editing of the field value.
- Disable UPDATE button by default, and enable it only when changes are made in the input values.
- Update the database when valid changes are made in the Member's Account form. -->
+On the 'Member Account' page, the signed-in user is allowed to change or update their account profile, which includes their first name, last name, and email address. The username, however, cannot be changed.
 
-### Sign Out Page
-> **User Story:** As a user, I can sign out when I am already signed in so that I can protect my website account and prevent unauthorised persons from using it.
+* 'Edit' button - enables editing of its corresponding input field (By default, each field is read-only)
+* 'Update' button - updates the database with the changes made by the user (This button is disabled by default, and will only become active when changes have been made in any of the input fields)
 
-The Sign Out page’s only purpose is to require the user to confirm that they really intend to sign out from the website after clicking the Sign Out link in the navbar menu. And if they do want to logout, a Sign Out button is available for them to click.
+If the user also wants to change their password, a link to Change Password is on this page for the user to click.
 
-<!-- Sign Out Page screenshot here -->
+**SIGN OUT PAGE**
+> **User Story [#21](https://github.com/marked-gil/goodwill-events/issues/21):** As a user, I can sign out after logging in so that I can protect my website account and prevent unauthorised persons from accessing it.
 
-### Change Password Page
-> **User Story:** As a User, I can change my password so that I can maintain the security of my account.
+The Sign Out page’s purpose is to require the user to confirm that they intend to sign out from the website. A 'Sign Out' link is available in the navbar menu when the user is signed in, and a 'Sign Out' button is available on the page to confirm.
 
-The Change Password page requires the current password and new password (needs to be entered twice) to be supplied. Then, a Change Password button is available for clicking to process the request. If the current password provided is correct, then the password will be successfully changed in the database.
+A feedback message stating 'You have signed out' is flashed when the user is successfully signed out.
+
+<!-- screenshot here -->
+
+**CHANGE PASSWORD**
+> **User Story [#38](https://github.com/marked-gil/goodwill-events/issues/38):** As a User, I can change my password so that I can maintain the security of my account.
+
+The 'Change Password' page requires the current password and new password (needs to be entered twice) to be supplied. Then, a 'Change Password' button is available for clicking to process the request. If the current password provided is correct, then the password will be successfully changed in the database. Validation of this feature is provided by 'Django-Allauth' library.
 
 A link to reset password is also available through the Forgot Password link.
 
-<!-- Change Password Page screenshot here -->
+<!-- screenshot here -->
 
-### Password Reset Page    
-> **User Story:** As a User, I can reset my password so that I can either keep my account secured or keep using my account when I have forgotten my password.
+**PASSWORD RESET**    
+> **User Story [#39](https://github.com/marked-gil/goodwill-events/issues/39):** As a User, I can reset my password so that I can either keep my account secured or keep using my account when I have forgotten my password.
 
 In this page, the user is only required to supply their registered email address where the site will automatically send an email with a link. Once this email is received by the user and they click on the link, the user will be redirected to a page where they can set their new password.
 
-<!-- Password Reset Page screenshot here -->
+<!-- screenshot here -->
 
-### Automatic Recycling of Expired Events
-> **User Story:** As a site owner, I can set an expired event to automatically be recycled to a new scheduled date so that the site can perpetuate despite its contents not being monitored and updated manually.
+**AUTOMATIC RECYCLING OF EXPIRED EVENTS**
+> **User Story [#34](https://github.com/marked-gil/goodwill-events/issues/34):** As a site owner, I can set an expired event to automatically be recycled to a new scheduled date so that the site can perpetuate despite its contents not being monitored and updated manually.
 
-<!-- Automatically update the schedule of the event in the database to the following year as soon as it expires
- Delete all reserved seats for the expired and recycled events -->
+As this website is for educational purposes and none of the events shown in this project exists in reality, as soon as an event's date has passed, the site is programmed to automatically update its date to the following year. Also, all its reserved seats, likes and comments are deleted for a fresh start. This is designed to allow the perpetuation of the site without overseeing it regularly.
 
 ## Fixed Bugs
 
