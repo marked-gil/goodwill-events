@@ -17,7 +17,7 @@ class EventSeatsView(LoginRequiredMixin, View):
     Also redirects to the UpdateSeatsReservation view if the logged-in user
     has already booked a seat/s for the event.
     """
-    permission_denied_message = 'You need to sign in to make seat reservations.'
+    permission_denied_message = 'SIGN IN to make seat reservations.'
 
     def dispatch(self, request, *args, **kwargs):
         """
@@ -131,7 +131,8 @@ class UpdateSeatsReservation(LoginRequiredMixin, View):
                 updated_form.save()
             else:
                 raise Exception(
-                    "Reservation form is empty. This may mean you want to delete your reserved seats."
+                    "Reservation form is empty. "
+                    "This may mean you want to delete your reserved seats."
                 )
         except Exception:
             formdata_dict = dict(request.POST)
@@ -143,7 +144,8 @@ class UpdateSeatsReservation(LoginRequiredMixin, View):
                     )
         else:
             messages.success(request,
-                             'Reservation for this event is successfully UPDATED.'
+                             "Reservation for this event is successfully "
+                             "UPDATED."
                              )
             return redirect(request.path_info)
 
@@ -177,7 +179,8 @@ class DeleteSeatsReservation(LoginRequiredMixin, DeleteView):
         try:
             self.object.delete()
         except Exception:
-            error_msg = "Something went wrong. Seat cancellation is NOT successful."
+            error_msg = "Something went wrong. "
+            "Seat cancellation is NOT successful."
             messages.error(request, error_msg)
         else:
             succcess_msg = "You have successfully CANCELLED your reservation."
