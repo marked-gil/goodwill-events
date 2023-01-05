@@ -24,7 +24,7 @@ class FeaturedView(TemplateView):
         and updates the database
         """
         event.event_date = date_of_event.replace(
-            date_of_event.year + 1)
+            datetime.now().year + 1)
         event.save()
 
     @staticmethod
@@ -92,11 +92,12 @@ class FeaturedView(TemplateView):
 
 class EventsList(ListView):
     """
-    Renders a list of all event objects in the Events page template
+    Renders a list of all active (unexpired) event objects in the Events page
     """
     model = Event
     context_object_name = 'events_list'
-    queryset = Event.objects.filter(status=1).order_by('event_date')
+    queryset = Event.objects.filter(status=1).exclude(
+        event_date__lte=date.today()).order_by('event_date')
     template_name = 'events/events.html'
     paginate_by = 5
 
