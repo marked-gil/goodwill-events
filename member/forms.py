@@ -20,6 +20,9 @@ class EventsSignUpForm(SignupForm):
     ]
 
     def __init__(self, *args, **kwargs):
+        """
+        Adds the first and last names on the django-allauth SIGN UP form
+        """
         # Idea taken from Gavin Wiener's website (See Credit section in README)
         super(EventsSignUpForm, self).__init__(*args, **kwargs)
         self.fields['first_name'] = forms.CharField(
@@ -42,6 +45,9 @@ class EventsSignUpForm(SignupForm):
             set_form_field_order(self, self.field_order)
 
     def save(self, request):
+        """
+        Saves the customized form
+        """
         user = super(EventsSignUpForm, self).save(request)
 
         return user

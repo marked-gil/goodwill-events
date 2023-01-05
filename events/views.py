@@ -18,9 +18,9 @@ class FeaturedView(TemplateView):
     template_name = 'index.html'
 
     @staticmethod
-    def _recycle_expired_event(event, date_of_event):
+    def _add_one_year(event, date_of_event):
         """
-        Modifies event's date to next year of same month and day
+        Modifies event's date to next year with same month and day,
         and updates the database
         """
         event.event_date = date_of_event.replace(
@@ -47,18 +47,29 @@ class FeaturedView(TemplateView):
 
     @staticmethod
     def _delete_comments(event):
+        """
+        Deletes all the comments for the event from the database
+        """
         comment_queryset = Comment.objects.filter(event=event)
         for qset in comment_queryset:
             qset.delete()
 
+    @staticmethod
+    def _recycle_expired_event(obj, show, event_date):
+        """
+        Recyles the expired event by moving event's date to next year,
+        and deleting all its booked seats, likes, and comments
+        """
+        obj._add_one_year(show, event_date)
+        obj._delete_booked_seats(show)
+        obj._delete_event_likes(show)
+        obj._delete_comments(show)
+
     def get_context_data(self, **kwargs):
         """
         Adds the featured events into the context dict, and automatically
-        recycles expired events by changing their date to the following year,
-        and deletes their likes, comments, and seat reservations.
+        recycles expired events
         """
-
-        # Automatcally recycles the expired event to next year
         all_events = Event.objects.all()
 
         for event in all_events:
@@ -66,16 +77,10 @@ class FeaturedView(TemplateView):
             event_expiration_time = event.event_time
 
             if date_of_event < date.today():
-                self._recycle_expired_event(event, date_of_event)
-                self._delete_booked_seats(event)
-                self._delete_event_likes(event)
-                self._delete_comments(event)
+                self._recycle_expired_event(self, event, date_of_event)
             elif date_of_event == date.today():
                 if datetime.now().time() >= event_expiration_time:
-                    self._recycle_expired_event(event, date_of_event)
-                    self._delete_booked_seats(event)
-                    self._delete_event_likes(event)
-                    self._delete_comments(event)
+                    self._recycle_expired_event(self, event, date_of_event)
 
         # Inserts the featured events into the context dictionary
         context = super().get_context_data(**kwargs)
@@ -196,5 +201,7 @@ class DeleteComment(LoginRequiredMixin, View):
 
 
 class SeatMapView(TemplateView):
-
+    """
+    Displays the generic seatmap
+    """
     template_name = "events/view_seatmap.html"

@@ -12,10 +12,8 @@ from django.conf import settings
 
 class EventSeatsView(LoginRequiredMixin, View):
     """
-    Displays the seat map page and all the seats reserved for a particular
-    event as requested by a logged-in user.
-    Also redirects to the UpdateSeatsReservation view if the logged-in user
-    has already booked a seat/s for the event.
+    Displays the specific event's Seat Map page (Seat Reservation page)
+    and its reserved seats.
     """
     permission_denied_message = 'SIGN IN to make seat reservations.'
 
@@ -31,7 +29,7 @@ class EventSeatsView(LoginRequiredMixin, View):
     def get(self, request, slug, *args, **kwargs):
         """
         Retrieves the requested event and its reserved seats, and returns the
-        Seat Reservation template with details of the specific event.
+        Seat Reservation template.
         Redirects to the UpdateReservationView if user has already booked
         seat/s for the event.
         """
@@ -111,8 +109,8 @@ class UpdateSeatsReservation(LoginRequiredMixin, View):
 
     def post(self, request, slug, *args, **kwargs):
         """
-        Updates the user's seat reservation/s for a particular event in the
-        database in response to POST request.
+        Updates the user's seat reservation/s on the database in response to
+        POST request.
         Redirects to DeleteSeatsReservation view if reservation form is
         emptied.
         """
@@ -185,4 +183,5 @@ class DeleteSeatsReservation(LoginRequiredMixin, DeleteView):
         else:
             succcess_msg = "You have successfully CANCELLED your reservation."
             messages.success(request, succcess_msg)
+
         return redirect(success_url)

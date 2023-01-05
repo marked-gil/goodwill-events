@@ -23,7 +23,7 @@ class MemberAccount(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
 
     def get_context_data(self, **kwargs):
         """
-        Insert the single object into the context dict.
+        Inserts the single object into the context dict.
         """
         context = {}
         context['event_reservations'] = EventSeating.objects.filter(
@@ -35,7 +35,7 @@ class MemberAccount(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
 
     def get_form(self, form_class=None):
         """
-        Set the specified fields as required
+        Sets the specified fields as required
         (Idea taken from StockOverflow - See Credits Section in README.)
         """
         form = super(MemberAccount, self).get_form(form_class)
@@ -57,7 +57,7 @@ class MemberAccount(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     def post(self, request, *args, **kwargs):
         """
         Checks if the updated email address provided already exists before
-        submitting to the database.
+        submitting to the database
         """
         self.object = self.get_object()
 

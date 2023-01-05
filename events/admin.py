@@ -5,6 +5,10 @@ from django_summernote.admin import SummernoteModelAdmin
 
 @admin.register(Event)
 class EventAdmin(SummernoteModelAdmin):
+    """
+    Particularizes the layout and content of the admin interface
+    for the Event model
+    """
     summernote_fields = ('post_content',)
     prepopulated_fields = {"slug": ("title",)}
     list_display = ('title', 'event_date', 'event_time',
@@ -26,6 +30,10 @@ class EventAdmin(SummernoteModelAdmin):
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
+    """
+    Particularizes the layout and content of the admin interface
+    for the Comment model
+    """
     list_display = ('author', 'text_comment', 'event', 'posted_on',)
     list_filter = ('event', 'posted_on')
     search_fields = ['author', 'event', 'text_comment']
