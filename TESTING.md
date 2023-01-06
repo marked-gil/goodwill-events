@@ -93,6 +93,27 @@
 ![JSHINT result for seatmap_panzoom.js](docs/testing_screenshots/jshint/seatmap_panzoom-jshint-result.png)  
 
 ### W3C MarkUp Validator
+* **Home Page**
+![Home Page HTML validated](docs/testing_screenshots/html_validator/home-html-validated.png)    
+* **Events (Upcoming Events) Page** 
+![Events Page HTML validated](docs/testing_screenshots/html_validator/events-page-html-validated.png)   
+* **Seat Map (Generic) Page**   
+![Generic Seat Map Page validated]()
+* **Specific Event Page**   
+![Specific Event Page HTML valiated](docs/testing_screenshots/html_validator/specific-event-page-html-validated.png)
+* **Seat Reservation Page**     
+![Seat Reservation Page]()
+* **Sign In Page**  
+![Sign In Page HTML validated](docs/testing_screenshots/html_validator/signin-html-validated.png)
+* **Sign Up Page**  
+![Sign Up Page HTML validated](docs/testing_screenshots/html_validator/signup-validated.png)    
+* **Sign Out Page**     
+![Sign Out Page validated]()
+* **Password Reset Page**   
+![Password Reset Page](docs/testing_screenshots/html_validator/password-reset-validated.png)    
+* **Change Password Page**      
+![Change Password Page validated]()
+
 ### W3C CSS Validator
 * [**style.css**](https://github.com/marked-gil/goodwill-events/blob/main/static/css/style.css)
 ![style.css validator result screenshot](docs/testing_screenshots/css_validator/style-css-validated.png)

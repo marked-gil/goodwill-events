@@ -11,7 +11,7 @@
         <p class="text-center" id="seatmap-instruction">To reserve your seat, you need to choose an event among our <a href="{% url 'events_list' %}" class="btn btn-success py-0 px-1">UPCOMING EVENTS</a>.</p>
         {% else %}
         <!-- For Unsigned-In User -->
-        <p class="text-center" id="seatmap-instruction">To reserve your seat for an event, you need to <button type="button" class="btn btn-success py-0 px-1"><a href="{% url 'account_login' %}">SIGN IN</a></button>.</p>
+        <p class="text-center" id="seatmap-instruction">To reserve your seat for an event, you need to <a href="{% url 'account_login' %}" class="btn btn-success py-0 px-1">SIGN IN</a>.</p>
         {% endif %}
     </div>
 
