@@ -85,6 +85,13 @@
 * [**seating/VIEWS.PY**](https://github.com/marked-gil/goodwill-events/blob/main/seating/views.py)  
 ![seating/view.py Linter Result](docs/testing_screenshots/python_linter/seating-views.png)  
 ### JSHint
+* [**script.js**](https://github.com/marked-gil/goodwill-events/blob/main/static/js/script.js)  
+![JSHINT result for script.js](docs/testing_screenshots/jshint/script-jshint-result.png)    
+* [**seating_script.js**](https://github.com/marked-gil/goodwill-events/blob/main/static/js/seating_script.js)  
+![JSHINT result for seating_script.js](docs/testing_screenshots/jshint/seating_script-jshint-result.png)    
+* [**seatmap_panzoom.js**](https://github.com/marked-gil/goodwill-events/blob/main/static/js/seatmap_panzoom.js)    
+![JSHINT result for seatmap_panzoom.js](docs/testing_screenshots/jshint/seatmap_panzoom-jshint-result.png)  
+
 ### W3C MarkUp Validator
 ### W3C CSS Validator
 
