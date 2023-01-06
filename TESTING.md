@@ -94,5 +94,9 @@
 
 ### W3C MarkUp Validator
 ### W3C CSS Validator
+* [**style.css**](https://github.com/marked-gil/goodwill-events/blob/main/static/css/style.css)
+![style.css validator result screenshot](docs/testing_screenshots/css_validator/style-css-validated.png)
+* [**seating_style.css**](https://github.com/marked-gil/goodwill-events/blob/main/static/css/seating_style.css)
+![seating_style.css validator result screenshot](docs/testing_screenshots/css_validator/seating_style_css_validated.png)
 
 ## ACCESSIBILITY
