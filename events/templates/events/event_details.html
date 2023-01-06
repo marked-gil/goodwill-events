@@ -23,7 +23,7 @@
         <!-- Event's Date & Time -->
         <p class="text-center">{{ event.event_date|date:'d F Y, l' }} | <span>{{ event.event_time|date:'g:i A' }}</span></p>
 
-        <p id="reserve-seat-wrapper" class="d-inline">
+        <div id="reserve-seat-wrapper" class="d-inline">
             <!-- Seats Left -->
             <span>
                 {% if seats_available > 1 %}
@@ -36,11 +36,9 @@
             <!-- 'Reserve Button' on BIGGER Screens -->
             <span class="d-none d-sm-inline">
                 {% if seats_available > 0 %}
-                <a href="{% url 'seatmap' event.slug %}"><button type="button" class="btn btn-primary btn-sm goto-reservations-btn">Reserve A
-                        Seat</button> | </a>
+                <a href="{% url 'seatmap' event.slug %}" class="btn btn-primary btn-sm goto-reservations-btn">Reserve A Seat</a> | 
                 {% else %}
-                <a href="{% url 'seatmap' event.slug %}"><button type="button" class="btn btn-primary btn-sm">No Seats
-                        Available</button> | </a>
+                <a href="{% url 'seatmap' event.slug %}" class="btn btn-primary btn-sm">No Seats Available</a> | 
                 {% endif %}   
             </span>
             <!-- Number of Likes -->
@@ -67,11 +65,9 @@
             <!-- 'Reserve Button' on SMALL Screens -->
             <span class="d-block d-sm-none">
                 {% if seats_available > 0 %}
-                <a href="{% url 'seatmap' event.slug %}"><button type="button" class="btn btn-primary btn-sm goto-reservations-btn">Reserve A
-                        Seat</button></a>
+                <a href="{% url 'seatmap' event.slug %}" class="btn btn-primary btn-sm goto-reservations-btn">Reserve A Seat</a>
                 {% else %}
-                <a href="{% url 'seatmap' event.slug %}"><button type="button" class="btn btn-primary btn-sm">No Seats
-                        Available</button></a>
+                <a href="{% url 'seatmap' event.slug %}" class="btn btn-primary btn-sm">No Seats Available</a>
                 {% endif %}
             </span>
             <!-- Like Button on Bigger Screen -->
@@ -85,12 +81,12 @@
                 {% endif %}
             </form>
             {% endif %}
-        </p>
+        </div>
     </div>
 
     <!-- Event's Writeup Content -->
     <div id="event-post" class="event-details-div py-2 pt-sm-3 pt-md-4 px-2 px-sm-3 px-md-5">
-        <p>{{ event.post_content | safe }}</p>
+        {{ event.post_content | safe }}
     </div>
 </section>
 

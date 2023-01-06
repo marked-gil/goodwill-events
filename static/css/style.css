@@ -231,12 +231,12 @@ textarea {
     font-weight: 700;
 }
 
-#event-card-wrapper {
+.event-card-wrapper {
     border: 2px solid var(--clr-police-blue);
     border-radius: 10px;
 }
 
-#event-card-wrapper:hover {
+.event-card-wrapper:hover {
     box-shadow: 2px 0 15px 0 var(--clr-police-blue);
     opacity: .9;
     transition: .3s;
@@ -321,11 +321,11 @@ textarea {
     border-radius: 10px;
 }
 
-#comment-username {
+.comment-username {
     font-size: 1rem;
 }
 
-#comment-posted-on {
+.comment-posted-on {
     font-size: .8rem;
 }
 
@@ -338,11 +338,11 @@ textarea {
 
 /* --> SEAT MAP PAGE [Start] */
 #seatmap-instruction,
-#seatmap-instruction > button {
+#seatmap-instruction > a {
     font-size: .9rem;
 }
 
-#seatmap-instruction > button:hover {
+#seatmap-instruction > a:hover {
     color: var(--clr-rich-black);
     background-color: var(--clr-crayola-gold);
     border: 1px solid var(--clr-crayola-gold);
@@ -528,22 +528,22 @@ footer {
 /* --> MEMBER ACCOUNT Page [End] <-- */
 
 
-/* OFFCANVAS [Start] */
-.offcanvas-body {
+/* MY RESERVATIONS OFFCANVAS [Start] */
+#my-reservations-body {
     overflow: auto;
     scrollbar-color: var(--clr-police-blue) var(--clr-linen);   /* styles scrollbar in Firefox */
     scrollbar-width: thin;   /* styles scrollbar thumb in Firefox */
 }
 
 /* styles scrollbar in Chrome, Safari, & Edge */
-.offcanvas-body::-webkit-scrollbar {
+#my-reservations-body::-webkit-scrollbar {
         background-color: var(--clr-linen);
         border-radius: 10px;
         width: 10px;
 }
 
  /* styles scrollbar thumb in Chrome, Safari, & Edge */
- .offcanvas-body::-webkit-scrollbar-thumb {
+ #my-reservations-body::-webkit-scrollbar-thumb {
     background-color: var(--clr-police-blue);
     border-radius: 5px;
 }
@@ -565,7 +565,7 @@ footer {
     box-shadow: inset 0 0 5px 2px var(--clr-linen),  0 0 5px 2px var(--clr-police-blue);
 }
 
-#my-reservation-seats > p {
+.my-reservation-seats > p {
     color: var(--clr-crayola-gold);
     font-weight: 700;
     font-size: .9rem;
@@ -592,7 +592,7 @@ footer {
     }
 
     /* ALL EVENTS PAGE */
-    #event-card-wrapper {
+    .event-card-wrapper {
         width: 75%
     }
 
@@ -619,8 +619,8 @@ footer {
         font-size: 1.1rem;
     }
 
-    /* OFFCANVAS */
-    .offcanvas-body p {
+    /* DELETE RESERVATIONS OFFCANVAS */
+    #delete-reservation-body {
         font-size: 1.2rem;
     }
 }
@@ -637,11 +637,6 @@ footer {
 
     #about-us-outer-container p {
         font-size: 1.1rem;
-    }
-
-    /* ALL EVENTS PAGE */
-    #reserve-btn {
-        display: inline;
     }
 
     /* EVENT DETAILS PAGE */

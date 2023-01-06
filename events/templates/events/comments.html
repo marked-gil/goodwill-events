@@ -4,9 +4,9 @@
     {% for comment in comments %}
     <!-- COMMENT CARD [start] -->
     <div class="card-body comment-wrapper position-relative py-2 mb-2 me-2 mx-sm-3">
-        <h5 class="card-title mb-2 bold-text" id="comment-username"><i class="fa-solid fa-user me-1"></i> {{ comment.author }}</h5>
+        <h5 class="comment-username card-title mb-2 bold-text"><i class="fa-solid fa-user me-1"></i> {{ comment.author }}</h5>
         <!-- Time Comment was Posted (using django's naturaltime filter) -->
-        <p id="comment-posted-on" class="card-subtitle mb-2 text-muted">{{ comment.posted_on|naturaltime }}</p>
+        <p class="comment-posted-on card-subtitle mb-2 text-muted">{{ comment.posted_on|naturaltime }}</p>
 
         <!-- COMMENT DELETE FORM -->
         {% if comment.author == user %}

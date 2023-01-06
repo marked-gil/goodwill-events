@@ -8,7 +8,7 @@
         
         {% if user.is_authenticated %}
         <!-- For Signed-In User -->
-        <p class="text-center" id="seatmap-instruction">To reserve your seat, you need to choose an event among our <button type="button" class="btn btn-success py-0 px-1"><a href="{% url 'events_list' %}">UPCOMING EVENTS</a></button>.</p>
+        <p class="text-center" id="seatmap-instruction">To reserve your seat, you need to choose an event among our <a href="{% url 'events_list' %}" class="btn btn-success py-0 px-1">UPCOMING EVENTS</a>.</p>
         {% else %}
         <!-- For Unsigned-In User -->
         <p class="text-center" id="seatmap-instruction">To reserve your seat for an event, you need to <button type="button" class="btn btn-success py-0 px-1"><a href="{% url 'account_login' %}">SIGN IN</a></button>.</p>

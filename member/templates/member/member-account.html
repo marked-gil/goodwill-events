@@ -48,7 +48,7 @@
 
     <!-- MY RESERVATIONS (Bootstrap's Offcanvas) [start] -->
     <div class="container col-md-9 col-lg-7 col-xl-6 my-5">
-        <button type="button" class="btn btn-success" data-bs-target="#offcanvasRight" data-bs-toggle="offcanvas"aria-controls="offcanvasRight">View My Reservations</button>
+        <button type="button" class="btn btn-success" data-bs-target="#offcanvasRight" data-bs-toggle="offcanvas" aria-controls="offcanvasRight">View My Reservations</button>
     </div>
 
     <div class="offcanvas offcanvas-end color-dutch-white" data-bs-backdrop="static" tabindex="-1" id="offcanvasRight" aria-labelledby="staticBackdropLabel">
@@ -56,7 +56,7 @@
             <button type="button" class="btn-close mt-2 align-self-start" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             <h3 class="offcanvas-title text-center bold-text mt-4" id="staticBackdropLabel">My Reservations</h3>
         </div>
-        <div class="offcanvas-body py-3">
+        <div id="my-reservations-body" class="offcanvas-body py-3">
             {% if event_reservations %}
             <!-- List of User's Reservations -->
             <ul class="px-0">
@@ -67,7 +67,7 @@
                         <small class="d-block">
                         {{ booking.event.event_date|date:"j M Y, D" }} | {{ booking.event.event_time }}
                         </small>
-                        <div id="my-reservation-seats" class="d-flex justify-content-between">
+                        <div class="my-reservation-seats d-flex justify-content-between">
                             <p class="mb-0">reserved:</p>
                             <p class="mb-0"> 
                             {% if booking.seat_location_1 and booking.seat_location_2 %}

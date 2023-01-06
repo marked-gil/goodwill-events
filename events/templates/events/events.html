@@ -9,7 +9,7 @@
 
         {% for event in events_list %}
         <!-- EVENT CARD [start] -->
-        <div id="event-card-wrapper" class="card my-5 mb-lg-5 text-center m-auto">
+        <div class="event-card-wrapper card my-5 mb-lg-5 text-center m-auto">
             <a href="{% url 'event_details' event.slug %}">
                 <!-- Event's Featured Image -->
                 {% if 'proxy_image' in event.featured_image.url  %}
@@ -38,9 +38,10 @@
             </a>
 
             <!-- Event's Seat Map Link -->
-            <a href="{% url 'seatmap' event.slug %}" class="position-relative">
-                <button type="button" id="reserve-btn" class="btn btn-primary goto-reservations-btn btn-sm position-absolute top-0 end-0 me-1 mb-1">Reserve A Seat</button>
-            </a>
+            <div class="position-relative">
+                <a href="{% url 'seatmap' event.slug %}" class="btn btn-primary goto-reservations-btn btn-sm position-absolute top-0 end-0 me-1 mb-1">Reserve A Seat
+                </a>
+            </div>
         </div>
         <!-- EVENT CARD [end] -->
         {% endfor %}    

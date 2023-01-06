@@ -50,7 +50,7 @@
     <div class="offcanvas-header">
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
-    <div class="offcanvas-body d-flex pt-0 pb-5 px-5">
+    <div id="delete-reservation-body" class="offcanvas-body d-flex pt-0 pb-5 px-5">
         <form class="d-flex flex-column align-self-center" method="POST" action="{% url 'delete_reservation' event.slug %}">
             {% csrf_token %}
             <p id="offcanvasRightLabel" class="text-center mb-4">Are you sure you want to delete your reservation?</p>
@@ -101,7 +101,9 @@
     <!-- Seat Reservation Form -->
     <form method="POST" id="reserve-seat-form">
         {% csrf_token %}
-        {{ form }}
+        {{ form.seat_location_1 }}
+        {{ form.seat_location_2 }}
+        {{ form.user_limit_reached }}
     </form>
 
     <!-- Reservation Notice -->
