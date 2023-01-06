@@ -44,7 +44,7 @@
 
 </section>
 
-<!-- Bootstrap offcanvas for confirmation to delete reservation -->
+<!-- Bootstrap's offcanvas for confirmation to delete reservation -->
 <button id="confirm-delete" class="d-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Open Offcanvas</button>
 <div class="offcanvas offcanvas-end color-dutch-white" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
     <div class="offcanvas-header">
@@ -59,6 +59,7 @@
     </div>
 </div>
 
+<!-- List of selected/reserved seats for the event -->
 <p id="data-seats">
     {{ data | safe }}
 </p>
@@ -75,7 +76,7 @@
     <h3 class="mb-0 m-md-auto">No Seats Reserved</h3>
     <div id="selected-seats-inner-wrapper" class="d-flex justify-content-between align-items-center mx-md-auto">
     {% endif %}
-
+        <!-- Current User's Selected/Reserved Seats -->
         <ul id="seats-selected-list" class="d-sm-flex my-2 ps-3 ps-sm-5">
             {% for seat in user_booked_seats %}
             <li id="{{ seat.seat_location_1 }}" class="d-flex align-items-center me-sm-5">{{ seat.seat_location_1 }}
@@ -88,7 +89,7 @@
             {% endif%}
             {% endfor %}
         </ul>
-            
+        <!-- Submit Buttons -->
         {% if user_booked_seats %}
         <button type="button" id="edit-reservation" class="btn btn-primary me-1 seat-booking-btn">Edit Reservation</button>
         <button type="button" id="update-reservation" class="btn btn-primary disabled-btn reserve-btn me-1 d-none seat-booking-btn">Update Reservation</button>
@@ -97,11 +98,13 @@
         {% endif %}
     </div>
 
+    <!-- Seat Reservation Form -->
     <form method="POST" id="reserve-seat-form">
         {% csrf_token %}
         {{ form }}
     </form>
 
+    <!-- Reservation Notice -->
     <ul id="reservation-notice" class="ps-sm-0 mt-sm-2 mx-md-auto">
         <li class="d-none d-sm-block">Each member can only reserve a maximum of 2 seats per event.
         </li>

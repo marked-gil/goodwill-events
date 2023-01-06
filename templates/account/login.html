@@ -8,6 +8,7 @@
 {% block content %}
 
 <section class="container py-4 py-sm-5" id="sign-in-section">
+  <!-- Sign In Page Title -->
   <h2 class="text-center mt-sm-4 pb-3 py-sm-4 bold-text">{% trans "Sign In" %}</h2>
 
   <div class="container col-md-8 col-lg-6 col-xl-5 px-3 px-sm-5 py-3 py-sm-4 rounded auth-box-background">
@@ -32,6 +33,7 @@
     <a href="{{ signup_url }}" class="underline-text">SIGN UP</a> first.{% endblocktrans %}</p>
     {% endif %}
     
+    <!-- SIGN IN FORM [start] -->
     <form id="signin_form" class="login" method="POST" action="{% url 'account_login' %}">
       {% csrf_token %}
       <!-- flash messages -->
@@ -44,6 +46,7 @@
         {% endfor %}
       </div>
 
+      <!-- Input Fields -->
       <div class="mb-2">
         <label for="id_login" class="form-label mb-1">{{ form.login.label }}: </label>
         {{ form.login }}
@@ -60,9 +63,13 @@
       {% if redirect_field_value %}
       <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
       {% endif %}
+
+      <!-- Forgot Password Link -->
       <a class="button secondaryAction d-block text-center mt-4" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+      <!-- Submit Button -->
       <button class="primaryAction btn btn-primary d-block mx-auto mt-4" type="submit">{% trans "Sign In" %}</button>
     </form>
+    <!-- SIGN IN FORM [end] -->
   </div>
 </section>
 {% endblock %}

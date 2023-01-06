@@ -4,9 +4,12 @@
 
 {% block content %}
 <section id="event-details-outer-container" class="container py-4">
+    <!-- Event's Title Header -->
     <p id="goodwill-presents" class="text-center mt-md-4 mt-xl-5">The Goodwill Events presents</p>
     <h2 id="event-details-title" class="text-center my-md-4">{{ event.title }}</h2>
     <p id="event-blurb" class="text-center mb-md-4">{{ event.blurb }}</p>
+
+    <!-- Event's Featured Image -->
     <div id="img-wrapper" class="event-details-div container px-0">
         {% if 'proxy_image' in event.featured_image.url %}
         <img src="{% static 'images/default-image.jpg' %}"
@@ -15,9 +18,13 @@
         <img src="{{ event.featured_image.url }}" class="event-details-img img-fluid rounded" alt="featured image">
         {% endif %}
     </div>
+
     <div class="event-details-div text-center">
+        <!-- Event's Date & Time -->
         <p class="text-center">{{ event.event_date|date:'d F Y, l' }} | <span>{{ event.event_time|date:'g:i A' }}</span></p>
+
         <p id="reserve-seat-wrapper" class="d-inline">
+            <!-- Seats Left -->
             <span>
                 {% if seats_available > 1 %}
                 <small>{{ seats_available }} Seats Left</small>
@@ -26,6 +33,7 @@
                 {% endif %}
             </span>
             |
+            <!-- 'Reserve Button' on BIGGER Screens -->
             <span class="d-none d-sm-inline">
                 {% if seats_available > 0 %}
                 <a href="{% url 'seatmap' event.slug %}"><button type="button" class="btn btn-primary btn-sm goto-reservations-btn">Reserve A
@@ -35,6 +43,7 @@
                         Available</button> | </a>
                 {% endif %}   
             </span>
+            <!-- Number of Likes -->
             <span>
                 <small id="event-likes" class="bold-text">{{ event.total_likes }}
                     {% if event.total_likes > 1 %}
@@ -43,7 +52,7 @@
                     <span>Like</span>
                     {% endif %}
                 </small>
-                <!-- Like Button on Small Screen-->
+                <!-- Like Button on SMALL Screens -->
                 {% if user.is_authenticated %}
                 <form action="{% url 'event_like' event.slug %}" method="POST" id="like-form" class="d-inline d-sm-none">
                     {% csrf_token %}
@@ -55,6 +64,7 @@
                 </form>
                 {% endif %}
             </span>
+            <!-- 'Reserve Button' on SMALL Screens -->
             <span class="d-block d-sm-none">
                 {% if seats_available > 0 %}
                 <a href="{% url 'seatmap' event.slug %}"><button type="button" class="btn btn-primary btn-sm goto-reservations-btn">Reserve A
@@ -77,15 +87,18 @@
             {% endif %}
         </p>
     </div>
+
+    <!-- Event's Writeup Content -->
     <div id="event-post" class="event-details-div py-2 pt-sm-3 pt-md-4 px-2 px-sm-3 px-md-5">
         <p>{{ event.post_content | safe }}</p>
     </div>
 </section>
 
-<!-- COMMENT SECTION -->
+<!-- COMMENT SECTION [start]-->
 <section id="comments-outer-wrapper" class="container">
     {% if user.is_authenticated %}
     <div class="mb-3 col-md-9 col-lg-6 m-auto">
+        <!-- COMMENT FORM [start] -->
         <form id="comment-form" action="{% url 'event_comment' event.slug %}" method="POST">
             {% csrf_token %}
             <label for="comment-textarea" class="form-label">Write Your Comment:</label>
@@ -95,8 +108,10 @@
                 <button class="btn btn-primary py-1 disabled" type="submit">Post</button>
             </div>
         </form>
+        <!-- COMMENT FORM [end] -->
     </div>
     {% endif %}
+
     <div class="card col-md-9 col-lg-6 mb-5 m-auto px-2 py-3">
         {% if comments %}
         <h4 class="mb-3 mb-sm-4 ms-sm-3 bold-text" id="comment-section-title">COMMENTS:</h4>
@@ -104,9 +119,10 @@
         <p class="text-center my-3">No comments available.</p>
         {% endif %}
 
+        <!-- Display Comments -->
         {% include 'events/comments.html' %}
 
     </div>
 </section>
-
+<!-- COMMENT SECTION [end]-->
 {% endblock content %}

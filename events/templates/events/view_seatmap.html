@@ -1,25 +1,23 @@
 {% extends "base.html" %}
 
 {% block content %}
+<!-- GENERIC SEAT MAP section [start] -->
 <section id="view-seatmap-section" class="container py-4 py-sm-5">
-    <!-- PAGE HEADER [Start] -->
     <div class="container-md text-center">
-
-        <!-- Page Title -->
         <h2 class="text-center pb-3 pb-sm-4 mb-0 mb-sm-3">Seat Map</h2>
         
         {% if user.is_authenticated %}
-        <!-- Instruction if Signed In -->
+        <!-- For Signed-In User -->
         <p class="text-center" id="seatmap-instruction">To reserve your seat, you need to choose an event among our <button type="button" class="btn btn-success py-0 px-1"><a href="{% url 'events_list' %}">UPCOMING EVENTS</a></button>.</p>
         {% else %}
-        <!-- Instruction if Not Signed In -->
+        <!-- For Unsigned-In User -->
         <p class="text-center" id="seatmap-instruction">To reserve your seat for an event, you need to <button type="button" class="btn btn-success py-0 px-1"><a href="{% url 'account_login' %}">SIGN IN</a></button>.</p>
         {% endif %}
     </div>
-    <!-- PAGE HEADER [End] -->
 
     <!-- SEAT MAP -->
     {% include 'seatmap.html' %}
 
 </section>
+<!-- GENERIC SEAT MAP section [end] -->
 {% endblock %}

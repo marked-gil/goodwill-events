@@ -41,13 +41,11 @@
             <div class="container-fluid">
                 <!-- logo -->
                 <h1><a id="logo" class="navbar-brand font-lobster" href="{% url 'featured_events' %}">Goodwill Events</a></h1>
-
                 <!-- navbar toggler -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
                 <!-- navbar menu -->
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
@@ -97,7 +95,7 @@
         {% endif %}
         {% endblock %}
 
-        <!-- for page content -->
+        <!-- for specific page content -->
         {% block content %}
         {% endblock content %}
     </main>
@@ -105,8 +103,10 @@
     <!-- for footer content -->
     {% block footer %}
     <footer class="d-flex flex-column-reverse align-items-center px-4 py-3 px-md-5 flex-md-row position-relative">
+        <!-- copyright, site name & purpose -->
         <h2 id="copy-right" class="mb-0">&copy; 2022 - 2023 Goodwill Events</h2>
         <p id="educ-statement" class="mb-0">For Educational Purposes Only.</p>
+        <!-- social media icons -->
         <div id="social-links" class="mx-auto me-md-0">
             <p class="mb-0">Connect with us on:</p>
             <ul id="social-icons" class="d-flex justify-content-between ps-0 mb-2">

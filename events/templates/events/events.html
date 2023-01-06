@@ -8,15 +8,18 @@
         <h2 id="upcoming-events">Upcoming Events</h2>
 
         {% for event in events_list %}
+        <!-- EVENT CARD [start] -->
         <div id="event-card-wrapper" class="card my-5 mb-lg-5 text-center m-auto">
             <a href="{% url 'event_details' event.slug %}">
+                <!-- Event's Featured Image -->
                 {% if 'proxy_image' in event.featured_image.url  %}
                 <img src="{% static 'images/default-image.jpg' %}"
                     class="card-img-top event-card-img" alt="featured image for the event">
                 {% else %}
                 <img src="{{ event.featured_image.url }}" class="card-img-top event-card-img" alt="featured image for the event">
                 {% endif %}
-    
+                
+                <!-- Event's Info -->
                 <div class="card-body">
                     <h3 class="events-list card-title">{{ event.title }}</h3>
                     <p class="card-text mb-1">{{ event.blurb }}</p>
@@ -33,13 +36,17 @@
                     </p>
                 </div>
             </a>
+
+            <!-- Event's Seat Map Link -->
             <a href="{% url 'seatmap' event.slug %}" class="position-relative">
                 <button type="button" id="reserve-btn" class="btn btn-primary goto-reservations-btn btn-sm position-absolute top-0 end-0 me-1 mb-1">Reserve A Seat</button>
             </a>
         </div>
+        <!-- EVENT CARD [end] -->
         {% endfor %}    
     </div>
 
+    <!-- PAGINATION [start] -->
     {% if is_paginated %}
     <nav aria-label="list of events" class="d-flex justify-content-center mb-5">
         <ul class="pagination" id="events-pagination" data-page-number="{{ page_obj.number }}">
@@ -103,5 +110,6 @@
         </ul>
     </nav>
     {% endif %}
+    <!-- PAGINATION [start] -->
 </section>
 {% endblock content %}

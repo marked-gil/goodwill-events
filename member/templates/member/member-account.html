@@ -3,10 +3,13 @@
 {% block content %}
 
 <section id="member-account-outer-container" class="container py-4 py-sm-5">
+    <!-- Member Account Page Title -->
     <h2 class="text-center mt-sm-4 pb-3 py-sm-4 bold-text">Member Account</h2>
 
+    <!-- MEMBER ACCOUNT FORM [start] -->
     <form id="member_account_form" class="container col-md-9 col-lg-7 col-xl-6 px-3 px-sm-4 px-xl-5 py-3 py-sm-4 rounded auth-box-background" method="POST">
-    {% csrf_token %}
+        {% csrf_token %}
+        <!-- Form Fields -->
         <div class="mb-3">
             <label for="member-username" class="form-label mb-1 d-block">Username</label>
             <input type="text" id="member-username" class="form-control" value="{{ member.username }}" readonly>
@@ -33,57 +36,59 @@
                 <button type="button" id="email_edit" class="btn btn-outline-warning py-0 px-1 px-sm-2">Edit</button>
             </div>
         </div>
-        <button type="submit" class="btn btn-primary d-block mx-auto py-0 mt-4 disabled" id="update-account-btn">Update</button>
 
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary d-block mx-auto py-0 mt-4 disabled" id="update-account-btn">Update</button>
         <!-- Change Password Link -->
         <div class="mt-4 text-white">
             <a id="change-password" href="{% url 'account_change_password' %}"><i class="fa-solid fa-lock"></i> Change Password</a>
         </div>
-
     </form>
+    <!-- MEMBER ACCOUNT FORM [start] -->
 
-    <!-- My Reservations [Bootstrap's Offcanvas] -->
+    <!-- MY RESERVATIONS (Bootstrap's Offcanvas) [start] -->
     <div class="container col-md-9 col-lg-7 col-xl-6 my-5">
         <button type="button" class="btn btn-success" data-bs-target="#offcanvasRight" data-bs-toggle="offcanvas"aria-controls="offcanvasRight">View My Reservations</button>
     </div>
 
     <div class="offcanvas offcanvas-end color-dutch-white" data-bs-backdrop="static" tabindex="-1" id="offcanvasRight" aria-labelledby="staticBackdropLabel">
-    <div id="my-reservations-header" class="offcanvas-header d-flex flex-column pt-2 pb-3 px-3 px-sm-4 py-sm-3 pb-sm-4">
-        <button type="button" class="btn-close mt-2 align-self-start" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        <h3 class="offcanvas-title text-center bold-text mt-4" id="staticBackdropLabel">My Reservations</h3>
+        <div id="my-reservations-header" class="offcanvas-header d-flex flex-column pt-2 pb-3 px-3 px-sm-4 py-sm-3 pb-sm-4">
+            <button type="button" class="btn-close mt-2 align-self-start" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            <h3 class="offcanvas-title text-center bold-text mt-4" id="staticBackdropLabel">My Reservations</h3>
+        </div>
+        <div class="offcanvas-body py-3">
+            {% if event_reservations %}
+            <!-- List of User's Reservations -->
+            <ul class="px-0">
+            {% for booking in event_reservations %}
+                <li class="my-booking-item rounded px-2 py-2 my-3">
+                    <a href="{% url 'seatmap' booking.event.slug %}">
+                        <h6 class="mb-0">{{ booking.event.title }}</h6>
+                        <small class="d-block">
+                        {{ booking.event.event_date|date:"j M Y, D" }} | {{ booking.event.event_time }}
+                        </small>
+                        <div id="my-reservation-seats" class="d-flex justify-content-between">
+                            <p class="mb-0">reserved:</p>
+                            <p class="mb-0"> 
+                            {% if booking.seat_location_1 and booking.seat_location_2 %}
+                                {{ booking.seat_location_1 }} | {{ booking.seat_location_2 }}
+                            {% elif booking.seat_location_1 %}
+                                {{ booking.seat_location_1 }}
+                            {% elif booking.seat_location_2 %}
+                                {{ booking.seat_location_2 }}
+                            {% endif %}
+                            </p>
+                        </div>
+                    </a>
+                </li>
+            {% endfor %}
+            </ul>
+            {% else %}
+            <p class="text-center my-4">No reservations made yet.</p>
+            {% endif %}
+        </div>
     </div>
-    <div class="offcanvas-body py-3">
-        {% if event_reservations %}
-        <ul class="px-0">
-        {% for booking in event_reservations %}
-            <li class="my-booking-item rounded px-2 py-2 my-3">
-                <a href="{% url 'seatmap' booking.event.slug %}">
-                    <h6 class="mb-0">{{ booking.event.title }}</h6>
-                        
-                    <small class="d-block">
-                    {{ booking.event.event_date|date:"j M Y, D" }} | {{ booking.event.event_time }}
-                    </small>
-                    <div id="my-reservation-seats" class="d-flex justify-content-between">
-                        <p class="mb-0">reserved:</p>
-                        <p class="mb-0"> 
-                        {% if booking.seat_location_1 and booking.seat_location_2 %}
-                            {{ booking.seat_location_1 }} | {{ booking.seat_location_2 }}
-                        {% elif booking.seat_location_1 %}
-                            {{ booking.seat_location_1 }}
-                        {% elif booking.seat_location_2 %}
-                            {{ booking.seat_location_2 }}
-                        {% endif %}
-                        </p>
-                    </div>
-                </a>
-            </li>
-        {% endfor %}
-        </ul>
-        {% else %}
-        <p class="text-center my-4">No reservations made yet.</p>
-        {% endif %}
-    </div>
-    </div>
+    <!-- MY RESERVATIONS (Bootstrap's Offcanvas) [end] -->
 </section>
 
 {% endblock content %}

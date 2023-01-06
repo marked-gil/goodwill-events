@@ -3,11 +3,14 @@
 {% load static %}
 
 {% block content %}
+<!-- HOME PAGE BANNER section [start] -->
 <section id="homepage-banner-container" class="d-flex flex-column justify-content-center mt-4 mt-sm-5 pb-4">
     <h2 class="text-center mt-md-4 mt-xl-5  mx-3"><span id="title-span" class="d-block mb-0">Welcome to </span><span id="homepage-title">Goodwill Events</span></h2>
     <p id="catchy-line" class="text-center px-3 mt-2">The fusion of Entertainment and Charity.</p>
 </section>
+<!-- HOME PAGE BANNER section [end] -->
 
+<!-- FEATURED EVENTS section [start] -->
 <section id="feature-events-outer-container" class="py-3 px-md-4">
     <h3 id="featured-events" class="text-center mb-4 pt-xl-4">Featured Events</h3>
     <div id="featured-events-inner-container" class="row row-cols-1 row-cols-md-2 d-md-flex justify-content-center justify-content-xl-between row-cols-lg-3 g-4 my-xl-0 mx-xl-auto">
@@ -32,7 +35,9 @@
         {% endfor %}
     </div>
 </section>
+<!-- FEATURED EVENTS section [end] -->
 
+<!-- ABOUT US section [start] -->
 <section id="about-us-outer-container" class="py-2 px-4 py-md-5 px-sm-5">
     <h3 id="about-us" class="text-center">About Us</h3>
     <div id="about-us-wrapper" class="container my-4 my-md-5">
@@ -50,5 +55,5 @@
         </p>
     </div>
 </section>
-
+<!-- ABOUT US section [end] -->
 {% endblock content %}
