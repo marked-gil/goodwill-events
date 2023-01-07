@@ -23,26 +23,26 @@
         <!-- Event's Date & Time -->
         <p class="text-center">{{ event.event_date|date:'d F Y, l' }} | <span>{{ event.event_time|date:'g:i A' }}</span></p>
 
-        <div id="reserve-seat-wrapper" class="d-inline">
+        <ul id="reserve-seat-wrapper" class="d-inline">
             <!-- Seats Left -->
-            <span>
+            <li class="d-inline">
                 {% if seats_available > 1 %}
                 <small>{{ seats_available }} Seats Left</small>
                 {% else %}
                 <small>{{ seats_available }} Seat Left</small>
-                {% endif %}
-            </span>
-            |
+                {% endif %} 
+                |
+            </li>
             <!-- 'Reserve Button' on BIGGER Screens -->
-            <span class="d-none d-sm-inline">
+            <li class="d-none d-sm-inline">
                 {% if seats_available > 0 %}
                 <a href="{% url 'seatmap' event.slug %}" class="btn btn-primary btn-sm goto-reservations-btn">Reserve A Seat</a> | 
                 {% else %}
                 <a href="{% url 'seatmap' event.slug %}" class="btn btn-primary btn-sm">No Seats Available</a> | 
                 {% endif %}   
-            </span>
+            </li>
             <!-- Number of Likes -->
-            <span>
+            <li class="d-inline">
                 <small id="event-likes" class="bold-text">{{ event.total_likes }}
                     {% if event.total_likes > 1 %}
                     <span>Likes</span>
@@ -52,7 +52,7 @@
                 </small>
                 <!-- Like Button on SMALL Screens -->
                 {% if user.is_authenticated %}
-                <form action="{% url 'event_like' event.slug %}" method="POST" id="like-form" class="d-inline d-sm-none">
+                <form action="{% url 'event_like' event.slug %}" method="POST" class="like-form d-inline d-sm-none">
                     {% csrf_token %}
                     {% if liked %}
                     <button type="submit" name="event_id" value="event.slug"><i class="fa-solid fa-heart"></i></button>
@@ -61,27 +61,27 @@
                     {% endif %}
                 </form>
                 {% endif %}
-            </span>
+            </li>
             <!-- 'Reserve Button' on SMALL Screens -->
-            <span class="d-block d-sm-none">
+            <li class="d-block d-sm-none">
                 {% if seats_available > 0 %}
                 <a href="{% url 'seatmap' event.slug %}" class="btn btn-primary btn-sm goto-reservations-btn">Reserve A Seat</a>
                 {% else %}
                 <a href="{% url 'seatmap' event.slug %}" class="btn btn-primary btn-sm">No Seats Available</a>
                 {% endif %}
-            </span>
-            <!-- Like Button on Bigger Screen -->
-            {% if user.is_authenticated %}
-            <form action="{% url 'event_like' event.slug %}" method="POST" id="like-form" class="d-none d-sm-inline">
-                {% csrf_token %}
-                {% if liked %}
-                <button class="like-button ms-2" type="submit" name="event_id" value="event.slug"><i class="fa-solid fa-heart"></i></button>
-                {% else %}
-                <button class="like-button ms-2" type="submit" name="event_id" value="event.slug"><i class="fa-regular fa-heart"></i></button>
-                {% endif %}
-            </form>
+            </li>
+        </ul>
+        <!-- Like Button on Bigger Screen -->
+        {% if user.is_authenticated %}
+        <form action="{% url 'event_like' event.slug %}" method="POST" class="like-form d-none d-sm-inline">
+            {% csrf_token %}
+            {% if liked %}
+            <button class="like-button ms-2" type="submit" name="event_id" value="event.slug"><i class="fa-solid fa-heart"></i></button>
+            {% else %}
+            <button class="like-button ms-2" type="submit" name="event_id" value="event.slug"><i class="fa-regular fa-heart"></i></button>
             {% endif %}
-        </div>
+        </form>
+        {% endif %}
     </div>
 
     <!-- Event's Writeup Content -->

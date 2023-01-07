@@ -277,12 +277,12 @@ textarea {
 }
 
 /* event likes */
-#like-form > button {
+.like-form > button {
     background: none;
     border: none;
 }
 
-#like-form > button i:hover {
+.like-form > button i:hover {
     text-shadow: 0 0 8px #b61a1a;
 }
 
