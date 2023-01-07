@@ -53,7 +53,9 @@
 
 ## VALIDATORS
 
-### CI Python Linter
+### **CI Python Linter**
+All Python files on this project were tested using the [CI Python Linter](https://pep8ci.herokuapp.com/), and all results were **"ALL CLEAR, NO ERRORS FOUND"**. See below for the result screenshots for each Python file.   
+
 * [**goodwill_events/SETTINGS.PY**](https://github.com/marked-gil/goodwill-events/blob/main/goodwill_events/settings.py)    
 ![Settings.py Linter Result](docs/testing_screenshots/python_linter/settings.png)   
 * [**goodwill_events/URLS.PY**](https://github.com/marked-gil/goodwill-events/blob/main/goodwill_events/urls.py)    
@@ -84,7 +86,11 @@
 ![seating/urls.py Linter Result](docs/testing_screenshots/python_linter/seating-urls.png)   
 * [**seating/VIEWS.PY**](https://github.com/marked-gil/goodwill-events/blob/main/seating/views.py)  
 ![seating/view.py Linter Result](docs/testing_screenshots/python_linter/seating-views.png)  
-### JSHint
+
+### **JSHint**  
+The Javascript files on this project were tested and validated by [JSHINT](https://jshint.com/), which is a tool analysis JS code for errors and potential problems. All the results from the JSHINT showed **NO ERROR** for this project.  
+See individual result screenshot below. 
+
 * [**script.js**](https://github.com/marked-gil/goodwill-events/blob/main/static/js/script.js)  
 ![JSHINT result for script.js](docs/testing_screenshots/jshint/script-jshint-result.png)    
 * [**seating_script.js**](https://github.com/marked-gil/goodwill-events/blob/main/static/js/seating_script.js)  
@@ -98,21 +104,27 @@
 * **Events (Upcoming Events) Page** 
 ![Events Page HTML validated](docs/testing_screenshots/html_validator/events-page-html-validated.png)   
 * **Seat Map (Generic) Page**   
-![Generic Seat Map Page validated]()
+![Generic Seat Map Page validated](docs/testing_screenshots/html_validator/generic-seatmap-html-validated.png)
 * **Specific Event Page**   
 ![Specific Event Page HTML valiated](docs/testing_screenshots/html_validator/specific-event-page-html-validated.png)
 * **Seat Reservation Page**     
-![Seat Reservation Page]()
+![Seat Reservation Page](docs/testing_screenshots/html_validator/seat-reservation-html-validated.png)
 * **Sign In Page**  
 ![Sign In Page HTML validated](docs/testing_screenshots/html_validator/signin-html-validated.png)
 * **Sign Up Page**  
 ![Sign Up Page HTML validated](docs/testing_screenshots/html_validator/signup-validated.png)    
 * **Sign Out Page**     
-![Sign Out Page validated]()
+![Sign Out Page validated](docs/testing_screenshots/html_validator/signout-html-validated.png)
 * **Password Reset Page**   
 ![Password Reset Page](docs/testing_screenshots/html_validator/password-reset-validated.png)    
+* **Password Reset - Emailed Link** 
+![Password Reset Link Emailed Validated](docs/testing_screenshots/html_validator/password-reset-emailed-html-validated.png) 
 * **Change Password Page**      
-![Change Password Page validated]()
+![Change Password Page validated](docs/testing_screenshots/html_validator/change-password-html-validated.png)   
+* **Change Password via Link**  
+![Change Password via Link Page validated](docs/testing_screenshots/html_validator/change-password-via-link-html-validated.png) 
+* **Change Password Done**  
+![Change Password Done Page validated](docs/testing_screenshots/html_validator/change-password-done-html-validated.png) 
 
 ### W3C CSS Validator
 * [**style.css**](https://github.com/marked-gil/goodwill-events/blob/main/static/css/style.css)
