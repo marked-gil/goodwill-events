@@ -8,7 +8,9 @@
 <section id="seat-reservation-section" class="container py-2 px-0">
     <!-- Event Info -->
     <div id="event-info" class="py-2 py-sm-4">
-        <h2 id="seating-event-title" class="mb-0 px-3">{{ event.title }}</h2>
+        <h2 id="seating-event-title" class="mb-0 px-3">
+            <a href="{% url 'event_details' event.slug %}">{{ event.title }}</a>
+        </h2>
         <p class="px-3 m-0">{{ event.event_date|date:'d F Y, D' }} | <span>{{ event.event_time|date:'g:i A' }}</span></p>
     </div>
     
@@ -32,7 +34,7 @@
         </div>
     </div>
 
-    <!-- Colour Legend -->
+    <!-- Seat Map Legend -->
     <div id="seatmap-legend" class="container d-flex justify-content-around align-items-center px-2 py-1 pt-sm-3 pt-lg-4">
         <p class="seatmap-legend-icon m-0"><i id="available-icon" class="fas fa-circle"></i> Available</p>
         <p class="seatmap-legend-icon m-0"><i id="selected-icon" class="fas fa-circle"></i> Selected</p>
@@ -44,7 +46,7 @@
 
 </section>
 
-<!-- Bootstrap's offcanvas for confirmation to delete reservation -->
+<!-- RESERVATION DELETE CONFIRMATION (Bootstrap's offcanvas) [start] -->
 <button id="confirm-delete" class="d-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Open Offcanvas</button>
 <div class="offcanvas offcanvas-end color-dutch-white" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
     <div class="offcanvas-header">
@@ -58,6 +60,7 @@
         </form>
     </div>
 </div>
+<!-- RESERVATION DELETE CONFIRMATION (Bootstrap's offcanvas) [end] -->
 
 <!-- List of selected/reserved seats for the event -->
 <p id="data-seats">
