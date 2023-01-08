@@ -55,9 +55,9 @@
                 <form action="{% url 'event_like' event.slug %}" method="POST" class="like-form d-inline d-sm-none">
                     {% csrf_token %}
                     {% if liked %}
-                    <button type="submit" name="event_id" value="event.slug"><i class="fa-solid fa-heart"></i></button>
+                    <button type="submit" name="event_id" aria-label="liked" value="event.slug"><i class="fa-solid fa-heart"></i></button>
                     {% else %}
-                    <button type="submit" name="event_id" value="event.slug"><i class="fa-regular fa-heart"></i></button>
+                    <button type="submit" name="event_id" aria-label="unliked" value="event.slug"><i class="fa-regular fa-heart"></i></button>
                     {% endif %}
                 </form>
                 {% endif %}
@@ -76,9 +76,9 @@
         <form action="{% url 'event_like' event.slug %}" method="POST" class="like-form d-none d-sm-inline">
             {% csrf_token %}
             {% if liked %}
-            <button class="like-button ms-2" type="submit" name="event_id" value="event.slug"><i class="fa-solid fa-heart"></i></button>
+            <button class="like-button ms-2" type="submit" aria-label="liked" name="event_id" value="event.slug"><i class="fa-solid fa-heart"></i></button>
             {% else %}
-            <button class="like-button ms-2" type="submit" name="event_id" value="event.slug"><i class="fa-regular fa-heart"></i></button>
+            <button class="like-button ms-2" type="submit" aria-label="unliked" name="event_id" value="event.slug"><i class="fa-regular fa-heart"></i></button>
             {% endif %}
         </form>
         {% endif %}
