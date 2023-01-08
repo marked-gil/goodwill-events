@@ -181,8 +181,8 @@ However, the pages that require logging in cannot be analysed by the validator, 
 ![Color Contrast Validator Result for Password Reset Page](docs/testing_screenshots/color_contrast_validator/color-contrast-password-reset.png) 
 
 ### **WAVE - Web Accessibility Evaluation Tool**
-
-This project utilised the [WAVE - Web Accessibility Evaluation Tool](https://wave.webaim.org/) browser extension to ensure its accessibility.
+This project utilised the [WAVE - Web Accessibility Evaluation Tool](https://wave.webaim.org/) browser extension to ensure its accessibility.       
+![WAVE](docs/testing_screenshots/wave/wave-screenshot.png)
 
 ## LIGHTHOUSE TESTING
 * **Home Page**     

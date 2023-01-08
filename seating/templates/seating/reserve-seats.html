@@ -80,7 +80,7 @@
     <div id="selected-seats-inner-wrapper" class="d-flex justify-content-between align-items-center mx-md-auto">
     {% endif %}
         <!-- Current User's Selected/Reserved Seats -->
-        <ul id="seats-selected-list" class="d-sm-flex my-2 ps-3 ps-sm-5">
+        <ul id="seats-selected-list" class="my-2 ps-3 ps-sm-5">
             {% for seat in user_booked_seats %}
             <li id="{{ seat.seat_location_1 }}" class="d-flex align-items-center me-sm-5">{{ seat.seat_location_1 }}
                 <button type="button" tabindex="-1" aria-label="deselect" class="btn-cancel-seat ms-2 p-0 disabled-btn"><i class="far fa-times-circle"></i></button>

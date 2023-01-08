@@ -125,17 +125,14 @@
     font-weight: 700;
 }
 
-#seats-selected-list > li {
-    font-size: .9rem;
-}
-
 .btn-cancel-seat {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     color: var(--clr-red-purple);
     background: none;
     border: none;
 }
 
+#edit-reservation,
 #update-reservation,
 #submit-reservation {
     font-size: .9rem;
@@ -173,7 +170,13 @@
     #event-info > p {
         font-size: .9rem;
     }
+}
 
+@media screen and (min-width: 400px) {
+    #seats-selected-list {
+        display: flex;
+        gap: 1.4rem;
+    }
 }
 
 @media screen and (min-width: 576px) {
