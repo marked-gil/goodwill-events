@@ -30,7 +30,7 @@
 
 ## User Experience Design (UXD)
 
-### STRATEGY
+### **STRATEGY**
 #### **Main Goal:**
 This website aims to showcase 'upcoming' charity shows and events by the fictional organization called ‘Goodwill Events’. And it provides numerous conveniences to philanthropists, such as its online membership registration and seat reservation features. It also allows members to leave comments and likes on specific upcoming events.
 
@@ -49,6 +49,8 @@ In total, there are 30 User Stories formulated for this project - 28 have been i
 
 Github’s Kanban board is an extremely useful feature that this project used. Through it , tasks were marked conveniently when done, and User Stories were closed when fulfilled. Here is the link for the project’s Kanban board - [CLICK HERE](https://github.com/users/marked-gil/projects/15).
 
+[Back to Table of Contents](#table-of-contents)
+
 #### **EPICS:**
 1. [Initial Django Setup](https://github.com/marked-gil/goodwill-events/issues/1)
 2. [Heroku Setup](https://github.com/marked-gil/goodwill-events/issues/2)
@@ -59,7 +61,6 @@ Github’s Kanban board is an extremely useful feature that this project used. T
 7. [Event Seating](https://github.com/marked-gil/goodwill-events/issues/7)
 8. [Comments](https://github.com/marked-gil/goodwill-events/issues/8)
 9. [Expired Events Management](https://github.com/marked-gil/goodwill-events/issues/9)
-
 
 #### **User Stories:**
 Iteration 1:    
@@ -100,7 +101,9 @@ Iteration 4:
 * Confirmation Email for Seat Reservation ([Epic 7](https://github.com/marked-gil/goodwill-events/issues/7))
 * Modify User Model ([Epic 3](https://github.com/marked-gil/goodwill-events/issues/3))
 
-### SCOPE
+[Back to Table of Contents](#table-of-contents)
+
+### **SCOPE**
 
 #### **Planned Features**
 The following are the User Stories that guided the creation of the features of this project:
@@ -195,7 +198,11 @@ The following are the User Stories that guided the creation of the features of t
 * User Story #18: [**Modify User Model**](https://github.com/marked-gil/goodwill-events/issues/18) [NOT IMPLEMENTED]
     > As a developer, I can add other fields in the User model in addition to those that are built-in so I can customize the sign-up and sign-in feature of the site.
 
+[Back to Table of Contents](#table-of-contents)
+
+
 #### **Design Choice**
+
 * **Color Scheme**:     
 The following are the main colors used:     
 
@@ -240,7 +247,9 @@ This project uses fonts from [Google Fonts](https://fonts.google.com/). And the 
 <!-- Visible -->
 <!-- Provides clear and intuitive Feedback -->
 
-### SKELETON
+[Back to Table of Contents](#table-of-contents)
+
+### **SKELETON**
 #### **Database Schema**
 The database for the Goodwill Events project is composed of 5 models, of which four (4) are custom models, such as the Event, Comment, VenueSeat, and EventSeating models; while one (1) is a default model from Django - the User model. The database schema shown below, which is a modified snowflake schema, represents the relationship of the models among each other. Also, it provides significant information such as the table names (model names), the fields, and the type of data for each field. (Note: PK stands for 'primary key')
 ![Database schema](docs/others/database-schema.png)
@@ -281,7 +290,9 @@ The database for the Goodwill Events project is composed of 5 models, of which f
 * **CONFIRM DELETE RESERVATION** Off Canvas     
     ![Confirm Delete Reservation](docs/wireframes/confirm-delete-reservation-wf.png)
 
-### SURFACE
+[Back to Table of Contents](#table-of-contents)
+
+### **SURFACE**
 
 * **Colors & Contrast**     
     Using the Contrast Grid from [Eightshapes.com](https://contrast-grid.eightshapes.com/), 
@@ -298,6 +309,7 @@ The database for the Goodwill Events project is composed of 5 models, of which f
     ![Roboto Font](docs/design_choices/roboto-font.png)
     ![Lobster Font](docs/design_choices/lobster-font.png)
 
+[Back to Table of Contents](#table-of-contents)
 
 ## Features
 **BASE TEMPLATE with Navbar and Footer**    
@@ -499,6 +511,9 @@ In this page, the user is only required to supply their registered email address
 
 As this website is for educational purposes and none of the events shown in this project exists in reality, as soon as an event's date has passed, the site is programmed to automatically update its date to the following year. Also, all its reserved seats, likes and comments are deleted for a fresh start. This is designed to allow the perpetuation of the site without overseeing it regularly.
 
+[Back to Table of Contents](#table-of-contents)
+
+
 ## Fixed Bugs
 
 * ISSUE:    
@@ -511,12 +526,16 @@ As this website is for educational purposes and none of the events shown in this
 ## Bugs Left To Fix
 <!-- Content here -->
 
+
+[Back to Table of Contents](#table-of-contents)
+
+
 ## Testing
 To view all the tests performend on this project, kindly click [HERE](https://github.com/marked-gil/goodwill-events/blob/main/TESTING.md)
 
 ## Deployment
 
-### Version Control
+### **Version Control**
 
 **Git** was a crucial tool used to track changes that were made in the repository. The following git commands were mainly used in developing this program:
 
@@ -525,7 +544,7 @@ To view all the tests performend on this project, kindly click [HERE](https://gi
 * `git commit -m "message"` — to add/record files or changes to the local repository
 * `git push` — to upload the local repository to the remote repository, such as GitHub
 
-### Heroku Deployment
+### **Heroku Deployment**
 
 This website is published on Heroku. The following were the steps I took for this project's deployment.
 
@@ -538,7 +557,8 @@ This website is published on Heroku. The following were the steps I took for thi
 7. Then, I went to the 'Deploy' link and clicked on Github as the Deployment Method.
 8. Below the Deployment Method section is the Connect to Github section. Here I searched for the name of my new app on Github using the search input field provided. When the name of the repository was displayed, I clicked on the 'connect' button.
 9. After a few minutes, it revealed a button to view the deployed website. [View Live Website.](https://goodwill-events.herokuapp.com/)
-### Cloning from GitHub
+
+### **Cloning from GitHub**
 
 To clone the repository for this site, do the following steps:
 
@@ -548,6 +568,9 @@ To clone the repository for this site, do the following steps:
 4. In the popup box, click on the 'HTTPS' link and copy the URL just below it.
 5. Then, go to your computer's terminal and type git clone https://github.com/marked-gil/goodwill-events
 6. A copy of the repository is now saved on your computer.
+
+[Back to Table of Contents](#table-of-contents)
+
 
 ## Technologies
 This project uses the following tools:
@@ -587,6 +610,8 @@ This project uses the following tools:
 * [Diffchecker](https://www.diffchecker.com/#) - used when comparing codes tested in another IDE to the codes in gitpod
 * [Grammarly](https://www.grammarly.com/) - used to check the grammar of the contents in this project
 
+[Back to Table of Contents](#table-of-contents)
+
 ## Credits
 * Main References:
     * [Code Institute](https://codeinstitute.net/ie/)
@@ -597,6 +622,8 @@ This project uses the following tools:
 * Redirecting to the same page after post method - [StockOverflow](https://stackoverflow.com/questions/39560175/redirect-to-same-page-after-post-method-using-class-based-views)
 
 * Creating a 404 Error Page - [GeeksforGeeks](https://www.geeksforgeeks.org/django-creating-a-404-error-page/)
+
+[Back to Table of Contents](#table-of-contents)
 
 ## Acknowledgment
 <!-- Content here -->

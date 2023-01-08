@@ -14,6 +14,7 @@
 * [**Lighthouse Testing**](#lighthouse-testing)
 * [**Responsiveness**](#responsiveness)
     * [Mobile-Friendly Test](#mobile-friendly-test)
+    * [Manual Testing for Responsiveness](#manual-testing-for-responsiveness)
 
 
 ## TEST CASES (User Story Testing)
@@ -241,7 +242,7 @@ The tool [Mobile-Friendly Test](https://search.google.com/test/mobile-friendly) 
 * **Change Password Page**      
 ![Mobile-Friendly Test Result for Change Password Page](docs/testing_screenshots/mobile_friendly_test/mobile-friendly-change-password.png)      
 
-### **Manual Testing**
+### **Manual Testing for Responsiveness**
 
 The web developer tools of the 4 main websites (Chrome, Firefox, Edge, and Safari) were used to manually test each page of this site for their responsivenes. Below are sample screenshots:
 
