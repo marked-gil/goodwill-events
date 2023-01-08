@@ -138,6 +138,29 @@ The CSS codes on this project were validated by the [W3C CSS Validation Service]
 ## ACCESSIBILITY
 
 ### **Safari Accessibility Audit Results**
+* **Home Page**     
+![Safari Audit Result for Home Page](docs/testing_screenshots/safari-audit/safari-audit-home.png)  
+* **Events (Upcoming Events) Page**     
+![Safari Audit Result for Events Page](docs/testing_screenshots/safari-audit/safari-audit-events.png)    
+* **Seat Map (Generic) Page**    
+![Safari Audit Result for Seat Map Page](docs/testing_screenshots/safari-audit/safari-audit-seatmap.png)  
+* **Specific Event Page**   
+![Safari Audit Result for Specific Event Page](docs/testing_screenshots/safari-audit/safari-audit-specific-event.png)    
+* **Seat Reservation Page**    
+![Safari Audit Result for Seat Reservation Page](docs/testing_screenshots/safari-audit/safari-audit-reservation.png)  
+* **Member Account Page**   
+![Safari Audit Result for Member Account Page](docs/testing_screenshots/safari-audit/safari-audit-member.png)    
+* **Sign In Page**  
+![Safari Audit Result for Sign In Page](docs/testing_screenshots/safari-audit/safari-audit-signin.png)
+* **Sign Up Page**  
+![Safari Audit Result for Sign Up Page](docs/testing_screenshots/safari-audit/safari-audit-signup.png)
+* **Sign Out Page**     
+![Safari Audit Result for Sign Out Page](docs/testing_screenshots/safari-audit/safari-audit-signout.png)  
+* **Password Reset Page**   
+![Safari Audit Result for Password Reset Page](docs/testing_screenshots/safari-audit/safari-audit-password-reset.png)    
+* **Change Password Page**      
+![Safari Audit Result for Change Password Page](docs/testing_screenshots/safari-audit/safari-audit-change-password.png)   
+
 ### **Color Contrast Accessibility Validator Results**
 ### **WAVE - Web Accessibility Evaluation Tool**
 
