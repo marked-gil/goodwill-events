@@ -13,6 +13,7 @@
     * [WAVE - Web Accessibility Evaluation Tool](#wave---web-accessibility-evaluation-tool) 
 * [**Lighthouse Testing**](#lighthouse-testing)
 * [**Responsiveness**](#responsiveness)
+    * [Mobile-Friendly Test](#mobile-friendly-test)
 
 
 ## TEST CASES (User Story Testing)
@@ -209,3 +210,39 @@ This project utilised the [WAVE - Web Accessibility Evaluation Tool](https://wav
 ![Lighthouse Result for Change Password Page](docs/testing_screenshots/lighthouse/lighthouse-change-password.png)   
 
 ## RESPONSIVENESS
+
+This website is designed to be fully responsive from a minimum screen size of 280px.
+
+### **Mobile-Friendly Test**
+The tool [Mobile-Friendly Test](https://search.google.com/test/mobile-friendly) validated the ease and friendliness of the site when used on small screens such as mobile devices.  
+**Note:** The Mobile-Friendly Test tool could not detect the ability of the seat map to pan and zoom; thus, manual testing was used for the Seat Reservation page.
+
+* **Home Page**     
+![Mobile-Friendly Test Result for Home Page](docs/testing_screenshots/mobile_friendly_test/mobile-friendly-home.png)    
+* **Events (Upcoming Events) Page**   
+![Mobile-Friendly Test Result for Events Page](docs/testing_screenshots/mobile_friendly_test/mobile-friendly-events.png)    
+* **Seat Map (Generic) Page**    
+![Mobile-Friendly Test Result for Seat Map Page](docs/testing_screenshots/mobile_friendly_test/mobile-friendly-seatmap.png)     
+* **Specific Event Page**   
+![Mobile-Friendly Test Result for Specific Event Page](docs/testing_screenshots/mobile_friendly_test/mobile-friendly-specific-event.png)    
+* **Member Account Page**   
+![Mobile-Friendly Test Result for Member Account Page](docs/testing_screenshots/mobile_friendly_test/mobile-friendly-member.png)    
+* **Sign In Page**  
+![Mobile-Friendly Test Result for Sign In Page](docs/testing_screenshots/mobile_friendly_test/mobile-friendly-signin.png)   
+* **Sign Up Page**  
+![Mobile-Friendly Test Result for Sign Up Page](docs/testing_screenshots/mobile_friendly_test/mobile-friendly-signup.png)   
+* **Sign Out Page**     
+![Mobile-Friendly Test Result for Sign Out Page](docs/testing_screenshots/mobile_friendly_test/mobile-friendly-signout.png)     
+* **Password Reset Page**   
+![Mobile-Friendly Test Result for Password Reset Page](docs/testing_screenshots/mobile_friendly_test/mobile-friendly-password-reset.png)    
+* **Change Password Page**      
+![Mobile-Friendly Test Result for Change Password Page](docs/testing_screenshots/mobile_friendly_test/mobile-friendly-change-password.png)      
+
+### **Manual Testing**
+
+The web developer tools of the 4 main websites were used to manually test each page of this site for their responsivenes. Below are sample screenshots:
+
+* **Chrome**
+* **Firefox**
+* **Microsoft Edge**
+* **Safari**
