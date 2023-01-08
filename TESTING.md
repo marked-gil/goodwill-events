@@ -161,8 +161,28 @@ The CSS codes on this project were validated by the [W3C CSS Validation Service]
 * **Change Password Page**      
 ![Safari Audit Result for Change Password Page](docs/testing_screenshots/safari-audit/safari-audit-change-password.png)   
 
-### **Color Contrast Accessibility Validator Results**
+### **Color Contrast Accessibility Validator Results**      
+Using the [a11Y's Color Contrast Accessibility Validator](https://color.a11y.com/), this site is validated to be compliant with website accessibilities regulations on colour contrast.
+However, the pages that require logging in cannot be analysed by the validator, but their color contrast was validated by other tools such as the 'Safari Audit', 'WAVE', and 'Lighthouse'.
+
+* **Home Page**     
+![Color Contrast Validator Result for Home Page](docs/testing_screenshots/color_contrast_validator/color-contrast-home.png) 
+* **Events (Upcoming Events) Page**     
+![Color Contrast Validator Result for Events Page](docs/testing_screenshots/color_contrast_validator/color-contrast-events.png)      
+* **Seat Map (Generic) Page**
+![Color Contrast Validator Result for Seat Map Page](docs/testing_screenshots/color_contrast_validator/color-contrast-seatmap.png)  
+* **Specific Event Page**   
+![Color Contrast Validator Result for Specific Event Page](docs/testing_screenshots/color_contrast_validator/color-contrast-specific-event.png)      
+* **Sign In Page**
+![Color Contrast Validator Result for Sign In Page](docs/testing_screenshots/color_contrast_validator/color-contrast-signin.png)    
+* **Sign Up Page**
+![Color Contrast Validator Result for Sign Up Page](docs/testing_screenshots/color_contrast_validator/color-contrast-signup.png)    
+* **Password Reset Page**
+![Color Contrast Validator Result for Password Reset Page](docs/testing_screenshots/color_contrast_validator/color-contrast-password-reset.png) 
+
 ### **WAVE - Web Accessibility Evaluation Tool**
+
+This project utilised the [WAVE - Web Accessibility Evaluation Tool](https://wave.webaim.org/) browser extension to ensure its accessibility.
 
 ## LIGHTHOUSE TESTING
 * **Home Page**     
