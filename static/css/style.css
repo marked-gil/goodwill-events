@@ -54,6 +54,9 @@ textarea {
 /* UTILITY CLASSES [Start] */
 .active {
     font-weight: 700;
+    background-color: var(--clr-linen);
+    border-radius: 5px;
+    text-transform: uppercase;
 }
 
 .auth-box-background {
@@ -137,12 +140,13 @@ textarea {
 }
 
 .nav-link {
+    color:#000000;
     font-size: 1.1rem;
 }
 
 .nav-link:hover {
-    text-shadow: 0 0 15px var(--clr-white);
-    background-color: var(--clr-dutch-white);
+    color:#000000;
+    background-color: #f0e2bfc1;
     border-radius: 10px;
 }
 
