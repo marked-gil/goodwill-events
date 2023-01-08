@@ -2,14 +2,17 @@
 
 ## TABLE OF CONTENTS    
 * [**Test Cases**](#test-cases-user-story-testing)
-* [**Lighthouse Testing**](#lighthouse-testing)
-* [**Responsiveness**](#responsiveness)
 * [**Validators**](#validators)     
     * [Python Linter](#ci-python-linter)
     * [JSHINT](#jshint)
     * [Markup Validator](#w3c-markup-validator)
     * [CSS Validator](#w3c-css-validator)
-* [**Accessibility**](#accessibility)
+* [**Accessibility**](#accessibility)   
+    * [Safari Accessibility Audit Results](#safari-accessibility-audit-results) 
+    * [Color Contrast Accessibility Validator Results](#color-contrast-accessibility-validator-results) 
+    * [WAVE - Web Accessibility Evaluation Tool](#wave---web-accessibility-evaluation-tool) 
+* [**Lighthouse Testing**](#lighthouse-testing)
+* [**Responsiveness**](#responsiveness)
 
 
 ## TEST CASES (User Story Testing)
@@ -59,9 +62,6 @@
 * **RECYCLING EXPIRED EVENTS**
     ![](docs/test_cases/test-cases-18.png)
 
-## LIGHTHOUSE TESTING
-
-## RESPONSIVENESS
 
 ## VALIDATORS
 
@@ -127,7 +127,7 @@ The HTML files on this project were tested and validated by [W3C Markup Validati
 * **Change Password via Link** -- [Click for Result](https://github.com/marked-gil/goodwill-events/blob/main/docs/testing_screenshots/html_validator/change-password-via-link-html-validated.png) 
 * **Change Password Done** -- [Click for Result](https://github.com/marked-gil/goodwill-events/blob/main/docs/testing_screenshots/html_validator/change-password-done-html-validated.png) 
 
-### W3C CSS Validator   
+### **W3C CSS Validator **  
 The CSS codes on this project were validated by the [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/). All results showed **"NO ERROR FOUND"**. See below for each result.
 * [**style.css**](https://github.com/marked-gil/goodwill-events/blob/main/static/css/style.css)
 ![style.css validator result screenshot](docs/testing_screenshots/css_validator/style-css-validated.png)
@@ -135,3 +135,11 @@ The CSS codes on this project were validated by the [W3C CSS Validation Service]
 ![seating_style.css validator result screenshot](docs/testing_screenshots/css_validator/seating_style_css_validated.png)
 
 ## ACCESSIBILITY
+
+### **Safari Accessibility Audit Results**
+### **Color Contrast Accessibility Validator Results**
+### **WAVE - Web Accessibility Evaluation Tool**
+
+## LIGHTHOUSE TESTING
+
+## RESPONSIVENESS
