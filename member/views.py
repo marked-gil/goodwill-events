@@ -69,3 +69,10 @@ class MemberAccount(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
             return redirect(request.path_info)
 
         return super(MemberAccount, self).post(request, *args, **kwargs)
+
+
+def error_404_view(request, exception):
+    """
+    Renders the 404 template when 404 error is raised
+    """
+    return render(request, '404.html')

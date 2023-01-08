@@ -581,11 +581,12 @@ footer {
 }
 /* OFFCANVAS [End] */
 
-/* 404 ERROR PAGE [Start] */
+/* ERROR PAGES [Start] */
+#error-500,
 #error-404 {
     font-size: 1.5rem;
 }
-/* 404 ERROR PAGE [End] */
+/* ERROR PAGES [End] */
 
 
 /* MEDIA QUERIES */
