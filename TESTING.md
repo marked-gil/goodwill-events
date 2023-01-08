@@ -139,6 +139,9 @@ The CSS codes on this project were validated by the [W3C CSS Validation Service]
 ## ACCESSIBILITY
 
 ### **Safari Accessibility Audit Results**
+
+Safari's Accessibility Audit inspects the site's pages for accessibility issues, and each page on this site is 100% accessible based on the results shown below.
+
 * **Home Page**     
 ![Safari Audit Result for Home Page](docs/testing_screenshots/safari-audit/safari-audit-home.png)  
 * **Events (Upcoming Events) Page**     
@@ -240,9 +243,13 @@ The tool [Mobile-Friendly Test](https://search.google.com/test/mobile-friendly) 
 
 ### **Manual Testing**
 
-The web developer tools of the 4 main websites were used to manually test each page of this site for their responsivenes. Below are sample screenshots:
+The web developer tools of the 4 main websites (Chrome, Firefox, Edge, and Safari) were used to manually test each page of this site for their responsivenes. Below are sample screenshots:
 
-* **Chrome**
-* **Firefox**
-* **Microsoft Edge**
-* **Safari**
+* **Chrome**    
+![iphone 5 on Chrome developer tool](docs/testing_screenshots/manual_responsiveness_test/chrome-iphone5.png)    
+* **Firefox**   
+![Pixel 2 Android on Firefox developer tool](docs/testing_screenshots/manual_responsiveness_test/firefox-pixel2-android.png)    
+* **Microsoft Edge**    
+![Galaxy S9+ on Microsoft Edge developer tool](docs/testing_screenshots/manual_responsiveness_test/edge-galaxy-s9plus.png)  
+* **Safari**    
+![iPhone 8 Plus on Safari developer tool](docs/testing_screenshots/manual_responsiveness_test/safari-iphone8plus.png)     
