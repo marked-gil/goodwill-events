@@ -19,7 +19,6 @@ if (document.getElementById('seat-reservation-section')) {
         for (let btn of cancel_seat_buttons) {
             cancelSeat(btn, userBookedSeats);
         }
-        // cancel_seat_buttons.forEach(cancelSeat);
     }
 
     // EventListener to Create Reservation
