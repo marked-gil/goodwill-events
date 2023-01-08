@@ -330,6 +330,7 @@ textarea {
 }
 
 .comment-posted-on {
+    opacity: .9;
     font-size: .8rem;
 }
 

@@ -13,9 +13,9 @@
     <div id="img-wrapper" class="event-details-div container px-0">
         {% if 'proxy_image' in event.featured_image.url %}
         <img src="{% static 'images/default-image.jpg' %}"
-            class="event-details-img rounded" alt="featured image">
+            class="event-details-img rounded" alt="featured image of the event">
         {% else %}
-        <img src="{{ event.featured_image.url }}" class="event-details-img img-fluid rounded" alt="featured image">
+        <img src="{{ event.featured_image.url }}" class="event-details-img img-fluid rounded" alt="featured image of the event">
         {% endif %}
     </div>
 
@@ -110,7 +110,7 @@
 
     <div class="card col-md-9 col-lg-6 mb-5 m-auto px-2 py-3">
         {% if comments %}
-        <h4 class="mb-3 mb-sm-4 ms-sm-3 bold-text" id="comment-section-title">COMMENTS:</h4>
+        <h3 class="mb-3 mb-sm-4 ms-sm-3 bold-text" id="comment-section-title">COMMENTS:</h3>
         {% else %}
         <p class="text-center my-3">No comments available.</p>
         {% endif %}
