@@ -63,7 +63,7 @@
             {% for booking in event_reservations %}
                 <li class="my-booking-item rounded px-2 py-2 my-3">
                     <a href="{% url 'seatmap' booking.event.slug %}">
-                        <h6 class="mb-0">{{ booking.event.title }}</h6>
+                        <h4 class="mb-0">{{ booking.event.title }}</h4>
                         <small class="d-block">
                         {{ booking.event.event_date|date:"j M Y, D" }} | {{ booking.event.event_time }}
                         </small>

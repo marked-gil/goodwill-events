@@ -7,7 +7,7 @@
     --clr-timber-wolf: #E3D7D7;
     --clr-jonquil: #f7d61c;
     --clr-mikado-yellow: #f9c012;
-    --clr-american-pink:#ff9393;
+    --clr-american-pink:#fa9f9f;
     --clr-police-blue: #284b63;
     --clr-rich-black: #030328;
     --font-lobster: 'Lobster', cursive;
@@ -534,6 +534,10 @@ footer {
 
 
 /* MY RESERVATIONS OFFCANVAS [Start] */
+#my-reservations-header {
+    border-bottom: 5px solid var(--clr-police-blue);
+}
+
 #my-reservations-body {
     overflow: auto;
     scrollbar-color: var(--clr-police-blue) var(--clr-linen);   /* styles scrollbar in Firefox */
@@ -553,8 +557,8 @@ footer {
     border-radius: 5px;
 }
 
-#my-reservations-header {
-    border-bottom: 5px solid var(--clr-police-blue);
+#my-reservations-body h4 {
+    font-size: 1rem;
 }
 
 #staticBackdropLabel {

@@ -141,5 +141,27 @@ The CSS codes on this project were validated by the [W3C CSS Validation Service]
 ### **WAVE - Web Accessibility Evaluation Tool**
 
 ## LIGHTHOUSE TESTING
+* **Home Page**     
+![Lighthouse Result for Home Page](docs/testing_screenshots/lighthouse/lighthouse-home.png)     
+* **Events (Upcoming Events) Page**     
+![Lighthouse Result for Events Page](docs/testing_screenshots/lighthouse/lighthouse-events.png)     
+* **Seat Map (Generic) Page**    
+![Lighthouse Result for Seat Map Page](docs/testing_screenshots/lighthouse/lighthouse-seatmap.png)  
+* **Specific Event Page**   
+![Lighthouse Result for Specific Event Page](docs/testing_screenshots/lighthouse/lighthouse-specific-event.png)  
+* **Seat Reservation Page**    
+![Lighthouse Result for Seat Reservation Page](docs/testing_screenshots/lighthouse/lighthouse-reservation.png)      
+* **Member Account Page**   
+![Lighthouse Result for Member Account Page](docs/testing_screenshots/lighthouse/lighthouse-member.png)     
+* **Sign In Page**  
+![Lighthouse Result for Sign In Page](docs/testing_screenshots/lighthouse/lighthouse-signin.png)         
+* **Sign Up Page**  
+![Lighthouse Result for Sign Up Page](docs/testing_screenshots/lighthouse/lighthouse-signup.png)         
+* **Sign Out Page**     
+![Lighthouse Result for Sign Out Page](docs/testing_screenshots/lighthouse/lighthouse-signout.png)  
+* **Password Reset Page**   
+![Lighthouse Result for Password Reset Page](docs/testing_screenshots/lighthouse/lighthouse-password-reset.png)     
+* **Change Password Page**      
+![Lighthouse Result for Change Password Page](docs/testing_screenshots/lighthouse/lighthouse-change-password.png)   
 
 ## RESPONSIVENESS
