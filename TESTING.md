@@ -1,5 +1,17 @@
 # TESTING
 
+## TABLE OF CONTENTS    
+* [**Test Cases**](#test-cases-user-story-testing)
+* [**Lighthouse Testing**](#lighthouse-testing)
+* [**Responsiveness**](#responsiveness)
+* [**Validators**](#validators)     
+    * [Python Linter](#ci-python-linter)
+    * [JSHINT](#jshint)
+    * [Markup Validator](#w3c-markup-validator)
+    * [CSS Validator](#w3c-css-validator)
+* [**Accessibility**](#accessibility)
+
+
 ## TEST CASES (User Story Testing)
 
 * **HOME Page**     
