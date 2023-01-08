@@ -20,9 +20,9 @@
                 <div class="card h-100 feat-event-card">
                     {% if "proxy_image" in event.featured_image.url %}
                     <img src="{% static 'images/default-image.jpg' %}"
-                        class="card-img-top featured-event-image" alt="image for featured event">
+                        class="card-img-top featured-event-image" alt="featured image for {{ event.title }}">
                     {% else %}
-                    <img src="{{ event.featured_image.url }}" class="card-img-top featured-event-image" alt="image for featured event">
+                    <img src="{{ event.featured_image.url }}" class="card-img-top featured-event-image" alt="featured image for {{ event.title }}">
                     {% endif %}
                     <div class="card-body pb-0">
                         <h4 class="featured card-title text-center">{{ event.title }}</h4>

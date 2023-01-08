@@ -14,9 +14,9 @@
                 <!-- Event's Featured Image -->
                 {% if 'proxy_image' in event.featured_image.url  %}
                 <img src="{% static 'images/default-image.jpg' %}"
-                    class="card-img-top event-card-img" alt="featured image for the event">
+                    class="card-img-top event-card-img" alt="featured image for {{ event.title }}">
                 {% else %}
-                <img src="{{ event.featured_image.url }}" class="card-img-top event-card-img" alt="featured image for the event">
+                <img src="{{ event.featured_image.url }}" class="card-img-top event-card-img" alt="featured image for {{ event.title }}">
                 {% endif %}
                 
                 <!-- Event's Info -->
