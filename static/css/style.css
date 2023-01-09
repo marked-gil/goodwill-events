@@ -57,6 +57,7 @@ textarea {
     background-color: var(--clr-linen);
     border-radius: 5px;
     text-transform: uppercase;
+    box-shadow: 0 0 5px 1px var(--clr-police-blue) inset;
 }
 
 .auth-box-background {

@@ -712,7 +712,6 @@ As this website is for educational purposes and none of the events shown in this
 ## Bugs Left To Fix
 <!-- Content here -->
 
-
 [Back to Table of Contents](#table-of-contents)
 
 
