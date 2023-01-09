@@ -520,14 +520,14 @@ The 'base template', which contains the navbar and footer, is included in all th
 
 The Home page includes the base template as described above and displays three (3) featured events, and the ‘About Us’ section.
 
-<!-- Home Page screenshot here -->
+![Home page screenshot](docs/features_screenshots/home-page.png)    
 
 **FEATURED EVENTS**
 > **User Story [#22](https://github.com/marked-gil/goodwill-events/issues/22):** As a user, I can see the featured list of events on the home page so that I can immediately see the events that are coming up.
 
 There are 3 featured events displayed in the Home page. These events are automatically selected based on their show dates relative to today. Each featured event is in a card container and displays the event's image, title, its show date and time. Each card is clickable and will redirect to the specific event's full detail page.
 
-<!-- screenshot -->
+![Featured Events screenshot](docs/features_screenshots/featured-events.png)    
 
 **UPCOMING EVENTS PAGE (List of All Events)**
 > **User Story [#23](https://github.com/marked-gil/goodwill-events/issues/23):** As a user, I can see all the upcoming events so that I can decide which one interests me.
@@ -536,7 +536,7 @@ The Upcoming Events page displays the list of all the upcoming events. This page
 
 Each item (event) in the list is presented as a card and shows a featured image, event title, date and time, a reserve button, and the number of likes. Also, each card is clickable and will redirect the site to the specific event’s page. The reserve button, on the other hand, will redirect to the 'Seat Reservation' page.
 
-<!-- screenshot here -->
+![Upcoming Events page screenshot](docs/features_screenshots/upcoming-events.png)   
 
 **SPECIFIC EVENT PAGE**   
 > **User Story [#24](https://github.com/marked-gil/goodwill-events/issues/24):** As a user, I can view the full detail of the event so that I can learn more about the event.
@@ -545,7 +545,7 @@ The specific event’s page displays the details of an event. It shows the event
 
 The 'Reserve a Seat' button, when clicked, will redirect the user to the event's 'Seat Reservation' page.
 
-<!-- screenshot here -->
+![Specific Event page screenshot](docs/features_screenshots/specific-event.png)     
 
 **EVENT LIKES**
 > **User Story [#25](https://github.com/marked-gil/goodwill-events/issues/25):** As a user, I can like an event post that interests me so that I can show my support for the event.    
@@ -586,7 +586,7 @@ The 'Seat Reservation' page (or specific event's seating page) contains the inte
 
 The gray small boxes represents 'available' seats, the blue ones are reserved or 'unavailable' seats, and the green boxes are the current user's 'selected' seats.
 
-![Seat Reservatio page](docs/features_screenshots/reservation-page.png)
+![Seat Reservation page](docs/features_screenshots/reservation-page.png)
 
 **RESTRICTING SEAT RESERVATION TO SIGNED-IN MEMBERS ONLY**
 > **User Story [#27](https://github.com/marked-gil/goodwill-events/issues/27):** As a user, I can register as a member and sign in so that I can reserve seats.
