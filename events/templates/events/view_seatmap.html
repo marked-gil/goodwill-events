@@ -2,7 +2,7 @@
 
 {% block content %}
 <!-- GENERIC SEAT MAP section [start] -->
-<section id="view-seatmap-section" class="container py-4 py-sm-5">
+<section id="view-seatmap-section" class="container pt-4 pt-sm-5">
     <div class="container-md text-center">
         <h2 class="text-center pb-3 pb-sm-4 mb-0 mb-sm-3">Seat Map</h2>
         
@@ -21,3 +21,11 @@
 </section>
 <!-- GENERIC SEAT MAP section [end] -->
 {% endblock %}
+
+<!-- Footer -->
+{% block footer %}
+<div class="fixed-bottom">
+    {{ block.super }}
+</div>
+{% endblock %}
+
