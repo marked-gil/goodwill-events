@@ -1,5 +1,8 @@
 <div id="seatmap-container" class="position-relative">
     <!-- SEAT MAP SVG [Start] -->
+    {% if event %}
+    <p id="select-box-instruction" class="position-absolute"><i class="fa-solid fa-angles-right"></i> Click the box to select the seat.</p>
+    {% endif %}
     <svg viewBox="-5.954 -11.097 500 500" xmlns="http://www.w3.org/2000/svg" id="my-svg">
         <g class="svg-pan-zoom_viewport">
             <rect x="100" y="155.547" width="121.702" height="18.806"

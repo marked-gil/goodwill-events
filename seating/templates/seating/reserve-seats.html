@@ -7,7 +7,7 @@
 {% block content %}
 <section id="seat-reservation-section" class="container py-2 px-0">
     <!-- Event Info -->
-    <div id="event-info" class="py-2 py-sm-4">
+    <div id="event-info" class="py-2 py-sm-4 pb-md-2">
         <h2 id="seating-event-title" class="mb-0 px-3">
             <a href="{% url 'event_details' event.slug %}">{{ event.title }}</a>
         </h2>
@@ -108,7 +108,7 @@
     </form>
 
     <!-- Reservation Notice -->
-    <ul id="reservation-notice" class="ps-sm-0 mt-sm-2 mx-md-auto">
+    <ul id="reservation-notice" class="ps-sm-0 mt-sm-2 mb-sm-0 mx-md-auto">
         <li class="d-none d-sm-block">Each member can only reserve a maximum of 2 seats per event.
         </li>
         <li class="d-none d-sm-block">Be at the venue at least 15 minutes before start of event to get your reserved seats.</li>

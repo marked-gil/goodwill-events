@@ -85,6 +85,13 @@
 /* SEAT MAP LEGEND [end] */
 
 /* SVG SEAT MAP [start] */
+#select-box-instruction {
+    font-weight: bold;
+    color: var(--clr-cornflower-blue);
+    top: .5rem;
+    left: 1rem;
+}
+
 #my-svg {
     width: 100%;
     height: 55vh;
@@ -239,6 +246,13 @@
 
     #reservation-notice {
         width: 42rem;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    /* SVG SEAT MAP */
+    #select-box-instruction {
+        font-size: 1.1rem;
     }
 }
 
