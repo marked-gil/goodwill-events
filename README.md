@@ -1,5 +1,5 @@
 # Goodwill Events
-<!-- Screenshot here -->
+![Am I Responsive Screenshot](docs/others/am-i-responsive.png)     
 **Goodwill Events** is a fictional charity organization that produces events, such as concerts, recitals, dance performances and the like for the purpose of entertainment and most especially for charity. And, this website is created to register new members to the organization, show upcoming events, and allow reservation of desired seats for an event by members. In addition, signed-in users of the website can also like and leave comments on individual event posts. [View Live Website.](https://goodwill-events.herokuapp.com/)
 
 ## TABLE OF CONTENTS

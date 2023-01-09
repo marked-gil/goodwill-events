@@ -382,12 +382,12 @@ footer {
     width: 100%;
 }
 
-.fa-brands {
+/* social icon */
+.social i {
     font-size: 1.5rem;
-    color: var(--clr-white);
 }
 
-.fa-brands:hover {
+.social i:hover {
     color: var(--clr-mikado-yellow);
 } 
 /* --> FOOTER [End] <--*/
@@ -748,6 +748,10 @@ footer {
     #social-links {
         width: 24rem;
     }
+
+    .social i {
+        font-size: 1.8rem;
+    }
     
     /* FLASH MESSAGES */
     #flash-message {
@@ -835,6 +839,10 @@ footer {
     /* FOOTER */
     #social-links {
         width: 32rem;
+    }
+
+    .social i {
+        font-size: 2rem;
     }
 }
 
