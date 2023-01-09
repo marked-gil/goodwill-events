@@ -16,6 +16,7 @@
     * [Mobile-Friendly Test](#mobile-friendly-test)
     * [Manual Testing for Responsiveness](#manual-testing-for-responsiveness)
 
+[BACK TO README.MD](https://github.com/marked-gil/goodwill-events#readme)
 
 ## TEST CASES (User Story Testing)
 
@@ -64,6 +65,7 @@
 * **RECYCLING EXPIRED EVENTS**
     ![](docs/test_cases/test-cases-18.png)
 
+[Back to Table of Contents](#table-of-contents)
 
 ## VALIDATORS
 
@@ -101,6 +103,8 @@ All Python codes on this project were tested using the [CI Python Linter](https:
 * [**seating/VIEWS.PY**](https://github.com/marked-gil/goodwill-events/blob/main/seating/views.py)  
 ![seating/view.py Linter Result](docs/testing_screenshots/python_linter/seating-views.png)  
 
+[Back to Table of Contents](#table-of-contents)
+
 ### **JSHint**  
 The Javascript codes on this project were tested and validated by [JSHINT](https://jshint.com/), which is a tool analysis JS code for errors and potential problems. All the results from the JSHINT showed **NO ERROR** for this project.  
 See individual result screenshot below. 
@@ -111,6 +115,8 @@ See individual result screenshot below.
 ![JSHINT result for seating_script.js](docs/testing_screenshots/jshint/seating_script-jshint-result.png)    
 * [**seatmap_panzoom.js**](https://github.com/marked-gil/goodwill-events/blob/main/static/js/seatmap_panzoom.js)    
 ![JSHINT result for seatmap_panzoom.js](docs/testing_screenshots/jshint/seatmap_panzoom-jshint-result.png)  
+
+[Back to Table of Contents](#table-of-contents)
 
 ### **W3C MarkUp Validator**    
 The HTML files on this project were tested and validated by [W3C Markup Validation Service](https://validator.w3.org/). **NO ERRORS OR WARNINGS** were shown on the results.    
@@ -130,12 +136,14 @@ The HTML files on this project were tested and validated by [W3C Markup Validati
 * **Change Password via Link** -- [Click for Result](https://github.com/marked-gil/goodwill-events/blob/main/docs/testing_screenshots/html_validator/change-password-via-link-html-validated.png) 
 * **Change Password Done** -- [Click for Result](https://github.com/marked-gil/goodwill-events/blob/main/docs/testing_screenshots/html_validator/change-password-done-html-validated.png) 
 
-### **W3C CSS Validator **  
+### **W3C CSS Validator**  
 The CSS codes on this project were validated by the [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/). All results showed **"NO ERROR FOUND"**. See below for each result.
 * [**style.css**](https://github.com/marked-gil/goodwill-events/blob/main/static/css/style.css)
 ![style.css validator result screenshot](docs/testing_screenshots/css_validator/style-css-validated.png)
 * [**seating_style.css**](https://github.com/marked-gil/goodwill-events/blob/main/static/css/seating_style.css)
 ![seating_style.css validator result screenshot](docs/testing_screenshots/css_validator/seating_style_css_validated.png)
+
+[Back to Table of Contents](#table-of-contents)
 
 ## ACCESSIBILITY
 
@@ -166,6 +174,9 @@ Safari's Accessibility Audit inspects the site's pages for accessibility issues,
 * **Change Password Page**      
 ![Safari Audit Result for Change Password Page](docs/testing_screenshots/safari-audit/safari-audit-change-password.png)   
 
+[Back to Table of Contents](#table-of-contents)
+
+
 ### **Color Contrast Accessibility Validator Results**      
 Using the [a11Y's Color Contrast Accessibility Validator](https://color.a11y.com/), this site is validated to be compliant with website accessibilities regulations on colour contrast.
 However, the pages that require logging in cannot be analysed by the validator, but their color contrast was validated by other tools such as the 'Safari Audit', 'WAVE', and 'Lighthouse'.
@@ -178,18 +189,21 @@ However, the pages that require logging in cannot be analysed by the validator, 
 ![Color Contrast Validator Result for Seat Map Page](docs/testing_screenshots/color_contrast_validator/color-contrast-seatmap.png)  
 * **Specific Event Page**   
 ![Color Contrast Validator Result for Specific Event Page](docs/testing_screenshots/color_contrast_validator/color-contrast-specific-event.png)      
-* **Sign In Page**
+* **Sign In Page**  
 ![Color Contrast Validator Result for Sign In Page](docs/testing_screenshots/color_contrast_validator/color-contrast-signin.png)    
-* **Sign Up Page**
+* **Sign Up Page**  
 ![Color Contrast Validator Result for Sign Up Page](docs/testing_screenshots/color_contrast_validator/color-contrast-signup.png)    
-* **Password Reset Page**
+* **Password Reset Page**   
 ![Color Contrast Validator Result for Password Reset Page](docs/testing_screenshots/color_contrast_validator/color-contrast-password-reset.png) 
+
+[Back to Table of Contents](#table-of-contents)
+
 
 ### **WAVE - Web Accessibility Evaluation Tool**
 This project utilised the [WAVE - Web Accessibility Evaluation Tool](https://wave.webaim.org/) browser extension to ensure its accessibility.       
 ![WAVE](docs/testing_screenshots/wave/wave-screenshot.png)
 
-## LIGHTHOUSE TESTING
+### **LIGHTHOUSE TESTING**
 * **Home Page**     
 ![Lighthouse Result for Home Page](docs/testing_screenshots/lighthouse/lighthouse-home.png)     
 * **Events (Upcoming Events) Page**     
@@ -212,6 +226,9 @@ This project utilised the [WAVE - Web Accessibility Evaluation Tool](https://wav
 ![Lighthouse Result for Password Reset Page](docs/testing_screenshots/lighthouse/lighthouse-password-reset.png)     
 * **Change Password Page**      
 ![Lighthouse Result for Change Password Page](docs/testing_screenshots/lighthouse/lighthouse-change-password.png)   
+
+[Back to Table of Contents](#table-of-contents)
+
 
 ## RESPONSIVENESS
 
@@ -242,6 +259,9 @@ The tool [Mobile-Friendly Test](https://search.google.com/test/mobile-friendly) 
 * **Change Password Page**      
 ![Mobile-Friendly Test Result for Change Password Page](docs/testing_screenshots/mobile_friendly_test/mobile-friendly-change-password.png)      
 
+[Back to Table of Contents](#table-of-contents)
+
+
 ### **Manual Testing for Responsiveness**
 
 The web developer tools of the 4 main websites (Chrome, Firefox, Edge, and Safari) were used to manually test each page of this site for their responsivenes. Below are sample screenshots:
@@ -254,3 +274,6 @@ The web developer tools of the 4 main websites (Chrome, Firefox, Edge, and Safar
 ![Galaxy S9+ on Microsoft Edge developer tool](docs/testing_screenshots/manual_responsiveness_test/edge-galaxy-s9plus.png)  
 * **Safari**    
 ![iPhone 8 Plus on Safari developer tool](docs/testing_screenshots/manual_responsiveness_test/safari-iphone8plus.png)     
+
+
+[Back to Table of Contents](#table-of-contents)
