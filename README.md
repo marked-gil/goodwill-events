@@ -739,6 +739,12 @@ This website is published on Heroku. The following were the steps I took for thi
 3. Then, on the 'Create New App' page, I typed in my 'app name' and 'region' on their respected input fields. Then I clicked the 'create app' button that is sitting at the bottom of the aforementioned fields. This then redirected me to my new app's page in Heroku.
 4. On my new app's page, there is a row of links, which includes: Overview, Resources, Deploy, Metrics, Activity, Access, and Settings. I first went to 'Settings' by clicking its link. 
 5. Inside the 'Settings', I clicked on 'Reveal Config Vars' and added the variables and corresponding values that are also found in my env.py file, then clicked on the 'add' button beside them.   
+    > The following are the variables in the **Heroku Config Vars**:    
+        * CLOUDINARY_URL    
+        * DATABASE_URL  
+        * EMAIL_ADD     
+        * SECRET_KEY    
+        * SENDGRID_API_KEY  
 6. Then, on the 'Buildpacks' section, I clicked the 'Add buildpack' button and added heroku/python.
 7. Then, I went to the 'Deploy' link and clicked on Github as the Deployment Method.
 8. Below the Deployment Method section is the Connect to Github section. Here I searched for the name of my new app on Github using the search input field provided. When the name of the repository was displayed, I clicked on the 'connect' button.
