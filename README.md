@@ -1,25 +1,25 @@
 # Goodwill Events
 ![Am I Responsive Screenshot](docs/others/am-i-responsive.png)     
-**Goodwill Events** is a fictional charity organization that produces events, such as concerts, recitals, dance performances and the like for the purpose of entertainment and most especially for charity. And, this website is created to register new members to the organization, show upcoming events, and allow reservation of desired seats for an event by members. In addition, signed-in users of the website can also like and leave comments on individual event posts. [View Live Website.](https://goodwill-events.herokuapp.com/)
+**Goodwill Events** is a fictional charity organization that produces events, such as concerts, recitals, dance performances, and the like for entertainment and charity. And this website is created to register new members to the organization, show upcoming events, and allow reservation of desired seats. In addition, signed-in users of the website can also 'like' and leave comments on individual event posts. [View Live Website.](https://goodwill-events.herokuapp.com/)
 
 ## TABLE OF CONTENTS
 * [**User Experience Design (UXD)**](#user-experience-design-uxd)
     * [**STRATEGY**](#strategy)     
-        [Main Goal](#main-goal)     
-        [Target Audience](#target-audience)     
-        [EPICS](#epics)     
-        [User Stories](#user-stories)
+        * [Main Goal](#main-goal)     
+        * [Target Audience](#target-audience)     
+        * [EPICS](#epics)     
+        * [User Stories](#user-stories)
     * [**SCOPE**](#scope)   
-        [Planned Features](#planned-features)   
-        [Design Choice](#design-choice)
+        * [Planned Features](#planned-features)   
+        * [Design Choice](#design-choice)
     * [**STRUCTURE**](#structure)   
-        [Interaction Design](#interaction-design-ixd)
+        * [Interaction Design](#interaction-design-ixd)
     * [**SKELETON**](#skeleton)     
-        [Database Schema](#database-schema)     
-        [Wireframes](#wireframes)
+        * [Database Schema](#database-schema)     
+        * [Wireframes](#wireframes)
     * [**SURFACE**](#surface)   
-        [Color and Contrast](#colors--contrast)     
-        [Typography](#typography)   
+        * [Color and Contrast](#colors--contrast)     
+        * [Typography](#typography)   
 * [**Features**](#features)
 * [**Fixed Bugs**](#fixed-bugs)
 * [**Bugs Left To Fix**](#bugs-left-to-fix)
@@ -34,22 +34,22 @@
 
 ### **STRATEGY**
 #### **Main Goal:**
-This website aims to showcase 'upcoming' charity shows and events by the fictional organization called ‘Goodwill Events’. And it provides numerous conveniences to philanthropists, such as its online membership registration and seat reservation features. It also allows members to leave comments and likes on specific upcoming events.
+This website aims to showcase upcoming charity shows and events by the fictional organization **Goodwill Events**. And it provides numerous conveniences to philanthropists, such as its online membership registration and seat reservation features. It also allows members to leave comments and likes on specific upcoming events.
 
 #### **Target Audience:**
-* Philanthropists or people who are interested in charity work, and are willing to support the cause of a charity organization.     
-* People who enjoy attending concerts and shows for its entertainment value.
-* People who prefer convenience when attending events by being able to choose and reserve preferred seat/s ahead of time.
-* People who like to feel involved and able to show support to a specific event by commenting and liking an event post.
+* Philanthropists or people who are interested in charity work and are willing to support the cause of a charity organization;     
+* People who enjoy attending concerts and shows for their entertainment value;
+* People who prefer convenience when attending events by being able to choose and reserve preferred seat/s ahead of time;
+* People who like to feel involved and able to show support for a specific event by commenting and liking an event post.
 
 #### **The Use of Agile Methodology**
-This project was created using the Agile Methodology. At the start of the project, 9 EPICS were formed to guide the design, structure, and the process of constructing the website. Under each epic are several User Stories that specify the features of the project. And each User Story was assigned a story point  ( ie, 2 - 8 points) and a priority label (ie, Must-Have, Should-Have, Could-Have, and Won’t-Have). The story points for each User Story guided the creator to estimate the time needed to implement the feature, while the priority labels allowed the creator to implement first the most vital components of the site to make it a viable product quicker.
+This project was created using the Agile Methodology. At the start of the project, nine (9) EPICS were formed to guide the design, structure, and the process of constructing the website. Under each epic are several User Stories that specify the features of the project. And each User Story was assigned a story point  (i.e., 2 - 8 points) and a priority label (i.e., Must-Have, Should-Have, Could-Have, and Won’t-Have). The story points for each User Story guided the creator to estimate the time needed to implement the feature, while the priority labels allowed the creator to implement first the most vital components of the site to make it a viable product quicker.
 
-Also, each User Story includes acceptance criteria, which are the basis of whether the User Story has been implemented successfully or not. And in order for the creator to fulfill them successfully, tasks are specified for the creator to implement.
+Also, each User Story includes acceptance criteria, which are the basis of whether the User Story has been implemented successfully or not. And for the creator to fulfil them successfully, tasks are specified for the creator to implement.
 
 In total, there are 30 User Stories formulated for this project - 28 have been implemented, and the remaining 2 are left for future implementation. These 28 implemented User Stories were divided among the 4 planned iterations. However, each iteration has been given a different timeframe as the owner and creator of this site has his time constrained by other professional obligations.
 
-Github’s Kanban board is an extremely useful feature that this project used. Through it , tasks were marked conveniently when done, and User Stories were closed when fulfilled. Here is the link for the project’s Kanban board - [CLICK HERE](https://github.com/users/marked-gil/projects/15).
+Github’s Kanban board is an extremely useful feature that this project used. Through it, tasks were marked conveniently when done, and User Stories were closed when fulfilled. Here is the link for the project’s Kanban board - [CLICK HERE](https://github.com/users/marked-gil/projects/15).
 
 [Back to Table of Contents](#table-of-contents)
 
@@ -482,7 +482,7 @@ The database for the Goodwill Events project is composed of 5 models, of which f
 
 #### **Colors & Contrast**     
 Using the Contrast Grid from [Eightshapes.com](https://contrast-grid.eightshapes.com/), 
-compliance with the WCAG 2.0 Minimum Contrast were adhered to when mixing and matching the different colors for the project.        
+compliance with the WCAG 2.0 Minimum Contrast was adhered to when mixing and matching the different colours for the project.        
     
 * **FOR ALL PAGES (Except Seat Reservation page)**      
 ![Colors Contrast Grid for All Pages except Seat Reservation Page](docs/design_choices/color-contrast-general.png)
@@ -511,7 +511,7 @@ The 'base template', which contains the navbar and footer, is included in all th
     ![Navbar screenshot](docs/features_screenshots/navbar.png)
 
 * **Footer**    
-    The footer for most pages, except on the 'Seat Reservation' page, simply contains the site title, copyright and the social media icons, which are links to the social media sites.
+    The footer on most pages, except on the 'Seat Reservation' page, simply contains the site title, copyright and the social media icons, which are links to the social media sites.
 
     ![Footer screenshot](docs/features_screenshots/general-footer.png)
 
@@ -525,23 +525,23 @@ The Home page includes the base template as described above and displays three (
 **FEATURED EVENTS**
 > **User Story [#22](https://github.com/marked-gil/goodwill-events/issues/22):** As a user, I can see the featured list of events on the home page so that I can immediately see the events that are coming up.
 
-There are 3 featured events displayed in the Home page. These events are automatically selected based on their show dates relative to today. Each featured event is in a card container and displays the event's image, title, its show date and time. Each card is clickable and will redirect to the specific event's full detail page.
+There are three (3) featured events displayed in the Home page. These events are automatically selected based on their show dates relative to today. Each featured event is in a card container and displays the event's image, title, its show date and time. Each card is clickable and will redirect to the specific event's full detail page.
 
 ![Featured Events screenshot](docs/features_screenshots/featured-events.png)    
 
 **UPCOMING EVENTS PAGE (List of All Events)**
 > **User Story [#23](https://github.com/marked-gil/goodwill-events/issues/23):** As a user, I can see all the upcoming events so that I can decide which one interests me.
 
-The Upcoming Events page displays the list of all the upcoming events. This page is paginated, and there are only 5 events displayed per page. 
+The Upcoming Events page displays the list of all the upcoming events. This page is paginated, and only five (5) events are displayed per page. 
 
-Each item (event) in the list is presented as a card and shows a featured image, event title, date and time, a reserve button, and the number of likes. Also, each card is clickable and will redirect the site to the specific event’s page. The reserve button, on the other hand, will redirect to the 'Seat Reservation' page.
+Each item (event) in the list is presented as a card and shows a featured image, event title, date and time, a reserve button, and the number of likes. Also, each card is clickable and will redirect the site to the specific event’s page. The 'reserve' button, on the other hand, will redirect to the 'Seat Reservation' page.
 
 ![Upcoming Events page screenshot](docs/features_screenshots/upcoming-events.png)   
 
 **SPECIFIC EVENT PAGE**   
 > **User Story [#24](https://github.com/marked-gil/goodwill-events/issues/24):** As a user, I can view the full detail of the event so that I can learn more about the event.
 
-The specific event’s page displays the details of an event. It shows the event title, its schedule, number of seats still available, a ‘Reserve a Seat’ button, a ‘LIKE’ button, the event’s description or call-to-action writeup, and a comment section.
+The specific event’s page displays the details of an event. It shows the event title, its schedule, the number of seats still available, a ‘Reserve a Seat’ button, a ‘LIKE’ button, the event’s description or call-to-action writeup, and a comment section.
 
 The 'Reserve a Seat' button, when clicked, will redirect the user to the event's 'Seat Reservation' page.
 
@@ -552,7 +552,7 @@ The 'Reserve a Seat' button, when clicked, will redirect the user to the event's
 
 The 'Like' button on the specific event's detail page is a red-coloured heart icon, which can be toggled. A hollow heart icon means the user has not liked the post yet, while a colour-filled heart icon denotes otherwise.
 
-The number of likes for an event is displayed on the 'Upcoming Events' page, and on the specific event's detail page. 
+The number of likes for an event is displayed on the 'Upcoming Events' page and the specific event's detail page. 
 
 ![Liked screenshot](docs/features_screenshots/liked-screenshot.png)
 ![unliked screenshot](docs/features_screenshots/unliked-screenshot.png)
@@ -560,7 +560,7 @@ The number of likes for an event is displayed on the 'Upcoming Events' page, and
 **POSTING COMMENTS**
 > **User Story [#31](https://github.com/marked-gil/goodwill-events/issues/31):** As a user, I can leave a comment on the event page so that I can share my thoughts to the public about a particular event.
 
-Inside the specific event's page, a comment section is located after the event's write-up. For logged-in users, a textarea is available for them to type in their comment. Each comment is only limited to 250 characters, and a realtime character counter is available tp guide the user. When the user submits their comment by clicking on the 'Post' button, the comment will be saved to the database and be displayed on the same page.
+Inside the specific event's page, a comment section is located after the event's write-up. For logged-in users, a text area is available for them to type in their comments. Each comment is limited to 250 characters, and a real-time character counter is available to guide the user. When the user submits their comment by clicking on the 'Post' button, the comment will be saved to the database and displayed on the same page.
 
 Non-logged-in users, on the other hand, will only see the comments posted by other users but cannot post comments themselves.
 
@@ -578,20 +578,17 @@ Logged-in users are allowed to delete their posted comments on an event. When a 
 
 * **Generic Seat Map** (Seat Map page)      
 The 'Seat Map' page shows the generic seat map for all the events. This SVG seat map can be panned and zoomed, but reservation cannot be made on this page. It’s main purpose is only to show the seating arrangement in the venue.
-
 ![Generic Seat Map page](docs/features_screenshots/seatmap-page.png)
 
 * **Specific Event's Seat Map**    
-The 'Seat Reservation' page (or specific event's seating page) contains the interactive SVG seat map, which can be panned and zoomed. In addition, the seats, as represented by the small boxes in the SVG map, can be toggled to select or deselect. Also, the selected or reserved seats can be updated and deleted.
-
+The 'Seat Reservation' page (or specific event's seating page) contains the interactive SVG seat map, which can be panned and zoomed. In addition, the seats, as represented by the small boxes in the SVG map, can be toggled to select or deselect. Also, the selected or reserved seats can be updated and deleted.  
 The gray small boxes represents 'available' seats, the blue ones are reserved or 'unavailable' seats, and the green boxes are the current user's 'selected' seats.
-
 ![Seat Reservation page](docs/features_screenshots/reservation-page.png)
 
 **RESTRICTING SEAT RESERVATION TO SIGNED-IN MEMBERS ONLY**
 > **User Story [#27](https://github.com/marked-gil/goodwill-events/issues/27):** As a user, I can register as a member and sign in so that I can reserve seats.
 
-The event's specific 'Seating' or 'Seat Reservation' page can only be accessed by logged-in users. When a non-logged-in user attempts to access it by clicking on a ‘Reserve a Seat’ button, they will, instead, be redirected to the Sign In page with a flash message 'You need to sign in to make seat reservations'; and once they sign in, they will be redirected back to the 'Seat Reservation' page for the specific event.
+The event's specific 'Seating' or 'Seat Reservation' page can only be accessed by logged-in users. When a non-logged-in user attempts to access it by clicking on a ‘Reserve a Seat’ button, they will instead be redirected to the Sign In page with a flash message stating 'You need to sign in to make seat reservations'. And once they sign in, they will be redirected back to the 'Seat Reservation' page for the specific event.
 
 ![Seat reservation restricted to signed-in members](docs/features_screenshots/reservation-restricted.png)
 
@@ -600,7 +597,7 @@ The event's specific 'Seating' or 'Seat Reservation' page can only be accessed b
 
 In the 'Seat Reservation' page for a particular event, which only signed-in users can access, the SVG seat map's small boxes can be toggled (selected or deselected). When selected, the grey box will turn green; and when deselected, it will turn back to grey. The blue boxes, on the other hand, cannot be clicked as they are already 'reserved' or 'unavailable'. However, if the blue boxes are the reservations made by the current user, then they can be updated or deselected by clicking the 'cancel' button (x button) at the page footer.
 
-Only a maximum of 2 seats can be selected and reserved by a user per event. If the user attempts to select more than 2 seats, a feedback message stating `You've reached the maximum of 2 seats per user` will be flashed.
+Only a maximum of 2 seats can be selected and reserved by a user per event. If the user attempts to select more than two (2) seats, a feedback message stating `You've reached the maximum of 2 seats per user` will be flashed.
 
 The seats selected by the user are displayed at the footer of the page.
 
@@ -609,16 +606,16 @@ The seats selected by the user are displayed at the footer of the page.
 **SEAT RESERVATION**
 > **User Story [#29](https://github.com/marked-gil/goodwill-events/issues/29):** As a user, I can reserve the selected seat/s so that they are saved in the database.
 
-In the 'Seat Reservation' page, when the user clicks the 'Reserve' button the selected seats will be saved in the database, the page will reload, turn the selected SVG boxes to blue and flashes a feedback message that 'new seats are reserved'.
+In the 'Seat Reservation' page, when the user clicks the 'Reserve' button the selected seats will be saved in the database, the page will reload, turn the selected SVG boxes to blue and flashes a feedback message that states `New seats are reserved`.
 
 **CANCELLING AND UPDATING RESERVED SEATS**
 > **User Story [#30](https://github.com/marked-gil/goodwill-events/issues/30):** As a user, I can cancel and/or update my reserved seats so that other users can reserve the seats or I can conveniently change my preference.   
 
-When a logged-in user already has reserved seat/s for an event, the seat map is disabled by default. For the user to edit their reservation, they need to click the 'Edit Reservation' button, which will enable the seat map's interactivity and allow updating and cancelling of reservation.
+When a logged-in user already has reserved seat/s for an event, the seat map is disabled by default. For the user to edit their reservation, they need to click the 'Edit Reservation' button, which will enable the seat map's interactivity and allow updating and cancelling of reservations.
 
 ![Edit Reservation](docs/features_screenshots/edit-reservation.png)
 
-If the user wants to change their reserved seats, they have to cancel a seat first if 2 seats have already been reserved before they can select another seat. Only a maximum of 2 seats are allowed per user per event. And to update the database of the changes, the user needs to click the 'Update Reservation' button. This button is disabled if there are no changes made in the reservation.
+If the user wants to change their reserved seats, they have to cancel a seat first if two (2) seats have already been reserved before they can select another seat. Only a maximum of two (2) seats are allowed per user per event. And to update the database of the changes, the user needs to click the 'Update Reservation' button. This button is disabled if there are no changes made to the reservation.
 
 ![Update Reservation](docs/features_screenshots/update-reservation.png)
 
@@ -679,9 +676,9 @@ A feedback message stating 'You have signed out' is flashed when the user is suc
 **CHANGE PASSWORD**
 > **User Story [#38](https://github.com/marked-gil/goodwill-events/issues/38):** As a User, I can change my password so that I can maintain the security of my account.
 
-The 'Change Password' page requires the current password and new password (needs to be entered twice) to be supplied. Then, a 'Change Password' button is available for clicking to process the request. If the current password provided is correct, then the password will be successfully changed in the database. Validation of this feature is provided by 'Django-Allauth' library.
+The 'Change Password' page requires the current password and new password (which needs to be entered twice) to be supplied. Then, a 'Change Password' button is available for clicking to process the request. If the current password provided is correct, then the password will be successfully changed in the database. Validation of this feature is provided by 'django-allauth' library.
 
-A link to reset password is also available through the Forgot Password link.
+A link to reset the password is also available through the Forgot Password link.
 
 ![Change password page](docs/features_screenshots/change-password.png)
 
@@ -723,7 +720,7 @@ As this website is for educational purposes and none of the events shown in this
     `{% endfor %}`
 
 ## Bugs Left To Fix
-<!-- Content here -->
+After extensive manual testing of the site, there were NO BUGS found.
 
 [Back to Table of Contents](#table-of-contents)
 
@@ -796,32 +793,60 @@ This project uses the following tools:
     * [Bootstrap](https://getbootstrap.com/) - frontend toolkit used to help build this responsive site faster
     * [JQUERY](https://jquery.com/) - a feature-rich Javascript library used, along with **AJAX**, to post and delete comments
     * [SVG-PAN-ZOOM library](https://github.com/bumbu/svg-pan-zoom) - used to add the pan and zoom functionality to the SVG seat map.
-    * os
-    * [datetime module](https://docs.python.org/3/library/datetime.html)
-    * django-database-url
+    * `OS` module in Python - used in the `settings.py` file to perform functions that involve the operating system, such as checking for environment variables
+    * [datetime module](https://docs.python.org/3/library/datetime.html) - used to determine the expired events and manipulating their dates for recycling
+    * [django-database-url](https://pypi.org/project/dj-database-url/) - used for connecting Django to database
     * [django-allauth](https://django-allauth.readthedocs.io/en/latest/installation.html) - used for user authentication and registration.
     * [django-summernote](https://github.com/summernote/django-summernote) - used to embed a WYSIWYG editor in the admin panel for the event post.
 * [Sendgrid](https://sendgrid.com/) - used in sending emails to users without having to maintain email servers. In this project, it sends password reset link via email to users who has forgotten their password
-* Google Fonts
+* [Google Fonts](https://fonts.google.com/) - font provider of the site
 * [Miniwebtool](https://miniwebtool.com/django-secret-key-generator/) - as Django secret_key generator
 * Git - as a version control system, was used to monitor and record changes made when building the site. This allowed for the restoration of an earlier version of the code when it was necessary
 * Gitpod - the cloud-based IDE (Integrated Developer Environment) used to code this site
 * GitHub - stores the source code repository for this website
-* Balsalmiq
+* [Balsalmiq](https://balsamiq.com/) - used in creating the wireframes of this project's design 
 * [BOXY-SVG](boxy-svg.com) - an online editor for SVG files, which was used to create the SVG seat map
 * [Diagrams.net](https://www.diagrams.net) - used to create the database schema diagram
-* [Favicon](https://favicon.io/) - Favicon generator
-* [Diffchecker](https://www.diffchecker.com/#) - used when comparing codes tested in another IDE to the codes in gitpod
-* [Grammarly](https://www.grammarly.com/) - used to check the grammar of the contents in this project
+* [Favicon](https://favicon.io/) - Favicon generator    
+* [Font Awesome](https://fontawesome.com/) - provides the social media icons on the page footer
+* [TinyPNG](https://tinypng.com/) - for image compression
+* [Diffchecker](https://www.diffchecker.com/#) - used when comparing codes tested in another IDE to the codes in gitpod     
+* [Grammarly](https://www.grammarly.com/) - used to check the grammar of the contents in this project   
+* Web browsers (Google Chrome, Firefox, Safari, Microsoft Edge) 
+* For Testing and Validation:   
+    * [CI Python Linter](https://pep8ci.herokuapp.com/) 
+    * [JSHint](https://jshint.com/) 
+    * [https://validator.w3.org/](https://validator.w3.org/)    
+    * [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) 
+    * Safari Accessibility Audit    
+    * [a11y Color Contrast Accessibility Validator](https://color.a11y.com/)    
+    * [WAVE - Web Accessibility Evaluation Tool](https://wave.webaim.org/)
+    * Lighthouse Testing
+    * [Mobile-Friendly Test](https://search.google.com/test/mobile-friendly)
 
 [Back to Table of Contents](#table-of-contents)
 
 ## Credits
+
+### Content
+The events and their writeups or blogs on this site are fictional and composed by me - the owner of the site. And most of these events were inspired by the shows in [Royal Albert Hall](https://www.royalalberthall.com).
+
+### Media
+
+The images shown on this site are taken from the following sites:
+* [Unsplash](https://unsplash.com/) 
+* [Pexels](https://www.pexels.com/) 
+* [Wikimedia Commons](https://commons.wikimedia.org/wiki/Main_Page)
+
+### References
 * Main References:
     * [Code Institute](https://codeinstitute.net/ie/)
-    * [Django Documentation](https://docs.djangoproject.com/en/3.2/)
+    * [Django Documentation](https://docs.djangoproject.com/en/3.2/)    
+    * [Bootstrap Documentation](https://getbootstrap.com/docs/5.2/getting-started/introduction/)
+    * [Jquery Documentation](https://jquery.com/)
     * [W3Schools](https://www.w3schools.com/)
     * [MDN Web Docs](https://developer.mozilla.org/en-US/)
+    * [django-allauth Documentation](https://django-allauth.readthedocs.io/en/latest/installation.html)     
 
 * Creating a 404 Error Page - [GeeksforGeeks](https://www.geeksforgeeks.org/django-creating-a-404-error-page/)  
 
@@ -835,10 +860,12 @@ This project uses the following tools:
 
 * Redirecting to the same page after post method - [StackOverflow](https://stackoverflow.com/questions/39560175/redirect-to-same-page-after-post-method-using-class-based-views)
 
-
 As a novice in web development, I have done intensive research on available resources and materials online that I can find, and tons of them have been instrumental in increasing my understanding of each programming language, library or technology used in this project. As I cannot name all those sites I have opened and read, I would just like to acknowledge the great works of experienced developers who took the time to help others, especially beginners like me, by filling the internet with your brilliant contributions.
 
 [Back to Table of Contents](#table-of-contents)
 
 ## Acknowledgment
-<!-- Content here -->
+With profound gratitude, I would like to mention the following:
+* **Daisy McGirr**, my Code Institute mentor, for her generosity in sharing with me her expertise that significantly guided the creation of this project.
+* **Kyle Dacutan**, my wife, for the constant support, love, and understanding.
+* And my children - **Zsyrish** and **Marko** - who continue to be my joy and inspiration.
