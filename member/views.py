@@ -71,8 +71,9 @@ class MemberAccount(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
         return super(MemberAccount, self).post(request, *args, **kwargs)
 
 
+# This code is taken from geeksforgeeks.org (See Credits Section in README.md)
 def error_404_view(request, exception):
     """
-    Renders the 404 template when 404 error is raised
+    Renders the 404 template when 404 error is raised.
     """
     return render(request, '404.html')
