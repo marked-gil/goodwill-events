@@ -46,6 +46,10 @@ if (document.getElementById('comment-form')) {
     });
 
     // Post User's Comment using AJAX
+    /** 
+     * Idea for this code were taken from Stackoverflow & Plus Geek's Youtube Channel
+     * (See Credits Section in README.md)
+     * */
     $("#comment-form").submit(function (e) {
         e.preventDefault();
         const baseURL = window.location.origin;
@@ -71,6 +75,10 @@ if (document.getElementById('comment-form')) {
     });
 
     // Delete User's Comment using AJAX
+    /** 
+     * Idea for this code were taken from Stackoverflow & Plus Geek's Youtube Channel
+     * (See Credits Section in README.md)
+     * */
     $(".delete-comment-form").submit(function (e) {
         e.preventDefault();
         $.ajax({
@@ -196,7 +204,7 @@ function fieldValueChanged(field, originalText) {
 
 /**
  * Checks if a string only contains spaces
- * CREDITS to bobbyhadz blog (See README Credits)
+ * Code taken from bobbyhadz blog (See Credit Section on README.md)
  * @param {*} str
  * @returns boolean
  */
