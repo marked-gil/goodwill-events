@@ -707,7 +707,20 @@ As this website is for educational purposes and none of the events shown in this
     * INTENDED OUTCOME:     
         Every time a comment is being posted by the user, the comment should be displayed without the page having to go back to the top. If page reload is necessary after every post, it should still stay at the comment section to display the posted comment to the user.
     * SOLUTION:     
+        I used JQUERY & AJAX to submit and display or delete the comment. And, when the comment is successfully posted or deleted, the site is reloaded using `location.reload()` to bring the site back to the comment section after reloading.   
 
+* ISSUE:    
+    I customized django-allauth's `login` template by adding the form fields individually, but it caused the error messages not to show up.
+    * INTENDED OUTCOME:     
+    I want django-allauth's default error messages to still show up in the `login` template as it normally would before the template was customized.    
+    * SOLUTION:     
+    Using [stackoverflow's](https://stackoverflow.com/questions/53320056/django-allauth-display-all-error-messages) suggestion, I added this code in the `login` template:  
+    ` {% for key, value in form.errors.items %}`     
+    `{% if key != '__all__' %}`   
+    `{{ key }}`   
+    `{% endif %}`     
+    `{{ value }}`     
+    `{% endfor %}`
 
 ## Bugs Left To Fix
 <!-- Content here -->
@@ -810,9 +823,20 @@ This project uses the following tools:
     * [W3Schools](https://www.w3schools.com/)
     * [MDN Web Docs](https://developer.mozilla.org/en-US/)
 
-* Redirecting to the same page after post method - [StockOverflow](https://stackoverflow.com/questions/39560175/redirect-to-same-page-after-post-method-using-class-based-views)
+* Creating a 404 Error Page - [GeeksforGeeks](https://www.geeksforgeeks.org/django-creating-a-404-error-page/)  
 
-* Creating a 404 Error Page - [GeeksforGeeks](https://www.geeksforgeeks.org/django-creating-a-404-error-page/)
+* How to Display Django-Allauth's Error Messages on Customized template - [Stackoverflow](https://stackoverflow.com/questions/53320056/django-allauth-display-all-error-messages)   
+
+* Django Get Comment Without Page Refresh Using jQuery Ajax - [Plus Geek's Youtube Channel](https://www.youtube.com/watch?v=I84MEWdDY20&list=WL&index=60&t=128s)    
+
+* How to Display a Comment Without Page Refresh - [Stackoverflow](https://stackoverflow.com/questions/49628116/how-to-display-a-comment-after-posting-it-without-page-refresh-in-django)
+
+* Function that Checks if a String Contains Only Spaces in JS (used in the site's Comment section) - [bobbyhadz.com](https://bobbyhadz.com/blog/javascript-check-if-string-contains-only-spaces#:~:text=To%20check%20if%20a%20string%20contains%20only%20spaces%2C%20use%20the,only%20spaces%20and%20false%20otherwise)
+
+* Redirecting to the same page after post method - [StackOverflow](https://stackoverflow.com/questions/39560175/redirect-to-same-page-after-post-method-using-class-based-views)
+
+
+As a novice in web development, I have done intensive research on available resources and materials online that I can find, and tons of them have been instrumental in increasing my understanding of each programming language, library or technology used in this project. As I cannot name all those sites I have opened and read, I would just like to acknowledge the great works of experienced developers who took the time to help others, especially beginners like me, by filling the internet with your brilliant contributions.
 
 [Back to Table of Contents](#table-of-contents)
 
