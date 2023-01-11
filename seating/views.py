@@ -6,8 +6,6 @@ from django.contrib import messages
 from events.models import Event
 from .models import EventSeating
 from .forms import SeatReserveForm
-from django.core.mail import send_mail
-from django.conf import settings
 
 
 class EventSeatsView(LoginRequiredMixin, View):

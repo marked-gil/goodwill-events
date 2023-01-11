@@ -3,9 +3,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib import messages
 from django.urls import reverse
-from django.views.generic import DetailView
 from django.views.generic.edit import UpdateView
-from django.views import View
 from django.contrib.auth.models import User
 from seating.models import EventSeating
 
