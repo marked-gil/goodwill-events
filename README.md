@@ -781,7 +781,7 @@ This project uses the following tools:
     * [ElephantSQL](https://www.elephantsql.com/) - serves as the PostgreSQL database for this project
 * Modules and Libraries:
     * [Bootstrap](https://getbootstrap.com/) - frontend toolkit used to help build this responsive site faster
-    * [JQUERY](https://jquery.com/) - a feature-rich Javascript library used, along with AJAX, to post and delete comments
+    * [JQUERY](https://jquery.com/) - a feature-rich Javascript library used, along with **AJAX**, to post and delete comments
     * [SVG-PAN-ZOOM library](https://github.com/bumbu/svg-pan-zoom) - used to add the pan and zoom functionality to the SVG seat map.
     * os
     * [datetime module](https://docs.python.org/3/library/datetime.html)
