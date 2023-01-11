@@ -4,6 +4,10 @@ if (document.getElementById('seat-reservation-section')) {
     let list_reserved_seats = string_reserved_seats.replace(/[^a-zA-Z0-9_,]/g, '').split(",");
     const userBookedSeats = getSelectedSeats();
 
+    /** 
+     * On Seat Reservation page display, block all reserved seats and 
+     * make all available seats clickable
+     */
     window.onpageshow = function () {
         const svg_seats_list = document.querySelectorAll('[data-seat-location]');
         for (let svg_seat of svg_seats_list) {
