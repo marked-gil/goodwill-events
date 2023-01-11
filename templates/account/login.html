@@ -38,6 +38,7 @@
       {% csrf_token %}
       <!-- flash messages -->
       <div id="sign-in-errors-wrapper">
+        <!-- Code taken from Stackoverflow. [See Credits Section on READMe.md] -->
         {% for key, value in form.errors.items %}
           {% if key != '__all__' %} 
             {{ key }} 
