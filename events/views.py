@@ -14,7 +14,7 @@ class FeaturedView(TemplateView):
     Renders the featured events in the Home page, and recycles expired events
     and deletes their booked seats.
     """
-    template_name = 'index.html'
+    template_name = 'events/index.html'
 
     @staticmethod
     def _add_one_year(event, date_of_event):
