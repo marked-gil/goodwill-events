@@ -724,7 +724,6 @@ After extensive manual testing of the site, there were NO BUGS found.
 
 [Back to Table of Contents](#table-of-contents)
 
-
 ## Testing
 Extensive **Manual Testing** was used for the development of this project. To view all the tests performed on this project, kindly click this [LINK](https://github.com/marked-gil/goodwill-events/blob/main/TESTING.md).
 
@@ -771,7 +770,6 @@ To clone the repository for this site, do the following steps:
 6. A copy of the repository is now saved on your computer.
 
 [Back to Table of Contents](#table-of-contents)
-
 
 ## Technologies
 This project uses the following tools:
