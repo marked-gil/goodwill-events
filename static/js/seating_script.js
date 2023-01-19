@@ -81,7 +81,7 @@ function makeAllFreeSeatsClickable(svg_seat, seat_loc, currentSeatsBooked) {
                 toggleReserveUpdateButton(currentSeatsBooked);
             } else {
                 // Displays feedback that 2 seats already booked by user
-                const message = "You've reached the maximum of 2 seats per user.";
+                const message = "You've reached the 2 seats maximum per user.";
                 showFeedBackMsg(message);
             }
         }
