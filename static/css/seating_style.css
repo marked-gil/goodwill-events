@@ -1,3 +1,10 @@
+/*
+ This custom JS script is utilized by the following templates:
+  'reserve-seats.html' template of the 'seating' app, 
+  'view_seatmap.html' template,
+  'seatmap.html', and
+*/
+
 /* Customized Variables */
 :root {
     --clr-chinese-silver: #ccc6c6;

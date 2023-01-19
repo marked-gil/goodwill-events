@@ -1,3 +1,10 @@
+/**
+ * This custom JS script is utilized by the following templates:
+ *   'reserve-seats.html' template of the 'seating' app, 
+ *   'view_seatmap.html' template, and
+ *   'seatmap.html'
+ */
+
 // --> SEAT RESERVATION Page <--
 if (document.getElementById('seat-reservation-section')) {
     const string_reserved_seats = document.getElementById('data-seats').textContent;
