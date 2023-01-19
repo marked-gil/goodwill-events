@@ -860,7 +860,7 @@ The images shown on this site are taken from the following sites:
 
 * Redirecting to the same page after post method - [StackOverflow](https://stackoverflow.com/questions/39560175/redirect-to-same-page-after-post-method-using-class-based-views)
 
-As a novice in web development, I have done intensive research on available resources and materials online that I can find, and tons of them have been instrumental in increasing my understanding of each programming language, library or technology used in this project. As I cannot name all those sites I have opened and read, I would just like to acknowledge the great works of experienced developers who took the time to help others, especially beginners like me, by filling the internet with your brilliant contributions.
+As a novice in web development, I have done intensive research on available resources and materials online that I can find, and tons of them have been instrumental in increasing my understanding of each programming language, library or technology used in this project. As I cannot name all those sites I have opened and read, I would just like to acknowledge the great works of experienced developers who took the time to help others, especially beginners like me, by filling the internet with their brilliant contributions.
 
 [Back to Table of Contents](#table-of-contents)
 
