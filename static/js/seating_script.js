@@ -7,6 +7,7 @@
 
 // --> SEAT RESERVATION Page <--
 if (document.getElementById('seat-reservation-section')) {
+    const total_event_seats = 142
     const string_reserved_seats = document.getElementById('data-seats').textContent;
     let list_reserved_seats = string_reserved_seats.replace(/[^a-zA-Z0-9_,]/g, '').split(",");
     const userBookedSeats = getSelectedSeats();
@@ -21,6 +22,13 @@ if (document.getElementById('seat-reservation-section')) {
             const seat_loc = svg_seat.getAttribute("data-seat-location");
             blockReservedSeats(svg_seat, seat_loc, list_reserved_seats);
             makeAllFreeSeatsClickable(svg_seat, seat_loc, userBookedSeats);
+        }
+
+        // Changes seat map's instruction message when fully booked
+        if (list_reserved_seats.length === total_event_seats) {
+            const select_box_text = document.getElementById("select-box-instruction");
+            select_box_text.innerHTML = "<i class='fa-solid fa-hand'></i> This event is FULLY BOOKED.";
+            select_box_text.style.color = "red";
         }
     };
     
