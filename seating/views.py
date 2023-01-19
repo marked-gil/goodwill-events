@@ -1,18 +1,19 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic.edit import DeleteView
-from django.views import View
+from django.views.generic import TemplateView, View, DeleteView
 from django.contrib import messages
 from events.models import Event
 from .models import EventSeating
 from .forms import SeatReserveForm
 
 
-class EventSeatsView(LoginRequiredMixin, View):
+class EventSeatsView(LoginRequiredMixin, TemplateView):
     """
     Displays the specific event's Seat Map page (Seat Reservation page)
     and its reserved seats.
     """
+
+    template_name = 'seating/reserve-seats.html'
     permission_denied_message = 'SIGN IN to make seat reservations.'
 
     def dispatch(self, request, *args, **kwargs):
@@ -26,44 +27,42 @@ class EventSeatsView(LoginRequiredMixin, View):
 
     def get(self, request, slug, *args, **kwargs):
         """
-        Retrieves the requested event and its reserved seats, and returns the
-        Seat Reservation template.
-        Redirects to the UpdateReservationView if user has already booked
-        seat/s for the event.
+        Retrieves the contents for the event's Seat Map page
+        (Seat Reservation page) and pass them to the 'context' object for use
+        in the displayed template
         """
-        reservation_form = SeatReserveForm()
-        try:
-            event = Event.objects.filter(slug=slug).first()
-            event_seats_obj = EventSeating.objects.filter(event__slug=slug)
-            user_booked_seats = event_seats_obj.filter(
-                reserved_by=request.user)
+        context = self.get_context_data(**kwargs)
 
-            if user_booked_seats.exists():
-                raise Exception(
-                    "Reservations can be updated."
-                )
+        context['form'] = SeatReserveForm()
 
-        except Exception as info:
-            return redirect(
-                f'/{self.kwargs.get("slug")}/update-reservation/'
-                )
+        event = Event.objects.filter(slug=slug).first()
+        context['event'] = event
+        event_seats_obj = EventSeating.objects.filter(event__slug=slug)
+        context['user_booked_seats'] = event_seats_obj.filter(
+            reserved_by=request.user)
 
-        else:
-            list_seats = []
-            for item in event_seats_obj:
-                list_seats.append(str(item.seat_location_1))
-                if item.seat_location_2:
-                    list_seats.append(str(item.seat_location_2))
+        event_booked_seats = []
+        for item in event_seats_obj:
+            event_booked_seats.append(str(item.seat_location_1))
+            if item.seat_location_2:
+                event_booked_seats.append(str(item.seat_location_2))
+        context['data'] = event_booked_seats
 
-            return render(request, 'seating/reserve-seats.html', {
-                'data': list_seats, 'event': event, 'form': reservation_form
-                })
+        return self.render_to_response(context)
+
+
+class ReserveSeats(LoginRequiredMixin, View):
+    """
+    Processes and saves new reservation made by a user for an event
+    """
 
     def post(self, request, slug, *args, **kwargs):
         """
         Saves to database the seat/s booked by the user in response to a POST
         request method.
         """
+        success_url = f'/{self.kwargs.get("slug")}/seat-reservation/'
+
         event = Event.objects.filter(slug=slug).first()
         user = request.user
         reservation_form = SeatReserveForm(data=request.POST)
@@ -73,45 +72,23 @@ class EventSeatsView(LoginRequiredMixin, View):
             filled_form.reserved_by = user
             filled_form.save()
             messages.success(
-                request, f"New seats are reserved for {event}."
+                request, f"Reservation is made for {event}."
                 )
-        return redirect(request.path_info)
+        return redirect(success_url)
 
 
 class UpdateSeatsReservation(LoginRequiredMixin, View):
     """
-    Displays the seat/s reserved by the logged-in user, and updates the
-    database if the user makes changes to their seat reservation.
+    Updates the database when the user makes changes to their seat reservation
     """
-    def get(self, request, slug, *args, **kwargs):
-        """
-        Retrieves the requested event and user's booked seats and returns the
-        Seat Reservation template for updating the booked seats.
-        """
-        reservation_form = SeatReserveForm()
-
-        event = Event.objects.filter(slug=slug).first()
-        event_seats_obj = EventSeating.objects.filter(event__slug=slug)
-        user_booked_seats = event_seats_obj.filter(
-            reserved_by=request.user)
-
-        list_seats = []
-        for item in event_seats_obj:
-            list_seats.append(str(item.seat_location_1))
-            if item.seat_location_2:
-                list_seats.append(str(item.seat_location_2))
-
-        return render(request, 'seating/reserve-seats.html', {
-            'data': list_seats, 'event': event, 'form': reservation_form,
-            'user_booked_seats': user_booked_seats})
 
     def post(self, request, slug, *args, **kwargs):
         """
         Updates the user's seat reservation/s on the database in response to
         POST request.
-        Redirects to DeleteSeatsReservation view if reservation form is
-        emptied.
         """
+        seat_reservation_URL = f'/{self.kwargs.get("slug")}/seat-reservation/'
+
         user = request.user
         event_seats_obj = EventSeating.objects.filter(
             event__slug=slug)
@@ -121,29 +98,18 @@ class UpdateSeatsReservation(LoginRequiredMixin, View):
         reservation_form = SeatReserveForm(
             request.POST, instance=user_reservation)
 
-        try:
-            if reservation_form.is_valid():
-                updated_form = reservation_form.save(commit=False)
-                updated_form.save()
-            else:
-                raise Exception(
-                    "Reservation form is empty. "
-                    "This may mean you want to delete your reserved seats."
-                )
-        except Exception:
-            formdata_dict = dict(request.POST)
-            empty_seat_1 = formdata_dict['seat_location_1'] == ['']
-            empty_seat_2 = formdata_dict['seat_location_2'] == ['']
-            if (empty_seat_1 and empty_seat_2):
-                return redirect(
-                    f'/{self.kwargs.get("slug")}/delete-reservation/'
-                    )
+        if reservation_form.is_valid():
+            updated_form = reservation_form.save(commit=False)
+            updated_form.save()
+
+            msg = 'Your reservation for this event is successfully UPDATED.'
+            messages.success(request, msg)
+
         else:
-            messages.success(request,
-                             "Reservation for this event is successfully "
-                             "UPDATED."
-                             )
-            return redirect(request.path_info)
+            msg = 'Your reservation for this event is successfully UPDATED.'
+            messages.success(request, msg)
+
+        return redirect(seat_reservation_URL)
 
 
 class DeleteSeatsReservation(LoginRequiredMixin, DeleteView):
@@ -170,16 +136,15 @@ class DeleteSeatsReservation(LoginRequiredMixin, DeleteView):
         self.object = self.get_object().filter(
             reserved_by=request.user
             ).first()
-        success_url = f'/{self.kwargs.get("slug")}/reserve-seat/'
+        success_URL = f'/{self.kwargs.get("slug")}/seat-reservation/'
 
         try:
             self.object.delete()
         except Exception:
-            error_msg = "Something went wrong. "
-            "Seat cancellation is NOT successful."
+            error_msg = "Seat cancellation is NOT successful. Try again."
             messages.error(request, error_msg)
         else:
             succcess_msg = "You have successfully CANCELLED your reservation."
             messages.success(request, succcess_msg)
 
-        return redirect(success_url)
+        return redirect(success_URL)

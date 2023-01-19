@@ -102,7 +102,11 @@
     </div>
 
     <!-- Seat Reservation Form -->
-    <form method="POST" id="reserve-seat-form">
+    {% if user_booked_seats %}
+    <form action="{% url 'update_reservation' event.slug %}" method="POST" id="reserve-seat-form">
+    {% else %}
+    <form action="{% url 'reserve_seats' event.slug %}" method="POST" id="reserve-seat-form">
+    {% endif %}
         {% csrf_token %}
         {{ form }}
     </form>
