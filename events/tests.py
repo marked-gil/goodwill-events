@@ -1,9 +1,5 @@
 from django.test import TestCase
-from .models import Event
-from datetime import datetime, date, time
-from django.contrib.auth.models import User
 from django.urls import reverse
-from django.test import Client
 
 
 class TestEventsViews(TestCase):
