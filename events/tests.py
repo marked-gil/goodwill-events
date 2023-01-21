@@ -7,6 +7,7 @@ class TestEventsViews(TestCase):
     Tests Views that belong to 'events' app
     """
     def setUp(self):
+        """ """
         self.home_url = reverse('featured_events')
         self.events_url = reverse('events_list')
         self.generic_seatmap_url = reverse('view_seatmap')
