@@ -862,4 +862,12 @@ footer {
         width: 23rem;
     }
 
+
+    /* ALL EVENTS PAGE */
+    .event-card-img {
+        height: 13rem;
+        object-fit: cover;
+        object-position: 0 40%;
+    }
+
 }
