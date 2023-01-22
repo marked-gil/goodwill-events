@@ -1,4 +1,4 @@
-from django.shortcuts import get_object_or_404, redirect
+from django.shortcuts import get_object_or_404, redirect, render
 from django.http import JsonResponse
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse
@@ -91,14 +91,62 @@ class FeaturedView(TemplateView):
 
 class EventsList(ListView):
     """
-    Renders a list of all active (unexpired) event objects in the Events page
+    Renders a list of active (unexpired) events in the Events page,
+    and filters them as per user search query
     """
     model = Event
     context_object_name = 'events_list'
-    queryset = Event.objects.filter(status=1).exclude(
-        event_date__lte=date.today()).order_by('event_date')
     template_name = 'events/events.html'
     paginate_by = 5
+
+    month_dict = {
+            'January': 1,
+            'February': 2,
+            'March': 3,
+            'April': 4,
+            'May': 5,
+            'June': 6,
+            'July': 7,
+            'August': 8,
+            'September': 9,
+            'October': 10,
+            'November': 11,
+            'December': 12
+        }
+
+    def get_queryset(self):
+        """
+        Gets the queryset to be rendered on the Events page
+        """
+        queryset = super().get_queryset()
+        search_value = self.request.GET.get('search-events', '')
+
+        try:
+            search_month = self.month_dict[search_value]
+        except KeyError:
+            queryset = Event.objects.filter(status=1).exclude(
+                event_date__lte=date.today()).order_by('event_date')
+        else:
+            queryset = queryset.filter(event_date__month=search_month).exclude(
+                event_date__lte=date.today()).order_by('event_date')
+
+        return queryset
+
+    def get_context_data(self, **kwargs):
+        """
+        Displays the queried 'month' on the Events page
+        """
+        context = super().get_context_data(**kwargs)
+
+        search_month = self.request.GET.get('search-events')
+
+        if search_month in self.month_dict:
+            context['search_month'] = search_month
+        elif search_month is not None:
+            message = 'No result for your query. See all the events below.'
+            context['search_month'] = message
+
+        return context
 
 
 class EventDetails(DetailView):
