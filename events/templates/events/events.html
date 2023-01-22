@@ -7,6 +7,32 @@
     <div class="container-md text-center">
         <h2 id="upcoming-events">Upcoming Events</h2>
 
+        <div>
+            <form action="{% url 'events_list' %}" method="GET">
+                <label for="events-search-bar">Search for Events by Month:</label>
+                <select id="events-search-bar" name="search-events" class="form-select form-select-sm" aria-label=".form-select-sm">
+                    <option disabled selected>Choose a month</option>
+                    <option value="January">January</option>
+                    <option value="February">February</option>
+                    <option value="March">March</option>
+                    <option value="April">April</option>
+                    <option value="May">May</option>
+                    <option value="June">June</option>
+                    <option value="July">July</option>
+                    <option value="August">August</option>
+                    <option value="September">September</option>
+                    <option value="October">October</option>
+                    <option value="November">November</option>
+                    <option value="December">December</option>
+                  </select>
+                <button type="submit" class="btn btn-primary btn-sm">Search</button>
+            </form>    
+        </div>
+
+        {% if search_month %}
+        <p>Search Result for: {{ search_month }}</p>
+        {% endif %}
+        {% if events_list %}
         {% for event in events_list %}
         <!-- EVENT CARD [start] -->
         <div class="event-card-wrapper card my-5 mb-lg-5 text-center m-auto">
@@ -44,7 +70,10 @@
             </div>
         </div>
         <!-- EVENT CARD [end] -->
-        {% endfor %}    
+        {% endfor %}
+        {% else %}
+        <p>No Events Available.</p>
+        {% endif %}
     </div>
 
     <!-- PAGINATION [start] -->
