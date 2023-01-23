@@ -7,7 +7,7 @@
 
 // --> SEAT RESERVATION Page <--
 if (document.getElementById('seat-reservation-section')) {
-    const total_event_seats = 142
+    const total_event_seats = 142;
     const string_reserved_seats = document.getElementById('data-seats').textContent;
     let list_reserved_seats = string_reserved_seats.replace(/[^a-zA-Z0-9_,]/g, '').split(",");
     const userBookedSeats = getSelectedSeats();
@@ -63,8 +63,8 @@ if (document.getElementById('seat-reservation-section')) {
 
 // --> FUNCTIONS [Start] <--
 /**
-     * Blocks seats that are already reserved.
-     */
+ * Blocks seats that are already reserved.
+ */
 function blockReservedSeats(svg_seat, seat_loc, list_reserved_seats) {
     if (list_reserved_seats.includes(seat_loc)) {
         svg_seat.classList.add("booked");
@@ -210,10 +210,12 @@ function showFeedBackMsg(message) {
  */
 function submitSeatReservation() {
     if (fillSeatReservationForm()) {
+        displayLoadingAnimation();
         const seat_form = document.getElementById("reserve-seat-form");
         seat_form.submit();
     } else {
         if (document.getElementById('update-reservation')) {
+            displayLoadingAnimation();
             const confirm_delete_btn = document.getElementById('confirm-delete');
             confirm_delete_btn.click();
         }
@@ -295,5 +297,13 @@ function allowEditingReservation() {
     this.classList.add("d-none");
     seatsBoxHeader.textContent = "Edit Your Reservation";
     seatMapBlocker.classList.add("d-none");
+}
+
+/**
+ * Displays the loading SVG animation
+ */
+function displayLoadingAnimation() {
+    const loadingSVGContainer = document.getElementById("loading-svg-container");
+    loadingSVGContainer.style.display = "flex";
 }
 // --> FUNCTIONS [End] <--
