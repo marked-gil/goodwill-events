@@ -96,8 +96,21 @@ class EventsList(ListView):
     """
     model = Event
     context_object_name = 'events_list'
+    queryset = queryset = Event.objects.filter(status=1).exclude(
+        event_date__lte=date.today()).order_by('event_date')
     template_name = 'events/events.html'
     paginate_by = 5
+
+
+class SearchEvents(ListView):
+    """
+    Filters the events as per user's search, and renders the template with
+    the list of corresponding events
+    """
+    model = Event
+    context_object_name = 'events_list'
+    template_name = 'events/events.html'
+    paginate_by = 4
 
     month_dict = {
             'January': 1,
@@ -116,15 +129,15 @@ class EventsList(ListView):
 
     def get_queryset(self):
         """
-        Gets the queryset to be rendered on the Events page
+        Retrieves the queryset to be rendered on the Events page
         """
         queryset = super().get_queryset()
-        search_value = self.request.GET.get('search-events', '')
+        search_value = self.request.GET.get('search_events', '')
 
         try:
             search_month = self.month_dict[search_value]
         except KeyError:
-            if search_value == 'all-events':
+            if search_value == 'all-events' or search_value == '':
                 queryset = Event.objects.filter(status=1).exclude(
                     event_date__lte=date.today()).order_by('event_date')
             else:
@@ -137,17 +150,21 @@ class EventsList(ListView):
 
     def get_context_data(self, **kwargs):
         """
-        Displays the queried 'month' on the Events page
+        Displays the queried 'month' on the Events page, or a message if query
+        is invalid
         """
         context = super().get_context_data(**kwargs)
-
-        search_month = self.request.GET.get('search-events')
+        search_month = self.request.GET.get('search_events')
 
         if search_month in self.month_dict:
             context['search_month'] = search_month
+        elif search_month is None:
+            context['search_month'] = ''
         elif search_month != 'all-events':
             message = 'Invalid query'
             context['search_month'] = message
+
+        context['search_events'] = '&search_events='
 
         return context
 
