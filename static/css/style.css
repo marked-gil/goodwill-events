@@ -236,14 +236,14 @@ textarea {
     font-weight: 700;
 }
 
-/* search bar */
-#events-search-form {
+/* filter bar */
+#events-filter-form {
     display: flex;
     flex-direction: column;
     margin: auto;
 }
 
-#events-search-form > label {
+#events-filter-form > label {
     align-self: flex-start;
 }
 
@@ -604,7 +604,7 @@ footer {
 /* MEDIA QUERIES */
 
 @media screen and (min-width: 375px) {
-    #events-search-form {
+    #events-filter-form {
         width: 21rem;
     }
 }
@@ -668,23 +668,23 @@ footer {
     }
 
     /* ALL EVENTS PAGE */
-    #events-search-form {
+    #events-filter-form {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-between;
         margin-left: 13%;
     }
 
-    #events-search-form > label {
+    #events-filter-form > label {
         flex-basis: 100%;
         text-align: left;
     }
 
-    #events-search-bar {
+    #events-filter-bar {
         width: 80%;
     }
 
-    #events-search-form > button {
+    #events-filter-form > button {
         height: 31px;
     }
 

@@ -7,11 +7,11 @@
     <div class="container-md text-center">
         <h2 id="upcoming-events">Upcoming Events</h2>
 
-        <!-- SEARCH BAR [start] -->
+        <!-- FILTER BAR [start] -->
         <div>
-            <form action="{% url 'events_search' %}" id="events-search-form" method="GET" class="mt-4 mt-sm-5">
-                <label for="events-search-bar">Search by Month:</label>
-                <select id="events-search-bar" name="search_events" class="form-select form-select-sm d-inline-block mb-2" aria-label=".form-select-sm">
+            <form action="{% url 'events_search' %}" id="events-filter-form" method="GET" class="mt-4 mt-sm-5">
+                <label for="events-filter-bar">Filter by Month:</label>
+                <select id="events-filter-bar" name="filter_events" class="form-select form-select-sm d-inline-block mb-2" aria-label=".form-select-sm">
                     <option selected value="all-events">All Events</option>
                     <option value="January">January</option>
                     <option value="February">February</option>
@@ -30,10 +30,10 @@
             </form>
 
             {% if search_month %}
-            <p id="search-result-for" class="mt-4 mb-0">Search Result for: <span class="bold-text text-blue">{{ search_month }}</span></p>
+            <p id="search-result-for" class="mt-4 mb-0">Filter Result for: <span class="bold-text text-blue">{{ search_month }}</span></p>
             {% endif %}
         </div>
-        <!-- SEARCH BAR [end] -->
+        <!-- FILTER BAR [end] -->
 
         {% if events_list %}
         {% for event in events_list %}
@@ -85,7 +85,7 @@
         <ul class="pagination" id="events-pagination" data-page-number="{{ page_obj.number }}">
             {% if page_obj.has_previous %}
             <li class="page-item">
-                <a class="page-link" href="?page={{ page_obj.previous_page_number }}{{ search_events }}{{ request.GET.search_events }}">Previous</a>
+                <a class="page-link" href="?page={{ page_obj.previous_page_number }}{{ filter_events }}{{ request.GET.filter_events }}">Previous</a>
             </li>
             {% else %}
             <li class="page-item disabled">
@@ -95,43 +95,43 @@
 
             {% if page_obj.number > 2 %}
             {% if page_obj.has_next %}
-            <li class="page-item"><a class="page-link" href="?page={{ page_obj.number|add:'-1'}}{{ search_events }}{{ request.GET.search_events }}">
+            <li class="page-item"><a class="page-link" href="?page={{ page_obj.number|add:'-1'}}{{ filter_events }}{{ request.GET.filter_events }}">
                 {{ page_obj.number|add:"-1" }}</a></li>
-            <li class="page-item"><a class="page-link" href="?page={{ page_obj.number }}{{ search_events }}{{ request.GET.search_events }}">{{ page_obj.number }}</a>
+            <li class="page-item"><a class="page-link" href="?page={{ page_obj.number }}{{ filter_events }}{{ request.GET.filter_events }}">{{ page_obj.number }}</a>
             </li>
             {% else %}
-            <li class="page-item"><a class="page-link" href="?page={{ page_obj.number|add:'-2'}}{{ search_events }}{{ request.GET.search_events }}">
+            <li class="page-item"><a class="page-link" href="?page={{ page_obj.number|add:'-2'}}{{ filter_events }}{{ request.GET.filter_events }}">
                 {{ page_obj.number|add:"-2" }}</a></li>
-            <li class="page-item"><a class="page-link" href="?page={{ page_obj.number|add:'-1' }}{{ search_events }}{{ request.GET.search_events }}">
+            <li class="page-item"><a class="page-link" href="?page={{ page_obj.number|add:'-1' }}{{ filter_events }}{{ request.GET.filter_events }}">
                 {{ page_obj.number|add:"-1" }}</a>
             </li>
             {% endif %}
             {% else %}
-            <li class="page-item"><a class="page-link" href="?page=1{{ search_events }}{{ request.GET.search_events }}">1</a></li>
-            <li class="page-item"><a class="page-link" href="?page=2{{ search_events }}{{ request.GET.search_events }}">2</a></li>
+            <li class="page-item"><a class="page-link" href="?page=1{{ filter_events }}{{ request.GET.filter_events }}">1</a></li>
+            <li class="page-item"><a class="page-link" href="?page=2{{ filter_events }}{{ request.GET.filter_events }}">2</a></li>
             {% endif %}
 
             {% if page_obj.paginator.num_pages >= 3%}
             {% if page_obj.number >= 3 and page_obj.has_next %}
             <li class="page-item">
-                <a class="page-link" href="?page={{ page_obj.number|add:'1' }}{{ search_events }}{{ request.GET.search_events }}">
+                <a class="page-link" href="?page={{ page_obj.number|add:'1' }}{{ filter_events }}{{ request.GET.filter_events }}">
                     {{ page_obj.number|add:"1" }}
                 </a>
             </li>
             {% elif not page_obj.has_next %}
             <li class="page-item">
-             <a class="page-link active disabled-link" tabindex="-1" href="?page={{ page_obj.number }}{{ search_events }}{{ request.GET.search_events }}">
+             <a class="page-link active disabled-link" tabindex="-1" href="?page={{ page_obj.number }}{{ filter_events }}{{ request.GET.filter_events }}">
                     {{ page_obj.number }}
                 </a>
             </li>
             {% else %}
-            <li class="page-item"><a class="page-link" href="?page=3{{ search_events }}{{ request.GET.search_events }}">3</a></li>
+            <li class="page-item"><a class="page-link" href="?page=3{{ filter_events }}{{ request.GET.filter_events }}">3</a></li>
             {% endif %}
             {% endif %}
 
             {% if page_obj.has_next %}
             <li class="page-item">
-                <a class="page-link" href="?page={{ page_obj.next_page_number }}{{ search_events }}{{ request.GET.search_events }}">Next</a>
+                <a class="page-link" href="?page={{ page_obj.next_page_number }}{{ filter_events }}{{ request.GET.filter_events }}">Next</a>
             </li>
             {% else %}
             <li class="page-item disabled">

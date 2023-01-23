@@ -132,7 +132,7 @@ class SearchEvents(ListView):
         Retrieves the queryset to be rendered on the Events page
         """
         queryset = super().get_queryset()
-        search_value = self.request.GET.get('search_events', '')
+        search_value = self.request.GET.get('filter_events', '')
 
         try:
             search_month = self.month_dict[search_value]
@@ -154,7 +154,7 @@ class SearchEvents(ListView):
         is invalid
         """
         context = super().get_context_data(**kwargs)
-        search_month = self.request.GET.get('search_events')
+        search_month = self.request.GET.get('filter_events')
 
         if search_month in self.month_dict:
             context['search_month'] = search_month
@@ -164,7 +164,7 @@ class SearchEvents(ListView):
             message = 'Invalid query'
             context['search_month'] = message
 
-        context['search_events'] = '&search_events='
+        context['filter_events'] = '&filter_events='
 
         return context
 
