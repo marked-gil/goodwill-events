@@ -2,7 +2,7 @@
 
 ## TABLE OF CONTENTS    
 * [**Manual Testing**](#manual-testing-user-story-testing)
-* [**Automated Testing**](#)
+* [**Automated Testing**](#automated-testing-unittest)
 * [**Validators**](#validators)     
     * [Python Linter](#ci-python-linter)
     * [JSHINT](#jshint)
@@ -56,16 +56,16 @@ The following are the test cases of the manual testing of the project:
     SVG Seat Map's Panning & Zooming Feature
     ![SVG Seat Map test case](docs/test_cases/test-cases-12.png)    
     Seat Reservation
-    ![](docs/test_cases/test-cases-13.png)     
-    ![](docs/test_cases/test-cases-14.png)  
+    ![Seat Reservation test cases](docs/test_cases/test-cases-13.png)     
+    ![Seat Reservation test cases](docs/test_cases/test-cases-14.png)  
     Reservation Update & Cancellation
-    ![](docs/test_cases/test-cases-15.png)
-    ![](docs/test_cases/test-cases-16.png)  
+    ![Reservation Update & Cancellation test cases](docs/test_cases/test-cases-15.png)
+    ![Reservation Update & Cancellation test cases](docs/test_cases/test-cases-16.png)  
     Seat Reservation Feature Restricted to Signed-In Users
-    ![](docs/test_cases/test-cases-17.png)  
+    ![Seat Reservation Restriction test case](docs/test_cases/test-cases-17.png)  
 
 * **RECYCLING EXPIRED EVENTS**
-    ![](docs/test_cases/test-cases-18.png)
+    ![Recyclign Expired Events test case](docs/test_cases/test-cases-18.png)
 
 [Back to Table of Contents](#table-of-contents)
 
