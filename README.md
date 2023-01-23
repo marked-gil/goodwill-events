@@ -725,7 +725,7 @@ After extensive manual testing of the site, there were NO BUGS found.
 [Back to Table of Contents](#table-of-contents)
 
 ## Testing
-Extensive **Manual Testing** was used for the development of this project. To view all the tests performed on this project, kindly click this [LINK](https://github.com/marked-gil/goodwill-events/blob/main/TESTING.md).
+A combination of **Manual Testing** and **Python Automated Testing** were used in the development of this project. To view all the tests performed, kindly click this [LINK](https://github.com/marked-gil/goodwill-events/blob/main/TESTING.md), which redirects to TESTING.md.
 
 ## Deployment
 

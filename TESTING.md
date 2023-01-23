@@ -1,7 +1,8 @@
 # TESTING
 
 ## TABLE OF CONTENTS    
-* [**Test Cases**](#test-cases-user-story-testing)
+* [**Manual Testing**](#manual-testing-user-story-testing)
+* [**Automated Testing**](#)
 * [**Validators**](#validators)     
     * [Python Linter](#ci-python-linter)
     * [JSHINT](#jshint)
@@ -18,7 +19,8 @@
 
 [BACK TO README.MD](https://github.com/marked-gil/goodwill-events#readme)
 
-## TEST CASES (User Story Testing)
+## MANUAL TESTING (User Story Testing)
+The following are the test cases of the manual testing of the project:
 
 * **HOME Page**     
 ![Home Page Template test cases](docs/test_cases/test-cases-1.png)
@@ -66,6 +68,30 @@
     ![](docs/test_cases/test-cases-18.png)
 
 [Back to Table of Contents](#table-of-contents)
+
+
+## AUTOMATED TESTING (Unittest)
+There are 18 automated tests created on this project and all of which ran successfully as shown in the image below. The tests checked the following:    
+* the correct rendering of the templates/pages,
+* the successful 'liking' and posting of comments
+* the creation of new events,
+* the signing up, logging in and logging out of users,
+* the site's response to very common passwords and invalid emails during signup, and 
+* the site's response to incorrect login passwords  
+
+These tests can be seen in the `tests.py` file in each of the apps.
+
+![Unittest Result](docs/test_cases/automated-testing-result.png)
+
+* **How to Run the Test**   
+    * On the settings.py file, use the **sqlite3 database** and comment out the production database URL temporarily.
+        > DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.sqlite3',
+                'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+            }
+        }
+    * Use the command "`python3 manage.py test`" to run the tests.
 
 ## VALIDATORS
 
