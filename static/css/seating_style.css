@@ -161,6 +161,16 @@
 }
 /* SELECTED SEATS FOOTER BOX [end] */
 
+/* LOADING SVG ANIMATION [Start] */
+#loading-svg-container {
+    display: none;
+    z-index: 1031;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+/* LOADING SVG ANIMATION [End] */
+
 /* HIDDEN ELEMENTS [start] */
 #data-seats {
     display: none;
