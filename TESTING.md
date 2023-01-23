@@ -65,7 +65,10 @@ The following are the test cases of the manual testing of the project:
     ![Seat Reservation Restriction test case](docs/test_cases/test-cases-17.png)  
 
 * **RECYCLING EXPIRED EVENTS**
-    ![Recyclign Expired Events test case](docs/test_cases/test-cases-18.png)
+    ![Recyclign Expired Events test case](docs/test_cases/test-cases-18.png)    
+
+* **FILTERING EVENTS BY MONTH**
+    ![Filtering Events by Month test cases](docs/test_cases/test-cases-19.png)
 
 [Back to Table of Contents](#table-of-contents)
 

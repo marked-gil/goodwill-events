@@ -66,42 +66,43 @@ Github’s Kanban board is an extremely useful feature that this project used. T
 
 #### **User Stories:**
 Iteration 1:    
-* Initial Dependencies Installation ([Epic 1](https://github.com/marked-gil/goodwill-events/issues/1))
-* Basic Skeletal Structure of the Project ([Epic 1](https://github.com/marked-gil/goodwill-events/issues/1))
-* Initial Deployment to Heroku ([Epic 2](https://github.com/marked-gil/goodwill-events/issues/2))
-* Base Template ([Epic 4](https://github.com/marked-gil/goodwill-events/issues/4))
-* Home Page Template ([Epic 4](https://github.com/marked-gil/goodwill-events/issues/4))
-* Event Model ([Epic 3](https://github.com/marked-gil/goodwill-events/issues/3))
-* Featured Events List ([Epic 6](https://github.com/marked-gil/goodwill-events/issues/6))
-* All Events Page ([Epic 6](https://github.com/marked-gil/goodwill-events/issues/6))
-* Specific Event's Page ([Epic 6](https://github.com/marked-gil/goodwill-events/issues/6))
+* Initial Dependencies Installation (Epic 1)
+* Basic Skeletal Structure of the Project (Epic 1)
+* Initial Deployment to Heroku (Epic 2)
+* Base Template (Epic 4)
+* Home Page Template (Epic 4)
+* Event Model (Epic 3)
+* Featured Events List (Epic 6)
+* All Events Page (Epic 6)
+* Specific Event's Page (Epic 6)
 
 Iteration 2:    
-* Sign In ([Epic 5](https://github.com/marked-gil/goodwill-events/issues/5))
-* Sign Out ([Epic 5](https://github.com/marked-gil/goodwill-events/issues/5))
-* Member Registration ([Epic 5](https://github.com/marked-gil/goodwill-events/issues/5))
-* Seating Model ([Epic 3](https://github.com/marked-gil/goodwill-events/issues/3))
-* Seat Map Page([Epic 7](https://github.com/marked-gil/goodwill-events/issues/7))
-* Allow Seat Selection ([Epic 7](https://github.com/marked-gil/goodwill-events/issues/7))
+* Sign In (Epic 5)
+* Sign Out (Epic 5)
+* Member Registration (Epic 5)
+* Seating Model (Epic 3)
+* Seat Map Page(Epic 7)
+* Allow Seat Selection (Epic 7)
 
 Iteration 3:    
-* Submission of Selected Seats for an Event ([Epic 7](https://github.com/marked-gil/goodwill-events/issues/7))
-* Restrict Seat Reservation to Signed-in Members Only ([Epic 7](https://github.com/marked-gil/goodwill-events/issues/7))
-* Cancel and/or Update Reserved Seats ([Epic 7](https://github.com/marked-gil/goodwill-events/issues/7))
-* Event Likes ([Epic 6](https://github.com/marked-gil/goodwill-events/issues/6))
-* Comment Model ([Epic 3](https://github.com/marked-gil/goodwill-events/issues/3))
-* Comments Control by Site Owner ([Epic 8](https://github.com/marked-gil/goodwill-events/issues/8))
-* User Comments on a Specific Event ([Epic 8](https://github.com/marked-gil/goodwill-events/issues/8))
-* Deleting Comments ([Epic 8](https://github.com/marked-gil/goodwill-events/issues/8))
+* Submission of Selected Seats for an Event (Epic 7)
+* Restrict Seat Reservation to Signed-in Members Only (Epic 7)
+* Cancel and/or Update Reserved Seats (Epic 7)
+* Event Likes (Epic 6)
+* Comment Model (Epic 3)
+* Comments Control by Site Owner (Epic 8)
+* User Comments on a Specific Event (Epic 8)
+* Deleting Comments (Epic 8)
 
 Iteration 4:    
-* Create Member Account Page ([Epic 5](https://github.com/marked-gil/goodwill-events/issues/5))
-* Allow Logged-in User to Edit their Account Information. ([Epic 5](https://github.com/marked-gil/goodwill-events/issues/5))
-* Allow Change of Password ([Epic 5](https://github.com/marked-gil/goodwill-events/issues/5))
-* Allow Password Reset ([Epic 5](https://github.com/marked-gil/goodwill-events/issues/5))
-* Recycling Expired Events ([Epic 9](https://github.com/marked-gil/goodwill-events/issues/9))
-* Confirmation Email for Seat Reservation ([Epic 7](https://github.com/marked-gil/goodwill-events/issues/7))
-* Modify User Model ([Epic 3](https://github.com/marked-gil/goodwill-events/issues/3))
+* Create Member Account Page (Epic 5)
+* Allow Logged-in User to Edit their Account Information. (Epic 5)
+* Allow Change of Password (Epic 5)
+* Allow Password Reset (Epic 5)
+* Recycling Expired Events (Epic 9)
+* Events Filtering(Epic 6)
+* Confirmation Email for Seat Reservation (Epic 7)
+* Modify User Model (Epic 3)
 
 [Back to Table of Contents](#table-of-contents)
 
@@ -110,21 +111,21 @@ Iteration 4:
 #### **Planned Features**
 The following are the User Stories that guided the creation of the features of this project:
 
-* User Story #10: [**Initial Dependencies Installation**](https://github.com/marked-gil/goodwill-events/issues/10)
+* User Story: [**Initial Dependencies Installation**](https://github.com/marked-gil/goodwill-events/issues/10)
     > As a Developer, I want the significant dependencies installed first so that I can focus on the functionalities of the site later on.      
 
    **Implementation:**  
     * The following dependencies will be installed at the outset of the project: Django, gunicorn, dj_database_url, psycopg2, and dj3-cloudinary storage.
     * All dependencies will be added to the requirements.txt file.  
 
-* User Story #11: [**Basic Skeletal Structure of the Project**](https://github.com/marked-gil/goodwill-events/issues/11)
+* User Story: [**Basic Skeletal Structure of the Project**](https://github.com/marked-gil/goodwill-events/issues/11)
     > As a developer, I can see the basic skeletal structure of the project.    
 
     **Implementation:**  
     * Create the new django project - Goodwill Events
     * Create the initial app - events
 
-* User Story #12: [**Initial Deployment to Heroku**](https://github.com/marked-gil/goodwill-events/issues/12)
+* User Story: [**Initial Deployment to Heroku**](https://github.com/marked-gil/goodwill-events/issues/12)
     > As a developer, I can initially deploy the basic and skeletal structure of the project to Heroku so that I can check the initial successful connection to Heroku.     
 
    **Implementation:**  
@@ -138,14 +139,14 @@ The following are the User Stories that guided the creation of the features of t
     * Create Procfile
     * Deploy to Heroku
 
-* User Story #13: [**Base Template**](https://github.com/marked-gil/goodwill-events/issues/13)
+* User Story: [**Base Template**](https://github.com/marked-gil/goodwill-events/issues/13)
     > As a Developer, I can use a base template that contains the header with logo, navbar menu, a block content tag, and general footer so that I can connect it to other html pages.      
 
     **Implementation:**  
     * Create a base template with a header consisting of navbar and site name or logo
     * Create block tag for footer and add the general footer content
 
-* User Story #14: [**Home Page Template**](https://github.com/marked-gil/goodwill-events/issues/14)
+* User Story: [**Home Page Template**](https://github.com/marked-gil/goodwill-events/issues/14)
     > As a User, I can see the home page of the site so that I will know what the website is for.   
     
     **Implementation:**  
@@ -153,7 +154,7 @@ The following are the User Stories that guided the creation of the features of t
     * Connect the base template to the Home page
     * Include a footer at the end of the Home page template
 
-* User Story #15: [**Event Model**](https://github.com/marked-gil/goodwill-events/issues/15)
+* User Story: [**Event Model**](https://github.com/marked-gil/goodwill-events/issues/15)
     > As a Developer, I can save new events into a database table so that I can use the data on the website.    
 
     **Implementation:**  
@@ -163,7 +164,7 @@ The following are the User Stories that guided the creation of the features of t
     * Customize the admin interface for the Event class Model
     * Register the Event model in admin.py  
 
-* User Story #16: [**Seating Model**](https://github.com/marked-gil/goodwill-events/issues/16)
+* User Story: [**Seating Model**](https://github.com/marked-gil/goodwill-events/issues/16)
     > As a developer, I can save the seat reservation of a signed-in member on the database so that I can block the specific seat/s of the event for the specific member.   
 
    **Implementation:**  
@@ -173,7 +174,7 @@ The following are the User Stories that guided the creation of the features of t
     * Modify the built-in string method of Django’s base Model class
     * Register the VenueSeat and EventSeating models in admin.py
 
-* User Story #17: [**Comment Model**](https://github.com/marked-gil/goodwill-events/issues/17)
+* User Story: [**Comment Model**](https://github.com/marked-gil/goodwill-events/issues/17)
     > As a developer, I can save the user’s comments into the database so that I can display it in its specific event post.     
 
    **Implementation:**  
@@ -181,7 +182,7 @@ The following are the User Stories that guided the creation of the features of t
     * Modify the built-in string method of Django’s base Model class
     * Register the Comment model in admin.py    
 
-* User Story #19: [**Member Registration**](https://github.com/marked-gil/goodwill-events/issues/19)
+* User Story: [**Member Registration**](https://github.com/marked-gil/goodwill-events/issues/19)
     > As a user, I can sign-up on the website so that I can be a member and use the full functionality of the website.      
 
     **Implementation:**  
@@ -191,7 +192,7 @@ The following are the User Stories that guided the creation of the features of t
     * Prevent the submission of the form when the password is not re-entered correctly, and use django-allauth password validation to show feedback message to the user
     * Redirect the user to the home page when registration is validly submitted
 
-* User Story #20: [**Sign In**](https://github.com/marked-gil/goodwill-events/issues/20)
+* User Story: [**Sign In**](https://github.com/marked-gil/goodwill-events/issues/20)
     > As a user, I can sign in when I am registered so that I can access the full functionality of the website.     
 
    **Implementation:**  
@@ -200,7 +201,7 @@ The following are the User Stories that guided the creation of the features of t
     * Redirect the user to the Home page when sign-in is successful, and flash a message to confirm that sign-in is successful.
     * Flash feedback message when sign-in credentials are invalid, and the URL stays the same.
 
-* User Story #21: [**Sign Out**](https://github.com/marked-gil/goodwill-events/issues/21)
+* User Story: [**Sign Out**](https://github.com/marked-gil/goodwill-events/issues/21)
     > As a user, I can sign out after logging in so that I can protect my website account and prevent unauthorised persons from accessing it.       
 
     **Implementation:**  
@@ -209,7 +210,7 @@ The following are the User Stories that guided the creation of the features of t
     * Flash a feedback message on the home page when the user is signed out successfully
     * Prevent users from making seat reservations, liking events, and posting comments when signed out.     
 
-* User Story #22: [**Featured Events List**](https://github.com/marked-gil/goodwill-events/issues/22)
+* User Story: [**Featured Events List**](https://github.com/marked-gil/goodwill-events/issues/22)
     > As a user, I can see the featured list of events on the home page so that I can immediately see the events that are coming up.    
 
     **Implementation:**  
@@ -217,7 +218,7 @@ The following are the User Stories that guided the creation of the features of t
     * Show title, short description, date and time
     * Make every featured event clickable and redirect each to their event's full detail page.  
 
-* User Story #23: [**All Events Page**](https://github.com/marked-gil/goodwill-events/issues/23)
+* User Story: [**All Events Page**](https://github.com/marked-gil/goodwill-events/issues/23)
     > As a user, I can See all the upcoming events so that I can decide which one interests me.     
 
    **Implementation:**  
@@ -227,7 +228,7 @@ The following are the User Stories that guided the creation of the features of t
    * Develop pagination
    * Redirect the 'Events' link in the navbar menu to the 'Events page'     
 
-* User Story #24: [**Specific Event’s Page**](https://github.com/marked-gil/goodwill-events/issues/24)
+* User Story: [**Specific Event’s Page**](https://github.com/marked-gil/goodwill-events/issues/24)
     > As a user, I can view the full detail of the event so that I can learn more about the event.      
 
    **Implementation:**  
@@ -237,7 +238,7 @@ The following are the User Stories that guided the creation of the features of t
    * Display the date and time of the event
    * Add a ‘reserve seat’ button to the event’s page    
 
-* User Story #25: [**Event Likes**](https://github.com/marked-gil/goodwill-events/issues/25)
+* User Story: [**Event Likes**](https://github.com/marked-gil/goodwill-events/issues/25)
     > As a user, I can like an event post that interests me so that I can show my support for the event.        
 
    **Implementation:**  
@@ -246,7 +247,7 @@ The following are the User Stories that guided the creation of the features of t
    * Add the user’s like to the total likes of the event and display it
    * Allow user to remove their ‘like’      
 
-* User Story #26: [**Seat Map Page**](https://github.com/marked-gil/goodwill-events/issues/26)
+* User Story: [**Seat Map Page**](https://github.com/marked-gil/goodwill-events/issues/26)
     > As a user, I can visit the Seat Map page so that I can see the seat map of the venue.     
 
    **Implementation:**  
@@ -256,7 +257,7 @@ The following are the User Stories that guided the creation of the features of t
    * Allow the seat map to pan and zoom
    * Display the event’s title, date, time and colour legend on the 'Event Seating' page    
 
-* User Story #27: [**Restrict Seat Reservation to Signed-in Members Only**](https://github.com/marked-gil/goodwill-events/issues/27)
+* User Story: [**Restrict Seat Reservation to Signed-in Members Only**](https://github.com/marked-gil/goodwill-events/issues/27)
     > As a user, I can register as a member and sign in so that I can reserve seats.        
 
    **Implementation:**  
@@ -264,7 +265,7 @@ The following are the User Stories that guided the creation of the features of t
    * Flash a feedback message to the user to sign in when redirected to the Sign In page
    * Redirect the user back to the event's Seat Reservation (Event Seating) page after signing in
 
-* User Story #28: [**Allow Seat Selection**](https://github.com/marked-gil/goodwill-events/issues/28)
+* User Story: [**Allow Seat Selection**](https://github.com/marked-gil/goodwill-events/issues/28)
     > As a user, I can select a seat so that I can choose the available seat I want for the event.      
 
    **Implementation:**  
@@ -274,7 +275,7 @@ The following are the User Stories that guided the creation of the features of t
    * List all selected seats on the screen
    * Allow de-selection of the seat     
 
-* User Story #29: [**Reservation of Selected Seats**](https://github.com/marked-gil/goodwill-events/issues/29)   
+* User Story: [**Reservation of Selected Seats**](https://github.com/marked-gil/goodwill-events/issues/29)   
     > As a user, I can reserve the selected seat/s so that they are saved in the database.      
 
     **Implementation:**  
@@ -282,7 +283,7 @@ The following are the User Stories that guided the creation of the features of t
     * Save selected seats in the database
     * Display a flash message on the seating (seat reservation) page when a seat is successfully reserved   
 
-* User Story #30: [**Cancel and/or Update Reserved Seats**](https://github.com/marked-gil/goodwill-events/issues/30)
+* User Story: [**Cancel and/or Update Reserved Seats**](https://github.com/marked-gil/goodwill-events/issues/30)
     > As a user, I can cancel and/or update my reserved seats so that other users can reserve the seats or I can conveniently change my preference.     
 
    **Implementation:**  
@@ -292,7 +293,7 @@ The following are the User Stories that guided the creation of the features of t
    * Allow reserved seats to be cancelled or updated
    * When 'EventSeating' database is successfully updated, flash a feedback message     
 
-* User Story #31: [**User Comments on a Specific Event**](https://github.com/marked-gil/goodwill-events/issues/31)
+* User Story: [**User Comments on a Specific Event**](https://github.com/marked-gil/goodwill-events/issues/31)
     > As a user, I can leave a comment on the event page so that I can share my thoughts to the public about a particular event.        
 
    **Implementation:**  
@@ -303,20 +304,20 @@ The following are the User Stories that guided the creation of the features of t
    * Display the comments on the event’s page along with the author's username, and time since posted   
 
 
-* User Story #32: [**Deleting Comments**](https://github.com/marked-gil/goodwill-events/issues/32)
+* User Story: [**Deleting Comments**](https://github.com/marked-gil/goodwill-events/issues/32)
     > As a user, I can delete my comments on a particular event so that they are no longer visible to the public.       
 
    **Implementation:**  
    * Add a ‘delete’ button on the user’s comment/s when signed-in
    * Delete the comment when the ‘delete’ button is clicked
 
-* User Story #33: [**Comments Control by Site Owner**](https://github.com/marked-gil/goodwill-events/issues/33)
+* User Story: [**Comments Control by Site Owner**](https://github.com/marked-gil/goodwill-events/issues/33)
     > As a site owner, I can delete the comments of members so that the site is kept friendly and safe for all users.       
 
    **Implementation:**  
    * Delete an inappropriate comment through the admin panel    
 
-* User Story #34: [**Recycling Expired Events**](https://github.com/marked-gil/goodwill-events/issues/34)
+* User Story: [**Recycling Expired Events**](https://github.com/marked-gil/goodwill-events/issues/34)
     > As a site owner, I can set an expired event to automatically be recycled to a new scheduled date so that the site can perpetuate despite its contents not being monitored and updated manually.       
 
    **Implementation:**  
@@ -324,7 +325,7 @@ The following are the User Stories that guided the creation of the features of t
    * Re-display the recycled event with the new schedule
    * Delete all reserved seats for the expired and recycled events  
 
-* User Story #36: [**Create Member Account Page**](https://github.com/marked-gil/goodwill-events/issues/36)
+* User Story: [**Create Member Account Page**](https://github.com/marked-gil/goodwill-events/issues/36)
     > As a User, I can view all of my account information/data as a registered member so that I can review them as needed.      
 
    **Implementation:**  
@@ -332,7 +333,7 @@ The following are the User Stories that guided the creation of the features of t
    * In the Member Account page, display the user's username, first name, last name, and email address
    * Display the user's reserved seats  
 
-* User Story #37: [**Allow Logged-In User to Edit their Account Information**](https://github.com/marked-gil/goodwill-events/issues/37)
+* User Story: [**Allow Logged-In User to Edit their Account Information**](https://github.com/marked-gil/goodwill-events/issues/37)
     > As a User, I can edit my personal information/data such as first name, last name, and email address so that I can update them easily as necessary.    
 
    **Implementation:**  
@@ -342,7 +343,7 @@ The following are the User Stories that guided the creation of the features of t
    * Disable UPDATE button by default, and enable it only when changes are made in the input values
    * Update the database when valid changes are made in the Member's Account form
 
-* User Story #38: [**Allow Change of Password**](https://github.com/marked-gil/goodwill-events/issues/38)
+* User Story: [**Allow Change of Password**](https://github.com/marked-gil/goodwill-events/issues/38)
     > As a User, I can change my password so that I can maintain the security of my account.    
 
    **Implementation:**  
@@ -350,7 +351,7 @@ The following are the User Stories that guided the creation of the features of t
    * Verify the new password the user entered by asking them to re-enter the same password
    * Update the database when the new password is verified and saved    
 
-* User Story #39: [**Allow Password Reset**](https://github.com/marked-gil/goodwill-events/issues/39)
+* User Story: [**Allow Password Reset**](https://github.com/marked-gil/goodwill-events/issues/39)
     > As a User, I can reset my password so that I can either keep my account secured or keep using my account when I have forgotten my password.       
 
    **Implementation:**  
@@ -358,14 +359,24 @@ The following are the User Stories that guided the creation of the features of t
    * Add a 'forgot my password?' link inside the Sign In page and redirect it to the password reset page
    * Send an email to the user with a link to allow them to change their password
 
-* User Story #35: [**Confirmation Email for Seat Reservation**](https://github.com/marked-gil/goodwill-events/issues/35) [NOT IMPLEMENTED NOW, FOR FUTURE IMPLEMENTATION]
+* User Story: [**Events Filtering**](https://github.com/marked-gil/goodwill-events/issues/41)
+    > As a User, I can filter all the events by month so that it is easy and convenient for me to choose an event.
+    **Implementation:**  
+    * Add a form for the search/filter bar that uses the < select > tag     
+    * Add the following as options to the < select > tag: <i>all the months of a year</i>, and the text "All Events"    
+    * Create a view class for searching/filtering the events using listview
+    * Display the events that are filtered or searched by the user using the filter bar
+    * Display 'No Events Found' if no events were returned from the search
+    * Display 'Invalid query' if the search input value is not included in the options provided, such as when the user manipulates the URL in the address bar   
+
+* User Story: [**Confirmation Email for Seat Reservation**](https://github.com/marked-gil/goodwill-events/issues/35) [NOT IMPLEMENTED NOW, FOR FUTURE IMPLEMENTATION]
     > As a user, I can receive a confirmation email for my seat reservation so that I can ensure that my seat reservation to an event is confirmed.     
 
    **Implementation:**  
    * Set up automatic email function
    * Display a flash message to the user that a confirmation has been sent to his email    
 
-* User Story #18: [**Modify User Model**](https://github.com/marked-gil/goodwill-events/issues/18) [NOT IMPLEMENTED NOW, FOR FUTURE IMPLEMENTATION]
+* User Story: [**Modify User Model**](https://github.com/marked-gil/goodwill-events/issues/18) [NOT IMPLEMENTED NOW, FOR FUTURE IMPLEMENTATION]
     > As a developer, I can add other fields in the User model in addition to those that are built-in so I can customize the sign-up and sign-in feature of the site.   
 
    **Implementation:**  
