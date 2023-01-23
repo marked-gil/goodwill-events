@@ -124,8 +124,11 @@ class EventsList(ListView):
         try:
             search_month = self.month_dict[search_value]
         except KeyError:
-            queryset = Event.objects.filter(status=1).exclude(
-                event_date__lte=date.today()).order_by('event_date')
+            if search_value == 'all-events':
+                queryset = Event.objects.filter(status=1).exclude(
+                    event_date__lte=date.today()).order_by('event_date')
+            else:
+                queryset = ''
         else:
             queryset = queryset.filter(event_date__month=search_month).exclude(
                 event_date__lte=date.today()).order_by('event_date')
@@ -142,8 +145,8 @@ class EventsList(ListView):
 
         if search_month in self.month_dict:
             context['search_month'] = search_month
-        elif search_month is not None:
-            message = 'No result for your query. See all the events below.'
+        elif search_month != 'all-events':
+            message = 'Invalid query'
             context['search_month'] = message
 
         return context
