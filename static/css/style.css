@@ -236,6 +236,17 @@ textarea {
     font-weight: 700;
 }
 
+/* search bar */
+#events-search-form {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+#events-search-form > label {
+    align-self: flex-start;
+}
+
 .event-card-wrapper {
     border: 2px solid var(--clr-police-blue);
     border-radius: 10px;
@@ -592,6 +603,12 @@ footer {
 
 /* MEDIA QUERIES */
 
+@media screen and (min-width: 375px) {
+    #events-search-form {
+        width: 21rem;
+    }
+}
+
 @media screen and (min-width: 400px) {
     #logo {
         font-size: 2rem;
@@ -648,6 +665,32 @@ footer {
 
     #about-us-outer-container p {
         font-size: 1.1rem;
+    }
+
+    /* ALL EVENTS PAGE */
+    #events-search-form {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-left: 13%;
+    }
+
+    #events-search-form > label {
+        flex-basis: 100%;
+        text-align: left;
+    }
+
+    #events-search-bar {
+        width: 80%;
+    }
+
+    #events-search-form > button {
+        height: 31px;
+    }
+
+    #search-result-for {
+        margin-left: 13%;
+        text-align: start;
     }
 
     /* EVENT DETAILS PAGE */
@@ -816,6 +859,12 @@ footer {
 
 
 @media screen and (min-width: 1080px) {
+
+    /* ALL EVENTS PAGE */
+    #search-result-for,
+    #no-events-found {
+        font-size: 1.1rem;
+    }
 
     /* EVENTS DETAILS PAGE */
     .event-details-div {
