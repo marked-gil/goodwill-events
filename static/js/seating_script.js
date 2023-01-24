@@ -1,19 +1,19 @@
 /**
- * This custom JS script is utilized by the following templates:
- *   'reserve-seats.html' template of the 'seating' app, 
+ * The following templates utilize this custom JS file:
+ *   'reserve-seats.html' template, 
  *   'view_seatmap.html' template, and
  *   'seatmap.html'
  */
 
 // --> SEAT RESERVATION Page <--
 if (document.getElementById('seat-reservation-section')) {
-    const total_event_seats = 142;
+    const TOTAL_EVENT_SEATS = 142;
     const string_reserved_seats = document.getElementById('data-seats').textContent;
     let list_reserved_seats = string_reserved_seats.replace(/[^a-zA-Z0-9_,]/g, '').split(",");
     const userBookedSeats = getSelectedSeats();
 
     /** 
-     * Block all reserved seats and make all available seats clickable
+     * Blocks all reserved seats, and makes all available seats clickable
      */
     window.onpageshow = function () {
         const svg_seats_list = document.querySelectorAll('[data-seat-location]');
@@ -23,15 +23,15 @@ if (document.getElementById('seat-reservation-section')) {
             makeAllFreeSeatsClickable(svg_seat, seat_loc, userBookedSeats);
         }
 
-        // Changes seat map's instruction message when fully booked
-        if (list_reserved_seats.length === total_event_seats) {
+        // Changes seat map's instruction message when FULLY BOOKED
+        if (list_reserved_seats.length === TOTAL_EVENT_SEATS) {
             const select_box_text = document.getElementById("select-box-instruction");
             select_box_text.innerHTML = "<i class='fa-solid fa-hand'></i> This event is FULLY BOOKED.";
             select_box_text.style.color = "red";
         }
     };
     
-    // EventListener to 'remove' reserved seat via cancel button
+    // EventListener to Remove Reserved Seat via Cancel Button
     if (document.getElementsByClassName("btn-cancel-seat")) {
         const cancel_seat_buttons = document.querySelectorAll(".btn-cancel-seat");
         for (let btn of cancel_seat_buttons) {
@@ -74,6 +74,9 @@ if (document.getElementById('seat-reservation-section')) {
 // --> FUNCTIONS [Start] <--
 /**
  * Blocks seats that are already reserved.
+ * @param {Element} svg_seat 
+ * @param {String} seat_loc
+ * @param {Array} list_reserved_seats
  */
 function blockReservedSeats(svg_seat, seat_loc, list_reserved_seats) {
     if (list_reserved_seats.includes(seat_loc)) {
@@ -85,6 +88,9 @@ function blockReservedSeats(svg_seat, seat_loc, list_reserved_seats) {
  * Transforms SVG boxes (seats) into clickable elements;
  * Enables or disables the button to reserve or update the seats;
  * Displays feedback if user tries to select more than 2 seats
+ * @param {Element} svg_seat
+ * @param {String} seat_loc
+ * @param {Array} currentSeatsBooked
  */
 function makeAllFreeSeatsClickable(svg_seat, seat_loc, currentSeatsBooked) {
     const ALLOWED_SEATS_PER_USER = 2;
@@ -108,6 +114,8 @@ function makeAllFreeSeatsClickable(svg_seat, seat_loc, currentSeatsBooked) {
 
 /**
  * Toggles between displaying the selected seat location and removing it
+ * @param {Element} seat - svg seat
+ * @param {String} seat_loc - seat location
  */
 function toggleSeat(seat, seat_loc) {
     seat.classList.toggle("user-selected");
@@ -120,6 +128,7 @@ function toggleSeat(seat, seat_loc) {
 
 /**
  * Displays the seat location name
+ * @param {String} seat_loc - seat location
  */
 function showSelectedSeat(seat_loc) {
     const li_elem = document.createElement("li");
@@ -131,7 +140,7 @@ function showSelectedSeat(seat_loc) {
 
 /**
  * Removes the displayed seat location name
- * @param {*} seat_loc 
+ * @param {*} seat_loc - seat location
  */
 function removeDeselectedSeat(seat_loc) {
     if (typeof seat_loc == "string") {
@@ -151,7 +160,11 @@ function SelectedSeatsByUser() {
 }
 
 /**
- * Cancels reserved seat by unblocking the SVG seat box and removing the display of the seat's name; also enables or disables the button to reserve or update the seats
+ * Cancels reserved seat by unblocking the SVG seat box
+ * and removing the display of seat's location.
+ * Also enables or disables the button to reserve or update the seats
+ * @param {Element} btn - button
+ * @param {Array} currentSeatsBooked
  */
 function cancelSeat(btn, currentSeatsBooked) {
     const svg_seats_list = document.querySelectorAll('[data-seat-location]');
@@ -175,7 +188,7 @@ function cancelSeat(btn, currentSeatsBooked) {
 /**
  * Fills the reservation form with the user's selected seats
  * Returns 'true' if the user has selected a seat/s, and 'false' if not.
- * @returns a boolean
+ * @returns a Boolean
  */
 function fillSeatReservationForm() {
     const selected_seats_list = document.querySelectorAll("#seats-selected-list>li");
@@ -205,7 +218,7 @@ function fillSeatReservationForm() {
 
 /**
  * Displays a feedback message
- * @param {str} message 
+ * @param {String} message 
  */
 function showFeedBackMsg(message) {
     const feedbackBody = document.querySelector(".toast-body");
@@ -249,7 +262,8 @@ function getSelectedSeats() {
 
 /**
  * Checks if the selected seats are the same as those already reserved by the user
- * @returns true or false
+ * @param {Array} currentSeatBooked
+ * @returns a Boolean
  */
 function sameSeatsAsOriginal(currentSeatBooked) {
     const newSeatChoices = getSelectedSeats();
@@ -266,6 +280,7 @@ function sameSeatsAsOriginal(currentSeatBooked) {
  * Toggles the Reserve (or Update) Button on the Seat Reservation page
  * between enabling and disabling depending on the changes made by the user
  * on seat selection
+ * @param {Array} currentSeatsBooked
  */
 function toggleReserveUpdateButton(currentSeatsBooked) {
     if (!sameSeatsAsOriginal(currentSeatsBooked)) {
@@ -300,11 +315,14 @@ function allowEditingReservation() {
     const updateReservationBtn = document.getElementById("update-reservation");
     const seatsList = document.querySelectorAll("#seats-selected-list button");
     const seatMapBlocker = document.getElementById("seatmap-blocker");
+
     seatsBox.classList.remove("locked-style");
+
     seatsList.forEach( (btn) => {
         btn.classList.remove("disabled-btn");
         btn.removeAttribute("tabindex");
     });
+
     updateReservationBtn.classList.remove("d-none");
     this.classList.add("d-none");
     seatsBoxHeader.textContent = "Edit Your Reservation";
@@ -332,5 +350,4 @@ function disableAllInteractiveElements() {
         }
     });
 }
-
 // --> FUNCTIONS [End] <--
