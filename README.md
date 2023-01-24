@@ -811,7 +811,7 @@ This project uses the following tools:
 * Frontend Programming Languages:
     * CSS, Javascript 
 * Backend Programming Language:
-    * Python
+    * [Python](https://www.python.org/)
 * Web Framework:
     * [Django](https://www.djangoproject.com) - web framework used in developing this project
 * Deployment Platform:
