@@ -108,7 +108,9 @@
     <form action="{% url 'reserve_seats' event.slug %}" method="POST" id="reserve-seat-form">
     {% endif %}
         {% csrf_token %}
+        <table>
         {{ form }}
+        </table>
     </form>
 
     <!-- Reservation Notice -->
