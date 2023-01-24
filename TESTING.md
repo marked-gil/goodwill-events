@@ -102,6 +102,22 @@ The results of the manual tests on Javascript are shown below.
 | Edit button is switched to 'X' button and vice versa when toggled | Yes |
 | 'Update' button is enabled when input field value is changed, and disabled when no changes were made | Yes |
 
+### Seat Reservation Page
+| Test Description | Achieved |
+| ---------------- | -------- |
+| All available seats are clickable as evidence by its color change | Yes |
+| All reserved seats are blocked/disabled | Yes |
+| When event is fully booked, a message "This event is FULLY BOOKED" is displayed | Yes |
+| User's selected seats are displayed at the footer of the page | Yes |
+| The 'Reserve' and 'Update reservation' buttons are disabled by default and will only turn active when the user has selected a new seat from the seat map | Yes | 
+| User's reserved seats for an event can be cancelled by clicking the 'X' button of the seat number, then the 'Update Reservation' button | Yes |
+| When reserving or updating a seat/s by clicking the 'Reserve' button or 'Update Reservation' button, a loading animation shows up and all interactive elements are disabled until the saving process is complete | Yes |
+| When all reserved seats are removed and the 'Update Reservation' button is clicked, an offcanvas lightbox shows up with the 'Confirm' button to delete the reservation for the event | Yes |
+| Only a maximum of 2 seats can be booked per user per event | Yes |
+| A feedback message stating "You've reached the 2 seats maximum per user" is displayed when the user attempts to select more thatn 2 seats per event | Yes |
+| The seat map can be panned and zoomed | Yes |
+| The seat map is initially blocked with pan and zoom functionality disabled when a user with reserved seats to the event visits the page | Yes |
+| The initial seat map blocker can be removed by clicking the 'Edit Reservation' button | Yes |
 
 ## PYTHON AUTOMATED TESTING (Unittest)
 There are 18 automated tests created on this project and all of which ran successfully as shown in the image below. The tests checked the following:    

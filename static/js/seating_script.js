@@ -13,8 +13,7 @@ if (document.getElementById('seat-reservation-section')) {
     const userBookedSeats = getSelectedSeats();
 
     /** 
-     * On Seat Reservation page display, block all reserved seats and 
-     * make all available seats clickable
+     * Block all reserved seats and make all available seats clickable
      */
     window.onpageshow = function () {
         const svg_seats_list = document.querySelectorAll('[data-seat-location]');
