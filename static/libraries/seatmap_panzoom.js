@@ -1,6 +1,11 @@
 // --> SVG SEAT MAP <--
 if (document.getElementById('seatmap-container')) {
-    // The following Code is copied from SVG-PAN-ZOOM library demo (See Technologies and Credits sections in README)
+    
+    /**
+     * The following Code is copied from SVG-PAN-ZOOM library demo
+     * (See Technologies and Credits sections in README)
+     */
+
     svgPanZoom('#my-svg', {
         zoomEnabled: true,
         fit: false,
