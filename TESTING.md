@@ -302,7 +302,7 @@ The web developer tools of the 4 main websites (Chrome, Firefox, Edge, and Safar
 * **Firefox**   
 ![Pixel 2 Android on Firefox developer tool](docs/testing_screenshots/manual_responsiveness_test/firefox-pixel2-android.png)    
 * **Microsoft Edge**    
-![Galaxy S9+ on Microsoft Edge developer tool](docs/testing_screenshots/manual_responsiveness_test/edge-galaxy-s9plus.png)  
+![Galaxy S9+ on Microsoft Edge developer tool](docs/testing_screenshots/manual_responsiveness_test/edge-galaxy-s8.png)  
 * **Safari**    
 ![iPhone 8 Plus on Safari developer tool](docs/testing_screenshots/manual_responsiveness_test/safari-iphone8plus.png)     
 
