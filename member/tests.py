@@ -107,6 +107,7 @@ class TestLogin(BaseTestCase):
         self.assertTrue(response.wsgi_request.user.is_authenticated)
 
     def test_incorrect_login_password(self):
+        """ Tests login response to incorrect password """
         response = self.client.post(self.login_url, {
             'login': self.username, 'password': 'wrongpasswoRD154'
             })
