@@ -24,7 +24,13 @@ class EventSeatingAdmin(admin.ModelAdmin):
     actions = ['limit_reached', 'can_book_seats']
 
     def limit_reached(self, request, queryset):
+        """
+        Sets user_limit_reached field as True
+        """
         queryset.update(user_limit_reached=True)
 
     def can_book_seats(self, request, queryset):
+        """
+        Sets user_limit_reached field as False
+        """
         queryset.update(user_limit_reached=False)
