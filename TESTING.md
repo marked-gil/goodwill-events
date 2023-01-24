@@ -154,7 +154,7 @@ The HTML files on this project were tested and validated by [W3C Markup Validati
 * **Events (Upcoming Events) Page** -- [Click for Result](https://github.com/marked-gil/goodwill-events/blob/main/docs/testing_screenshots/html_validator/events-page-html-validated.png)
 * **Seat Map (Generic) Page** -- [Click for Result](https://github.com/marked-gil/goodwill-events/blob/main/docs/testing_screenshots/html_validator/generic-seatmap-html-validated.png)   
 * **Specific Event Page** -- [Click for Result](https://github.com/marked-gil/goodwill-events/blob/main/docs/testing_screenshots/html_validator/specific-event-page-html-validated.png)  
-* **Seat Reservation Page** -- [Click for Result]()    
+* **Seat Reservation Page** -- [Click for Result](https://github.com/marked-gil/goodwill-events/blob/main/docs/testing_screenshots/html_validator/seat-reservation-html-validated.png)    
 * **Member Account Page** -- [Click for Result](https://github.com/marked-gil/goodwill-events/blob/main/docs/testing_screenshots/html_validator/member-account-html-validated.png)
 * **Sign In Page** -- [Click for Result](https://github.com/marked-gil/goodwill-events/blob/main/docs/testing_screenshots/html_validator/signin-html-validated.png)
 * **Sign Up Page** -- [Click for Result](https://github.com/marked-gil/goodwill-events/blob/main/docs/testing_screenshots/html_validator/signup-validated.png) 
