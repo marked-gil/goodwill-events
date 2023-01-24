@@ -74,6 +74,10 @@ if (document.getElementById('comment-form')) {
         });
     });
 
+    // Prevents multiple clicking of the 'Post' button for comment
+    const commentPostBtn = document.querySelector("#comment-form button");
+    disableBtn(commentPostBtn);
+
     // Delete User's Comment using AJAX
     /** 
      * Idea for this code were taken from Stackoverflow & Plus Geek's Youtube Channel
@@ -94,6 +98,14 @@ if (document.getElementById('comment-form')) {
             },
         });
     });
+
+    // Prevents multiple clicking of the 'Delete' button for comment
+    const commentDeleteBtns = document.querySelectorAll(".delete-comment-form button");
+    if (commentDeleteBtns) {
+        commentDeleteBtns.forEach(function(btn) {
+            disableBtn(btn);
+        });
+    }
 }
 // --> EVENT DETAILS Page [End] <--
 
@@ -200,6 +212,16 @@ function fieldValueChanged(field, originalText) {
     } else {
         updateBtn.classList.add('disabled');
     }
+}
+
+/**
+ * Disables a button
+ * @param {*} button - The target button
+ */
+function disableBtn(button) {
+    button.addEventListener('click', function() {
+        this.classList.add("disabled");
+    });
 }
 
 /**
