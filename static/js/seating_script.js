@@ -59,6 +59,17 @@ if (document.getElementById('seat-reservation-section')) {
         seatMapBlocker.classList.remove("d-none");
         editReservationBtn.addEventListener('click', allowEditingReservation);
     }
+
+    // EventListener to Delete Reservation
+    if (document.getElementById("confirm-delete")) {
+        const deleteReservationForm = document.getElementById("delete-reservation-form");
+        const confirmDeleteBtn = document.getElementById("delete-reservation-button");
+        confirmDeleteBtn.addEventListener('click', function() {
+            displayLoadingAnimation();
+            deleteReservationForm.submit();
+            disableAllInteractiveElements();
+        });
+    }
 }
 
 // --> FUNCTIONS [Start] <--
@@ -207,15 +218,17 @@ function showFeedBackMsg(message) {
 
 /**
  * Submits the user's newly selected seats, or deletes previously booked seats.
+ * Also displays the loading SVG animation, and disables all buttons and links
+ * while waiting for the reservation processing to complete.
  */
 function submitSeatReservation() {
     if (fillSeatReservationForm()) {
         displayLoadingAnimation();
+        disableAllInteractiveElements();
         const seat_form = document.getElementById("reserve-seat-form");
         seat_form.submit();
     } else {
         if (document.getElementById('update-reservation')) {
-            displayLoadingAnimation();
             const confirm_delete_btn = document.getElementById('confirm-delete');
             confirm_delete_btn.click();
         }
@@ -306,4 +319,19 @@ function displayLoadingAnimation() {
     const loadingSVGContainer = document.getElementById("loading-svg-container");
     loadingSVGContainer.style.display = "flex";
 }
+
+/**
+ * Disables all the buttons and anchor tags in the page
+ */
+function disableAllInteractiveElements() {
+    const buttonsLinks = document.querySelectorAll("button, a");
+    buttonsLinks.forEach(function(elem) {
+        if(elem.tagName === 'A') {
+            elem.removeAttribute("href")
+        } else {
+            elem.disabled = true;
+        }
+    });
+}
+
 // --> FUNCTIONS [End] <--
