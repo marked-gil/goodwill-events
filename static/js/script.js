@@ -179,8 +179,8 @@ if (document.getElementById('member-account-outer-container')) {
 // --> FUNCTIONS <--
 /**
  * Highlights and disables the corresponding nav link of the current page
- * @param {*} pageDOM - element specific to a page
- * @param {*} navID - ID of the nav link
+ * @param {Element} pageDOM - element specific to a page
+ * @param {String} navID - ID of the nav link
  */
 function showActiveNavLink(pageDOM, navID) {
     if (pageDOM) {
@@ -193,7 +193,7 @@ function showActiveNavLink(pageDOM, navID) {
 
 /**
  * Toggles text content of the Edit button
- * @param {*} btn - The targeted button
+ * @param {Element} btn - The targeted button
  */
 function toggleButtonText(btn) {
     return btn.textContent == 'Edit' ? btn.textContent = 'X' : btn.textContent = 'Edit';
@@ -202,8 +202,8 @@ function toggleButtonText(btn) {
 /**
  * Enables the 'Update' button when field input is changed,
  * and disables it when no changes are made
- * @param {*} field 
- * @param {*} originalText 
+ * @param {Element} field - input field
+ * @param {String} originalText 
  */
 function fieldValueChanged(field, originalText) {
     const updateBtn = document.getElementById('update-account-btn');
@@ -216,7 +216,7 @@ function fieldValueChanged(field, originalText) {
 
 /**
  * Disables a button
- * @param {*} button - The target button
+ * @param {Element} button - The target button
  */
 function disableBtn(button) {
     button.addEventListener('click', function() {
@@ -227,8 +227,8 @@ function disableBtn(button) {
 /**
  * Checks if a string only contains spaces
  * Code taken from bobbyhadz blog (See Credit Section on README.md)
- * @param {*} str
- * @returns boolean
+ * @param {String} str - a string of characters
+ * @returns a Boolean
  */
 function containsOnlySpaces(str) {
     return /^\s*$/.test(str);
