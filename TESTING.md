@@ -157,6 +157,7 @@ All Python codes on this project were tested using the [CI Python Linter](https:
 ![events/admin.py Linter Result](docs/testing_screenshots/python_linter/events-admin.png)         
 * [**events/FORMS.PY**](https://github.com/marked-gil/goodwill-events/blob/main/events/forms.py)    
 ![events/forms.py Linter Result](docs/testing_screenshots/python_linter/events-forms.png)   
+* [**events/tests.py**]()setting
 * [**events/MODELS.PY**](https://github.com/marked-gil/goodwill-events/blob/main/events/models.py)  
 ![events/models.py Linter Result](docs/testing_screenshots/python_linter/events-models.png) 
 * [**events/URLS.PY**](https://github.com/marked-gil/goodwill-events/blob/main/events/urls.py)  

@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% load static %}
+
 <!-- Removes the flash message that comes with the base template -->
 {% block flash-messages %}
 {% endblock %}
@@ -125,7 +127,7 @@
 
 <!-- LOADING SVG ANIMATION -->
 <div id="loading-svg-container">
-    {% include 'loading-svg.html' %}
+    <img src="{% static 'images/loading.svg' %}" alt="loading animation is showing while request is in progress">
 </div>
 
 {% endblock %}
