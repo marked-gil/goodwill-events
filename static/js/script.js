@@ -47,7 +47,7 @@ if (document.getElementById('comment-form')) {
 
     // Post User's Comment using AJAX
     /** 
-     * Idea for this code were taken from Stackoverflow & Plus Geek's Youtube Channel
+     * Code idea was taken from Stackoverflow & Plus Geek's Youtube Channel
      * (See Credits Section in README.md)
      */
     $("#comment-form").submit(function (e) {
@@ -80,7 +80,7 @@ if (document.getElementById('comment-form')) {
 
     // Delete User's Comment using AJAX
     /** 
-     * Idea for this code were taken from Stackoverflow & Plus Geek's Youtube Channel
+     * Code idea was taken from Stackoverflow & Plus Geek's Youtube Channel
      * (See Credits Section in README.md)
      */
     $(".delete-comment-form").submit(function (e) {
@@ -147,7 +147,7 @@ if (document.getElementById('member-account-outer-container')) {
         field.setAttribute('class', 'disabled-field');
     }
 
-    // Event Listeners for edit buttons
+    // Event Listeners for EDIT buttons
     fnameEditBtn.addEventListener('click', (e) => {
         firstName.toggleAttribute('readonly');
         firstName.classList.toggle('disabled-field');
@@ -178,7 +178,7 @@ if (document.getElementById('member-account-outer-container')) {
 
 // --> FUNCTIONS <--
 /**
- * Highlights the nav link when page opened
+ * Highlights and disables the corresponding nav link of the current page
  * @param {*} pageDOM - element specific to a page
  * @param {*} navID - ID of the nav link
  */
