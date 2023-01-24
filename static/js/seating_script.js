@@ -75,7 +75,7 @@ if (document.getElementById('seat-reservation-section')) {
 /**
  * Blocks seats that are already reserved.
  * @param {Element} svg_seat 
- * @param {String} seat_loc
+ * @param {String} seat_loc - seat location
  * @param {Array} list_reserved_seats
  */
 function blockReservedSeats(svg_seat, seat_loc, list_reserved_seats) {
@@ -89,7 +89,7 @@ function blockReservedSeats(svg_seat, seat_loc, list_reserved_seats) {
  * Enables or disables the button to reserve or update the seats;
  * Displays feedback if user tries to select more than 2 seats
  * @param {Element} svg_seat
- * @param {String} seat_loc
+ * @param {String} seat_loc - seat location
  * @param {Array} currentSeatsBooked
  */
 function makeAllFreeSeatsClickable(svg_seat, seat_loc, currentSeatsBooked) {
