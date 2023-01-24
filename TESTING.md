@@ -197,7 +197,7 @@ See individual result screenshot below.
 * [**seating_script.js**](https://github.com/marked-gil/goodwill-events/blob/main/static/js/seating_script.js)  
 ![JSHINT result for seating_script.js](docs/testing_screenshots/jshint/seating_script-jshint-result.png)    
 * [**seatmap_panzoom.js**](https://github.com/marked-gil/goodwill-events/blob/main/static/js/seatmap_panzoom.js)    
-![JSHINT result for seatmap_panzoom.js](docs/testing_screenshots/jshint/seatmap_panzoom-jshint-result.png)  
+![JSHINT result for seatmap_panzoom.js](docs/testing_screenshots/jshint/seatmap-panzoom-jshint-result.png)  
 
 [Back to Table of Contents](#table-of-contents)
 
