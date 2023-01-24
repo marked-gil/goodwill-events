@@ -1,8 +1,8 @@
 /*
- This custom JS script is utilized by the following templates:
-  'reserve-seats.html' template of the 'seating' app, 
-  'view_seatmap.html' template,
-  'seatmap.html', and
+ The following templates utilizes this CSS file:
+    'reserve-seats.html' template, 
+    'view_seatmap.html' template, and
+    'seatmap.html'
 */
 
 /* Customized Variables */
@@ -119,7 +119,7 @@
 }
 /* SVG SEAT MAP [end] */
 
-/* Seat Map BLocker */
+/* Seat Map Blocker */
 #seatmap-blocker {
     background-color: var(--clr-cornflower-blue);
     top: 0;
@@ -214,7 +214,7 @@
         font-size: 1.4rem;
     }
 
-    /* SEAT MAP LEGEND */
+    /* Seat Map Legend */
     .seatmap-legend-icon {
         font-size: 1rem;
     }
@@ -250,7 +250,7 @@
         font-size: 1rem;
     }
 
-    /* SEAT MAP LEGEND */
+    /* Seat Map Legend */
     #available-icon,
     #selected-icon,
     #unavailable-icon {
