@@ -94,7 +94,7 @@
 <section id="comments-outer-wrapper" class="container">
     {% if user.is_authenticated %}
     <div class="mb-3 col-md-9 col-lg-6 m-auto">
-        <!-- COMMENT FORM [start] -->
+        <!-- Comment Form -->
         <form id="comment-form" action="{% url 'event_comment' event.slug %}" method="POST">
             {% csrf_token %}
             <label for="comment-textarea" class="form-label">Write Your Comment:</label>
@@ -104,7 +104,6 @@
                 <button class="btn btn-primary py-1 disabled" type="submit">Post</button>
             </div>
         </form>
-        <!-- COMMENT FORM [end] -->
     </div>
     {% endif %}
 
