@@ -1,3 +1,8 @@
+/* 
+ This CSS file is utilized by all templates,
+ except those that contain the Seat Map
+*/
+
 /* Customized Variables */
 :root {
     --clr-white: #ffffff;
@@ -47,7 +52,7 @@ a:hover {
 }
 
 textarea {         
-    resize: none;       /* prevents resizing of textarea */
+    resize: none;    /* prevents resizing of textarea */
 }
 /* DEFAULT STYLING [End] */
 
@@ -121,7 +126,7 @@ textarea {
 }
 /* UTILITY CLASSES [End] */
 
-/* Logo */
+/* LOGO */
 #logo {
     font-size: 1.7rem;
     transition: .3s;
@@ -133,7 +138,7 @@ textarea {
     text-shadow: 3px 0 5px var(--clr-linen), 1px 0 0 var(--clr-rich-black);
 }
 
-/* navbar */
+/* NAV BAR */
 #navbar-main {
     background-color: var(--clr-mikado-yellow);
     box-shadow: 0px 0px 50px 5px rgb(235, 210, 16) inset, 0px 0px 5px 5px rgb(0, 0, 0) inset;
@@ -314,8 +319,8 @@ textarea {
 #comments-container {
     max-height: 35rem;
     overflow: auto;
-    scrollbar-color: var(--clr-dutch-white) var(--clr-linen);   /* styles scrollbar in Firefox */
-    scrollbar-width: thin;   /* styles scrollbar thumb in Firefox */
+    scrollbar-color: var(--clr-dutch-white) var(--clr-linen);   /* for Firefox */
+    scrollbar-width: thin;   /* for scrollbar thumb in Firefox */
 }
 
 /* styles scrollbar in Chrome, Safari, & Edge */
@@ -501,7 +506,7 @@ footer {
     border: 1px solid rgb(186, 181, 181);
     margin-top: .4rem;
 }
-/* --> PASSWORD RESET FROM KEY [Start] */
+/* --> PASSWORD RESET FROM KEY [End] */
 
 
 /* --> PASSWORD CHANGE [Start] <-- */
@@ -551,8 +556,8 @@ footer {
 
 #my-reservations-body {
     overflow: auto;
-    scrollbar-color: var(--clr-police-blue) var(--clr-linen);   /* styles scrollbar in Firefox */
-    scrollbar-width: thin;   /* styles scrollbar thumb in Firefox */
+    scrollbar-color: var(--clr-police-blue) var(--clr-linen);   /* for Firefox */
+    scrollbar-width: thin;   /* for scrollbar thumb in Firefox */
 }
 
 /* styles scrollbar in Chrome, Safari, & Edge */
@@ -590,7 +595,7 @@ footer {
     font-weight: 700;
     font-size: .9rem;
 }
-/* OFFCANVAS [End] */
+/* MY RESERVATIONS OFFCANVAS [End] */
 
 /* ERROR PAGES [Start] */
 #error-500,
@@ -720,7 +725,6 @@ footer {
     #homepage-title {
         font-size: 3.2rem;
     }
-
 
     /* EVENT DETAILS PAGE */
     #event-details-title {
@@ -883,7 +887,6 @@ footer {
         font-size: 1.3rem;
     }
     
-
     /* FOOTER */
     #social-links {
         width: 32rem;
@@ -901,7 +904,6 @@ footer {
         font-size: 3.8rem;
     }
 
-
     #featured-events-inner-container {
         width: 70rem;
     }
@@ -910,12 +912,10 @@ footer {
         width: 23rem;
     }
 
-
     /* ALL EVENTS PAGE */
     .event-card-img {
         height: 13rem;
         object-fit: cover;
         object-position: 0 40%;
     }
-
 }
