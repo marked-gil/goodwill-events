@@ -21,6 +21,7 @@
         * [Color and Contrast](#colors--contrast)     
         * [Typography](#typography)   
 * [**Features**](#features)
+* [**Features for Future Implementation**](#features-left-for-future-implementation)
 * [**Fixed Bugs**](#fixed-bugs)
 * [**Bugs Left To Fix**](#bugs-left-to-fix)
 * [**Testing**](#testing)
@@ -847,7 +848,7 @@ This project uses the following tools:
 * For Testing and Validation:   
     * [CI Python Linter](https://pep8ci.herokuapp.com/) 
     * [JSHint](https://jshint.com/) 
-    * [https://validator.w3.org/](https://validator.w3.org/)    
+    * [W3C Markup Validator](https://validator.w3.org/)    
     * [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) 
     * Safari Accessibility Audit    
     * [a11y Color Contrast Accessibility Validator](https://color.a11y.com/)    
@@ -895,12 +896,12 @@ The events and their writeups or blogs on this site are fictional and composed b
 
 * Redirecting to the same page after post method - [StackOverflow](https://stackoverflow.com/questions/39560175/redirect-to-same-page-after-post-method-using-class-based-views)
 
-As a novice in web development, I have done intensive research on available resources and materials online that I can find, and tons of them have been instrumental in increasing my understanding of each programming language, library or technology used in this project. As I cannot name all those sites I have opened and read, I would just like to acknowledge the great works of experienced developers who took the time to help others, especially beginners like me, by filling the internet with their brilliant contributions.
+As a beginner in web development, I conducted extensive research on available resources and materials online to increase my understanding of the programming languages, libraries, and technologies used in this project. While I cannot name all the sites I visited and read, I would like to acknowledge and express my gratitude to the experienced developers who have shared their knowledge and expertise online, helping beginners like me with their brilliant contributions.
 
 [Back to Table of Contents](#table-of-contents)
 
 ## Acknowledgment
 With profound gratitude, I would like to mention the following:
-* **Daisy McGirr**, my Code Institute mentor, for her generosity in sharing with me her expertise that significantly guided the creation of this project.
-* **Kyle Dacutan**, my wife, for the constant support, love, and understanding.
-* And my children - **Zsyrish** and **Marko** - who continue to be my joy and inspiration.
+* **Daisy McGirr**, my Code Institute mentor, for her generosity in sharing her expertise and guiding the creation of this project.
+* **Kyle Dacutan**, my wife, for her constant support, love, and understanding.
+* And my children, **Zsyrish** and **Marko**, who continue to be my joy and inspiration.
