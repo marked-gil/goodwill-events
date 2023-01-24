@@ -49,7 +49,7 @@ if (document.getElementById('comment-form')) {
     /** 
      * Idea for this code were taken from Stackoverflow & Plus Geek's Youtube Channel
      * (See Credits Section in README.md)
-     * */
+     */
     $("#comment-form").submit(function (e) {
         e.preventDefault();
         const baseURL = window.location.origin;
@@ -82,7 +82,7 @@ if (document.getElementById('comment-form')) {
     /** 
      * Idea for this code were taken from Stackoverflow & Plus Geek's Youtube Channel
      * (See Credits Section in README.md)
-     * */
+     */
     $(".delete-comment-form").submit(function (e) {
         e.preventDefault();
         $.ajax({
