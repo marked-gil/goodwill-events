@@ -8,7 +8,7 @@
         <!-- Time Comment was Posted (using django's naturaltime filter) -->
         <p class="comment-posted-on card-subtitle mb-2">{{ comment.posted_on|naturaltime }}</p>
 
-        <!-- COMMENT DELETE FORM -->
+        <!-- Comment Delete Form -->
         {% if comment.author == user %}
         <form class="delete-comment-form" data-url="{% url 'delete_comment' pk=comment.id %}" method="POST">
             {% csrf_token %}
