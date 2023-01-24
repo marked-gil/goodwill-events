@@ -896,6 +896,8 @@ The events and their writeups or blogs on this site are fictional and composed b
 
 * Redirecting to the same page after post method - [StackOverflow](https://stackoverflow.com/questions/39560175/redirect-to-same-page-after-post-method-using-class-based-views)
 
+* Django Testing Tutorial - [Cryce Truly Youtube Channel](www.youtube.com/watch?v=FLVB_HruIjk&t=306s)
+
 As a beginner in web development, I conducted extensive research on available resources and materials online to increase my understanding of the programming languages, libraries, and technologies used in this project. While I cannot name all the sites I visited and read, I would like to acknowledge and express my gratitude to the experienced developers who have shared their knowledge and expertise online, helping beginners like me with their brilliant contributions.
 
 [Back to Table of Contents](#table-of-contents)
