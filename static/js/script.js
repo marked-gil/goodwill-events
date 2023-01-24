@@ -5,7 +5,7 @@ const viewSeatMapPage = document.getElementById('view-seatmap-section');
 const signInPage = document.getElementById('sign-in-section');
 const signUpPage = document.getElementById('sign-up-section');
 const signOutPage = document.getElementById('sign-out-section');
-const AccountPage = document.getElementById('member-account-outer-container');
+const accountPage = document.getElementById('member-account-outer-container');
 
 // Highlights & disables the nav link when corresponding page is opened
 showActiveNavLink(homePage, 'home-link');
@@ -14,7 +14,7 @@ showActiveNavLink(viewSeatMapPage,'view-seatmap-link');
 showActiveNavLink(signInPage, 'sign-in-link');
 showActiveNavLink(signUpPage, 'sign-up-link');
 showActiveNavLink(signOutPage, 'sign-out-link');
-showActiveNavLink(AccountPage, 'user-acount-link');
+showActiveNavLink(accountPage, 'user-acount-link');
 // --> NAV BAR [End] <--
 
 
