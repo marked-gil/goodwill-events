@@ -2,7 +2,7 @@
 
 ## TABLE OF CONTENTS    
 * [**Manual Testing**](#manual-testing-user-story-testing)
-* [**Automated Testing**](#automated-testing-unittest)
+* [**Python Automated Testing**](#automated-testing-unittest)
 * [**Validators**](#validators)     
     * [Python Linter](#ci-python-linter)
     * [JSHINT](#jshint)
@@ -20,7 +20,7 @@
 [BACK TO README.MD](https://github.com/marked-gil/goodwill-events#readme)
 
 ## MANUAL TESTING (User Story Testing)
-The following are the test cases of the manual testing of the project:
+The following are the test cases for the manual testing done on the project. Both the Python and Javascript codes were tested.
 
 * **HOME Page**     
 ![Home Page Template test cases](docs/test_cases/test-cases-1.png)
@@ -73,10 +73,10 @@ The following are the test cases of the manual testing of the project:
 [Back to Table of Contents](#table-of-contents)
 
 
-## AUTOMATED TESTING (Unittest)
+## PYTHON AUTOMATED TESTING (Unittest)
 There are 18 automated tests created on this project and all of which ran successfully as shown in the image below. The tests checked the following:    
 * the correct rendering of the templates/pages,
-* the successful 'liking' and posting of comments
+* the successful 'liking' and posting of comments,
 * the creation of new events,
 * the signing up, logging in and logging out of users,
 * the site's response to very common passwords and invalid emails during signup, and 
@@ -86,15 +86,17 @@ These tests can be seen in the `tests.py` file in each of the apps.
 
 ![Unittest Result](docs/test_cases/automated-testing-result.png)
 
-* **How to Run the Test**   
-    * On the settings.py file, use the **sqlite3 database** and comment out the production database URL temporarily.
-        > DATABASES = {
-            'default': {
-                'ENGINE': 'django.db.backends.sqlite3',
-                'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+* **How to Run the Tests**
+    * Use the **sqlite3 database**. This can be done by either:     
+        * Temporarily commenting out the production database URL, and leaving the following code as the default:
+            > DATABASES = {
+                'default': {
+                    'ENGINE': 'django.db.backends.sqlite3',
+                    'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+                }
             }
-        }
-    * Use the command "`python3 manage.py test`" to run the tests.
+        * Or, temporarily comment out the DATABASE_URL in the `env` file.
+    * Then, use the command "`python3 manage.py test`" to run the tests.
 
 ## VALIDATORS
 
@@ -293,7 +295,7 @@ The tool [Mobile-Friendly Test](https://search.google.com/test/mobile-friendly) 
 
 ### **Manual Testing for Responsiveness**
 
-The web developer tools of the 4 main websites (Chrome, Firefox, Edge, and Safari) were used to manually test each page of this site for their responsivenes. Below are sample screenshots:
+The web developer tools of the 4 main websites (Chrome, Firefox, Edge, and Safari) were used to manually test each page of this site for their responsiveness. Below are sample screenshots:
 
 * **Chrome**    
 ![iphone 5 on Chrome developer tool](docs/testing_screenshots/manual_responsiveness_test/chrome-iphone5.png)    
