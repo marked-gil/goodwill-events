@@ -327,7 +327,7 @@ function disableAllInteractiveElements() {
     const buttonsLinks = document.querySelectorAll("button, a");
     buttonsLinks.forEach(function(elem) {
         if(elem.tagName === 'A') {
-            elem.removeAttribute("href")
+            elem.removeAttribute("href");
         } else {
             elem.disabled = true;
         }
