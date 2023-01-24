@@ -1,6 +1,6 @@
 # Goodwill Events
 ![Am I Responsive Screenshot](docs/others/am-i-responsive.png)     
-**Goodwill Events** is a fictional charity organization that produces events, such as concerts, recitals, dance performances, and the like for entertainment and charity. And this website is created to register new members to the organization, show upcoming events, and allow reservation of desired seats. In addition, signed-in users of the website can also 'like' and leave comments on individual event posts. [View Live Website.](https://goodwill-events.herokuapp.com/)
+**Goodwill Events** is a fictional charity organization that produces a variety of entertaining events, such as concerts, recitals, and dance performances. This website serves as its platform for registering new members, displaying upcoming events, and reserving seats for an event. Additionally, signed-in users can 'like' and leave comments on individual event posts. [View Live Website.](https://goodwill-events.herokuapp.com/)
 
 ## TABLE OF CONTENTS
 * [**User Experience Design (UXD)**](#user-experience-design-uxd)
@@ -43,11 +43,7 @@ This website aims to showcase upcoming charity shows and events by the fictional
 * People who like to feel involved and able to show support for a specific event by commenting and liking an event post.
 
 #### **The Use of Agile Methodology**
-This project was created using the Agile Methodology. At the start of the project, nine (9) EPICS were formed to guide the design, structure, and the process of constructing the website. Under each epic are several User Stories that specify the features of the project. And each User Story was assigned a story point  (i.e., 2 - 8 points) and a priority label (i.e., Must-Have, Should-Have, Could-Have, and Won’t-Have). The story points for each User Story guided the creator to estimate the time needed to implement the feature, while the priority labels allowed the creator to implement first the most vital components of the site to make it a viable product quicker.
-
-Also, each User Story includes acceptance criteria, which are the basis of whether the User Story has been implemented successfully or not. And for the creator to fulfil them successfully, tasks are specified for the creator to implement.
-
-In total, there are 30 User Stories formulated for this project - 28 have been implemented, and the remaining 2 are left for future implementation. These 28 implemented User Stories were divided among the 4 planned iterations. However, each iteration has been given a different timeframe as the owner and creator of this site has his time constrained by other professional obligations.
+The project was developed using the Agile Methodology. To guide the design and structure of the website, nine EPICS were established at the start of the project. Each EPIC contained several User Stories that specified the features of the project. A story point (ranging from 2-8) and priority label (Must-Have, Should-Have, Could-Have, and Won’t-Have) were assigned to each User Story to guide the estimation of time needed for implementation and prioritize the most vital components of the site. Acceptance criteria were included in each User Story, which served as a basis for determining successful implementation. Tasks were also specified for the creator to fulfill the acceptance criteria. In total, 31 User Stories were formulated for this project, with 29 being implemented and the remaining 2 left for future implementation. These 29 User Stories were divided among four planned iterations, with each iteration having a different timeframe due to the creator's other professional obligations.
 
 Github’s Kanban board is an extremely useful feature that this project used. Through it, tasks were marked conveniently when done, and User Stories were closed when fulfilled. Here is the link for the project’s Kanban board - [CLICK HERE](https://github.com/users/marked-gil/projects/15).
 
@@ -715,6 +711,23 @@ As this website is for educational purposes and none of the events shown in this
 
 [Back to Table of Contents](#table-of-contents)
 
+## Features Left for Future Implementation
+
+The following **User Stories** have not been implemented in the current state of the project and will be considered for future implementation.
+
+* User Story: [**Confirmation Email for Reserved Seats**](https://github.com/marked-gil/goodwill-events/issues/35)
+    > As a user, I can receive a confirmation email for my seat reservation so that I can ensure that my seat reservation to an event is confirmed.     
+
+   **Implementation:**  
+   * Set up automatic email function
+   * Display a flash message to the user that a confirmation has been sent to his email    
+
+* User Story: [**Modify User Model**](https://github.com/marked-gil/goodwill-events/issues/18)
+    > As a developer, I can add other fields in the User model in addition to those that are built-in so I can customize the sign-up and sign-in features of the site.   
+
+   **Implementation:**  
+   * Modify the User model to include: telephone number, date of birth, gender, address, and/or etc
+   * Require all fields in the User Model
 
 ## Fixed Bugs
 
