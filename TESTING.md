@@ -1,7 +1,8 @@
 # TESTING
 
 ## TABLE OF CONTENTS    
-* [**Manual Testing**](#manual-testing-user-story-testing)
+* [**Manual Testing for User Stories**](#manual-testing-user-story-testing)
+* [**Manual Testing for Javascript**](#manual-testing-for-javascript)
 * [**Python Automated Testing**](#automated-testing-unittest)
 * [**Validators**](#validators)     
     * [Python Linter](#ci-python-linter)
@@ -20,7 +21,7 @@
 [BACK TO README.MD](https://github.com/marked-gil/goodwill-events#readme)
 
 ## MANUAL TESTING (User Story Testing)
-The following are the test cases for the manual testing done on the project. Both the Python and Javascript codes were tested.
+These are the test cases for manual testing on the project's User Stories.
 
 * **HOME Page**     
 ![Home Page Template test cases](docs/test_cases/test-cases-1.png)
@@ -71,6 +72,35 @@ The following are the test cases for the manual testing done on the project. Bot
     ![Filtering Events by Month test cases](docs/test_cases/test-cases-19.png)
 
 [Back to Table of Contents](#table-of-contents)
+
+## MANUAL TESTING FOR JAVASCRIPT
+The results of the manual tests on Javascript are shown below.
+
+### Nav Bar Links
+| Test Description | Achieved |
+| ---------------- | -------- |
+| Nav link is highlighted and disabled when its corresponding page is opened | Yes |
+
+### Events Page (Upcoming Events)
+| Test Description | Achieved |
+| ---------------- | -------- |
+| Current page's number in the pagination nav is highlighted and disabled | Yes |
+
+### Event Details Page (Specific Event's Page)
+| Test Description | Achieved |
+| ---------------- | -------- |
+| Character counter for the comment section tracks the number of characters left with a maximum of 250 characters | Yes |
+| 'Post' button of the comment section is disabled when textarea is empty | Yes |
+| Page reloads and stays on the comment section after user posted a comment | Yes |
+| Page reloads and stays on the comment section after user deleted a comment | Yes |
+
+### Member Account Page
+| Test Description | Achieved |
+| ---------------- | -------- |
+| All input fields in the form are 'read-only' as their initial state | Yes |
+| Edit button on each input field removes the 'read-only' status and allow editing of the field | Yes |
+| Edit button is switched to 'X' button and vice versa when toggled | Yes |
+| 'Update' button is enabled when input field value is changed, and disabled when no changes were made | Yes |
 
 
 ## PYTHON AUTOMATED TESTING (Unittest)

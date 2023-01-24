@@ -188,11 +188,11 @@ function toggleButtonText(btn) {
 }
 
 /**
-     * Enables the 'Update' button when field input is changed,
-     * and disables it when no changes are made
-     * @param {*} field 
-     * @param {*} originalText 
-     */
+ * Enables the 'Update' button when field input is changed,
+ * and disables it when no changes are made
+ * @param {*} field 
+ * @param {*} originalText 
+ */
 function fieldValueChanged(field, originalText) {
     const updateBtn = document.getElementById('update-account-btn');
     if (field.value.trim() != originalText) {
