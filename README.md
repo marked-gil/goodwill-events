@@ -824,6 +824,7 @@ This project uses the following tools:
     * [Bootstrap](https://getbootstrap.com/) - frontend toolkit used to help build this responsive site faster
     * [JQUERY](https://jquery.com/) - a feature-rich Javascript library used, along with **AJAX**, to post and delete comments
     * [SVG-PAN-ZOOM library](https://github.com/bumbu/svg-pan-zoom) - used to add the pan and zoom functionality to the SVG seat map.
+    * [Hammer.js](http://hammerjs.github.io/) - used to move the seatmap by recognizing gestures made by touch, mouse and pointer events.
     * `OS` module in Python - used in the `settings.py` file to perform functions that involve the operating system, such as checking for environment variables
     * [datetime module](https://docs.python.org/3/library/datetime.html) - used to determine the expired events and manipulating their dates for recycling
     * [django-database-url](https://pypi.org/project/dj-database-url/) - used for connecting Django to database
