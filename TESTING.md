@@ -268,7 +268,7 @@ However, the pages that require logging in cannot be analysed by the validator, 
 ![Color Contrast Validator Result for Home Page](docs/testing_screenshots/color_contrast_validator/color-contrast-home.png) 
 * **Events (Upcoming Events) Page**     
 ![Color Contrast Validator Result for Events Page](docs/testing_screenshots/color_contrast_validator/color-contrast-events.png)      
-* **Seat Map (Generic) Page**
+* **Seat Map (Generic) Page**   
 ![Color Contrast Validator Result for Seat Map Page](docs/testing_screenshots/color_contrast_validator/color-contrast-seatmap.png)  
 * **Specific Event Page**   
 ![Color Contrast Validator Result for Specific Event Page](docs/testing_screenshots/color_contrast_validator/color-contrast-specific-event.png)      

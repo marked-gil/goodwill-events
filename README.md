@@ -837,7 +837,7 @@ This project uses the following tools:
 * Gitpod - the cloud-based IDE (Integrated Developer Environment) used to code this site
 * GitHub - stores the source code repository for this website
 * [Balsalmiq](https://balsamiq.com/) - used in creating the wireframes of this project's design 
-* [BOXY-SVG](boxy-svg.com) - an online editor for SVG files, which was used to create the SVG seat map
+* [BOXY-SVG](https://boxy-svg.com/) - an online editor for SVG files, which was used to create the SVG seat map
 * [Diagrams.net](https://www.diagrams.net) - used to create the database schema diagram
 * [Favicon](https://favicon.io/) - Favicon generator    
 * [Font Awesome](https://fontawesome.com/) - provides the social media icons on the page footer
@@ -862,7 +862,9 @@ This project uses the following tools:
 ## Credits
 
 ### Content
-The events and their writeups or blogs on this site are fictional and composed by me - the owner of the site. And most of these events were inspired by the shows in [Royal Albert Hall](https://www.royalalberthall.com).
+Most of the events and their writeups in this project are re-worded copies of the events in [Royal Albert Hall's](https://www.royalalberthall.com) website. And a a couple of the events are made up by me - the site ownder.
+
+The idea for this site was inspired by [Royal Albert Hall's](https://www.royalalberthall.com) website.
 
 ### Media
 
@@ -897,7 +899,7 @@ The events and their writeups or blogs on this site are fictional and composed b
 
 * Redirecting to the same page after post method - [StackOverflow](https://stackoverflow.com/questions/39560175/redirect-to-same-page-after-post-method-using-class-based-views)
 
-* Django Testing Tutorial - [Cryce Truly Youtube Channel](www.youtube.com/watch?v=FLVB_HruIjk&t=306s)
+* Django Unit Testing Tutorial - [Cryce Truly Youtube Channel](https://www.youtube.com/watch?v=FLVB_HruIjk&t=306s)
 
 As a beginner in web development, I conducted extensive research on available resources and materials online to increase my understanding of the programming languages, libraries, and technologies used in this project. While I cannot name all the sites I visited and read, I would like to acknowledge and express my gratitude to the experienced developers who have shared their knowledge and expertise online, helping beginners like me with their brilliant contributions.
 
