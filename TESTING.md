@@ -18,7 +18,7 @@
     * [Mobile-Friendly Test](#mobile-friendly-test)
     * [Manual Testing for Responsiveness](#manual-testing-for-responsiveness)
 
-[BACK TO README.MD](https://github.com/marked-gil/goodwill-events#readme)
+### [>> **BACK TO README.MD**](https://github.com/marked-gil/goodwill-events#readme)
 
 ## MANUAL TESTING (User Story Testing)
 These are the test cases for manual testing on the project's User Stories.
@@ -71,7 +71,7 @@ These are the test cases for manual testing on the project's User Stories.
 * **FILTERING EVENTS BY MONTH**
     ![Filtering Events by Month test cases](docs/test_cases/test-cases-19.png)
 
-[Back to Table of Contents](#table-of-contents)
+[<ins>Back to Table of Contents</ins>](#table-of-contents)
 
 ## MANUAL TESTING FOR JAVASCRIPT
 The results of the manual tests on Javascript are shown below.
@@ -119,6 +119,8 @@ The results of the manual tests on Javascript are shown below.
 | The seat map is initially blocked with pan and zoom functionality disabled when a user with reserved seats to the event visits the page | Yes |
 | The initial seat map blocker can be removed by clicking the 'Edit Reservation' button | Yes |
 
+[<ins>Back to Table of Contents</ins>](#table-of-contents)
+
 ## PYTHON AUTOMATED TESTING (Unittest)
 There are 18 automated tests created on this project and all of which ran successfully as shown in the image below. The tests checked the following:    
 * the correct rendering of the templates/pages,
@@ -143,6 +145,8 @@ These tests can be seen in the `tests.py` file in each of the apps.
             }
         * Or, temporarily comment out the DATABASE_URL in the `env` file.
     * Then, use the command "`python3 manage.py test`" to run the tests.
+
+[<ins>Back to Table of Contents</ins>](#table-of-contents)
 
 ## VALIDATORS
 
@@ -186,7 +190,7 @@ All Python codes on this project were tested using the [CI Python Linter](https:
 * [**seating/VIEWS.PY**](https://github.com/marked-gil/goodwill-events/blob/main/seating/views.py)  
 ![seating/view.py Linter Result](docs/testing_screenshots/python_linter/seating-views.png)  
 
-[Back to Table of Contents](#table-of-contents)
+[<ins>Back to Table of Contents</ins>](#table-of-contents)
 
 ### **JSHint**  
 The Javascript codes on this project were tested and validated by [JSHINT](https://jshint.com/), which is a tool analysis JS code for errors and potential problems. All the results from the JSHINT showed **NO ERROR** for this project.  
@@ -199,7 +203,7 @@ See individual result screenshot below.
 * [**seatmap_panzoom.js**](https://github.com/marked-gil/goodwill-events/blob/main/static/js/seatmap_panzoom.js)    
 ![JSHINT result for seatmap_panzoom.js](docs/testing_screenshots/jshint/seatmap-panzoom-jshint-result.png)  
 
-[Back to Table of Contents](#table-of-contents)
+[<ins>Back to Table of Contents</ins>](#table-of-contents)
 
 ### **W3C MarkUp Validator**    
 The HTML files on this project were tested and validated by [W3C Markup Validation Service](https://validator.w3.org/). **NO ERRORS OR WARNINGS** were shown on the results.
@@ -226,7 +230,7 @@ The CSS codes on this project were validated by the [W3C CSS Validation Service]
 * [**seating_style.css**](https://github.com/marked-gil/goodwill-events/blob/main/static/css/seating_style.css)
 ![seating_style.css validator result screenshot](docs/testing_screenshots/css_validator/seating_style_css_validated.png)
 
-[Back to Table of Contents](#table-of-contents)
+[<ins>Back to Table of Contents</ins>](#table-of-contents)
 
 ## ACCESSIBILITY
 
@@ -279,7 +283,7 @@ However, the pages that require logging in cannot be analysed by the validator, 
 * **Password Reset Page**   
 ![Color Contrast Validator Result for Password Reset Page](docs/testing_screenshots/color_contrast_validator/color-contrast-password-reset.png) 
 
-[Back to Table of Contents](#table-of-contents)
+[<ins>Back to Table of Contents</ins>](#table-of-contents)
 
 
 ### **WAVE - Web Accessibility Evaluation Tool**
@@ -310,7 +314,7 @@ This project utilised the [WAVE - Web Accessibility Evaluation Tool](https://wav
 * **Change Password Page**      
 ![Lighthouse Result for Change Password Page](docs/testing_screenshots/lighthouse/lighthouse-change-password.png)   
 
-[Back to Table of Contents](#table-of-contents)
+[<ins>Back to Table of Contents</ins>](#table-of-contents)
 
 
 ## RESPONSIVENESS
@@ -342,7 +346,7 @@ The tool [Mobile-Friendly Test](https://search.google.com/test/mobile-friendly) 
 * **Change Password Page**      
 ![Mobile-Friendly Test Result for Change Password Page](docs/testing_screenshots/mobile_friendly_test/mobile-friendly-change-password.png)      
 
-[Back to Table of Contents](#table-of-contents)
+[<ins>Back to Table of Contents</ins>](#table-of-contents)
 
 
 ### **Manual Testing for Responsiveness**
@@ -359,4 +363,6 @@ The web developer tools of the 4 main websites (Chrome, Firefox, Edge, and Safar
 ![iPhone 8 Plus on Safari developer tool](docs/testing_screenshots/manual_responsiveness_test/safari-iphone8plus.png)     
 
 
-[Back to Table of Contents](#table-of-contents)
+[<ins>Back to Table of Contents</ins>](#table-of-contents)
+
+### [>> **BACK TO README.MD**](https://github.com/marked-gil/goodwill-events#readme)
