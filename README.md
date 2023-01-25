@@ -863,7 +863,7 @@ This project uses the following tools:
 ## Credits
 
 ### Content
-Most of the events and their writeups in this project are re-worded copies of the events in [Royal Albert Hall's](https://www.royalalberthall.com) website. And a a couple of the events are made up by me - the site ownder.
+Most of the events and their descriptions in this project have been reworded versions of events found on the [Royal Albert Hall's](https://www.royalalberthall.com) website, with a few being fictional events created by the project's owner.
 
 The idea for this site was inspired by [Royal Albert Hall's](https://www.royalalberthall.com) website.
 
