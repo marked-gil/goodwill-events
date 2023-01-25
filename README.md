@@ -525,7 +525,7 @@ The 'base template', which contains the navbar and footer, is included in all th
     ![Footer screenshot](docs/features_screenshots/general-footer.png)
 
 **HOME Page**
-> **[User Story](https://github.com/marked-gil/goodwill-events/issue):** As a User, I can see the home page of the site so that I will know what the website is for.   
+> **[User Story](https://github.com/marked-gil/goodwill-events/issues/14):** As a User, I can see the home page of the site so that I will know what the website is for.   
 
 The Home page includes the base template as described above and displays three (3) featured events, and the ‘About Us’ section.
 
@@ -843,6 +843,7 @@ This project uses the following tools:
 * [Favicon](https://favicon.io/) - Favicon generator    
 * [Font Awesome](https://fontawesome.com/) - provides the social media icons on the page footer
 * [Loading.io](https://loading.io/) - provides the free 'loading' SVG animation used on the Seat Reservation page as hint for a request in progress, such as reserving, updating, or deleting seats
+* [Eightshapes.com](https://contrast-grid.eightshapes.com/) - for the Contrast Grid, which guides compliance with WCAG 2.0 minimum contrast requirements  
 * [TinyPNG](https://tinypng.com/) - for image compression
 * [Diffchecker](https://www.diffchecker.com/#) - used when comparing codes tested in another IDE to the codes in gitpod     
 * [Grammarly](https://www.grammarly.com/) - used to check the grammar of the contents in this project   
