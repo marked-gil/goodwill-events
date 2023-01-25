@@ -110,7 +110,7 @@ class SearchEvents(ListView):
     model = Event
     context_object_name = 'events_list'
     template_name = 'events/events.html'
-    paginate_by = 4
+    paginate_by = 5
 
     month_dict = {
             'January': 1,
