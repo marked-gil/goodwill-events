@@ -110,8 +110,8 @@ if (document.getElementById('comment-form')) {
 // --> EVENT DETAILS Page [End] <--
 
 
-// --> EVENTS Page [Start] <--
-if (document.getElementById("events-outer-container")) {
+// --> EVENTS Page (Pagination Nav) [Start] <--
+if (document.getElementById("pagination-nav")) {
     const pagination = document.getElementById('events-pagination');
     const pageNumber = pagination.getAttribute('data-page-number');
     const pageLinks = document.querySelectorAll('.page-link');

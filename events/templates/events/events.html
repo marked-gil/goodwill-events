@@ -81,7 +81,7 @@
 
     <!-- PAGINATION [start] -->
     {% if is_paginated %}
-    <nav aria-label="list of events" class="d-flex justify-content-center mb-5">
+    <nav id="pagination-nav" aria-label="list of events" class="d-flex justify-content-center mb-5">
         <ul class="pagination" id="events-pagination" data-page-number="{{ page_obj.number }}">
             {% if page_obj.has_previous %}
             <li class="page-item">
