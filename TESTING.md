@@ -3,7 +3,7 @@
 ## TABLE OF CONTENTS    
 * [**Manual Testing for User Stories**](#manual-testing-user-story-testing)
 * [**Manual Testing for Javascript**](#manual-testing-for-javascript)
-* [**Python Automated Testing**](#automated-testing-unittest)
+* [**Python Automated Testing**](#python-automated-testing-unittest)
 * [**Validators**](#validators)     
     * [Python Linter](#ci-python-linter)
     * [JSHINT](#jshint)
