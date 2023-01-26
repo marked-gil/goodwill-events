@@ -85,9 +85,10 @@ if (document.getElementById('comment-form')) {
      */
     $(".delete-comment-form").submit(function (e) {
         e.preventDefault();
+        const form = $(this);
         $.ajax({
             type: "POST",
-            url: $(".delete-comment-form").data("url"),
+            url: form.data("url"),
             data: {
                 csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
             },
