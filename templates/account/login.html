@@ -40,10 +40,13 @@
       <div id="sign-in-errors-wrapper">
         <!-- Code taken from Stackoverflow. [See Credits Section on READMe.md] -->
         {% for key, value in form.errors.items %}
-          {% if key != '__all__' %} 
-            {{ key }} 
-          {% endif %}
+          {% if key != '__all__' %}
+          <ul class="errorlist nonfield">
+            <li>All fields are required.</li>
+          </ul>
+          {% else %}
           {{ value }}
+          {% endif %}
         {% endfor %}
       </div>
 
