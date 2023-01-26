@@ -210,8 +210,10 @@ function fieldValueChanged(field, originalText) {
     const updateBtn = document.getElementById('update-account-btn');
     if (field.value.trim() != originalText) {
         updateBtn.classList.remove('disabled');
+        updateBtn.removeAttribute("tabindex");
     } else {
         updateBtn.classList.add('disabled');
+        updateBtn.setAttribute("tabindex", "-1");
     }
 }
 
