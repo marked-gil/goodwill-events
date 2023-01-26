@@ -736,9 +736,9 @@ The following **User Stories** have not been implemented in the current state of
 * ISSUE:    
     Whenever a comment was posted in the Comment section, the page would reload and go back to the top of the page. As the comment section is at the lower part of the page, the user then had to scroll back down to see the displayed comment on the Comment section. This did not seem to provide a good user experience.
     * INTENDED OUTCOME:     
-        Every time a comment is being posted by the user, the comment should be displayed without the page having to go back to the top. If page reload is necessary after every post, it should still stay at the comment section to display the posted comment to the user.
+    Every time a comment is being posted by the user, the comment should be displayed without the page having to go back to the top. If page reload is necessary after every post, it should still stay at the comment section to display the posted comment to the user.
     * SOLUTION:     
-        I used JQUERY & AJAX to submit and display or delete the comment. And, when the comment is successfully posted or deleted, the site is reloaded using `location.reload()` to bring the site back to the comment section after reloading.   
+    I used JQUERY & AJAX to submit and display or delete the comment. And, when the comment is successfully posted or deleted, the site is reloaded using `location.reload()` to bring the site back to the comment section after reloading.   
 
 * ISSUE:    
     I customized django-allauth's `login` template by adding the form fields individually, but it caused the error messages not to show up.
@@ -746,12 +746,19 @@ The following **User Stories** have not been implemented in the current state of
     I want django-allauth's default error messages to still show up in the `login` template as it normally would before the template was customized.    
     * SOLUTION:     
     Using [stackoverflow's](https://stackoverflow.com/questions/53320056/django-allauth-display-all-error-messages) suggestion, I added this code in the `login` template:  
-    ` {% for key, value in form.errors.items %}`     
+    `{% for key, value in form.errors.items %}`     
     `{% if key != '__all__' %}`   
     `{{ key }}`   
     `{% endif %}`     
     `{{ value }}`     
     `{% endfor %}`
+
+* ISSUE:
+    When a user has multiple comments posted on an event, it is always the last comment entered that would get deleted when 'delete' button is clicked regardless of the comment that the user wants to remove.     
+    * INTENDED OUTCOME:  
+    When a comment's 'delete' button is clicked, its corresponding comment should be the one deleted.
+    * SOLUTION:     
+    I used the jquery keyword `$(this)` and assign it to a variable, such as this `const form = $(this)`, to hold the specific delete `form` that is being targeted, and then use it in AJAX to retrieve the URL, like this `url: form.data("url")`, to post the request to.
 
 ## Bugs Left To Fix
 After extensive manual testing of the site, there were NO BUGS found.
