@@ -146,6 +146,7 @@ if (document.getElementById('member-account-outer-container')) {
     for (let field of member_info_fields) {
         field.setAttribute('readonly', true);
         field.setAttribute('class', 'disabled-field');
+        field.setAttribute('tabindex', '-1');
     }
 
     // Event Listeners for EDIT buttons
@@ -211,9 +212,11 @@ function fieldValueChanged(field, originalText) {
     if (field.value.trim() != originalText) {
         updateBtn.classList.remove('disabled');
         updateBtn.removeAttribute("tabindex");
+        updateBtn.setAttribute('type', 'submit');
     } else {
         updateBtn.classList.add('disabled');
         updateBtn.setAttribute("tabindex", "-1");
+        updateBtn.setAttribute('type', 'button');
     }
 }
 
